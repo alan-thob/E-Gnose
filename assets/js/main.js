@@ -17,118 +17,145 @@ require = function (r, e, n) {
                 throw l.code = "MODULE_NOT_FOUND", l
             }
             i.resolve = f;
-            var s = e[n] = new t.Module(n);
-            r[n][0].call(s.exports, i, s, s.exports)
+            var a = e[n] = new t.Module;
+            r[n][0].call(a.exports, i, a, a.exports)
         }
         return e[n].exports
     }
 
-    function o(r) {
-        this.id = r, this.bundle = t, this.exports = {}
+    function o() {
+        this.bundle = t, this.exports = {}
     }
 
     var u = "function" == typeof require && require;
-    t.isParcelRequire = !0, t.Module = o, t.modules = r, t.cache = e, t.parent = u;
+    t.Module = o, t.modules = r, t.cache = e, t.parent = u;
     for (var i = 0; i < n.length; i++) t(n[i]);
     return t
 }({
-    35: [function (require, module, exports) {
+    3: [function (require, module, exports) {
+        "use strict";
         var t = function () {
-            function t(t, e) {
-                for (var i = 0; i < e.length; i++) {
-                    var s = e[i];
+            function t(t, i) {
+                for (var e = 0; e < i.length; e++) {
+                    var s = i[e];
                     s.enumerable = s.enumerable || !1, s.configurable = !0, "value" in s && (s.writable = !0), Object.defineProperty(t, s.key, s)
                 }
             }
 
-            return function (e, i, s) {
-                return i && t(e.prototype, i), s && t(e, s), e
+            return function (i, e, s) {
+                return e && t(i.prototype, e), s && t(i, s), i
             }
         }();
 
-        function e(t) {
+        function i(t) {
             if (Array.isArray(t)) {
-                for (var e = 0, i = Array(t.length); e < t.length; e++) i[e] = t[e];
-                return i
+                for (var i = 0, e = Array(t.length); i < t.length; i++) e[i] = t[i];
+                return e
             }
             return Array.from(t)
         }
 
-        function i(t, e) {
-            if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function")
+        function e(t, i) {
+            if (!(t instanceof i)) throw new TypeError("Cannot call a class as a function")
         }
 
-        "function" != typeof Object.assign && Object.defineProperty(Object, "assign", {
-            value: function (t, e) {
-                "use strict";
-                if (null == t) throw new TypeError("Cannot convert undefined or null to object");
-                for (var i = Object(t), s = 1; s < arguments.length; s++) {
-                    var n = arguments[s];
-                    if (null != n) for (var o in n) Object.prototype.hasOwnProperty.call(n, o) && (i[o] = n[o])
-                }
-                return i
-            }, writable: !0, configurable: !0
-        });
         var s = function () {
-            function s(t) {
-                var n = this, o = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-                if (i(this, s), this.element = t, this.options = Object.assign({}, {
+            function i(t) {
+                e(this, i), t.container.addEventListener("dragstart", function (t) {
+                    return t.preventDefault()
+                }), t.container.addEventListener("mousedown", this.startDrag.bind(this)), t.container.addEventListener("touchstart", this.startDrag.bind(this)), window.addEventListener("mousemove", this.drag.bind(this)), window.addEventListener("touchmove", this.drag.bind(this)), window.addEventListener("touchend", this.endDrag.bind(this)), window.addEventListener("mouseup", this.endDrag.bind(this)), window.addEventListener("touchcancel", this.endDrag.bind(this)), this.carousel = t
+            }
+
+            return t(i, [{
+                key: "startDrag", value: function (t) {
+                    if (t.touches) {
+                        if (t.touches.length > 1) return;
+                        t = t.touches[0]
+                    }
+                    this.origin = {
+                        x: t.screenX,
+                        y: t.screenY
+                    }, this.width = this.carousel.containerWidth, this.carousel.disableTransition()
+                }
+            }, {
+                key: "drag", value: function (t) {
+                    if (this.origin) {
+                        var i = t.touches ? t.touches[0] : t,
+                            e = {x: i.screenX - this.origin.x, y: i.screenY - this.origin.y};
+                        t.touches && Math.abs(e.x) > Math.abs(e.y) && (t.preventDefault(), t.stopPropagation());
+                        var s = -100 * this.carousel.currentItem / this.carousel.items.length;
+                        this.lastTranslate = e, this.carousel.translate(s + 100 * e.x / this.width)
+                    }
+                }
+            }, {
+                key: "endDrag", value: function (t) {
+                    this.origin && this.lastTranslate && (this.carousel.enableTransition(), Math.abs(this.lastTranslate.x / this.carousel.carouselWidth) > .2 ? this.lastTranslate.x < 0 ? this.carousel.next() : this.carousel.prev() : this.carousel.gotoItem(this.carousel.currentItem)), this.origin = null
+                }
+            }]), i
+        }(), n = function () {
+            function n(t) {
+                var o = this, r = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+                if (e(this, n), this.element = t, this.options = Object.assign({}, {
                     slidesToScroll: 1,
                     slidesVisible: 1,
                     loop: !1,
                     pagination: !1,
                     navigation: !0,
                     infinite: !1
-                }, o), this.options.loop && this.options.infinite) throw new Error("Un carousel ne peut être à la fois en boucle et en infinie");
-                var r = [].slice.call(t.children);
-                this.isMobile = !1, this.currentItem = 0, this.moveCallbacks = [], this.offset = 0, this.root = this.createDivWithClass("carousel"), this.container = this.createDivWithClass("carousel__container"), this.root.setAttribute("tabindex", "0"), this.root.appendChild(this.container), this.element.appendChild(this.root), this.items = r.map(function (t) {
-                    var e = n.createDivWithClass("carousel__item");
-                    return e.appendChild(t), e
-                }), this.options.infinite && (this.offset = this.options.slidesVisible + this.options.slidesToScroll, this.offset > r.length && console.error("Vous n'avez pas assez d'élément dans le carousel", t), this.items = [].concat(e(this.items.slice(this.items.length - this.offset).map(function (t) {
+                }, r), this.options.loop && this.options.infinite) throw new Error("Un carousel ne peut être à la fois en boucle et en infinie");
+                var a = [].slice.call(t.children);
+                this.isMobile = !1, this.currentItem = 0, this.moveCallbacks = [], this.offset = 0, this.root = this.createDivWithClass("carousel"), this.container = this.createDivWithClass("carousel__container"), this.root.setAttribute("tabindex", "0"), this.root.appendChild(this.container), this.element.appendChild(this.root), this.items = a.map(function (t) {
+                    var i = o.createDivWithClass("carousel__item");
+                    return i.appendChild(t), i
+                }), this.options.infinite && (this.offset = this.options.slidesVisible + this.options.slidesToScroll, this.offset > a.length && console.error("Vous n'avez pas assez d'élément dans le carousel", t), this.items = [].concat(i(this.items.slice(this.items.length - this.offset).map(function (t) {
                     return t.cloneNode(!0)
-                })), e(this.items), e(this.items.slice(0, this.offset).map(function (t) {
+                })), i(this.items), i(this.items.slice(0, this.offset).map(function (t) {
                     return t.cloneNode(!0)
                 }))), this.gotoItem(this.offset, !1)), this.items.forEach(function (t) {
-                    return n.container.appendChild(t)
+                    return o.container.appendChild(t)
                 }), this.setStyle(), this.options.navigation && this.createNavigation(), this.options.pagination && this.createPagination(), this.moveCallbacks.forEach(function (t) {
-                    return t(n.currentItem)
+                    return t(o.currentItem)
                 }), this.onWindowResize(), window.addEventListener("resize", this.onWindowResize.bind(this)), this.root.addEventListener("keyup", function (t) {
-                    "ArrowRight" === t.key || "Right" === t.key ? n.next() : "ArrowLeft" !== t.key && "Left" !== t.key || n.prev()
-                }), this.options.infinite && this.container.addEventListener("transitionend", this.resetInfinite.bind(this))
+                    "ArrowRight" === t.key || "Right" === t.key ? o.next() : "ArrowLeft" !== t.key && "Left" !== t.key || o.prev()
+                }), this.options.infinite && this.container.addEventListener("transitionend", this.resetInfinite.bind(this)), new s(this)
             }
 
-            return t(s, [{
+            return t(n, [{
                 key: "setStyle", value: function () {
-                    var t = this, e = this.items.length / this.slidesVisible;
-                    this.container.style.width = 100 * e + "%", this.items.forEach(function (i) {
-                        return i.style.width = 100 / t.slidesVisible / e + "%"
+                    var t = this, i = this.items.length / this.slidesVisible;
+                    this.container.style.width = 100 * i + "%", this.items.forEach(function (e) {
+                        return e.style.width = 100 / t.slidesVisible / i + "%"
                     })
                 }
             }, {
                 key: "createNavigation", value: function () {
-                    var t = this, e = this.createDivWithClass("carousel__next"),
-                        i = this.createDivWithClass("carousel__prev");
-                    this.root.appendChild(e), this.root.appendChild(i), e.addEventListener("click", this.next.bind(this)), i.addEventListener("click", this.prev.bind(this)), !0 !== this.options.loop && this.onMove(function (s) {
-                        0 === s ? i.classList.add("carousel__prev--hidden") : i.classList.remove("carousel__prev--hidden"), void 0 === t.items[t.currentItem + t.slidesVisible] ? e.classList.add("carousel__next--hidden") : e.classList.remove("carousel__next--hidden")
+                    var t = this, i = this.createDivWithClass("carousel__next"),
+                        e = this.createDivWithClass("carousel__prev");
+                    this.root.appendChild(i), this.root.appendChild(e), i.addEventListener("click", this.next.bind(this)), e.addEventListener("click", this.prev.bind(this)), !0 !== this.options.loop && this.onMove(function (s) {
+                        0 === s ? e.classList.add("carousel__prev--hidden") : e.classList.remove("carousel__prev--hidden"), void 0 === t.items[t.currentItem + t.slidesVisible] ? i.classList.add("carousel__next--hidden") : i.classList.remove("carousel__next--hidden")
                     })
                 }
             }, {
                 key: "createPagination", value: function () {
-                    var t = this, e = this.createDivWithClass("carousel__pagination"), i = [];
-                    this.root.appendChild(e);
+                    var t = this, i = this.createDivWithClass("carousel__pagination"), e = [];
+                    this.root.appendChild(i);
                     for (var s = function (s) {
                         var n = t.createDivWithClass("carousel__pagination__button");
                         n.addEventListener("click", function () {
                             return t.gotoItem(s + t.offset)
-                        }), e.appendChild(n), i.push(n)
+                        }), i.appendChild(n), e.push(n)
                     }, n = 0; n < this.items.length - 2 * this.offset; n += this.options.slidesToScroll) s(n);
-                    this.onMove(function (e) {
+                    this.onMove(function (i) {
                         var s = t.items.length - 2 * t.offset,
-                            n = i[Math.floor((e - t.offset) % s / t.options.slidesToScroll)];
-                        n && (i.forEach(function (t) {
+                            n = e[Math.floor((i - t.offset) % s / t.options.slidesToScroll)];
+                        n && (e.forEach(function (t) {
                             return t.classList.remove("carousel__pagination__button--active")
                         }), n.classList.add("carousel__pagination__button--active"))
                     })
+                }
+            }, {
+                key: "translate", value: function (t) {
+                    this.container.style.transform = "translate3d(" + t + "%, 0, 0)"
                 }
             }, {
                 key: "next", value: function () {
@@ -140,7 +167,7 @@ require = function (r, e, n) {
                 }
             }, {
                 key: "gotoItem", value: function (t) {
-                    var e = !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1];
+                    var i = !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1];
                     if (t < 0) {
                         if (!this.options.loop) return;
                         t = this.items.length - this.slidesVisible
@@ -148,9 +175,9 @@ require = function (r, e, n) {
                         if (!this.options.loop) return;
                         t = 0
                     }
-                    var i = -100 * t / this.items.length;
-                    !1 === e && (this.container.style.transition = "none"), this.container.style.transform = "translate3d(" + i + "%, 0, 0)", this.container.offsetHeight, !1 === e && (this.container.style.transition = ""), this.currentItem = t, this.moveCallbacks.forEach(function (e) {
-                        return e(t)
+                    var e = -100 * t / this.items.length;
+                    !1 === i && this.disableTransition(), this.translate(e), this.container.offsetHeight, !1 === i && this.enableTransition(), this.currentItem = t, this.moveCallbacks.forEach(function (i) {
+                        return i(t)
                     })
                 }
             }, {
@@ -163,15 +190,23 @@ require = function (r, e, n) {
                 }
             }, {
                 key: "onWindowResize", value: function () {
-                    var t = this, e = window.innerWidth < 800;
-                    e !== this.isMobile && (this.isMobile = e, this.setStyle(), this.moveCallbacks.forEach(function (e) {
-                        return e(t.currentItem)
+                    var t = this, i = window.innerWidth < 800;
+                    i !== this.isMobile && (this.isMobile = i, this.setStyle(), this.moveCallbacks.forEach(function (i) {
+                        return i(t.currentItem)
                     }))
                 }
             }, {
                 key: "createDivWithClass", value: function (t) {
-                    var e = document.createElement("div");
-                    return e.setAttribute("class", t), e
+                    var i = document.createElement("div");
+                    return i.setAttribute("class", t), i
+                }
+            }, {
+                key: "disableTransition", value: function () {
+                    this.container.style.transition = "none"
+                }
+            }, {
+                key: "enableTransition", value: function () {
+                    this.container.style.transition = ""
                 }
             }, {
                 key: "slidesToScroll", get: function () {
@@ -181,25 +216,29 @@ require = function (r, e, n) {
                 key: "slidesVisible", get: function () {
                     return this.isMobile ? 1 : this.options.slidesVisible
                 }
-            }]), s
-        }(), n = function () {
-            new s(document.querySelector("#carousel0"), {
-                slidesVisible: 3,
-                slidesToScroll: 3,
-                loop: !0,
-                pagination: !0
-            }), new s(document.querySelector("#carousel2"), {
-                slidesVisible: 3,
-                slidesToScroll: 2,
-                loop: !0,
-                pagination: !0
-            }), new s(document.querySelector("#carousel3"), {
+            }, {
+                key: "containerWidth", get: function () {
+                    return this.container.offsetWidth
+                }
+            }, {
+                key: "carouselWidth", get: function () {
+                    return this.root.offsetWidth
+                }
+            }]), n
+        }(), o = function () {
+            new n(document.querySelector("#carousel0"), {
                 slidesVisible: 4,
                 slidesToScroll: 2,
                 infinite: !0,
-                pagination: !0
+                pagination: !1
+            })
+            new n(document.querySelector("#carousel1"), {
+                slidesVisible: 4,
+                slidesToScroll: 2,
+                infinite: !0,
+                pagination: !1
             })
         };
-        "loading" !== document.readyState && n(), document.addEventListener("DOMContentLoaded", n);
+        "loading" !== document.readyState && o(), document.addEventListener("DOMContentLoaded", o);
     }, {}]
-}, {}, [35])
+}, {}, [3])
