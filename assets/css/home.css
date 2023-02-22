@@ -7,10 +7,30 @@ body, html {
 
 body {
     font-family: sans-serif;
-    padding: 0 50px 50px;
-    background: linear-gradient(45deg, #f37646, #f3e946) 50% no-repeat;
+    background: linear-gradient(135deg,#2666ff,#15c0ed) 50% no-repeat;
     line-height: 1.4
 }
+
+/*############################# */
+/*###### CAROUSEL HEADER ###### */
+/*############################# */
+.my-nav{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+.carousel-item {
+    height: 100vh;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+/*############################# */
+/*###### CAROUSEL CONTENT ###### */
+/*############################# */
 
 .title {
     margin-top: 50px;
@@ -58,7 +78,8 @@ body {
 }
 
 .carousel {
-    margin-bottom: 30px
+    margin-bottom: 30px;
+
 }
 
 .carousel__container {
