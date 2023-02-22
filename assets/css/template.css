@@ -1,0 +1,23 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    overflow-x: hidden
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    background: linear-gradient(135deg,#2666ff,#15c0ed) 50% no-repeat;
+    line-height: 1.4
+}
+
+
+a .logo-color, span .logo-color  {
+    color: #2666ff;
+    font-family: 'Kanit', sans-serif;
+}
+
+.logo-color  {
+    color: #2666ff;
+    font-family: 'Kanit', sans-serif;
+}

@@ -19,6 +19,9 @@
     <title>Accueil | E-Gnose</title>
 
     <!-- Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -41,7 +44,7 @@ include_once('_navbar/navbar.php');
         <div class="search__bar">
             <div id="select">
                 <p id="selectText">Toute catégorie</p>
-                <img src="assets/img/arrow-drop-down-fill.svg" alt="">
+                <img id="dropdown" src="assets/img/arrow-drop-down-fill.svg" alt="">
                 <ul id="list">
                     <li class="options">Toutes les catégories</li>
                     <li class="options">Catégorie 1</li>
@@ -171,6 +174,12 @@ include_once('_navbar/navbar.php');
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section id="subscribe-cta">
+    <div class="container">
+        <h2>Retrouvez votre contenu préféré où vous voulez, quand vous voulez, en illimité sur <span class="logo-color">e</span>-Gnose.</h2>
     </div>
 </section>
 

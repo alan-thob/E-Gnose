@@ -1,16 +1,4 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    overflow-x: hidden
-}
-
-body {
-    font-family: sans-serif;
-    background: #000;
-    line-height: 1.4
-}
-
+@import "template.css";
 /*############################# */
 /*###### CAROUSEL HEADER ###### */
 /*############################# */
@@ -122,12 +110,14 @@ body {
 #select ul.open {
     max-height: 300px;
 }
-/*############################# */
-/*###### CAROUSEL CONTENT ###### */
-/*############################# */
-section {
-    background: linear-gradient(135deg,#2666ff,#15c0ed) 50% no-repeat;
+
+.reverse {
+    transform: scaleY(-1);
+    transition: 0.5s;
 }
+/*############################## */
+/*###### CAROUSEL CONTENT ###### */
+/*############################## */
 .title {
     margin-top: 50px;
     font-size: 25px;
@@ -251,4 +241,12 @@ section {
     .carousel__pagination {
         display: block
     }
+}
+
+/*########################### */
+/*###### SUBSCRIBE CTA ###### */
+/*########################### */
+#subscribe-cta {
+    height: 50vh;
+    background: url("../img/subscribe-cta.png") 46% 57% no-repeat
 }
