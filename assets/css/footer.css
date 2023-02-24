@@ -13,6 +13,7 @@
 .footer h2 {
     color: #fff;
     font-weight: 600;
+    font-size: 2rem;
 }
 
 .footer a {
@@ -46,3 +47,18 @@
     margin-top: 0;
     margin-bottom: 0;
 }
+
+@media (max-width: 768px) {
+    .footer h2 {
+        font-size: 1.4rem;
+    }
+
+    .credits {
+        height: 150px;
+    }
+    .credits a {
+        display: flex;
+        flex-direction: column;
+    }
+}
+

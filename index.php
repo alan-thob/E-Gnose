@@ -22,11 +22,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/css/home.css" rel="stylesheet" type="text/css" media="screen">
+    <script src="assets/js/navbar.js" async></script>
 </head>
 
 <body class="unselectable">
@@ -40,7 +40,12 @@ include_once('_navbar/navbar.php');
         <h1>Films, livres, audios … Toute une bibliothèque<br>pour vous divertir, où que vous soyez, en illimité !</h1>
         <div class="search__bar">
             <div id="select">
-                <p id="selectText">Toute catégorie</p>
+                <p id="selectText">Sélectionner</p>
+                <button id="selectText" class="navbar-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <img id="dropdown" src="assets/img/arrow-drop-down-fill.svg" alt="">
                 <ul id="list">
                     <li class="options">Toutes les catégories</li>
@@ -67,11 +72,11 @@ include_once('_navbar/navbar.php');
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
+            <span class="sr-only">Précédent</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
+            <span class="sr-only">Suivant</span>
         </a>
     </div>
 
