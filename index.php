@@ -4,32 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="#"/>
+    <meta name="description" content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
     <meta name="robots" content="index, follow"/>
-    <meta property="og:title" content="Accueil | E-Gnose"/>
+    <meta property="og:title" content="Accueil | e-Gnose"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:image" content="#"/>
+    <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
     <meta property="og:url" content="https://e-gnose.sfait.fr/"/>
-    <meta property="og:description" content="#"/>
+    <meta property="og:description" content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
     <meta property="og:locale" content="fr_FR"/>
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Accueil | E-Gnose"/>
-    <meta name="twitter:description" content="#"/>
-    <meta name="twitter:image" content="#"/>
-    <title>Accueil | E-Gnose</title>
+    <meta name="twitter:title" content="Accueil | e-Gnose"/>
+    <meta name="twitter:description" content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
+    <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
+    <title>Accueil | e-Gnose</title>
 
     <!-- Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="assets/img/favicon.ico" rel="icon">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/home.css">
-    <link href="assets/css/navbar.css" rel="stylesheet">
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/css/home.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 
 <body class="unselectable">
@@ -177,21 +174,12 @@ include_once('_navbar/navbar.php');
     </div>
 </section>
 
-<section id="subscribe-cta">
-    <div class="container">
-        <h2>Retrouvez votre contenu préféré où vous voulez, quand vous voulez, en illimité sur <span class="logo-color">e</span>-Gnose.</h2>
-    </div>
-</section>
+<?php
+include_once('_footer/footer.php');
+?>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="assets/js/carousel.js" async></script>
 <script src="assets/js/search-bar.js" async></script>
 

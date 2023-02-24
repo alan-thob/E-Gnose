@@ -6,18 +6,7 @@ body, html {
 }
 
 body {
-    font-family: Helvetica, sans-serif;
-    background: linear-gradient(135deg,#2666ff,#15c0ed) 50% no-repeat;
+    font-family: 'Kanit', sans-serif;
+    background: linear-gradient(120deg,#071e53,#15c0ed) 50% no-repeat;
     line-height: 1.4
-}
-
-
-a .logo-color, span .logo-color  {
-    color: #2666ff;
-    font-family: 'Kanit', sans-serif;
-}
-
-.logo-color  {
-    color: #2666ff;
-    font-family: 'Kanit', sans-serif;
 }
