@@ -130,6 +130,7 @@ include_once('_navbar/navbar.php');
                 </div>
             </div>
         </div>
+        <a class="more__btn" href="#">Voir plus</a>
 
         <div class="title">Les mieux notés</div>
         <div id="carousel1">
@@ -176,6 +177,7 @@ include_once('_navbar/navbar.php');
                 </div>
             </div>
         </div>
+        <a class="more__btn" href="#">Voir plus</a>
     </div>
 </section>
 
