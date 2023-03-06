@@ -26,7 +26,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/css/home.css" rel="stylesheet" type="text/css" media="screen">
-    <script src="assets/js/navbar.js" async></script>
+
 </head>
 
 <body class="unselectable">

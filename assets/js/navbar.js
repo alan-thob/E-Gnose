@@ -1,55 +1,47 @@
-let dropdowns = document.querySelectorAll('.navbar .dropdown-toggler')
-let dropdownIsOpen = false
+(function () {
+  "use strict";
 
-// Handle dropdown menues
-if (dropdowns.length) {
-  dropdowns.forEach((dropdown) => {
-    dropdown.addEventListener('mouseover', (event) => {
-      let target = document.querySelector(`#${event.target.dataset.dropdown}`)
-
-      if (target) {
-        if (target.classList.contains('show')) {
-          target.classList.remove('show')
-          dropdownIsOpen = false
-        } else {
-          target.classList.add('show')
-          dropdownIsOpen = true
-        }
-      }
-    })
-  })
-}
-
-// Use the "mouseout" type if you want to hide the dropdown without clicking elsewhere.
-window.addEventListener('mouseup', (event) => {
-  if (dropdownIsOpen) {
-    dropdowns.forEach((dropdownButton) => {
-      let dropdown = document.querySelector(`#${dropdownButton.dataset.dropdown}`)
-      let targetIsDropdown = dropdown == event.target
-
-      if (dropdownButton == event.target) {
-        return
-      }
-
-      if ((!targetIsDropdown) && (!dropdown.contains(event.target))) {
-        dropdown.classList.remove('show')
-      }
-    })
+  /**
+   * Easy selector helper function
+   */
+  const select = (el, all = false) => {
+    el = el.trim()
+    if (all) {
+      return [...document.querySelectorAll(el)]
+    } else {
+      return document.querySelector(el)
+    }
   }
-})
 
-// Open links in mobiles
-function handleSmallScreens() {
-  document.querySelector('.navbar-toggler')
-      .addEventListener('click', () => {
-        let navbarMenu = document.querySelector('.navbar-menu')
+  /**
+   * Easy on scroll event listener
+   */
+  const onscroll = (el, listener) => {
+    el.addEventListener('scroll', listener)
+  }
 
-        if (!navbarMenu.classList.contains('active')) {
-          navbarMenu.classList.add('active')
-        } else {
-          navbarMenu.classList.remove('active')
-        }
-      })
-}
+  /**
+   * Toggle .header-scrolled class to #header when page is scrolled
+   */
+  let selectHeader = select('#header')
+  if (selectHeader) {
+    const headerScrolled = () => {
+      if (window.scrollY > 100) {
+        selectHeader.classList.add('navbar-scrolled')
+      } else {
+        selectHeader.classList.remove('navbar-scrolled')
+      }
+    }
+    window.addEventListener('load', headerScrolled)
+    onscroll(document, headerScrolled)
+  }
 
-handleSmallScreens()
+  function classToggle() {
+    const navs = document.querySelectorAll('.Navbar__Items')
+
+    navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+  }
+
+  document.querySelector('.Navbar__Link-toggle')
+      .addEventListener('click', classToggle);
+})()

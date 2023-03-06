@@ -1,10 +1,3 @@
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.20);
-}
-
 .container__navbar {
     padding-left: 15px;
     padding-right: 45px;
@@ -16,15 +9,6 @@ nav {
     align-items: center;
     -webkit-transition: height 0.45s ease;
     transition: height 0.45s ease;
-}
-
-.navbar,
-.navbar > .container__navbar {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
 }
 
 #header {
@@ -48,6 +32,7 @@ nav {
     font-size: 17px;
     color: #FFFFFF;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .Navbar__Items--right {
@@ -80,6 +65,42 @@ nav {
     color: #fff;
 }
 
+/*--------------------------------------------------------------
+# Hover
+--------------------------------------------------------------*/
+
+.Navbar__Link a {
+    position: relative;
+}
+
+.Navbar__Link a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #FEFEFE;
+    transform-origin: bottom right;
+    transition: transform 0.5s ease;
+    transform: scaleX(0);
+}
+
+.Navbar__Link a:hover::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+.Navbar__Searchbar svg{
+    transform : rotate(0deg);
+    transition: all 0.35s;
+}
+
+.Navbar__Searchbar svg:hover {
+    transform : rotate(-40deg);
+    transition: all 0.35s;
+}
+
 /*###################################### */
 /*########## Navbar hamburger ########## */
 /*###################################### */
@@ -104,7 +125,7 @@ nav {
 }
 
 .Navbar__Items--right {
-    margin-left:auto;
+    margin-left: auto;
 }
 
 .Navbar__Items--left {
@@ -127,7 +148,7 @@ nav {
     }
 
     .Navbar__Items {
-        display:none;
+        display: none;
     }
 
     .Navbar__ToggleShow {
@@ -156,7 +177,8 @@ nav {
         padding-right: 10px;
         padding-left: 0;
     }
+
     .navbar {
-        padding: 5px 0px 0px 20px;
+        padding: 5px 0 0 20px;
     }
 }
