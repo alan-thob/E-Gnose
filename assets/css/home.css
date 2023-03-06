@@ -159,12 +159,11 @@
 /*###### CAROUSEL CONTENT ###### */
 /*############################## */
 .title {
-    margin-top: 50px;
+    margin: 25px 0 25px 0;
     font-size: 29px;
     color: #bd9e5a;
     filter: brightness(1.10);
     font-weight: 900;
-    margin-bottom: 25px;
 }
 
 .item {
@@ -284,4 +283,32 @@
     .carousel__pagination {
         display: block
     }
+}
+
+.more__btn {
+    font-weight: 500;
+    font-size: 20px;
+    padding: 6px;
+    border-radius: 25px;
+    color: #fff;
+    background: linear-gradient(90deg, rgb(7, 30, 83, 1), rgb(21, 192, 237, 0.5));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+    margin: auto;
+}
+
+.more__btn:hover{
+    font-weight: 500;
+    font-size: 20px;
+    padding: 6px;
+    border-radius: 25px;
+    color: #fff;
+    background: linear-gradient(90deg, rgb(7, 30, 83, 1), rgb(21, 192, 237, 0.5));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+    margin: auto;
 }
