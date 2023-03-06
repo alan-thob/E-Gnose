@@ -36,27 +36,6 @@ include_once('_navbar/navbar.php');
 ?>
 
 <header>
-    <div class="carousel-items">
-        <h1>Films, livres, audios … Toute une bibliothèque<br>pour vous divertir, où que vous soyez, en illimité !</h1>
-        <div class="search__bar">
-            <div id="select">
-                <p id="selectText">Sélectionner</p>
-                <button id="selectText" class="navbar-toggler">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <img id="dropdown" src="assets/img/arrow-drop-down-fill.svg" alt="">
-                <ul id="list">
-                    <li class="options">Toutes les catégories</li>
-                    <li class="options">Catégorie 1</li>
-                    <li class="options">Catégorie 2</li>
-                    <li class="options">Catégorie 3</li>
-                </ul>
-            </div>
-            <input type="text" id="inputfield" placeholder="Rechercher un film, un livre, un audio, un ISBN ...">
-        </div>
-    </div>
     <div id="carouselExampleIndicators" class="carousel slide my-carousel my-carousel" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
