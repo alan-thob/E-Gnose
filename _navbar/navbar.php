@@ -2,49 +2,65 @@
 <html lang="fr">
 <head>
     <link href="../assets/css/navbar.css" rel="stylesheet">
-
 </head>
 <body>
 
 <header id="header">
     <nav id="navbar" class="navbar">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggler" data-toggle="open-navbar1">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+        <div class="container__navbar">
+
+            <div class="Navbar__Link Navbar__Link-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="Navbar__Items">
+                <div class="Navbar__Items--left">
+                    <div class="Navbar__Link">
+                        <a href="#">Accueil</a>
+                    </div>
+                    <div class="Navbar__Link">
+                        <a href="#">Catégories</a>
+                    </div>
+                    <div class="Navbar__Link">
+                        <a href="#">Ma wishlist</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Navbar__Link-brand">
                 <a href="#">
                     <h4><span>e</span>-Gnose</h4>
                 </a>
             </div>
 
-            <div class="navbar-menu" id="open-navbar1">
-                <ul class="navbar-nav">
-                    <li class="active"><a href="#">Accueil</a></li>
-                    <li class="navbar-dropdown">
-                        <a href="#" class="dropdown-toggler" data-dropdown="my-dropdown-id">
-                            Catégories <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown" id="my-dropdown-id">
-                            <li><a href="#">Cat 1</a></li>
-                            <li><a href="#">Cat 2</a></li>
-                            <li class="separator"></li>
-                            <li><a href="#">Cat 3</a></li>
-                            <li class="separator"></li>
-                            <li><a href="#">Cat 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Ma wishlist</a></li>
-                    <li><a href="#">Se connecter</a></li>
-                </ul>
+
+            <div class="Navbar__Items--right">
+                <div class="Navbar__Link">
+                    <a href="#searchbar">
+                        <svg id="search" data-name="Layer 1" width="27" height="27"
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 70 70" fill="#fff">
+                            <path d="M67.34,64.89,48.88,46.43a26.46,26.46,0,1,0-2.46,2.46L64.89,67.35ZM12.83,45.26A22.92,22.92,0,1,1,29,52,23,23,0,0,1,12.83,45.26Z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="Navbar__Link">
+                    <a href="#account">
+                        <svg id="user" xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor"
+                             class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                            <path fill-rule="evenodd"
+                                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 </header>
 
-<script src="../assets/js/navbar.js" async></script>
 <script>
     (function () {
         "use strict";
@@ -85,4 +101,15 @@
         }
 
     })()
+</script>
+
+<script>
+    function classToggle() {
+        const navs = document.querySelectorAll('.Navbar__Items')
+
+        navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+    }
+
+    document.querySelector('.Navbar__Link-toggle')
+        .addEventListener('click', classToggle);
 </script>
