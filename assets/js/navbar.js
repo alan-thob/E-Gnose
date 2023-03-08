@@ -26,7 +26,7 @@
   let selectHeader = select('#header')
   if (selectHeader) {
     const headerScrolled = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 30) {
         selectHeader.classList.add('navbar-scrolled')
       } else {
         selectHeader.classList.remove('navbar-scrolled')

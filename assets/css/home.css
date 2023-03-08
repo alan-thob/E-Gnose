@@ -89,7 +89,8 @@ body, html {
 }
 
 .carousel, .items {
-    position: relative
+    position: relative;
+    margin-top: 70px;
 }
 
 .carousel {
