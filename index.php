@@ -159,23 +159,12 @@ include_once('_navbar/navbar.php');
     </div>
 </section>
 
-<<<<<<< HEAD
-<div class="cta--inscription__container">
-    <div class="cta--inscription">
-        <h2>Retrouvez vos contenus préférés où vous voulez, quand vous voulez, en illimité sur <span>e</span>-Gnose.
-        </h2>
-        <a class="subscribe__btn" href="#">Je m'abonne !</a>
-    </div>
-</div>
-
-=======
 <div class="cta--subscribe">
     <h2>Retrouvez vos contenus préférés où vous voulez, quand vous voulez, en illimité sur <span>e</span>-Gnose.</h2>
     <a class="subscribe__btn" href="#">Je m'abonne !</a>
 </div>
 
 
->>>>>>> c0dc037598fe1f53cb3bb7bc66b47ba6d62b9eb5
 <?php
 include_once('_footer/footer.php');
 ?>

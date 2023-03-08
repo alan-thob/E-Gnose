@@ -200,19 +200,11 @@ body, html {
     margin: auto;
 }
 
-<<<<<<< HEAD
-/*############################# */
-/*###### CTA INSCRIPTION ###### */
-/*############################# */
-
-.cta--inscription__container {
-=======
 /*########################### */
 /*###### CTA SUBSCRIBE ###### */
 /*########################### */
 
 .cta--subscribe {
->>>>>>> c0dc037598fe1f53cb3bb7bc66b47ba6d62b9eb5
     text-align: center;
     background: linear-gradient(0deg, rgb(7, 30, 83, 1), rgb(21, 192, 237, 0.5)), url(../img/mozaic.jpg) fixed center center repeat;
     padding: 60px 0;
@@ -224,30 +216,18 @@ body, html {
     margin-top: 3vh;
 }
 
-<<<<<<< HEAD
-.cta--inscription h2 {
-=======
 .cta--subscribe h2 {
->>>>>>> c0dc037598fe1f53cb3bb7bc66b47ba6d62b9eb5
     color: #fff;
     font-weight: 600;
     font-size: 2rem;
 }
 
-<<<<<<< HEAD
-.cta--inscription a {
-=======
 .cta--subscribe a {
->>>>>>> c0dc037598fe1f53cb3bb7bc66b47ba6d62b9eb5
     width: 300px;
     margin: auto;
 }
 
-<<<<<<< HEAD
-.cta--inscription .subscribe__btn {
-=======
 .cta--subscribe .subscribe__btn {
->>>>>>> c0dc037598fe1f53cb3bb7bc66b47ba6d62b9eb5
     font-weight: 500;
     font-size: 20px;
     padding: 6px;
@@ -260,17 +240,12 @@ body, html {
 }
 
 @media (max-width: 768px) {
-<<<<<<< HEAD
-    .footer h2 {
-        font-size: 1.4rem;
-=======
     .cta--subscribe {
         height: 150px;
     }
     .cta--subscribe a {
         display: flex;
         flex-direction: column;
->>>>>>> c0dc037598fe1f53cb3bb7bc66b47ba6d62b9eb5
     }
 }
 
