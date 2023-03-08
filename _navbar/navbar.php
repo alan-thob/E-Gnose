@@ -48,7 +48,7 @@
                     </a>
                 </div>
                 <div class="Navbar__Account">
-                    <a href="https://e-gnose.sfait.fr/view/espace-client.php">
+                    <a href="https://e-gnose.sfait.fr/view/authentification.php">
                         <svg id="user" xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor"
                              class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
