@@ -6,36 +6,16 @@
     justify-content: center;
     color: #fff;
     display: flex;
-    bottom: 0;
 }
 
-<<<<<<< HEAD
-.footer a {
-    color: #007bff;
-}
-
-=======
->>>>>>> c0dc037598fe1f53cb3bb7bc66b47ba6d62b9eb5
 .footer p {
     margin-top: 0;
     margin-bottom: 0;
-    z-index: 99999;
 }
 
 @media (max-width: 768px) {
-<<<<<<< HEAD
-    .footer {
-        height: 150px;
-    }
-    .footer a {
-        display: flex;
-        flex-direction: column;
-    }
-}
-=======
     .footer h2 {
         font-size: 1.4rem;
     }
 }
 
->>>>>>> c0dc037598fe1f53cb3bb7bc66b47ba6d62b9eb5
