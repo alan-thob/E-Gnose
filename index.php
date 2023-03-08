@@ -160,6 +160,12 @@ include_once('_navbar/navbar.php');
     </div>
 </section>
 
+<div class="cta--subscribe">
+    <h2>Retrouvez vos contenus préférés où vous voulez, quand vous voulez, en illimité sur <span>e</span>-Gnose.</h2>
+    <a class="subscribe__btn" href="#">Je m'abonne !</a>
+</div>
+
+
 <?php
 include_once('_footer/footer.php');
 ?>

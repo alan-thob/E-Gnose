@@ -1,39 +1,4 @@
-.footer__subscribe {
-    text-align: center;
-    background: linear-gradient(0deg, rgb(7, 30, 83, 1), rgb(21, 192, 237, 0.5)), url(../img/mozaic.jpg) fixed center center repeat;
-    padding: 60px 0;
-    height: 290px;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 3vh;
-}
-
-.footer h2 {
-    color: #fff;
-    font-weight: 600;
-    font-size: 2rem;
-}
-
-.footer a {
-    width: 300px;
-    margin: auto;
-}
-
-.footer .subscribe__btn {
-    font-weight: 500;
-    font-size: 20px;
-    padding: 6px;
-    border-radius: 25px;
-    color: #fff;
-    background: linear-gradient(90deg, rgb(7, 30, 83, 1), rgb(21, 192, 237, 0.5));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.credits {
+.footer {
     background: rgb(7, 30, 83, 1);
     height: 70px;
     align-content: center;
@@ -43,7 +8,7 @@
     display: flex;
 }
 
-.credits p {
+.footer p {
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -51,14 +16,6 @@
 @media (max-width: 768px) {
     .footer h2 {
         font-size: 1.4rem;
-    }
-
-    .credits {
-        height: 150px;
-    }
-    .credits a {
-        display: flex;
-        flex-direction: column;
     }
 }
 

@@ -175,3 +175,53 @@
     width: 15vw;
     margin: auto;
 }
+
+/*########################### */
+/*###### CTA SUBSCRIBE ###### */
+/*########################### */
+
+.cta--subscribe {
+    text-align: center;
+    background: linear-gradient(0deg, rgb(7, 30, 83, 1), rgb(21, 192, 237, 0.5)), url(../img/mozaic.jpg) fixed center center repeat;
+    padding: 60px 0;
+    height: 290px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3vh;
+}
+
+.cta--subscribe h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.cta--subscribe a {
+    width: 300px;
+    margin: auto;
+}
+
+.cta--subscribe .subscribe__btn {
+    font-weight: 500;
+    font-size: 20px;
+    padding: 6px;
+    border-radius: 25px;
+    color: #fff;
+    background: linear-gradient(90deg, rgb(7, 30, 83, 1), rgb(21, 192, 237, 0.5));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .cta--subscribe {
+        height: 150px;
+    }
+    .cta--subscribe a {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
