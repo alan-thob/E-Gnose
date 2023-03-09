@@ -27,21 +27,12 @@
   if (selectHeader) {
     const headerScrolled = () => {
       if (window.scrollY > 30) {
-        selectHeader.classList.add('navbar-scrolled')
+        selectHeader.classList.add('wrapper-scrolled', 'search-box-scrolled')
       } else {
-        selectHeader.classList.remove('navbar-scrolled')
+        selectHeader.classList.remove('wrapper-scrolled', 'search-box-scrolled')
       }
     }
     window.addEventListener('load', headerScrolled)
     onscroll(document, headerScrolled)
   }
-
-  function classToggle() {
-    const navs = document.querySelectorAll('.Navbar__Items')
-
-    navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
-  }
-
-  document.querySelector('.Navbar__Link-toggle')
-      .addEventListener('click', classToggle);
 })()
