@@ -27,9 +27,9 @@
   if (selectHeader) {
     const headerScrolled = () => {
       if (window.scrollY > 30) {
-        selectHeader.classList.add('wrapper-scrolled', 'search-box-scrolled')
+        selectHeader.classList.add('wrapper-scrolled')
       } else {
-        selectHeader.classList.remove('wrapper-scrolled', 'search-box-scrolled')
+        selectHeader.classList.remove('wrapper-scrolled')
       }
     }
     window.addEventListener('load', headerScrolled)

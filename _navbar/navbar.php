@@ -15,7 +15,6 @@
         <input type="checkbox" id="show-menu">
         <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
         <div class="content-navbar">
-            <div class="logo"><a href="https://e-gnose.sfait.fr/"><span>e</span>-Gnose</a></div>
             <ul class="links">
                 <li><a href="#">Accueil</a></li>
                 <li>
@@ -29,7 +28,7 @@
                         <li><a href="#">Catégories 4</a></li>
                     </ul>
                 </li>
-                <li>
+                <!--<li>
                     <a href="#" class="desktop-link">Catégories2 </a>
                     <input type="checkbox" id="show-services">
                     <label for="show-services">Catégories2</label>
@@ -48,14 +47,18 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li>-->
                 <li><a href="#">Ma wishlist</a></li>
-                <li><a href="https://e-gnose.sfait.fr/view/authentification.php">Mon compte</a></li>
+                <!--<li><a href="https://e-gnose.sfait.fr/view/authentification.php">Mon compte</a></li>-->
             </ul>
+            <div class="logo">
+                <a href="https://e-gnose.sfait.fr/"><span>e</span>-Gnose</a>
+            </div>
         </div>
-        <label for="show-search" class=" search-icon"><i class="fas fa-search"></i>
-            <!--<a class="account" href="https://e-gnose.sfait.fr/view/authentification.php"><i class="far fa-user-circle"></i></a>-->
-        </label>
+
+
+        <label for="show-search" class="icons search-icon"><i class="fas fa-search"></i></label>
+        <a class="icons2" href="https://e-gnose.sfait.fr/view/authentification.php"><i class="far fa-user-circle"></i></a>
 
         <form action="#" class="search-box">
             <input type="text" placeholder="Rechercher un film, un livre, un audio ..." required>
