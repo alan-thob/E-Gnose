@@ -238,6 +238,13 @@ require = function (r, e, n) {
                 infinite: !0,
                 pagination: !1
             })
+
+            new n(document.querySelector("#carousel2"), {
+                slidesVisible: 3,
+                slidesToScroll: 2,
+                infinite: !0,
+                pagination: !1
+            })
         };
         "loading" !== document.readyState && o(), document.addEventListener("DOMContentLoaded", o);
     }, {}]

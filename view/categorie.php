@@ -7,7 +7,7 @@
     <meta name="description"
           content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
     <meta name="robots" content="index, follow"/>
-    <meta property="og:title" content="Accueil | e-Gnose"/>
+    <meta property="og:title" content="e-Gnose"/>
     <meta property="og:type" content="website"/>
     <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
     <meta property="og:url" content="https://e-gnose.sfait.fr/"/>
@@ -15,11 +15,11 @@
           content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
     <meta property="og:locale" content="fr_FR"/>
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Accueil | e-Gnose"/>
+    <meta name="twitter:title" content="e-Gnose"/>
     <meta name="twitter:description"
           content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
     <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
-    <title>Accueil | e-Gnose</title>
+    <title>e-Gnose</title>
 
     <!-- Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,81 +27,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <link href="https://e-gnose.sfait.fr/assets/img/favicon.png" rel="icon">
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="assets/css/home.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="../assets/css/category.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 
 <body class="unselectable">
 
 <?php
-include_once('_navbar/navbar.php');
+include_once('../_navbar/navbar.php');
 ?>
-
-<div id="carouselExampleIndicators" class="carousel slide my-carousel my-carousel" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active" style="background-image: url('assets/img/posters/the-last-of-us.png')">
-
-        </div>
-        <div class="carousel-item" style="background-image: url('assets/img/posters/coeurs-noirs.jpg')">
-
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Précédent</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Suivant</span>
-    </a>
-</div>
 
 <section id="carousel-content">
     <div class="container">
 
-        <div class="title">Titres populaires</div>
+        <div class="title">
+            <h2>Films</h2>
+            <a class="more__btn" href="#">Voir plus<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
         <div id="carousel0">
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
                 <div class="item__body">
                     <div class="item__title"> Contenu 1</div>
                     <div class="item__description"> Ici une petite description</div>
                 </div>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
                 <div class="item__body">
                     <div class="item__title"> Contenu 2</div>
                     <div class="item__description"> Ici une petite description</div>
                 </div>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
                 <div class="item__body">
                     <div class="item__title"> Contenu 3</div>
                     <div class="item__description"> Ici une petite description</div>
                 </div>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
                 <div class="item__body">
                     <div class="item__title"> Contenu 4</div>
                     <div class="item__description"> Ici une petite description</div>
                 </div>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
                 <div class="item__body">
                     <div class="item__title"> Contenu 5</div>
                     <div class="item__description"> Ici une petite description</div>
                 </div>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
                 <div class="item__body">
                     <div class="item__title"> Contenu 6</div>
                     <div class="item__description"> Ici une petite description</div>
@@ -109,45 +88,97 @@ include_once('_navbar/navbar.php');
             </div>
         </div>
 
-        <div class="title">Les mieux notés</div>
+        <div class="title">
+            <h2>Livres</h2>
+            <a class="more__btn" href="#">Voir plus<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
         <div id="carousel1">
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
                 <div class="item__body">
                     <div class="item__title"> Contenu 1</div>
                     <div class="item__description"> Ici une petite description</div>
                 </div>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
                 <div class="item__body">
                     <div class="item__title"> Contenu 2</div>
                     <div class="item__description"> Ici une petite description</div>
                 </div>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
                 <div class="item__body">
                     <div class="item__title"> Contenu 3</div>
                     <div class="item__description"> Ici une petite description</div>
                 </div>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
                 <div class="item__body">
                     <div class="item__title"> Contenu 4</div>
                     <div class="item__description"> Ici une petite description</div>
                 </div>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
                 <div class="item__body">
                     <div class="item__title"> Contenu 5</div>
                     <div class="item__description"> Ici une petite description</div>
                 </div>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
+                <div class="item__body">
+                    <div class="item__title"> Contenu 6</div>
+                    <div class="item__description"> Ici une petite description</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="title">
+            <h2>Audios</h2>
+            <a class="more__btn" href="#">Voir plus<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
+        <div id="carousel2">
+            <div class="item">
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
+                <div class="item__body">
+                    <div class="item__title"> Contenu 1</div>
+                    <div class="item__description"> Ici une petite description</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
+                <div class="item__body">
+                    <div class="item__title"> Contenu 2</div>
+                    <div class="item__description"> Ici une petite description</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
+                <div class="item__body">
+                    <div class="item__title"> Contenu 3</div>
+                    <div class="item__description"> Ici une petite description</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
+                <div class="item__body">
+                    <div class="item__title"> Contenu 4</div>
+                    <div class="item__description"> Ici une petite description</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
+                <div class="item__body">
+                    <div class="item__title"> Contenu 5</div>
+                    <div class="item__description"> Ici une petite description</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__image"><img src="../assets/img/carousel.jpg" alt=""></div>
                 <div class="item__body">
                     <div class="item__title"> Contenu 6</div>
                     <div class="item__description"> Ici une petite description</div>
@@ -164,11 +195,12 @@ include_once('_navbar/navbar.php');
 
 
 <?php
-include_once('_footer/footer.php');
+include_once('../_footer/footer.php');
 ?>
 
 <script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-<script src="assets/js/carousel.js" async></script>
+<script src="../assets/js/carousel.js" async></script>
+<script src="../assets/js/font-awesome.js"></script>
 <!--<script src="assets/js/search-bar.js" async></script>-->
 
 

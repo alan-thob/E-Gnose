@@ -359,6 +359,12 @@ label.search-icon, .menu-icon {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    transition: all 0.4s ease;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 0.15rem #bdbdbd);
+    transition: all 0.5s ease;
 }
 
 .icons {

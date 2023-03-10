@@ -15,16 +15,16 @@
         <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
         <div class="content-navbar">
             <ul class="links">
-                <li><a href="#">Accueil</a></li>
+                <li><a href="https://e-gnose.sfait.fr/">Accueil</a></li>
                 <li>
                     <a href="#" class="desktop-link">Catégories</a>
                     <input type="checkbox" id="show-features">
                     <label for="show-features">Catégories</label>
                     <ul>
-                        <li><a href="#">Catégories 1</a></li>
-                        <li><a href="#">Catégories 2</a></li>
-                        <li><a href="#">Catégories 3</a></li>
-                        <li><a href="#">Catégories 4</a></li>
+                        <li><a href="../view/categorie.php">Catégories 1</a></li>
+                        <li><a href="../view/categorie.php">Catégories 2</a></li>
+                        <li><a href="../view/categorie.php">Catégories 3</a></li>
+                        <li><a href="../view/categorie.php">Catégories 4</a></li>
                     </ul>
                 </li>
                 <!--<li>
@@ -48,7 +48,6 @@
                     </ul>
                 </li>-->
                 <li><a href="#">Ma wishlist</a></li>
-                <!--<li><a href="https://e-gnose.sfait.fr/view/authentification.php">Mon compte</a></li>-->
             </ul>
             <div class="logo">
                 <a href="https://e-gnose.sfait.fr/"><span>e</span>-Gnose</a>

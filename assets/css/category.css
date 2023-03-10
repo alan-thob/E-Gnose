@@ -16,6 +16,11 @@ body, html {
     flex-direction: column;
 }
 
+section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+
 .content {
     flex-grow: 1;
 }
@@ -25,22 +30,6 @@ body, html {
     -moz-user-select: none;     /* Firefox all */
     -ms-user-select: none;      /* IE 10+ */
     user-select: none;          /* Likely future */
-}
-
-/*############################# */
-/*###### CAROUSEL HEADER ###### */
-/*############################# */
-.carousel-item {
-    height: 67vh;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.carousel-control-prev, .carousel-control-next {
-    z-index: 100;
 }
 
 /*########################### */
@@ -76,7 +65,7 @@ body, html {
     padding: 6px;
     border-radius: 25px;
     color: #fff;
-    background: linear-gradient(90deg, rgb(7, 30, 83, 1), rgb(21, 192, 237, 0.5));
+    background: linear-gradient(90deg, rgb(7, 30, 83, 1), rgb(21, 192, 237, 1));
     display: flex;
     align-items: center;
     justify-content: center;
