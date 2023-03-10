@@ -189,12 +189,34 @@ label.search-icon i {
     top: 0;
 }
 
+.icons2 {
+    right: 0;
+    position: absolute;
+    font-size: 30px;
+    color: #fff;
+}
+
 /* Responsive code start */
+@media screen and (min-width: 1250px) {
+    .icons2 {
+        margin-right: 75px;
+    }
+}
+
 @media screen and (max-width: 1250px) {
     .wrapper nav {
-        max-width: 90%;
-        padding: 0 20px;
+        max-width: 100%;
+        padding: 0 0;
     }
+
+    .icons2 {
+        margin-right: 130px;
+    }
+
+    label.search-icon i {
+        margin-right: 70px;
+    }
+
 
     nav .content-navbar .links {
         margin-left: 30px;
@@ -216,6 +238,10 @@ label.search-icon i {
 @media screen and (max-width: 900px) {
     .wrapper .menu-icon {
         display: block;
+    }
+
+    .icons2 {
+        margin-right: 70px;
     }
 
     .wrapper #show-menu:checked ~ .menu-icon i::before {
@@ -284,6 +310,10 @@ label.search-icon i {
         line-height: 30px;
         border-radius: 5px !important;
     }
+
+    .search-box .go-icon {
+        right: -46px;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -307,6 +337,17 @@ label.search-icon i {
     .wrapper .search-box input {
         padding-right: 30px;
     }
+    .search-box .go-icon {
+        right: -30px;
+    }
+
+    .icons2 i {
+        font-size: 25px;
+    }
+    label.search-icon i {
+        font-size: 25px;
+    }
+
 }
 
 label.search-icon, .menu-icon {
@@ -323,13 +364,4 @@ label.search-icon, .menu-icon {
 .icons {
     position: absolute;
     right: 0;
-
-}
-
-.icons2 {
-    margin-right: 75px;
-    right: 0;
-    position: absolute;
-    font-size: 30px;
-    color: #fff;
 }
