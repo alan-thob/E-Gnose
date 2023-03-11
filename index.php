@@ -68,46 +68,58 @@ include_once('_navbar/navbar.php');
         </div>
         <div id="carousel0">
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
-                <div class="item__body">
-                    <div class="item__title"> Contenu 1</div>
-                    <div class="item__description"> Ici une petite description</div>
-                </div>
+                <a href="#">
+                    <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                    <div class="item__body">
+                        <div class="item__title"> Contenu 1</div>
+                        <div class="item__description"> Ici une petite description</div>
+                    </div>
+                </a>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
-                <div class="item__body">
-                    <div class="item__title"> Contenu 2</div>
-                    <div class="item__description"> Ici une petite description</div>
-                </div>
+                <a href="#">
+                    <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                    <div class="item__body">
+                        <div class="item__title"> Contenu 2</div>
+                        <div class="item__description"> Ici une petite description</div>
+                    </div>
+                </a>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
-                <div class="item__body">
-                    <div class="item__title"> Contenu 3</div>
-                    <div class="item__description"> Ici une petite description</div>
-                </div>
+                <a href="#">
+                    <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                    <div class="item__body">
+                        <div class="item__title"> Contenu 3</div>
+                        <div class="item__description"> Ici une petite description</div>
+                    </div>
+                </a>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
-                <div class="item__body">
-                    <div class="item__title"> Contenu 4</div>
-                    <div class="item__description"> Ici une petite description</div>
-                </div>
+                <a href="#">
+                    <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                    <div class="item__body">
+                        <div class="item__title"> Contenu 4</div>
+                        <div class="item__description"> Ici une petite description</div>
+                    </div>
+                </a>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
-                <div class="item__body">
-                    <div class="item__title"> Contenu 5</div>
-                    <div class="item__description"> Ici une petite description</div>
-                </div>
+                <a href="#">
+                    <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                    <div class="item__body">
+                        <div class="item__title"> Contenu 5</div>
+                        <div class="item__description"> Ici une petite description</div>
+                    </div>
+                </a>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
-                <div class="item__body">
-                    <div class="item__title"> Contenu 6</div>
-                    <div class="item__description"> Ici une petite description</div>
-                </div>
+                <a href="#">
+                    <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                    <div class="item__body">
+                        <div class="item__title"> Contenu 6</div>
+                        <div class="item__description"> Ici une petite description</div>
+                    </div>
+                </a>
             </div>
         </div>
 
@@ -116,46 +128,58 @@ include_once('_navbar/navbar.php');
         </div>
         <div id="carousel1">
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
-                <div class="item__body">
-                    <div class="item__title"> Contenu 1</div>
-                    <div class="item__description"> Ici une petite description</div>
-                </div>
+                <a href="#">
+                    <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                    <div class="item__body">
+                        <div class="item__title"> Contenu 1</div>
+                        <div class="item__description"> Ici une petite description</div>
+                    </div>
+                </a>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
-                <div class="item__body">
-                    <div class="item__title"> Contenu 2</div>
-                    <div class="item__description"> Ici une petite description</div>
-                </div>
+                <a href="#">
+                    <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                    <div class="item__body">
+                        <div class="item__title"> Contenu 2</div>
+                        <div class="item__description"> Ici une petite description</div>
+                    </div>
+                </a>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
-                <div class="item__body">
-                    <div class="item__title"> Contenu 3</div>
-                    <div class="item__description"> Ici une petite description</div>
-                </div>
+                <a href="#">
+                    <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                    <div class="item__body">
+                        <div class="item__title"> Contenu 3</div>
+                        <div class="item__description"> Ici une petite description</div>
+                    </div>
+                </a>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
-                <div class="item__body">
-                    <div class="item__title"> Contenu 4</div>
-                    <div class="item__description"> Ici une petite description</div>
-                </div>
+                <a href="#">
+                    <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                    <div class="item__body">
+                        <div class="item__title"> Contenu 4</div>
+                        <div class="item__description"> Ici une petite description</div>
+                    </div>
+                </a>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
-                <div class="item__body">
-                    <div class="item__title"> Contenu 5</div>
-                    <div class="item__description"> Ici une petite description</div>
-                </div>
+                <a href="#">
+                    <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                    <div class="item__body">
+                        <div class="item__title"> Contenu 5</div>
+                        <div class="item__description"> Ici une petite description</div>
+                    </div>
+                </a>
             </div>
             <div class="item">
-                <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
-                <div class="item__body">
-                    <div class="item__title"> Contenu 6</div>
-                    <div class="item__description"> Ici une petite description</div>
-                </div>
+                <a href="#">
+                    <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
+                    <div class="item__body">
+                        <div class="item__title"> Contenu 6</div>
+                        <div class="item__description"> Ici une petite description</div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
