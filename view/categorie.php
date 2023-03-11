@@ -39,8 +39,12 @@ include_once('../_navbar/navbar.php');
 <section id="carousel-content">
     <div class="container">
 
+        <div class="category--title">
+            <h2>Catégorie</h2>
+        </div>
+
         <div class="title">
-            <h2>Films</h2>
+            <h3>Films</h3>
             <a class="more__btn" href="#">Voir plus<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
         </div>
         <div id="carousel0">
@@ -89,7 +93,7 @@ include_once('../_navbar/navbar.php');
         </div>
 
         <div class="title">
-            <h2>Livres</h2>
+            <h3>Livres</h3>
             <a class="more__btn" href="#">Voir plus<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
         </div>
         <div id="carousel1">
@@ -138,7 +142,7 @@ include_once('../_navbar/navbar.php');
         </div>
 
         <div class="title">
-            <h2>Audios</h2>
+            <h3>Audios</h3>
             <a class="more__btn" href="#">Voir plus<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
         </div>
         <div id="carousel2">

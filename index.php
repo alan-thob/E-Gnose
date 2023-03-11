@@ -63,7 +63,9 @@ include_once('_navbar/navbar.php');
 <section id="carousel-content">
     <div class="container">
 
-        <div class="title">Titres populaires</div>
+        <div class="title">
+            <h3>Titres populaires</h3>
+        </div>
         <div id="carousel0">
             <div class="item">
                 <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>
@@ -109,7 +111,9 @@ include_once('_navbar/navbar.php');
             </div>
         </div>
 
-        <div class="title">Les mieux notés</div>
+        <div class="title">
+            <h3>Les mieux notés</h3>
+        </div>
         <div id="carousel1">
             <div class="item">
                 <div class="item__image"><img src="assets/img/carousel.jpg" alt=""></div>

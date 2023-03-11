@@ -1,17 +1,29 @@
 /*############################## */
 /*###### CAROUSEL CONTENT ###### */
 /*############################## */
-.title {
+
+.category--title {
     margin: 25px 0 25px 0;
-    font-size: 24px;
-    color: #bd9e5a;
-    filter: brightness(1.10);
-    font-weight: 900;
     display: flex;
     align-items: center;
 }
 
-.title h2 {
+.category--title h2 {
+    font-size: 36px;
+    color: #bd9e5a;
+    filter: brightness(1.10);
+    font-weight: 900;
+    margin-bottom: 0;
+}
+
+
+.title {
+    margin: 25px 0 25px 0;
+    display: flex;
+    align-items: center;
+}
+
+.title h3 {
     font-size: 29px;
     color: #bd9e5a;
     filter: brightness(1.10);
@@ -163,4 +175,61 @@
     .carousel__pagination {
         display: block
     }
+}
+
+@media screen and (max-width: 900px) {
+    .category--title {
+        margin: 25px 0 25px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .category--title h2 {
+        font-size: 30px;
+        color: #bd9e5a;
+        font-weight: 900;
+        margin: 0 auto;
+    }
+
+
+    .title {
+        margin: 25px 0 25px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .title h3 {
+        font-size: 23px;
+        color: #bd9e5a;
+        filter: brightness(1.10);
+        font-weight: 900;
+        margin-bottom: 0;
+    }
+
+
+    .more__btn {
+        font-weight: 500;
+        font-size: 16px;
+        color: #fff;
+        display: flex;
+        flex-direction: row;
+        margin-left: 30px;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+
+    .more__btn i {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .more__btn:hover {
+        text-decoration: none;
+        filter: drop-shadow(0 0 0.2rem #bdbdbd);
+        color: #fff;
+        transition: all 0.5s ease;
+    }
+
 }

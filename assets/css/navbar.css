@@ -146,6 +146,14 @@ label.search-icon i {
     font-size: 25px;
     cursor: pointer;
 }
+.go-icon i {
+    transition: all 0.3s ease;
+}
+
+.go-icon i:hover {
+    filter: drop-shadow(0 0 0.3rem #bdbdbd);
+    transition: all 0.3s ease;
+}
 
 .wrapper input[type="checkbox"] {
     display: none;
@@ -194,6 +202,13 @@ label.search-icon i {
     position: absolute;
     font-size: 30px;
     color: #fff;
+    transition: all 0.3s ease;
+}
+
+.icons2:hover {
+    color: #fff;
+    filter: drop-shadow(0 0 0.3rem #bdbdbd);
+    transition: all 0.3s ease;
 }
 
 /* Responsive code start */
@@ -337,6 +352,7 @@ label.search-icon i {
     .wrapper .search-box input {
         padding-right: 30px;
     }
+
     .search-box .go-icon {
         right: -30px;
     }
@@ -344,6 +360,7 @@ label.search-icon i {
     .icons2 i {
         font-size: 25px;
     }
+
     label.search-icon i {
         font-size: 25px;
     }
@@ -358,7 +375,7 @@ label.search-icon, .menu-icon {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     transition: all 0.4s ease;
 }
 
@@ -370,4 +387,13 @@ label.search-icon, .menu-icon {
 .icons {
     position: absolute;
     right: 0;
+    transition: all 0.3s ease;
 }
+
+.icons:hover {
+    position: absolute;
+    right: 0;
+    filter: drop-shadow(0 0 0.3rem #bdbdbd);
+    transition: all 0.3s ease;
+}
+
