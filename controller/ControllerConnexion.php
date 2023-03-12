@@ -18,11 +18,11 @@
                         $_SESSION["user_role"] = $result['user_role'];
                         $_SESSION["user_value"] = $result['user_value'];
                         if ($result['user_role'] == 1 && $result['user_value'] == 1) {
-                            header('location: controller/search.php');
+                            header('location: /index.php');
                         } elseif ($result['user_role'] == 2 && $result['user_value'] == 1) {
-                            header('location: controller/search.php');
+                            header('location: /index.php');
                         } elseif ($result['user_role'] == 3 && $result['user_value'] == 1) {
-                            header('location: controller/search.php');
+                            header('location: /index.php');
                         } else {
                             header('location: 404.html');
                         }
@@ -31,7 +31,7 @@
                <div class="box">
                <form class= "formBloc">
                 <div class="mdpPerdu">
-                Le mot de passe est incorrect, rÃ©essayez !
+                Le mot de passe est incorrect, réssayez !
                 </div>
                </form>
                </div>';
