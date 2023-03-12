@@ -9,21 +9,19 @@
 
 body, html {
     font-family: 'Kanit', sans-serif;
-    background: linear-gradient(120deg, #071e53, #15c0ed) 50% no-repeat;
     overflow-x: hidden;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-.content {
-    flex-grow: 1;
+    background: linear-gradient(rgb(7, 30, 83, 1), rgb(21, 192, 237, 0.5));
+    color: #fff;
 }
 
 .unselectable {
-    -webkit-user-select: none;  /* Chrome all / Safari all */
-    -moz-user-select: none;     /* Firefox all */
-    -ms-user-select: none;      /* IE 10+ */
-    user-select: none;          /* Likely future */
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
 }
 
 div {
@@ -33,40 +31,32 @@ div {
 /*############################# */
 /*###### CAROUSEL HEADER ###### */
 /*############################# */
-.details--content__section {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-}
 
+.details--content__section {
+    height: 80vh;
+    background: linear-gradient(rgb(21, 192, 237, 0.5), rgb(7, 30, 83, 1)), url(../img/posters/apercu_futurama.png) fixed center center repeat;
+    background-size: cover;
+    justify-content: flex-end;
+    flex-direction: column;
+    display: flex;
+}
 
 .poster--content {
-    width: 50%;
     display: flex;
-    justify-content: center;
-    margin: auto;
-}
-
-.poster--content img {
-    width: 45%;
-    border-radius: 10px;
-}
-
-.details--content {
-    width: 50%;
-    display: flex;
-    justify-content: left;
-    margin: auto;
     flex-direction: column;
+    width: 85vw;
+    margin-inline: auto;
 }
 
-.title--content h1 {
-    color: #fff;
-    font-weight: bold;
+.stars {
+    display: flex;
+    align-items: center;
 }
 
-.description--content {
-    color: #fff;
-    font-size: 20px;
+.fa-star.gold {
+    color: #ffdc0f;
+}
+
+.stars p {
+    margin-bottom: 0;
 }
