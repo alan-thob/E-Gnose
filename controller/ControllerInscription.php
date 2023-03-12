@@ -10,8 +10,8 @@ if (isset($_POST['inscription'])) {
             $option = ['cost' => 12,];
             $hashpass = password_hash($user_password, PASSWORD_BCRYPT, $option);
             if (isset($_POST['user_nom'])) {
-                $req = $db->prepare('INSERT INTO users(user_nom,user_email,user_password,user_telephone,user_date_naissance,user_role,user_value,id_abonnement )
-                                                                VALUES(?, ?, ?, ?, ?, ?, ?,?)');
+                $req = $db->prepare('INSERT INTO users(`user_nom`,`user_email`,`user_password`,`user_telephone`,`user_date_naissance`,`user_role`,`user_value`,`id_abonnement` )
+                                                                VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
                 $req->execute(array(
                     $user_nom,
                     $user_email, $hashpass,
