@@ -1,5 +1,5 @@
 <?php session_start();
-require_once("../controller/singleton_connexion.php");
+require_once("./controller/singleton_connexion.php");
 if ($_SESSION['user_nom']) {
     echo "Bonjour, " . $_SESSION["user_nom"];
 } else {
