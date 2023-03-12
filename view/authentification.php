@@ -67,11 +67,11 @@ if ($_SESSION['user_nom']) {
                                                     <i class="input-icon uil uil-lock-alt"></i>
                                                 </div>
                                                 <input type="submit" name="connexion" value="Se connecter" class="buttonSub btn mt-4">
-
+                                                <?php
+                                                require_once('../controller/ControllerConnexion.php');
+                                                ?>
                                             </form>
-                                            <?php
-                                            require_once('../controller/ControllerConnexion.php');
-                                            ?>
+
                                             <p class="mb-0 mt-4 text-center"><a href="#" class="link">Mot de passe
                                                     oublié ?</a></p>
                                         </div>
@@ -110,6 +110,7 @@ if ($_SESSION['user_nom']) {
                                             </form>
                                             <?php
                                             require_once('../controller/ControllerInscription.php');
+                                            var_dump($_SESSION['user_nom']);
                                             ?>
                                         </div>
                                     </div>
