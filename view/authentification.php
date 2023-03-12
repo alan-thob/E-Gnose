@@ -85,6 +85,31 @@ include_once('../_navbar/navbar.php');
                                                    placeholder="Mot de passe" id="logpass" autocomplete="off">
                                             <i class="input-icon uil uil-lock-alt"></i>
                                         </div>
+                                        <div class="form-group mt-2">
+                                            <input type="password" name="logpass" class="form-style"
+                                                   placeholder="Mot de passe" id="logpass" autocomplete="off">
+                                            <i class="input-icon uil uil-lock-alt"></i>
+                                        </div>
+                                        <div class="form-group mt-2">
+                                            <input type="password" name="logpass" class="form-style"
+                                                   placeholder="Mot de passe" id="logpass" autocomplete="off">
+                                            <i class="input-icon uil uil-lock-alt"></i>
+                                        </div>
+                                        <div class="form-group mt-2">
+                                            <input type="password" name="logpass" class="form-style"
+                                                   placeholder="Mot de passe" id="logpass" autocomplete="off">
+                                            <i class="input-icon uil uil-lock-alt"></i>
+                                        </div>
+                                        <div class="form-group mt-2">
+                                            <input type="password" name="logpass" class="form-style"
+                                                   placeholder="Mot de passe" id="logpass" autocomplete="off">
+                                            <i class="input-icon uil uil-lock-alt"></i>
+                                        </div>
+                                        <div class="form-group mt-2">
+                                            <input type="password" name="logpass" class="form-style"
+                                                   placeholder="Mot de passe" id="logpass" autocomplete="off">
+                                            <i class="input-icon uil uil-lock-alt"></i>
+                                        </div>
                                         <a href="#" class="btn mt-4">S'inscrire</a>
                                     </div>
                                 </div>
