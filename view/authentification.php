@@ -1,4 +1,10 @@
-<?php session_start();?>
+<?php session_start();
+if ($_SESSION['user_nom']) {
+    echo "Bonjour, " . $_SESSION["user_nom"];
+} else {
+    echo "pensez à  vous inscrire";
+}
+?>
 <!doctype html>
 <html lang="fr">
 
@@ -34,7 +40,6 @@
 
     <?php
     include_once('../_navbar/navbar.php');
-    require_once("./controller/singleton_connexion.php");
     ?>
 
 
