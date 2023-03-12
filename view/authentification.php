@@ -5,21 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-          content="Films, livres, audios â€¦ Toute une bibliothÃ¨que pour vous divertir, oÃ¹ que vous soyez, en illimitÃ© !"/>
-    <meta name="robots" content="index, follow"/>
-    <meta property="og:title" content="Authentification | e-Gnose"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
-    <meta property="og:url" content="https://e-gnose.sfait.fr/view/authentification.php"/>
-    <meta property="og:description"
-          content="Films, livres, audios â€¦ Toute une bibliothÃ¨que pour vous divertir, oÃ¹ que vous soyez, en illimitÃ© !"/>
-    <meta property="og:locale" content="fr_FR"/>
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Authentification | e-Gnose"/>
-    <meta name="twitter:description"
-          content="Films, livres, audios â€¦ Toute une bibliothÃ¨que pour vous divertir, oÃ¹ que vous soyez, en illimitÃ© !"/>
-    <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
+    <meta name="description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Authentification | e-Gnose" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
+    <meta property="og:url" content="https://e-gnose.sfait.fr/view/authentification.php" />
+    <meta property="og:description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Authentification | e-Gnose" />
+    <meta name="twitter:description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
     <title>Authentification | e-Gnose</title>
 
     <!-- Links -->
@@ -34,88 +31,82 @@
 
 <body class="unselectable">
 
-<?php
-include_once('../_navbar/navbar.php');
-?>
+    <?php
+    include_once('../_navbar/navbar.php');
+    ?>
 
-<div class="section">
-    <div class="container">
-        <div class="row full-height justify-content-center">
-            <div class="col-12 text-center align-self-center py-5">
-                <div class="section pb-5 pt-5 pt-sm-2 text-center">
-                    <h6 class="mb-0 pb-3"><span>Connexion</span><span
-                                class="separator">|</span><span>Inscription</span></h6>
-                    <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-                    <label for="reg-log"></label>
-                    <div class="card-3d-wrap mx-auto">
-                        <div class="card-3d-wrapper">
-                            <div class="card-front">
-                                <div class="center-wrap">
-                                    <div class="section text-center">
-                                        <h4 class="mb-4 pb-3">Connexion</h4>
-                                        <div class="form-group">
-                                            <input type="email" name="logemail" class="form-style"
-                                                   placeholder="Adresse mail" id="logemail" autocomplete="off">
-                                            <i class="input-icon uil uil-at"></i>
-                                        </div>
-                                        <div class="form-group mt-2">
-                                            <input type="password" name="logpass" class="form-style"
-                                                   placeholder="Mot de passe" id="logpass" autocomplete="off">
-                                            <i class="input-icon uil uil-lock-alt"></i>
-                                        </div>
-                                        <a href="#" class="btn mt-4">Se connecter</a>
-                                        <p class="mb-0 mt-4 text-center"><a href="#" class="link">Mot de passe
-                                                oublié ?</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-back">
-                                <div class="center-wrap">
-                                    <div class="section text-center">
-                                        <h4 class="mb-4 pb-3">Inscription</h4>
-                                        <form action="" method="post">
+
+    <div class="section">
+        <div class="container">
+            <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center py-5">
+                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                        <h6 class="mb-0 pb-3"><span>Connexion</span><span class="separator">|</span><span>Inscription</span></h6>
+                        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+                        <label for="reg-log"></label>
+                        <div class="card-3d-wrap mx-auto">
+                            <div class="card-3d-wrapper">
+                                <div class="card-front">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">Connexion</h4>
                                             <div class="form-group">
-                                                <input type='text' name="user_nom" id="username" class="form-style"
-                                                       placeholder="Nom d'utilisateur" autocomplete="off" required
-                                                       maxlength="30">
-                                                <i class="input-icon uil uil-user"></i>
-                                            </div>
-                                            <div class="form-group mt-2">
-                                                <input type="email" name="user_email" id="user_email"
-                                                       class="form-style" placeholder="Adresse mail"
-                                                       autocomplete="off" required maxlength="60">
+                                                <input type="email" name="logemail" class="form-style" placeholder="Adresse mail" id="logemail" autocomplete="off">
                                                 <i class="input-icon uil uil-at"></i>
                                             </div>
                                             <div class="form-group mt-2">
-                                                <input type='text' name="user_telephone" id="user_telephone"
-                                                       class="form-style" placeholder="Téléphone" autocomplete="off"
-                                                       required maxlength="15">
-                                                <i class="input-icon uil-phone"></i>
-                                            </div>
-                                            <div class="form-group mt-2">
-                                                <input type='date' name="user_date_naissance"
-                                                       id="user_date_naissance" class="form-style"
-                                                       placeholder="Date de naissance" autocomplete="off" required>
-                                                <i class="input-icon uil uil-calender"></i>
-                                            </div>
-                                            <div class="form-group mt-2">
-                                                <input type="password" name="user_password" id="user_password"
-                                                       class="form-style" placeholder="Mot de passe"
-                                                       autocomplete="off" required>
+                                                <input type="password" name="logpass" class="form-style" placeholder="Mot de passe" id="logpass" autocomplete="off">
                                                 <i class="input-icon uil uil-lock-alt"></i>
                                             </div>
-                                            <div class="form-group mt-2">
-                                                <input type="password" name="user_password_2" id="user_password_2"
-                                                       class="form-style" placeholder="Confirmer le mot de passe"
-                                                       autocomplete="off" required>
-                                                <i class="input-icon uil uil-lock-alt"></i>
-                                            </div>
-                                            <input type="submit" name="inscription" value="S'inscrire"
-                                                   class="btn mt-4">
-                                        </form>
-                                        <?php
-                                        require_once('../controller/ControllerInscription.php');
-                                        ?>
+                                            <a href="#" class="btn mt-4">Se connecter</a>
+                                            <p class="mb-0 mt-4 text-center"><a href="#" class="link">Mot de passe oublié
+                                                    ?</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">Inscription</h4>
+                                            <form action="" method="post">
+                                                <div class="form-group">
+                                                    <input type='text' name="user_nom" id="user_nom" class="form-style" placeholder="Nom complet" autocomplete="off" required maxlength="30">
+                                                    <i class="input-icon uil uil-user"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type='text' name="user_prenom" id="user_prenom" class="form-style" placeholder="Votre prenom" autocomplete="off" required maxlength="30">
+                                                    <i class="input-icon uil uil-at"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="email" name="user_email" id="user_email" class="form-style" placeholder="Entrez votre Email" autocomplete="off" required maxlength="60">
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="password" name="user_password" id="user_password" class="form-style" placeholder="Entre votre mot de passe" autocomplete="off" required>
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="password" name="user_password_2" id="user_password_2" class="form-style" placeholder="Confirmer le mot de passe" autocomplete="off" required>
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type='text' name="user_telephone" id="user_telephone" class="form-style" placeholder="Votre téléphone" autocomplete="off" required maxlength="15">
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type='text' name="user_city" id="user_city" class="form-style" placeholder="Votre ville" autocomplete="off" required maxlength="40">
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type='date' name="user_date_naissance" id="user_date_naissance" class="form-style" placeholder="Votre anniversaire" autocomplete="off" required>
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                </div>
+                                                <input type="submit" name="inscription" value="S'inscrire" class="btn mt-4">
+                                            </form>
+                                            <?php
+                                            require_once('../controller/ControllerInscription.php');
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +116,12 @@ include_once('../_navbar/navbar.php');
             </div>
         </div>
     </div>
-</div>
+
+    <?php
+    include_once('../_footer/footer.php');
+    ?>
+
 
 </body>
+
 </html>
