@@ -72,7 +72,7 @@ include_once('../_navbar/navbar.php');
                                     <div class="section text-center">
                                         <h4 class="mb-4 pb-3">Inscription</h4>
                                         <div class="form-group">
-                                            <input type="text" name="logname" class="form-style"
+                                            <input type='text' name="user_nom" placeholder="Votre nom" required maxlength="30"  class="form-style"/><br />
                                                    placeholder="Nom complet" id="logname" autocomplete="off">
                                             <i class="input-icon uil uil-user"></i>
                                         </div>
