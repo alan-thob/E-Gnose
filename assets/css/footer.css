@@ -6,6 +6,10 @@
     justify-content: center;
     color: #fff;
     display: flex;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    position: absolute;
 }
 
 .footer p {
