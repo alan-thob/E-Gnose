@@ -41,7 +41,7 @@ if ($_SESSION['user_nom']) {
 
     <?php
     include_once('../_navbar/navbar.php');
-    require_once("./controller/singleton_connexion.php")
+    require_once("./controller/singleton_connexion.php");
     ?>
 
 
