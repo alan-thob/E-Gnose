@@ -1,11 +1,3 @@
-<?php session_start();
-require_once("./controller/singleton_connexion.php");
-if ($_SESSION['user_nom']) {
-    echo "Bonjour, " . $_SESSION["user_nom"];
-} else {
-    echo "pensez à  vous inscrire";
-} ?>
-
 <!doctype html>
 <html lang="fr">
 
@@ -59,7 +51,7 @@ if ($_SESSION['user_nom']) {
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Connexion</h4>
-                                            <form action="./authentification.php" method="post">
+                                            <form action="./authentification.php" method="POST">
                                                 <div class="form-group">
                                                     <input type="email" name="user_email" class="form-style" placeholder="Adresse mail" id="user_email" autocomplete="off" required>
                                                     <i class="input-icon uil uil-at"></i>
@@ -71,9 +63,9 @@ if ($_SESSION['user_nom']) {
                                                 <input type="submit" name="connexion" value="Se connecter" class="buttonSub btn mt-4">
 
                                             </form>
-                                            <?php
-                                            require_once('../controller/ControllerConnexion.php');
-                                            ?>
+                                            <!-- <?php
+                                            // require_once('../controller/ControllerConnexion.php');
+                                            ?> -->
                                             <p class="mb-0 mt-4 text-center"><a href="#" class="link">Mot de passe
                                                     oublié ?</a></p>
                                         </div>
