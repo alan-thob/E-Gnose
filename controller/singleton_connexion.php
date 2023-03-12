@@ -15,13 +15,13 @@ class Database
         try {
             $this->connexionbdd = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->user, $this->pass);
         } catch (PDOException $e) {
-            echo "erreur de connexion à la base de donnée";
+            echo '<div class="error-bdd">' . "Erreur de connexion à la base de données !" . '</div>';
         }
     }
 
     public function __clone()
     {
-        trigger_error("Le clonage n'est pas autorisée", E_USER_ERROR);
+        trigger_error("Le clonage n'est pas autorisé", E_USER_ERROR);
     }
     
     // Permet d'instancier la connexion à la BDD

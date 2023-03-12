@@ -316,3 +316,11 @@ h6 span {
     color: #ffeba7;
     box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
 }
+
+.error-bdd {
+    color: red;
+    height: 30px;
+    width: 30vw;
+    background-color: #fff;
+    border-radius:5px;
+}

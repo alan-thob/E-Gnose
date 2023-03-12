@@ -59,7 +59,7 @@
                                                 <i class="input-icon uil uil-lock-alt"></i>
                                             </div>
                                             <a href="#" class="btn mt-4">Se connecter</a>
-                                            <p class="mb-0 mt-4 text-center"><a href="#" class="link">Mot de passe oubliÃ©
+                                            <p class="mb-0 mt-4 text-center"><a href="#" class="link">Mot de passe oublié
                                                     ?</a></p>
                                         </div>
                                     </div>

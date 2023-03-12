@@ -17,7 +17,7 @@ if (isset($_POST['inscription'])) {
                     $user_prenom, $user_email, $hashpass,
                     $user_telephone, $user_city, $user_date_naissance, 3, 1, 1
                 ));
-                echo "inscription réussite";
+                echo "inscription rÃ©ussie";
             }
         }
     }
