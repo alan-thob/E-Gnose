@@ -51,19 +51,24 @@
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Connexion</h4>
+                                            <form>
                                             <div class="form-group">
-                                                <input type="email" name="logemail" class="form-style"
-                                                       placeholder="Adresse mail" id="logemail" autocomplete="off">
+                                                <input type="email" name="user_email" class="form-style"
+                                                       placeholder="Adresse mail" id="user_email" autocomplete="off" required>
                                                 <i class="input-icon uil uil-at"></i>
                                             </div>
                                             <div class="form-group mt-2">
-                                                <input type="password" name="logpass" class="form-style"
-                                                       placeholder="Mot de passe" id="logpass" autocomplete="off">
+                                                <input type="password" name="user_password" class="form-style"
+                                                       placeholder="Mot de passe" id="user_password" autocomplete="off" required>
                                                 <i class="input-icon uil uil-lock-alt"></i>
                                             </div>
-                                            <a href="#" class="btn mt-4">Se connecter</a>
+                                            <input type="submit" name="connexion" value="Se connecter" class="buttonSub" class="btn mt-4">
                                             <p class="mb-0 mt-4 text-center"><a href="#" class="link">Mot de passe
                                                     oublié ?</a></p>
+                                            </form>
+                                            <?php
+                                            require_once('../controller/ControllerConnexion.php');
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
