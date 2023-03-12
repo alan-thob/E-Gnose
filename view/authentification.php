@@ -41,6 +41,7 @@ if ($_SESSION['user_nom']) {
 
     <?php
     include_once('../_navbar/navbar.php');
+    require_once("./controller/singleton_connexion.php")
     ?>
 
 
@@ -58,7 +59,7 @@ if ($_SESSION['user_nom']) {
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Connexion</h4>
-                                            <form action="" method="post">
+                                            <form action="./authentification.php" method="post">
                                                 <div class="form-group">
                                                     <input type="email" name="user_email" class="form-style" placeholder="Adresse mail" id="user_email" autocomplete="off" required>
                                                     <i class="input-icon uil uil-at"></i>
@@ -68,12 +69,13 @@ if ($_SESSION['user_nom']) {
                                                     <i class="input-icon uil uil-lock-alt"></i>
                                                 </div>
                                                 <input type="submit" name="connexion" value="Se connecter" class="buttonSub btn mt-4">
-                                                <p class="mb-0 mt-4 text-center"><a href="#" class="link">Mot de passe
-                                                        oublié ?</a></p>
+
                                             </form>
                                             <?php
                                             require_once('../controller/ControllerConnexion.php');
                                             ?>
+                                            <p class="mb-0 mt-4 text-center"><a href="#" class="link">Mot de passe
+                                                    oublié ?</a></p>
                                         </div>
                                     </div>
                                 </div>
