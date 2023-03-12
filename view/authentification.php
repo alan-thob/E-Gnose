@@ -1,10 +1,4 @@
-<?php session_start();
-require_once("./controller/singleton_connexion.php");
-if ($_SESSION['user_nom']) {
-    echo "Bonjour, " . $_SESSION["user_nom"];
-} else {
-    echo "pensez à  vous inscrire";
-} ?>
+<?php session_start();?>
 
 <!doctype html>
 <html lang="fr">
