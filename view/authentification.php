@@ -1,4 +1,10 @@
-<?php session_start();?>
+<?php session_start();
+require_once("./controller/singleton_connexion.php");
+if ($_SESSION['user_nom']) {
+    echo "Bonjour, " . $_SESSION["user_nom"];
+} else {
+    echo "pensez à  vous inscrire";
+} ?>
 
 <!doctype html>
 <html lang="fr">
@@ -35,7 +41,7 @@
 
     <?php
     include_once('../_navbar/navbar.php');
-    require_once("./controller/singleton_connexion.php");
+    require_once("./controller/singleton_connexion.php")
     ?>
 
 
@@ -62,7 +68,7 @@
                                                     <input type="password" name="user_password" class="form-style" placeholder="Mot de passe" id="user_password" autocomplete="off" required>
                                                     <i class="input-icon uil uil-lock-alt"></i>
                                                 </div>
-                                                <input type="submit" name="connexion" id="connexion" value="Se connecter" class="buttonSub btn mt-4">
+                                                <input type="submit" name="connexion" value="Se connecter" class="buttonSub btn mt-4">
 
                                             </form>
                                             <?php
