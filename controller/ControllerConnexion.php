@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['../controller/singleton_connexion.php'])) {
+if (isset($_POST['connexion'])) {
 
     extract($_POST);
 
