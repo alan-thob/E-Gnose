@@ -63,9 +63,9 @@
                                                 <input type="submit" name="connexion" value="Se connecter" class="buttonSub btn mt-4">
 
                                             </form>
-                                            <!-- <?php
-                                            // require_once('../controller/ControllerConnexion.php');
-                                            ?> -->
+                                            <?php
+                                            require_once('../controller/ControllerConnexion.php');
+                                            ?>
                                             <p class="mb-0 mt-4 text-center"><a href="#" class="link">Mot de passe
                                                     oublié ?</a></p>
                                         </div>
