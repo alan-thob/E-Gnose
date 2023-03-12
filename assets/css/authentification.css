@@ -26,9 +26,8 @@ body, html {
 /*###### CONNEXION AREA ###### */
 /*############################ */
 
-input[type=date] i {
-    -webkit-appearance: listbox;
-    color: whitesmoke;
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
 }
 
 .link {
