@@ -16,11 +16,11 @@
                         $_SESSION["user_role"] = $result['user_role'];
                         $_SESSION["user_value"] = $result['user_value'];
                         if ($result['user_role'] == 1 && $result['user_value'] == 1) {
-                            header('location: https://e-gnose.sfait.fr');
+                            header('location: ../../../index.php');
                         } elseif ($result['user_role'] == 2 && $result['user_value'] == 1) {
-                            header('location: https://e-gnose.sfait.fr');
+                            header('location: ../../../index.php');
                         } elseif ($result['user_role'] == 3 && $result['user_value'] == 1) {
-                            header('location: https://e-gnose.sfait.fr');
+                            header('location: ../../../index.php');
                         } else {
                             header('location: 404.html');
                         }
