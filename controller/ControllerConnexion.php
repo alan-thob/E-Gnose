@@ -16,6 +16,7 @@
                         $_SESSION["user_role"] = $result['user_role'];
                         $_SESSION["user_value"] = $result['user_value'];
                         header('location : ./../index.php');
+                        exit();
                     } else {
                         echo '
                <div class="box">
