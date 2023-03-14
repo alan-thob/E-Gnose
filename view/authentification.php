@@ -63,7 +63,7 @@
                                                 </div>
                                                 <div>
                                                     <input type="submit" name="connexion" value="CONNEXION" class="btn mt-4">
-                                                    <?php if ($result['user_role'] == 1 && $result['user_value'] == 1) {
+                                                    <!-- if ($result['user_role'] == 1 && $result['user_value'] == 1) {
                                                         header('location: ../../../index.php');
                                                     } elseif ($result['user_role'] == 2 && $result['user_value'] == 1) {
                                                         header('location: ../../../index.php');
@@ -71,7 +71,7 @@
                                                         header('location: ../index.php');
                                                     } else {
                                                         header('location: 404.html');
-                                                    } ?>
+                                                    }  -->
                                                 </div>
                                             </form>
                                             <?php
