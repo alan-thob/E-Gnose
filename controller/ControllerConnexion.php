@@ -7,11 +7,10 @@
 
             if (isset($_POST['user_email'])) {
                 $req = $db->prepare('SELECT * FROM users WHERE user_email = ?');
-                var_dump($req);
-                die();
                 $req->execute(array($user_email));
                 $result = $req->fetch();
-
+                var_dump($result);
+                die();
                 if ($result == true) {
                     if (password_verify($user_password, $result['user_password'])) {
                         session_start();
