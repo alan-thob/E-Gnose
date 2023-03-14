@@ -1,6 +1,12 @@
+<?php session_start();
+require_once("../controller/singleton_connexion.php");
+if ($_SESSION['user_nom']) {
+    echo "Bonjour, " . $_SESSION["user_nom"];
+} else {
+    echo "pensez à vous inscrire";
+}?>
 <!doctype html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +39,6 @@
 
     <?php
     include_once('../_navbar/navbar.php');
-    require_once('./../controller/singleton_connexion.php');
     ?>
 
 
