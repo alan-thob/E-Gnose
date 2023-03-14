@@ -12,8 +12,6 @@ session_start();
                 $result = $req->fetch();
                 if ($result == true) {
                     if (password_verify($user_password, $result['user_password'])) {
-                        var_dump(password_verify($user_password, $result['user_password']));
-                        die();
                         $_SESSION["id_user"] = $result['id_user'];
                         $_SESSION["user_nom"] = $result['user_nom'];
                         $_SESSION["user_role"] = $result['user_role'];
