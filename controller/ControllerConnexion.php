@@ -1,5 +1,11 @@
 <?php
 session_start();
+require_once("./controller/singleton_connexion.php");
+if ($_SESSION['user_nom']) {
+    echo "Bonjour, " . $_SESSION["user_nom"];
+} else {
+    echo "pensez à vous inscrire";
+}
     if (isset($_POST['connexion'])) {
 
         extract($_POST);
