@@ -7,6 +7,8 @@
 
             if (isset($_POST['user_email'])) {
                 $req = $db->prepare('SELECT * FROM users WHERE user_email = ?');
+                var_dump($req);
+                die();
                 $req->execute(array($user_email));
                 $result = $req->fetch();
 
