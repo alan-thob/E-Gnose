@@ -20,7 +20,7 @@
                         } elseif ($result['user_role'] == 2 && $result['user_value'] == 1) {
                             header('location: ../../../index.php');
                         } elseif ($result['user_role'] == 3 && $result['user_value'] == 1) {
-                            header('location: ../../../index.php');
+                            header('location: ../index.php');
                         } else {
                             header('location: 404.html');
                         }
