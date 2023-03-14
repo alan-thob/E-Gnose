@@ -16,13 +16,6 @@ session_start();
                         $_SESSION["user_nom"] = $result['user_nom'];
                         $_SESSION["user_role"] = $result['user_role'];
                         $_SESSION["user_value"] = $result['user_value'];
-                        var_dump($_SESSION["id_user"]);
-                        var_dump($_SESSION["user_nom"]);
-                        var_dump($_SESSION["user_role"]);
-                        var_dump($_SESSION["user_value"]);
-                        var_dump($result["user_role"]);
-                        var_dump($result["user_value"]);
-                        die();
                         if ($result['user_role'] == 1 && $result['user_value'] == 1) {
                             header('location: https://e-gnose.sfait.fr');
                         } elseif ($result['user_role'] == 2 && $result['user_value'] == 1) {
