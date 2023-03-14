@@ -1,6 +1,7 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <!doctype html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +73,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-back">
+                                <!-- <div class="card-back">
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Inscription</h4>
@@ -103,12 +104,12 @@
                                                 </div>
                                                 <input type="submit" name="inscription" value="S'inscrire" class="btn mt-4">
                                             </form>
-                                            <?php
-                                            require_once('../controller/ControllerInscription.php');
-                                            ?>
+                                            
+                                            // require_once('../controller/ControllerInscription.php');
+                                            
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
