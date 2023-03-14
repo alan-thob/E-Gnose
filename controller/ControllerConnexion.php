@@ -1,4 +1,5 @@
 <?php
+session_start();
     if (isset($_POST['connexion'])) {
 
         extract($_POST);
@@ -9,11 +10,10 @@
                 $req = $db->prepare('SELECT * FROM users WHERE user_email = ?');
                 $req->execute(array($user_email));
                 $result = $req->fetch();
-                var_dump($result);
-                die();
                 if ($result == true) {
                     if (password_verify($user_password, $result['user_password'])) {
-                        session_start();
+                        var_dump(password_verify($user_password, $result['user_password']));
+                        die();
                         $_SESSION["id_user"] = $result['id_user'];
                         $_SESSION["user_nom"] = $result['user_nom'];
                         $_SESSION["user_role"] = $result['user_role'];
