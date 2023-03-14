@@ -15,7 +15,18 @@
                         $_SESSION["user_nom"] = $result['user_nom'];
                         $_SESSION["user_role"] = $result['user_role'];
                         $_SESSION["user_value"] = $result['user_value'];
-                        header('Location : ../../../index.php');
+                        if ($_SESSION['user_role'] == 1 && $_SESSION['user_value'] == 1) {
+                            header('location: ../index.php');
+                            exit;
+                        } elseif ($_SESSION['user_role'] == 2 && $_SESSION['user_value'] == 1) {
+                            header('location: ../index.php');
+                            exit;
+                        } elseif ($_SESSION['user_role'] == 3 && $_SESSION['user_value'] == 1) {
+                            header('location: ../index.php');
+                            exit;
+                        } else {
+                            header('location: 404.html');
+                        }
                         exit;
                     } else {
                         echo '
