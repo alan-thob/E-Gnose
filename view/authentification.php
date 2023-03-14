@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php session_start(); 
+require_once("../controller/singleton_connexion.php");
+require_once('../controller/ControllerConnexion.php');
+?>
 <!doctype html>
 <html lang="fr">
 
@@ -33,7 +36,6 @@
 <body class="unselectable">
 
     <?php
-    require_once("../controller/singleton_connexion.php");
     include_once('../_navbar/navbar.php');
     ?>
 
@@ -74,9 +76,6 @@
                                                     }  -->
                                                 </div>
                                             </form>
-                                            <?php
-                                            require_once('../controller/ControllerConnexion.php');
-                                            ?>
                                             <p class="mb-0 mt-4 text-center"><a href="#" class="link">Mot de passe
                                                     oublié ?</a></p>
                                         </div>
