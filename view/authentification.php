@@ -1,10 +1,3 @@
-<?php session_start();
-if ($_SESSION['user_nom']) {
-    echo "Bonjour, " . $_SESSION["user_nom"];
-} else {
-    echo "pensez à  vous inscrire";
-}
-?>
 <!doctype html>
 <html lang="fr">
 
@@ -57,7 +50,7 @@ if ($_SESSION['user_nom']) {
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Connexion</h4>
-                                            <form action="./authentification.php" method="POST">
+                                            <form action="" method="post">
                                                 <div class="form-group">
                                                     <input type="email" name="user_email" class="form-style" placeholder="Adresse mail" id="user_email" autocomplete="off" required>
                                                     <i class="input-icon uil uil-at"></i>
@@ -66,12 +59,13 @@ if ($_SESSION['user_nom']) {
                                                     <input type="password" name="user_password" class="form-style" placeholder="Mot de passe" id="user_password" autocomplete="off" required>
                                                     <i class="input-icon uil uil-lock-alt"></i>
                                                 </div>
-                                                <input type="submit" name="connexion" value="Se connecter" class="buttonSub btn mt-4">
-                                                <?php
-                                                require_once('../controller/ControllerConnexion.php');
-                                                ?>
+                                                <div>
+                                                    <input type="submit" name="connexion" value="CONNEXION" class="btn mt-4">
+                                                </div>
                                             </form>
-
+                                            <?php
+                                            require_once('../controller/ControllerConnexion.php');
+                                            ?>
                                             <p class="mb-0 mt-4 text-center"><a href="#" class="link">Mot de passe
                                                     oublié ?</a></p>
                                         </div>
@@ -83,7 +77,7 @@ if ($_SESSION['user_nom']) {
                                             <h4 class="mb-4 pb-3">Inscription</h4>
                                             <form action="" method="post">
                                                 <div class="form-group">
-                                                    <input type='text' name="user_nom" id="username" class="form-style" placeholder="Nom d'utilisateur" autocomplete="off" required maxlength="30">
+                                                    <input type='text' name="user_nom" id="user_nom" class="form-style" placeholder="Nom d'utilisateur" autocomplete="off" required maxlength="30">
                                                     <i class="input-icon uil uil-user"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
@@ -110,7 +104,6 @@ if ($_SESSION['user_nom']) {
                                             </form>
                                             <?php
                                             require_once('../controller/ControllerInscription.php');
-                                            var_dump($_SESSION['user_nom']);
                                             ?>
                                         </div>
                                     </div>
