@@ -15,7 +15,7 @@
                         $_SESSION["user_nom"] = $result['user_nom'];
                         $_SESSION["user_role"] = $result['user_role'];
                         $_SESSION["user_value"] = $result['user_value'];
-                        header('Location : ./../index.php');
+                        header('Location : ../../../index.php');
                         exit;
                     } else {
                         echo '
