@@ -3,7 +3,7 @@ require_once("./controller/singleton_connexion.php");
 if ($_SESSION['user_nom']) {
     echo "Bonjour, " . $_SESSION["user_nom"];
 } else {
-    echo "pensez à  vous inscrire";
+    echo "pensez à vous inscrire";
 }?>
 <!doctype html>
 <html lang="fr">
