@@ -65,15 +65,6 @@ require_once('../controller/ControllerConnexion.php');
                                                 </div>
                                                 <div>
                                                     <input type="submit" name="connexion" value="CONNEXION" class="btn mt-4">
-                                                    <!-- if ($result['user_role'] == 1 && $result['user_value'] == 1) {
-                                                        header('location: ../../../index.php');
-                                                    } elseif ($result['user_role'] == 2 && $result['user_value'] == 1) {
-                                                        header('location: ../../../index.php');
-                                                    } elseif ($result['user_role'] == 3 && $result['user_value'] == 1) {
-                                                        header('location: ../index.php');
-                                                    } else {
-                                                        header('location: 404.html');
-                                                    }  -->
                                                 </div>
                                             </form>
                                             <p class="mb-0 mt-4 text-center"><a href="#" class="link">Mot de passe
