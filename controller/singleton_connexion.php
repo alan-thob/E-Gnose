@@ -14,6 +14,7 @@ class Database
     {
         try {
             $this->connexionbdd = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->user, $this->pass);
+            $this->connexionbdd->exec("set names utf8mb4");
         } catch (PDOException $e) {
             echo '<div class="error-bdd">' . "Erreur de connexion à la base de données !" . '</div>';
         }
