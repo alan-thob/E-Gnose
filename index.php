@@ -3,7 +3,7 @@ require_once("./controller/singleton_connexion.php");
 if (isset($_SESSION['user_nom'])) {
     echo "Bonjour, " . $_SESSION["user_nom"];
 } else {
-    echo "pensez à vous inscrire";
+    echo "pensez Ã  vous inscrire";
 } ?>
 <!doctype html>
 <html lang="fr">
@@ -12,17 +12,17 @@ if (isset($_SESSION['user_nom'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta name="description" content="Films, livres, audio... Toute une bibliothÃ¨que pour vous divertir, oÃ» que vous soyez, en illimitÃ© !" />
     <meta name="robots" content="index, follow" />
     <meta property="og:title" content="Accueil | e-Gnose" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
     <meta property="og:url" content="https://e-gnose.sfait.fr/" />
-    <meta property="og:description" content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta property="og:description" content="Films, livres, audios... Toute une bibliothÃ¨que pour vous divertir, oÃ» que vous soyez, en illimitÃ© !" />
     <meta property="og:locale" content="fr_FR" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Accueil | e-Gnose" />
-    <meta name="twitter:description" content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta name="twitter:description" content="Films, livres, audios... Toute une bibliothÃ¨que pour vous divertir, oÃ» que vous soyez, en illimitÃ© !" />
     <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
     <title>Accueil | e-Gnose</title>
 
@@ -60,7 +60,7 @@ if (isset($_SESSION['user_nom'])) {
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Précédent</span>
+            <span class="sr-only">PrÃ©cÃ©dent</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -93,7 +93,7 @@ if (isset($_SESSION['user_nom'])) {
                         }
                     }
                 } else {
-                    echo "<p>Aucun média trouvé</p>";
+                    echo "<p>Aucun mÃ©dia trouvÃ©</p>";
                 }
                 ?>
             </div>
@@ -101,7 +101,7 @@ if (isset($_SESSION['user_nom'])) {
         </div>
 
         <div class="title">
-            <h3>Les mieux notés</h3>
+            <h3>Les mieux notÃ©s</h3>
         </div>
         <div id="carousel1">
             <?php
@@ -122,7 +122,7 @@ if (isset($_SESSION['user_nom'])) {
                     }
                 }
             } else {
-                echo "<p>Aucun média trouvé</p>";
+                echo "<p>Aucun mÃ©dia trouvÃ©</p>";
             }
             ?>
         </div>
@@ -130,7 +130,7 @@ if (isset($_SESSION['user_nom'])) {
     </section>
 
     <div class="cta--subscribe">
-        <h2>Retrouvez vos contenus préférés où vous voulez, quand vous voulez, en illimité sur <span>e</span>-Gnose.</h2>
+        <h2>Retrouvez vos contenus prÃ©fÃ©rÃ©s oÃ» vous voulez, quand vous voulez, en illimitÃ© sur <span>e</span>-Gnose.</h2>
         <a class="subscribe__btn" href="#">Je m'abonne !</a>
     </div>
 

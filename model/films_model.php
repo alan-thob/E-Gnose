@@ -38,7 +38,9 @@ class Film
                 $film_value = $film['film_value'];
             }
             if ($film_value == 1) {
-                echo "<div class='details--content__section' style='background: linear-gradient(rgb(21, 192, 237, 0.5), rgb(7, 30, 83, 1)), url($film_back_image);'>
+                echo "<div class='details--content__section' style='background: linear-gradient(rgb(21, 192, 237, 0.5), rgb(7, 30, 83, 1)), url($film_back_image);background-repeat: no-repeat !important;
+                background-size: cover;
+                background-position: center;'>
                     <div class='poster--content'>
                         <div class='infos--content'>
                             <h1> $film_titre ($film_date[0])</h1>
