@@ -38,13 +38,13 @@
     require_once("../model/films_model.php");
     // On vérifie que le média existe bien en récupérant son ID
     if (!isset($_GET['id']) || empty($_GET['id'])) {
-        // Si il n'existe pas, on le renvoie vers la page de recherche
+        // S'il n'existe pas, on le renvoie vers la page de recherche
         header("Location: search.php");
         exit;
     }
-    // On stock l'id de la ressources dans une variable
+    // On stock l'id de la ressource dans une variable
     $id = $_GET['id'];
-    // On va chercher le média é l'aide d'une requéte
+    // On va chercher le média à l'aide d'une requéte
     $sql = "SELECT * FROM films WHERE id_film = :id"; // :id = sécurité
 
     // On prépare la requéte
@@ -53,12 +53,12 @@
     // On injecte les paramétres en tranformant les informations en entier
     $requete->bindValue(":id", $id, PDO::PARAM_INT);
 
-    // On éxécute
+    // On exécute
     $requete->execute();
 
-    // On récupére le média
+    // On récupère le média
     $media = $requete->fetch();
-    // On vérifie si le media est vide
+    // On vérifie si le média est vide
     if (!$media) {
         // Erreur 404
         http_response_code(404);

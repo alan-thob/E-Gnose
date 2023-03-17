@@ -86,11 +86,11 @@ include_once('./_navbar/navbar.php');
                 while ($ressources = $allRessources->fetch()) {
                     if ($ressources['film_value'] == 1) {
                         echo "<div class='item'>
-                            <a href='./view/futurama.php?id=" . $ressources['id_film'] . "'>
+                            <a href='./view/content.php?id=" . $ressources['id_film'] . "'>
                                 <div class='item__image'><img src='" . $ressources['film_cover_image'] . "' alt='></div>
                                 <div class='item__body'>
                                     <div class='item__title'> " . strip_tags($ressources['film_titre']) . " </div>
-                                    <div class='item__description'>" . substr($ressources['film_description'], 0, 200) . "... <br/><a href='./view/futurama.php?id=" . $ressources['id_film'] . "'>Lire la suite...</a></div>
+                                    <div class='item__description'>" . substr($ressources['film_description'], 0, 200) . "... <br/><a href='./view/content.php?id=" . $ressources['id_film'] . "'>Lire la suite...</a></div>
                                 </div>
                             </a>
                         </div>";
@@ -106,7 +106,7 @@ include_once('./_navbar/navbar.php');
 
 <section id="carousel-content">
     <div class="container">
-            
+
         <div class="title">
             <h3>Les mieux notés</h3>
         </div>
@@ -118,11 +118,11 @@ include_once('./_navbar/navbar.php');
                 while ($ressources = $allRessources->fetch()) {
                     if ($ressources['film_value'] == 1) {
                         echo "<div class='item'>
-                            <a href='./view/futurama.php?id=" . $ressources['id_film'] . "'>
+                            <a href='./view/content.php?id=" . $ressources['id_film'] . "'>
                                 <div class='item__image'><img src='" . $ressources['film_cover_image'] . "' alt='></div>
                                 <div class='item__body'>
                                     <div class='item__title'> " . strip_tags($ressources['film_titre']) . " </div>
-                                    <div class='item__description'>" . substr($ressources['film_description'], 0, 200) . "... <br/><a href='./view/futurama.php?id=" . $ressources['id_film'] . "'>Lire la suite...</a></div>
+                                    <div class='item__description'>" . substr($ressources['film_description'], 0, 200) . "... <br/><a href='./view/content.php?id=" . $ressources['id_film'] . "'>Lire la suite...</a></div>
                                 </div>
                             </a>
                         </div>";
