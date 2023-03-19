@@ -34,13 +34,13 @@
 <body class="unselectable">
 
     <?php
-    include_once('https://e-gnose.sfait.fr/_navbar/navbar.php');
-    require_once("https://e-gnose.sfait.fr/controller/singleton_connexion.php");
-    require_once("https://e-gnose.sfait.fr/model/films_model.php");
+    include_once('../_navbar/navbar.php');
+    require_once("../controller/singleton_connexion.php");
+    require_once("../model/films_model.php");
     // On vérifie que le média existe bien en récupérant son ID
     if (!isset($_GET['id']) || empty($_GET['id'])) {
         // S'il n'existe pas, on le renvoie vers la page de recherche
-        header("Location: search.php");
+        header("Location: https://e-gnose.sfait.fr/index.php");
         exit;
     }
     // On stock l'id de la ressource dans une variable
@@ -83,7 +83,7 @@
 
     <section>
         <div>
-            <?php include_once("https://e-gnose.sfait.fr/controller/ajout_com.php"); ?>
+            <?php include_once("../controller/ajout_com.php"); ?>
         </div>
     </section>
     <?php
