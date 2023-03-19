@@ -78,7 +78,7 @@ if (isset($_SESSION['user_nom'])) {
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="stars"> Nombres d'étoiles</label>
-                                                <input type="number" class="form-control" name="stars" id="stars"
+                                                <input type="number" class="form-control" name="stars" id="stars" max="5.0" min="1.0" maxlength="1.0" step="0.01"
                                                        placeholder="Nombres d'étoiles">
                                             </div>
                                         </div>
