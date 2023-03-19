@@ -48,8 +48,8 @@ class Film
                             <p>Duree : $film_duree (min)</p>
                             <div class='stars'>
                                 <p>Avis des internautes </p>
-                                <i class='fa fa-star gold'></i>
-                                <i class='fa fa-star gold'></i>
+                                <i class='fa fa-star'></i>
+                                <i class='fa fa-star'></i>
                                 <i class='fa fa-star'></i>
                                 <i class='fa fa-star'></i>
                                 <i class='fa fa-star'></i>
