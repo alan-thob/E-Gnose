@@ -1,6 +1,6 @@
 <?php
-require_once("https://e-gnose.sfait.fr/controller/singleton_connexion.php");
-require_once("https://e-gnose.sfait.fr/model/comment_model.php");
+require_once("../controller/singleton_connexion.php");
+require_once("../model/comment_model.php");
 function ajout_com()
 {
     global $db;
