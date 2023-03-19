@@ -45,9 +45,9 @@ if (isset($_SESSION['user_nom'])) {
 <body class="unselectable">
 
 <?php
-require_once("https://e-gnose.sfait.fr/controller/singleton_connexion.php");
-require_once("https://e-gnose.sfait.fr/model/films_model.php");
-include_once('https://e-gnose.sfait.fr/_navbar/navbar.php');
+require_once("controller/singleton_connexion.php");
+require_once("model/films_model.php");
+include_once('_navbar/navbar.php');
 ?>
 
 <div id="carouselExampleIndicators" class="carousel slide my-carousel my-carousel" data-ride="carousel">
