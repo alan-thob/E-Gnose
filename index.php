@@ -36,17 +36,18 @@ if (isset($_SESSION['user_nom'])) {
     <link href="https://e-gnose.sfait.fr/assets/img/favicon.png" rel="icon">
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="assets/css/home.css" rel="stylesheet" type="text/css" media="screen">
-    .
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
+    <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
 </head>
 
 <body class="unselectable">
 
 <?php
-require_once("./controller/singleton_connexion.php");
-require_once("./model/films_model.php");
-include_once('./_navbar/navbar.php');
+require_once("https://e-gnose.sfait.fr/controller/singleton_connexion.php");
+require_once("https://e-gnose.sfait.fr/model/films_model.php");
+include_once('https://e-gnose.sfait.fr/_navbar/navbar.php');
 ?>
 
 <div id="carouselExampleIndicators" class="carousel slide my-carousel my-carousel" data-ride="carousel">

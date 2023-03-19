@@ -36,7 +36,7 @@
             </ul>
         </li>';
         } else {
-            echo '<a class="icons2" href="./view/authentification.php"><i class="far fa-user-circle"></i></a>';
+            echo '<a class="icons2" href="https://e-gnose.sfait.fr/view/authentification.php"><i class="far fa-user-circle"></i></a>';
         }
         ?>
     <label for="show-search" class="icons search-icon"><i class="fas fa-search"></i></label>

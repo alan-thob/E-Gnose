@@ -31,6 +31,7 @@ require_once('../controller/ControllerConnexion.php');
     <link href="https://e-gnose.sfait.fr/assets/img/favicon.png" rel="icon">
     <link href="../assets/css/authentification.css" rel="stylesheet" type="text/css" media="screen">
     <link href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css' rel="stylesheet">
+    <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
 </head>
 
 <body class="unselectable">

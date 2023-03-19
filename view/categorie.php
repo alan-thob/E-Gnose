@@ -28,6 +28,7 @@
     <link href="https://e-gnose.sfait.fr/assets/img/favicon.png" rel="icon">
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="../assets/css/category.css" rel="stylesheet" type="text/css" media="screen">
+    <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
 </head>
 
 <body class="unselectable">

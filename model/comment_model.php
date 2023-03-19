@@ -1,5 +1,5 @@
 <?php
-require_once("../controller/singleton_connexion.php");
+require_once("https://e-gnose.sfait.fr/controller/singleton_connexion.php");
 class Commentaire
 {
     public function getComment()
