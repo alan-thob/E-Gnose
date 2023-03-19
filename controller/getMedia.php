@@ -1,5 +1,6 @@
 <?php
-require_once("../controller/singleton_connexion.php");
+require_once("./singleton_connexion.php");
+global $db;
 $m = $_GET["m"];
 if (isset($_GET['searchdata']) || !empty($_GET['searchdata']) || isset($m) || !empty($m)) {
     $recherche = htmlspecialchars($m);
@@ -9,12 +10,12 @@ if (isset($_GET['searchdata']) || !empty($_GET['searchdata']) || isset($m) || !e
         while ($ressources = $allRessources->fetch()) {
 ?>
 
-            <figure class="shadow"><a href="media.php?id=<?= $ressources['id_film'] ?>"><img src="<?= $ressources['film_cover_image'] ?>" /></a></figure>
+        <a href="https://e-gnose.sfait.fr/view/content.php?id=<?= $ressources['id_film'] ?>"><p><?= $ressources['film_titre'] ?></p></a>
         <?php
         }
     } else {
         ?>
-        <p>Aucun média trouvé</p>
+        <p>Aucun mÃ©dia trouvÃ©</p>
 <?php
     }
 }

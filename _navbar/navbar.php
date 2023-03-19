@@ -24,9 +24,6 @@
             </div>
         </div>
 
-
-        <label for="show-search" class="icons search-icon"><i class="fas fa-search"></i></label>
-
         <?php
         if (isset($_SESSION['id_user']) && $_SESSION['id_user'] != null) {
             echo '
@@ -42,10 +39,11 @@
             echo '<a class="icons2" href="./view/authentification.php"><i class="far fa-user-circle"></i></a>';
         }
         ?>
-
-        <form action="#" class="search-box">
-            <input type="text" placeholder="Rechercher un film, un livre, un audio ..." required>
-            <button type="submit" class="go-icon" title="Lancer la rechercher !"><i class="fas fa-search"></i></button>
+    <label for="show-search" class="icons search-icon"><i class="fas fa-search"></i></label>
+        <form method="get" action="" class="search-box">
+            <input type="search" name="searchdata" id="searchdata" onkeyup="showMovie(this.value)" placeholder="Rechercher un film, une série..." autocomplete="off">
+            <input type="submit" name="Envoyer" class="go-icon">
+            <div id="txtMovie" style="background-color: #171c24; color:aliceblue;"></div>
         </form>
     </nav>
 </div>
