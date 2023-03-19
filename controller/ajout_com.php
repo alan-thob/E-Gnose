@@ -1,5 +1,6 @@
 <?php
 require_once("https://e-gnose.sfait.fr/controller/singleton_connexion.php");
+require_once("https://e-gnose.sfait.fr/model/comment_model.php");
 function ajout_com()
 {
     global $db;
@@ -69,3 +70,16 @@ if (isset($_SESSION['user_nom'])) {
         <input type="submit" value="OK">
     </form>
 <?php } ?>
+
+<section>
+    <div>
+        <h2> Tous les commentaires</h2>
+        <?php
+        $comment->getComment();
+        ?>
+    </div>
+</section>
+
+
+<?php
+?>
