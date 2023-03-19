@@ -1,6 +1,5 @@
 <?php
 require_once("https://e-gnose.sfait.fr/controller/singleton_connexion.php");
-require_once("https://e-gnose.sfait.fr/model/comment_model.php");
 function ajout_com()
 {
     global $db;
@@ -19,7 +18,6 @@ function ajout_com()
 
             // Enregistrer les données
             $sql = "INSERT INTO `commentaires`(`commentaire_titre`, `commentaire_text`, `commentaire_note`,`commentaire_value`) VALUES (:commentaire_titre, :commentaire_text, :commentaire_note, :commentaire_value)";
-            var_dump($sql);
             // Préparation de la requête
             $query = $db->prepare($sql);
             $query->bindValue(":commentaire_titre", $titre, PDO::PARAM_STR);
@@ -71,16 +69,6 @@ if (isset($_SESSION['user_nom'])) {
         <input type="submit" value="OK">
     </form>
 <?php } ?>
-
-<section>
-    <div>
-        <h2> Tous les commentaires</h2>
-        <?php
-        $comment->getComment();
-        ?>
-    </div>
-</section>
-
 
 <?php
 ?>
