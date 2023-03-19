@@ -36,8 +36,8 @@
     <?php
     include_once('https://e-gnose.sfait.fr/_navbar/navbar.php');
     require_once("https://e-gnose.sfait.fr/controller/singleton_connexion.php");
-    require_once("https://e-gnose.sfait.fr/model/films_model.php");
     require_once("https://e-gnose.sfait.fr/model/comment_model.php");
+    require_once("https://e-gnose.sfait.fr/model/films_model.php");
     // On vérifie que le média existe bien en récupérant son ID
     if (!isset($_GET['id']) || empty($_GET['id'])) {
         // S'il n'existe pas, on le renvoie vers la page de recherche

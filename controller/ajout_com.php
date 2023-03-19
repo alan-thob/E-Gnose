@@ -69,6 +69,3 @@ if (isset($_SESSION['user_nom'])) {
         <input type="submit" value="OK">
     </form>
 <?php } ?>
-
-<?php
-?>
