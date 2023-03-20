@@ -81,18 +81,19 @@ include_once('_navbar/navbar.php');
         </div>
         <div id="carousel0">
             <?php
-            $allRessources = $db->query('SELECT * FROM films WHERE film_value = 1 ORDER BY id_film ASC LIMIT 10');
+            $allRessources = $db->query("SELECT * FROM films WHERE film_value = 1 ORDER BY id_film ASC LIMIT 10");
             if ($allRessources->rowCount() > 0) {
                 while ($ressources = $allRessources->fetch()) {
-                    echo "<div class='item'>
-                <a href='./view/content.php?id=" . $ressources['id_film'] . "'>
-                    <div class='item__image'><img src='" . $ressources['film_cover_image'] . "' alt=''></div>
-                    <div class='item__body'>
-                        <div class='item__title'> " . strip_tags($ressources['film_titre']) . " </div>
-                        <div class='item__description'>" . substr($ressources['film_description'], 0, 200) . "... <br/><a href='./view/content.php?id=" . $ressources['id_film'] . "'>Lire la suite...</a></div>
-                    </div>
-                </a>
-            </div>";
+                    echo '<div class="item">
+        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+            <div class="item__body">
+                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+                <a href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            </div>
+        </a>
+    </div>';
                 }
             } else {
                 echo "<p>Aucun média trouvé</p>";
@@ -110,20 +111,20 @@ include_once('_navbar/navbar.php');
         </div>
         <div id="carousel1">
             <?php
-            $allRessources = $db->prepare('SELECT * FROM films WHERE film_value = 1 ORDER BY film_popularity DESC LIMIT 10');
+            $allRessources = $db->prepare("SELECT * FROM films WHERE film_value = 1 ORDER BY film_popularity DESC LIMIT 10");
             $allRessources->execute();
             if ($allRessources->rowCount() > 0) {
                 while ($ressources = $allRessources->fetch()) {
-                    echo "<div class='item'>
- <a href='./view/content.php?id=" . $ressources['id_film'] . "'>
- <div class='item__image'><img src='" . $ressources['film_cover_image'] . "' alt=''></div>
- <div class='item__body'>
- <div class='item__title'> " . strip_tags($ressources['film_titre']) . " </div>
- <div class='item__description'>" . substr($ressources['film_description'], 0, 200) . "... <br/>
- <a href='./view/content.php?id=" . $ressources['id_film'] . "'>Lire la suite...</a></div>
- </div>
- </a>
- </div>";
+                    echo '<div class="item">
+        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+            <div class="item__body">
+                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+                <a href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            </div>
+        </a>
+    </div>';
                 }
             } else {
                 echo "<p>Aucun média trouvé</p>";
