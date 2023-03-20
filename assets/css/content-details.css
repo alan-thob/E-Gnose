@@ -122,7 +122,7 @@ textarea.form-control {
 
 /* Animations */
 .active-tab {
-    background: rgb(7, 30, 83, 1);
+    background: rgb(21, 192, 237, 0.5);
     font-weight: bolder;
     color: #fff
 }

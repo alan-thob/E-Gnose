@@ -58,7 +58,7 @@ if (isset($_SESSION['user_nom'])) {
             <div class="row justify-content-center">
                 <div class="row justify-content-center">
                     <div class="contact-wrap">
-                        <h3 class="mb-4 text-center">Ajouter un commentaire</h3>
+                        <h2 class="mb-4 text-center">Ajouter un commentaire</h2>
                         <form method="POST" id="contactForm" name="contactForm" class="contactForm">
                             <div class="row">
                                 <div class="col-md-12">
@@ -98,7 +98,7 @@ if (isset($_SESSION['user_nom'])) {
 
     <section>
         <div>
-            <h2> Tous les commentaires</h2>
+            <h2 class="text-center">Tous les commentaires</h2>
             <?php
             $comment->getComment();
             ?>
