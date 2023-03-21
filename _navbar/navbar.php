@@ -7,14 +7,14 @@
             <ul class="links">
                 <li><a href="https://e-gnose.sfait.fr/">Accueil</a></li>
                 <li>
-                    <a href="#" class="desktop-link">CatÃ©gories</a>
+                    <a href="#" class="desktop-link">Catégories</a>
                     <input type="checkbox" id="show-features">
-                    <label for="show-features">CatÃ©gories</label>
+                    <label for="show-features">Catégories</label>
                     <ul>
-                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">CatÃ©gories 1</a></li>
-                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">CatÃ©gories 2</a></li>
-                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">CatÃ©gories 3</a></li>
-                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">CatÃ©gories 4</a></li>
+                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">Catégories 1</a></li>
+                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">Catégories 2</a></li>
+                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">Catégories 3</a></li>
+                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">Catégories 4</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Ma wishlist</a></li>
@@ -41,7 +41,7 @@
         ?>
     <label for="show-search" class="icons search-icon"><i class="fas fa-search"></i></label>
         <form method="get" action="" class="search-box">
-            <input type="search" name="searchdata" id="searchdata" onkeyup="showMovie(this.value)" placeholder="Rechercher un film, une sÃ©rie..." autocomplete="off">
+            <input type="search" name="searchdata" id="searchdata" onkeyup="showMovie(this.value)" placeholder="Rechercher un film, une série..." autocomplete="off">
             <button type="submit" class="go-icon" title="Lancer la rechercher !"><i class="fas fa-search"></i></button>
             <div id="txtMovie" style="background-color: #171c24; color:aliceblue;"></div>
         </form>
