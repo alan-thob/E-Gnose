@@ -99,6 +99,7 @@ if (isset($_SESSION['user_nom'])) {
     <section>
         <div>
             <h2 class="text-center">Tous les commentaires</h2>
+
             <?php
             $comment->getComment();
             ?>
