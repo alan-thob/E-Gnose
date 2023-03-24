@@ -62,12 +62,13 @@
 }
 
 .item {
-    margin: 10px;
+    margin: 10px auto;
     background-color: #fff;
     box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
     transition: transform .3s;
     transform: translate3d(0, -1px, 0);
     border-radius: 5px;
+    width: 85%;
 }
 
 .item:hover {
@@ -82,7 +83,7 @@
 }
 
 .item__body {
-    padding: 25px
+    padding: 15px 15px 35px 15px;
 }
 
 .item__title {

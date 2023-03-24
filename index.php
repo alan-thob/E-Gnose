@@ -47,7 +47,7 @@ require_once("model/films_model.php");
 include_once('_navbar/navbar.php');
 ?>
 
-<div id="carouselExampleIndicators" class="carousel slide my-carousel my-carousel" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide my-carousel" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -87,7 +87,7 @@ include_once('_navbar/navbar.php');
             <div class="item__body">
                 <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
                 <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-                <a href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Voir la suite...</a></div>
             </div>
         </a>
     </div>';
@@ -112,13 +112,13 @@ include_once('_navbar/navbar.php');
             $allRessources->execute();
             if ($allRessources->rowCount() > 0) {
                 while ($ressources = $allRessources->fetch()) {
-                    echo '<div class="item">
+                    echo '<div class="item" style="width: 85%">
         <a href="./view/content.php?id=' . $ressources['id_film'] . '">
             <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
             <div class="item__body">
                 <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
                 <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-                <a href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
             </div>
         </a>
     </div>';
@@ -143,8 +143,6 @@ include_once('_footer/footer.php');
 
 <script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script src="assets/js/carousel.js" async></script>
-<!--<script src="assets/js/search-bar.js" async></script>-->
-
 
 </body>
 

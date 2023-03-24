@@ -18,7 +18,7 @@ if (isset($_POST['inscription'])) {
                     $user_telephone, $user_date_naissance, 3, 1, 1
                     
                 ));
-                echo "<p style='color:white;'>inscription rÃ©ussie</p>";
+                echo "<p style='color:white;'>inscription réussie</p>";
             }
         }
     }

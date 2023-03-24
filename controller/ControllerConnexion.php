@@ -31,7 +31,7 @@ if (isset($_POST['connexion'])) {
                <div class="box">
                <form class= "formBloc">
                 <div class="mdpPerdu">
-                Le mot de passe est incorrect, réssayez !
+                Le mot de passe est incorrect, réessayez !
                 </div>
                </form>
                </div>';
@@ -41,7 +41,7 @@ if (isset($_POST['connexion'])) {
                <div class="box">
                <form class= "formBloc">
                 <div class="mdpPerdu">
-                Les identifiants saisies ne sont pas valides
+                Les identifiants saisis ne sont pas valides
                 </div>
                </form>
                </div>';
