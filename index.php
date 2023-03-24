@@ -10,23 +10,20 @@ if (isset($_SESSION['user_nom'])) {
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-          content="Films, livres, audio... Toute une bibliothèque pour vous divertir, oû que vous soyez, en illimité !"/>
-    <meta name="robots" content="index, follow"/>
-    <meta property="og:title" content="Accueil | e-Gnose"/>
-    <meta property="og:type" content="website"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Films, livres, audio... Toute une bibliothèque pour vous divertir, oû que vous soyez, en illimité !" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Accueil | e-Gnose" />
+    <meta property="og:type" content="website" />
     <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
-    <meta property="og:url" content="https://e-gnose.sfait.fr/"/>
-    <meta property="og:description"
-          content="Films, livres, audios... Toute une bibliothèque pour vous divertir, oû que vous soyez, en illimité !"/>
-    <meta property="og:locale" content="fr_FR"/>
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Accueil | e-Gnose"/>
-    <meta name="twitter:description"
-          content="Films, livres, audios... Toute une bibliothèque pour vous divertir, oû que vous soyez, en illimité !"/>
-    <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
+    <meta property="og:url" content="https://e-gnose.sfait.fr/" />
+    <meta property="og:description" content="Films, livres, audios... Toute une bibliothèque pour vous divertir, oû que vous soyez, en illimité !" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Accueil | e-Gnose" />
+    <meta name="twitter:description" content="Films, livres, audios... Toute une bibliothèque pour vous divertir, oû que vous soyez, en illimité !" />
+    <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
     <title>Accueil | e-Gnose</title>
 
     <!-- Links -->
@@ -45,9 +42,9 @@ if (isset($_SESSION['user_nom'])) {
 <body class="unselectable">
 
 <?php
-require_once("https://e-gnose.sfait.fr/controller/singleton_connexion.php");
-require_once("https://e-gnose.sfait.fr/model/films_model.php");
-include_once('https://e-gnose.sfait.fr/_navbar/navbar.php');
+require_once("controller/singleton_connexion.php");
+require_once("model/films_model.php");
+include_once('_navbar/navbar.php');
 ?>
 
 <div id="carouselExampleIndicators" class="carousel slide my-carousel my-carousel" data-ride="carousel">
@@ -81,18 +78,19 @@ include_once('https://e-gnose.sfait.fr/_navbar/navbar.php');
         </div>
         <div id="carousel0">
             <?php
-            $allRessources = $db->query('SELECT * FROM films WHERE film_value = 1 ORDER BY id_film ASC LIMIT 10');
+            $allRessources = $db->query("SELECT * FROM films WHERE film_value = 1 ORDER BY id_film ASC LIMIT 10");
             if ($allRessources->rowCount() > 0) {
                 while ($ressources = $allRessources->fetch()) {
-                    echo "<div class='item'>
-                <a href='./view/content.php?id=" . $ressources['id_film'] . "'>
-                    <div class='item__image'><img src='" . $ressources['film_cover_image'] . "' alt=''></div>
-                    <div class='item__body'>
-                        <div class='item__title'> " . strip_tags($ressources['film_titre']) . " </div>
-                        <div class='item__description'>" . substr($ressources['film_description'], 0, 200) . "... <br/><a href='./view/content.php?id=" . $ressources['id_film'] . "'>Lire la suite...</a></div>
-                    </div>
-                </a>
-            </div>";
+                    echo '<div class="item">
+        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+            <div class="item__body">
+                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+                <a href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            </div>
+        </a>
+    </div>';
                 }
             } else {
                 echo "<p>Aucun média trouvé</p>";
@@ -110,20 +108,20 @@ include_once('https://e-gnose.sfait.fr/_navbar/navbar.php');
         </div>
         <div id="carousel1">
             <?php
-            $allRessources = $db->prepare('SELECT * FROM films WHERE film_value = 1 ORDER BY film_popularity DESC LIMIT 10');
+            $allRessources = $db->prepare("SELECT * FROM films WHERE film_value = 1 ORDER BY film_popularity DESC LIMIT 10");
             $allRessources->execute();
             if ($allRessources->rowCount() > 0) {
                 while ($ressources = $allRessources->fetch()) {
-                    echo "<div class='item'>
- <a href='./view/content.php?id=" . $ressources['id_film'] . "'>
- <div class='item__image'><img src='" . $ressources['film_cover_image'] . "' alt=''></div>
- <div class='item__body'>
- <div class='item__title'> " . strip_tags($ressources['film_titre']) . " </div>
- <div class='item__description'>" . substr($ressources['film_description'], 0, 200) . "... <br/>
- <a href='./view/content.php?id=" . $ressources['id_film'] . "'>Lire la suite...</a></div>
- </div>
- </a>
- </div>";
+                    echo '<div class="item">
+        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+            <div class="item__body">
+                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+                <a href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            </div>
+        </a>
+    </div>';
                 }
             } else {
                 echo "<p>Aucun média trouvé</p>";

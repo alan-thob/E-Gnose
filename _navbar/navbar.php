@@ -26,15 +26,7 @@
 
         <?php
         if (isset($_SESSION['id_user']) && $_SESSION['id_user'] != null) {
-            echo '
-                <li><a href="#" class="desktop-link"><i class="fa-solid fa-link"></i></a>
-                <input type="checkbox" id="show-features">
-                <label for="show-features">Bonjour; ' . $_SESSION['user_nom'] . '</label>
-            <ul>
-                <li><a href="https://e-gnose.sfait.fr/view/account_user.php">Mon Compte</a></li>
-                <li><a href="https://e-gnose.sfait.fr/_navbar/deconnexion.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-            </ul>
-        </li>';
+            echo '<a href="https://e-gnose.sfait.fr/view/account_user.php" class="icons2 desktop-link"><i class="far fa-user-circle"></i></a>';
         } else {
             echo '<a class="icons2" href="https://e-gnose.sfait.fr/view/authentification.php"><i class="far fa-user-circle"></i></a>';
         }
