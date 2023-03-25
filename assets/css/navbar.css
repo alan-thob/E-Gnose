@@ -255,6 +255,7 @@ label.search-icon i {
 @media screen and (max-width: 900px) {
     .wrapper .menu-icon {
         display: block;
+        margin-left: 25px;
     }
 
     .icons2 {
