@@ -1,6 +1,5 @@
 .footer {
     background: rgb(7, 30, 83, 1);
-    height: 80px;
     align-content: center;
     align-items: center;
     justify-content: center;
@@ -22,3 +21,21 @@
     }
 }
 
+
+@media screen and (min-width: 320px) {
+    .footer {
+        height: 152px;
+    }
+}
+
+@media screen and (min-width: 363px) {
+    .footer {
+        height: 137px;
+    }
+}
+
+@media screen and (min-width: 656px) {
+    .footer {
+        height: 90px;
+    }
+}
