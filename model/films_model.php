@@ -15,7 +15,7 @@ class Film
 
     public function getFilm()
     {
-        require_once("https://e-gnose.sfait.fr/controller/singleton_connexion.php");
+        require_once("../controller/singleton_connexion.php");
         $database = Database::getInstance();
         $db = $database->getConnexion();
         $films = $db->prepare('SELECT * FROM films WHERE film_value = :film_value AND id_film = :id_film ORDER BY film_titre DESC ');
