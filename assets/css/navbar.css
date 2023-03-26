@@ -12,7 +12,7 @@
     display: flex;
     max-width: calc(100% - 200px);
     margin: 0 auto;
-    height: 70px;
+    height: 54px;
     align-items: center;
 }
 
@@ -42,7 +42,6 @@ ul.links {
 
 .content-navbar .links li {
     list-style: none;
-    line-height: 70px;
 }
 
 .content-navbar .links li a,
@@ -50,7 +49,7 @@ ul.links {
     color: #fff;
     font-size: 18px;
     font-weight: 500;
-    padding: 9px 17px;
+    padding: 13px 20px;
     border-radius: 5px;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -170,6 +169,7 @@ label.search-icon i {
     z-index: -1;
     opacity: 0;
     visibility: hidden;
+    margin-top: -16px;
 }
 
 .content-navbar .links li:hover > ul {
@@ -206,6 +206,9 @@ label.search-icon i {
     font-size: 30px;
     color: #fff;
     transition: all 0.3s ease;
+    background-color: transparent;
+    border: 0;
+    bottom: 13px;
 }
 
 .icons2:hover {
@@ -218,7 +221,6 @@ label.search-icon i {
 @media screen and (min-width: 1250px) {
     .icons2 {
         margin-right: 63px;
-        bottom: 12px;
     }
 
     .icons2 i {
@@ -234,7 +236,6 @@ label.search-icon i {
 
     .icons2 {
         margin-right: 117px;
-        bottom: 12px;
     }
 
     .icons2 i {
@@ -248,10 +249,6 @@ label.search-icon i {
 
     nav .content-navbar .links {
         margin-left: 30px;
-    }
-
-    .content-navbar .links li a {
-        padding: 8px 13px;
     }
 
     .wrapper .search-box {
