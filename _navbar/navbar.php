@@ -7,14 +7,14 @@
             <ul class="links">
                 <li><a href="https://e-gnose.sfait.fr/">Accueil</a></li>
                 <li>
-                    <a href="#" class="desktop-link">CatÈgories</a>
+                    <a href="#" class="desktop-link">Cat√©gories</a>
                     <input type="checkbox" id="show-features">
-                    <label for="show-features">CatÈgories</label>
+                    <label for="show-features">Cat√©gories</label>
                     <ul>
-                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">CatÈgories 1</a></li>
-                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">CatÈgories 2</a></li>
-                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">CatÈgories 3</a></li>
-                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">CatÈgories 4</a></li>
+                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">Cat√©gories 1</a></li>
+                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">Cat√©gories 2</a></li>
+                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">Cat√©gories 3</a></li>
+                        <li><a href="https://e-gnose.sfait.fr/view/categorie.php">Cat√©gories 4</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Ma wishlist</a></li>
@@ -26,14 +26,36 @@
 
         <?php
         if (isset($_SESSION['id_user']) && $_SESSION['id_user'] != null) {
-            echo '<a href="https://e-gnose.sfait.fr/view/account_user.php" class="icons2 desktop-link"><i class="far fa-user-circle"></i></a>';
+            echo '
+        <div class="content-navbar" style="right: 50px;">
+            <ul class="links">
+                <li>
+                    <a href="#" class="icons2 desktop-link"><i class="far fa-user-circle"></i></a>
+                    <input type="checkbox" id="show-features">
+                    <label for="show-features"><i class="far fa-user-circle"></i></label>
+                    <ul style="right: 50px">
+                        <li><a href="https://e-gnose.sfait.fr/view/account_user.php">Mon compte</a></li>
+                        <li><a href="https://e-gnose.sfait.fr/_navbar/deconnexion.php">Se d√©connecter</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>';
         } else {
-            echo '<a class="icons2" href="https://e-gnose.sfait.fr/view/authentification.php"><i class="far fa-user-circle"></i></a>';
+            echo '<div class="content-navbar" style="right: 50px;">
+                     <ul class="links">
+                        <li>
+                            <a class="icons2 desktop-link" href="https://e-gnose.sfait.fr/view/authentification.php"><i class="far fa-user-circle"></i></a>
+                        </li>
+                     </ul>
+                  </div>';
         }
         ?>
+
+
+
     <label for="show-search" class="icons search-icon"><i class="fas fa-search"></i></label>
         <form method="get" action="" class="search-box">
-            <input type="search" name="searchdata" id="searchdata" onkeyup="showMovie(this.value)" placeholder="Rechercher un film, une sÈrie..." autocomplete="off">
+            <input type="search" name="searchdata" id="searchdata" onkeyup="showMovie(this.value)" placeholder="Rechercher un film, une s√©rie..." autocomplete="off">
             <button type="submit" class="go-icon" title="Lancer la rechercher !"><i class="fas fa-search"></i></button>
             <div id="txtMovie" style="background-color: #171c24; color:aliceblue;"></div>
         </form>

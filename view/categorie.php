@@ -1,3 +1,7 @@
+<?php session_start();
+require_once("../controller/singleton_connexion.php");
+require_once('../controller/ControllerConnexion.php');
+?>
 <!doctype html>
 <html lang="fr">
 <head>

@@ -148,6 +148,7 @@ label.search-icon i {
     font-size: 25px;
     cursor: pointer;
 }
+
 .go-icon i {
     transition: all 0.3s ease;
 }
@@ -216,7 +217,12 @@ label.search-icon i {
 /* Responsive code start */
 @media screen and (min-width: 1250px) {
     .icons2 {
-        margin-right: 75px;
+        margin-right: 63px;
+        bottom: 12px;
+    }
+
+    .icons2 i {
+        font-size: 29px;
     }
 }
 
@@ -227,7 +233,12 @@ label.search-icon i {
     }
 
     .icons2 {
-        margin-right: 130px;
+        margin-right: 117px;
+        bottom: 12px;
+    }
+
+    .icons2 i {
+        font-size: 29px;
     }
 
     label.search-icon i {
@@ -401,4 +412,3 @@ label.search-icon, .menu-icon {
     filter: drop-shadow(0 0 0.3rem #bdbdbd);
     transition: all 0.3s ease;
 }
-
