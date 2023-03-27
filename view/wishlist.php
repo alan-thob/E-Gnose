@@ -2,15 +2,15 @@
 session_start();
 
 // Vérifier si l'utilisateur est connecté
-//if (!isset($_SESSION['id_user'])) {
-   // header('Location: https://e-gnose.sfait.fr/view/authentification.php');
-   // exit;
-//}
+if (!isset($_SESSION['id_user'])) {
+   header('Location: https://e-gnose.sfait.fr/view/authentification.php');
+   exit;
+}
 
 require_once('../controller/singleton_connexion.php');
 GLOBAL $db;
 // Récupérer la wishlist de l'utilisateur
-// $id_user = $_SESSION['id_user'];
+$id_user = $_SESSION['id_user'];
 
 $query = "SELECT wishlist.id_wishlist, wishlist.id_film, wishlist.created_at, films.id_film, films.film_titre
  FROM users, wishlist, films
@@ -19,8 +19,8 @@ $query = "SELECT wishlist.id_wishlist, wishlist.id_film, wishlist.created_at, fi
  AND users.id_user = ?";
 
 $result = $db->prepare($query);
-//$result->bindValue(1, $id_user, PDO::PARAM_INT);
-//$result->execute();
+$result->bindValue(1, $id_user, PDO::PARAM_INT);
+$result->execute();
 if (!$result) {
     $error = $result->errorInfo();
     die("Erreur : " . $error[2]);
