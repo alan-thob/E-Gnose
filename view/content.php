@@ -40,7 +40,7 @@
     // On vérifie que le média existe bien en récupérant son ID
     if (!isset($_GET['id']) || empty($_GET['id'])) {
         // S'il n'existe pas, on le renvoie vers la page de recherche
-        header("Location: https://e-gnose.sfait.fr/index.php");
+        header("Location: ../index.php");
         exit;
     }
     // On stock l'id de la ressource dans une variable
@@ -74,7 +74,7 @@
             if ($media['film_value'] == 1 && $media['id_film'] == $id) {
                 $film->getFilm();
             } else {
-                header("Location: https://e-gnose.sfait.fr/index.php");
+                header("Location: ../index.php");
                 exit;
             }
             ?>

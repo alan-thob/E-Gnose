@@ -52,7 +52,7 @@ if (isset($_POST['user_email']) && isset($_POST['user_password'])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Page de connexion</title>
