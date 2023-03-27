@@ -37,6 +37,30 @@ if (isset($_SESSION['user_nom'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
     <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
+
+    <style>
+
+        html::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background-color: #7775;
+            border-radius: 15px;
+        }
+
+
+        html::-webkit-scrollbar-thumb:hover {
+            background-color: #777;
+        }
+
+        html::-webkit-scrollbar-track {
+            background-color: #333;
+        }
+
+
+
+    </style>
 </head>
 
 <body class="unselectable">

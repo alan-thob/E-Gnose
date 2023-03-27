@@ -13,6 +13,7 @@ body, html {
     display: flex;
     flex-direction: column;
     background: linear-gradient(rgb(7, 30, 83, 1), rgb(21, 192, 237, 0.5)), url(../img/mozaic.jpg) fixed center center repeat;
+
 }
 
 .unselectable {
