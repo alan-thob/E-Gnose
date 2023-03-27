@@ -8,7 +8,7 @@ if (!isset($_SESSION['id_user'])) {
 }
 
 require_once('../controller/singleton_connexion.php');
-
+GLOBAL $db;
 // Récupérer la wishlist de l'utilisateur
 $id_user = $_SESSION['id_user'];
 
@@ -51,7 +51,7 @@ if (!$result) {
         <?php endwhile; ?>
     </ul>
 
-    <a href="index.php">Retour à la liste des films</a>
+    <a href="https://e-gnose.sfait.fr/index.php">Retour à la liste des films</a>
 </body>
 
 </html>
