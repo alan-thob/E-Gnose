@@ -9,10 +9,10 @@ class Database
     //private $user = "engk9490";
     //private $pass = "p]bbxAH@7cNy";
 
-    private $host = "localhost";
-    private $dbname = "e-gnose";
-    private $user = "root";
-    private $pass = "root";
+    private $host = "telchak.o2switch.net";
+    private $dbname = "engk9490_e-gnose";
+    private $user = "engk9490";
+    private $pass = "p]bbxAH@7cNy";
 
     // Paramètre de connexion à la base
     private function __construct()
