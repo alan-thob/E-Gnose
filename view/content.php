@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <!doctype html>
 <html lang="fr">
 
@@ -84,55 +84,37 @@
     <section style="padding-top: 0;">
         <div>
             <div class="tabs">
-                <div
-                        role="tablist"
-                        aria-label="tabs component"
-                        class="tabs-btn-container"
-                >
-                    <button
-                            role="tab"
-                            aria-controls="panel-details"
-                            id="tab-1"
-                            type="button"
-                            aria-selected="true"
-                            tabindex="0"
-                            class="tab active-tab"
-                    >
+                <div role="tablist" aria-label="tabs component" class="tabs-btn-container">
+                    <button role="tab" aria-controls="panel-details" id="tab-1" type="button" aria-selected="true" tabindex="0" class="tab active-tab">
                         Détails
                     </button>
-                    <button
-                            role="tab"
-                            aria-controls="panel-comments"
-                            id="tab-2"
-                            type="button"
-                            aria-selected="false"
-                            tabindex="-1"
-                            class="tab"
-                    >
+                    <button role="tab" aria-controls="panel-comments" id="tab-2" type="button" aria-selected="false" tabindex="-1" class="tab">
                         Commentaires
                     </button>
                 </div>
-                <div
-                        id="panel-details"
-                        role="tabpanel"
-                        tabindex="0"
-                        aria-labelledby="tab-1"
-                        class="tab-content active-tab-content"
-                >
+                <div id="panel-details" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="tab-content active-tab-content">
                     <h3>TEST.</h3>
+                    <?php if (isset($_SESSION['id_user'])) {
+                        $done = $db->prepare('SELECT * FROM wishlist WHERE id_film = ? AND id_user = ?');
+                        $done->bindParam(1, $id, PDO::PARAM_INT);
+                        $done->bindParam(2, $_SESSION['id_user'], PDO::PARAM_INT);
+                        $done->execute();
+                        if ($done->rowCount() == 0) { ?>
+                            <section>
+                                <form method="POST" action="../controller/add_to_wishlist.php">
+                                    <input type="hidden" name="id_film" value="<?php echo $id ?>">
+                                    <button type="submit">Ajouter à la wishlist</button>
+                                </form>
+                            </section>
+                    <?php }
+                    } ?>
                     <p>
                         Bonjour, ceci est un test pour les détails
                     </p>
                 </div>
 
-                <div
-                        id="panel-comments"
-                        role="tabpanel"
-                        tabindex="0"
-                        aria-labelledby="tab-2"
-                        class="tab-content"
-                >
-                        <?php include_once("../controller/ajout_com.php"); ?>
+                <div id="panel-comments" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="tab-content">
+                    <?php include_once("../controller/ajout_com.php"); ?>
                 </div>
             </div>
         </div>
@@ -149,7 +131,7 @@
 
         const tabContents = [...document.querySelectorAll(".tab-content")]
 
-        function tabsAnimation(e){
+        function tabsAnimation(e) {
 
             const indexToRemove = tabs.findIndex(tab => tab.classList.contains("active-tab"))
 
@@ -169,22 +151,23 @@
         tabs.forEach(tab => tab.addEventListener("keydown", arrowNavigation))
 
         let tabFocus = 0;
-        function arrowNavigation(e){
 
-            if(e.keyCode === 39 || e.keyCode === 37) {
+        function arrowNavigation(e) {
+
+            if (e.keyCode === 39 || e.keyCode === 37) {
                 tabs[tabFocus].setAttribute("tabindex", -1)
 
-                if(e.keyCode === 39) {
+                if (e.keyCode === 39) {
                     tabFocus++;
 
-                    if(tabFocus >= tabs.length) {
+                    if (tabFocus >= tabs.length) {
                         tabFocus = 0;
                     }
                 } else if (e.keyCode === 37) {
                     tabFocus--;
 
-                    if(tabFocus < 0) {
-                        tabFocus = tabs.length -1;
+                    if (tabFocus < 0) {
+                        tabFocus = tabs.length - 1;
                     }
                 }
 
@@ -195,4 +178,5 @@
         }
     </script>
 </body>
+
 </html>
