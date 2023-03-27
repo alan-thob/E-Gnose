@@ -17,7 +17,7 @@
                         <li><a href="https://e-gnose.sfait.fr/view/categorie.php">Catégories 4</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Ma wishlist</a></li>
+                <li><a href="https://e-gnose.sfait.fr/view/wishlist.php">Ma wishlist</a></li>
             </ul>
             <div class="logo">
                 <a href="https://e-gnose.sfait.fr/"><span>e</span>-Gnose</a>
