@@ -3,7 +3,7 @@ session_start();
 
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['id_user'])) {
-    header('Location: ./authentification.php');
+    header('Location: https://e-gnose.sfait.fr/view/authentification.php');
     exit;
 }
 
