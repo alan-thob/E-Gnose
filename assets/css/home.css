@@ -22,10 +22,10 @@ body, html {
 }
 
 .unselectable {
-    -webkit-user-select: none;  /* Chrome all / Safari all */
-    -moz-user-select: none;     /* Firefox all */
-    -ms-user-select: none;      /* IE 10+ */
-    user-select: none;          /* Likely future */
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
 }
 
 /*############################# */
@@ -87,6 +87,7 @@ body, html {
     .cta--subscribe {
         height: 150px;
     }
+
     .cta--subscribe a {
         display: flex;
         flex-direction: column;

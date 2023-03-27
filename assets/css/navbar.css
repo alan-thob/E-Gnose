@@ -1,3 +1,8 @@
+.links button {
+    line-height: normal;
+    font-family: none;
+}
+
 .wrapper {
     position: fixed;
     width: 100%;
@@ -49,7 +54,7 @@ ul.links {
     color: #fff;
     font-size: 18px;
     font-weight: 500;
-    padding: 13px 20px;
+    padding: 14px 20px;
     border-radius: 5px;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -208,13 +213,7 @@ label.search-icon i {
     transition: all 0.3s ease;
     background-color: transparent;
     border: 0;
-    bottom: 13px;
-}
-
-.icons2:hover {
-    color: #fff;
-    filter: drop-shadow(0 0 0.3rem #bdbdbd);
-    transition: all 0.3s ease;
+    bottom: 11px;
 }
 
 /* Responsive code start */
@@ -280,7 +279,7 @@ label.search-icon i {
         background: #14181f;
         height: 100%;
         width: 100%;
-        top: 70px;
+        top: 54px;
         left: -100%;
         margin-left: 0;
         max-width: 350px;

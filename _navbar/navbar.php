@@ -26,26 +26,24 @@
 
         <?php
         if (isset($_SESSION['id_user']) && $_SESSION['id_user'] != null) {
-            echo '
-
-<div class="content-navbar" style="right: 45px;">
-            <ul class="links">
-                <li>
-                    <button class="icons2 desktop-link" ><i class="far fa-user-circle"></i></button>
-                    <input type="checkbox" id="show-features">
-                    <label for="show-features"><i class="far fa-user-circle"></i></label>
-                    <ul style="right: 50px">
-                        <li><a href="https://e-gnose.sfait.fr/view/account_user.php">Mon compte</a></li>
-                        <li><a href="https://e-gnose.sfait.fr/_navbar/deconnexion.php">Se déconnecter</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>';
-        } else {
             echo '<div class="content-navbar" style="right: 45px;">
+                    <ul class="links">
+                        <li>
+                            <button class="icons2 desktop-link"><a href="#" style="padding: 22px 22px 12px 22px;"><i class="far fa-user-circle"></i></a></button>
+                            <input type="checkbox" id="show-features">
+                            <label for="show-features"><i class="far fa-user-circle"></i></label>
+                                <ul style="right: 50px">
+                                    <li><a href="https://e-gnose.sfait.fr/view/account_user.php">Mon compte</a></li>
+                                    <li><a href="https://e-gnose.sfait.fr/_navbar/deconnexion.php">Se déconnecter</a></li>
+                                </ul>
+                        </li>
+                    </ul>
+                    </div>';
+        } else {
+            echo '<div class="content-navbar" style="right: 45px;padding: 21px 14px 13px 20px;">
                      <ul class="links">
                         <li>
-                            <button class="icons2 desktop-link"><a href="https://e-gnose.sfait.fr/view/authentification.php" style="background: transparent"><i class="far fa-user-circle"></i></a></button>
+                            <button class="icons2 desktop-link"><a href="https://e-gnose.sfait.fr/view/authentification.php" style="padding: 22px 22px 12px 22px;"><i class="far fa-user-circle"></i></a></button>
                                 <input type="checkbox" id="show-features">
                                 <label for="show-features"><i class="far fa-user-circle"></i></label>
                         </li>
