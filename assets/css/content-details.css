@@ -1,5 +1,6 @@
 @import "navbar.css";
 @import "footer.css";
+@import "scrollbar.css";
 
 * {
     margin: 0;

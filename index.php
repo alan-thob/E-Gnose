@@ -46,25 +46,7 @@ if (isset($_SESSION['user_nom'])) {
     require_once("./model/films_model.php");
     include_once('./_navbar/navbar.php');
     ?>
-    <style>
-        html::-webkit-scrollbar {
-            width: 10px;
-        }
 
-        html::-webkit-scrollbar-thumb {
-            background-color: #7775;
-            border-radius: 15px;
-        }
-
-
-        html::-webkit-scrollbar-thumb:hover {
-            background-color: #777;
-        }
-
-        html::-webkit-scrollbar-track {
-            background-color: #333;
-        }
-    </style>
     <div id="carouselExampleIndicators" class="carousel slide my-carousel" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
