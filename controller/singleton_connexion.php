@@ -16,7 +16,7 @@ class Database
             $this->connexionbdd = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->user, $this->pass);
             $this->connexionbdd->exec("set names utf8mb4");
         } catch (PDOException $e) {
-            echo '<div class="error-bdd">' . "Erreur de connexion à  la base de données !" . '</div>';
+            echo '<div class="error-bdd">' . "Erreur de connexion à la base de données !" . '</div>';
         }
     }
 
@@ -25,7 +25,7 @@ class Database
         trigger_error("Le clonage n'est pas autorisé", E_USER_ERROR);
     }
     
-    // Permet d'instancier la connexion à  la BDD
+    // Permet d'instancier la connexion à la BDD
     public static function getInstance()
     {
         //Si pas instancié alors on l'instancie
@@ -38,7 +38,7 @@ class Database
         return $this->connexionbdd;
     }
 }
-// Vérifie si une connexion existe déjà 
+// Vérifie si une connexion existe déjà
 $database = Database::getInstance();
 // connexion
 $db = $database->getConnexion();
