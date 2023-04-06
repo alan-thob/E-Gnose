@@ -55,8 +55,8 @@
     <label for="show-search" class="icons search-icon"><i class="fas fa-search"></i></label>
         <form method="get" action="" class="search-box">
             <input type="search" name="searchdata" id="searchdata" onkeyup="showMovie(this.value)" placeholder="Rechercher un film, une série..." autocomplete="off">
-            <button type="submit" class="go-icon" title="Lancer la rechercher !"><i class="fas fa-search"></i></button>
-            <div id="txtMovie" style="background-color: #171c24; color:aliceblue;"></div>
+            <button type="submit" class="go-icon" title="Lancer la recherche !"><i class="fas fa-search"></i></button>
+            <div class="dropdown--searchbar" id="txtMovie"></div>
         </form>
     </nav>
 </div>

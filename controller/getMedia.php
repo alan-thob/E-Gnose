@@ -14,7 +14,7 @@ if (isset($_GET['searchdata']) && !empty($_GET['searchdata']) || isset($m) && !e
         }
     } else {
         ?>
-        <p>Aucun média trouvé</p>
+        <p>Aucun média trouvé.</p>
         <?php
     }
 }

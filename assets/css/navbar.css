@@ -407,3 +407,31 @@ label.search-icon, .menu-icon {
     filter: drop-shadow(0 0 0.3rem #bdbdbd);
     transition: all 0.3s ease;
 }
+
+/*################################ */
+/*###### DROPDOWN SEARCHBAR ###### */
+/*################################ */
+
+.dropdown--searchbar {
+    background-color: #171c24;
+    color:aliceblue;
+}
+
+.dropdown--searchbar a:hover{
+    text-decoration: none;
+}
+
+.dropdown--searchbar p {
+    padding: 10px 10px 7px 3px;
+    margin: 0 7px 7px 7px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.dropdown--searchbar p:hover {
+    background: #323c4e;
+    border-radius: 5px;
+    padding-left: 0;
+    margin: 0 10px 7px 10px;
+    transition: all 0.3s ease;
+}
