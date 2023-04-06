@@ -90,7 +90,7 @@ require_once('../controller/ControllerConnexion.php');
                                                     <i class="input-icon uil-phone"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
-                                                    <input type='date' name="user_date_naissance" id="user_date_naissance" class="form-style" placeholder="Date de naissance" autocomplete="off" required>
+                                                    <input type="text" name="user_date_naissance" id="user_date_naissance" class="form-style" placeholder="Date de naissance" onfocus="(this.type='date')" onblur="(this.type='text')" autocomplete="off" required>
                                                     <i class="input-icon uil uil-calender"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
