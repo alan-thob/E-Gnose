@@ -9,6 +9,6 @@ $id_film = $_POST["id_film"];
 $delete = $db->prepare('DELETE FROM wishlist WHERE id_user = ? AND id_film = ?');
 $delete->execute([$id_user, $id_film]);
 if($delete){
-    header("Location: https://e-gnose.sfait.fr/index.php");
+    header("Location: https://e-gnose.sfait.fr/view/wishlist.php");
     exit;
 }
