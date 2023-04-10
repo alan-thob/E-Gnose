@@ -28,6 +28,7 @@
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="../assets/css/content-details.css" rel="stylesheet" type="text/css" media="screen">
 
+    <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
     <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
 </head>
 
@@ -48,7 +49,7 @@
     // On va chercher le média à l'aide d'une requéte
     $sql = "SELECT * FROM films WHERE id_film = :id"; // :id = sécurité
 
-    // On prépare la requéte
+    // On prépare la requête
     $requete = $db->prepare($sql);
 
     // On injecte les paramétres en tranformant les informations en entier
@@ -106,7 +107,7 @@
                                     <button type="submit">Ajouter à la wishlist</button>
                                 </form>
                             </section>
-                    <?php }
+                        <?php }
                     } ?>
                     <p>
                         Bonjour, ceci est un test pour les détails

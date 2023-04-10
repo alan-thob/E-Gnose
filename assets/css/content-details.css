@@ -132,7 +132,17 @@ textarea.form-control {
     opacity: 1;
 }
 
-/*################################## */
-/*###### SECTION COMMENTAIRES ###### */
-/*################################## */
+/*############################## */
+/*###### SECTION WISHLIST ###### */
+/*############################## */
 
+.wishlist--button button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+
+div {
+    border: 1px solid red;
+}
