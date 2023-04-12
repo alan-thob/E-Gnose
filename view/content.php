@@ -28,7 +28,6 @@
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="../assets/css/content-details.css" rel="stylesheet" type="text/css" media="screen">
 
-    <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
     <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
 </head>
 
@@ -49,7 +48,7 @@
     // On va chercher le média à l'aide d'une requéte
     $sql = "SELECT * FROM films WHERE id_film = :id"; // :id = sécurité
 
-    // On prépare la requête
+    // On prépare la requéte
     $requete = $db->prepare($sql);
 
     // On injecte les paramétres en tranformant les informations en entier
@@ -107,8 +106,38 @@
                                     <button type="submit">Ajouter à la wishlist</button>
                                 </form>
                             </section>
-                        <?php }
+                    <?php }
                     } ?>
+                    
+                    
+                    
+                    <section>
+                    <h3>Les acteurs :</h3>
+                    <?php 
+                        $acteur = $db->prepare('SELECT * FROM acteurs, personnage, films  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_film = films.id_film AND films.id_film = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
+                        $acteur->bindParam(1, $id, PDO::PARAM_INT);
+                        $acteur->execute();
+                        
+                        if ($acteur->rowCount() > 0) { 
+                            $count = 0;
+                            while($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)){?>
+                            <div>
+                                <ul>
+                                    <li>
+                                        <p><?= $acteurs['acteur_nom'] ?></p>
+                                        <p><?= $acteurs['personnage_nom'] ?></p>
+                                        <p><?= $acteurs['acteur_img'] ?></p>
+                                    </li>
+                                </ul>
+                            </div>
+                    <?php
+                        } 
+                    } 
+                    ?>
+                    
+                    </section>
+                    
+                    
                     <p>
                         Bonjour, ceci est un test pour les détails
                     </p>
