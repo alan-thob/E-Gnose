@@ -24,7 +24,6 @@ class Film
         $films->execute();
         if ($films->rowCount() > 0) {
             while ($film = $films->fetch()) {
-                $id_film = $film['id_film'];
                 $film_city = $film['film_city'];
                 $film_titre = $film['film_titre'];
                 $film_description = $film['film_description'];
