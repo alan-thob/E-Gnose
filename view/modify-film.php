@@ -142,6 +142,14 @@ include_once('../_navbar/navbar.php');
             }
             $administration->ModifyFilm();
             ?>
+        </div>
+    </div>
+</section>
+
+<?php
+include_once('../_footer/footer.php');
+?>
+
 </body>
 
 </html>

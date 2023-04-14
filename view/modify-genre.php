@@ -99,6 +99,7 @@ include_once('../_navbar/navbar.php');
 <?php
 include_once('../_footer/footer.php');
 ?>
+
 </body>
 
 </html>
