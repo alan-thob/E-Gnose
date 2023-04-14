@@ -66,6 +66,10 @@ if (!$result) {
 
 <body class="unselectable">
 
+<?php
+include_once('../_navbar/navbar.php');
+?>
+
 <section>
     <div class="container">
         <div class="title">
@@ -73,27 +77,25 @@ if (!$result) {
         </div>
 
 
-        <?php
-        include_once('../_navbar/navbar.php');
-        ?>
+        <div class="user_infos--container">
 
-        <?php if ($result->rowCount() == 0) : ?>
-            <p>Votre wishlist est vide</p>
-        <?php else : ?>
-            <ul>
-                <?php while ($row = $result->fetch()) : ?>
-                    <li>
-                        <?php echo $row['film_titre']; ?>
-                        <form method="POST" action="../controller/remove_from_wishlist.php">
-                            <input type="hidden" name="id_film" value="<?php echo $row['id_film']; ?>">
-                            <button type="submit">Retirer</button>
-                        </form>
-                    </li>
-                <?php endwhile; ?>
-            </ul>
-        <?php endif; ?>
-
-        <a href="https://e-gnose.sfait.fr/index.php">Retour à la liste des films</a>
+            <?php if ($result->rowCount() == 0) : ?>
+                <h2 class="text-center">Votre wishlist est vide</h2>
+                <input class="subscribe__btn" type="button" onclick="history.back(-1)" value="Retourner en arrière"/>
+            <?php else : ?>
+                <ul>
+                    <?php while ($row = $result->fetch()) : ?>
+                        <li>
+                            <?php echo $row['film_titre']; ?>
+                            <form method="POST" action="../controller/remove_from_wishlist.php">
+                                <input type="hidden" name="id_film" value="<?php echo $row['id_film']; ?>">
+                                <button type="submit">Retirer</button>
+                            </form>
+                        </li>
+                    <?php endwhile; ?>
+                </ul>
+            <?php endif; ?>
+        </div>
     </div>
 </section>
 </body>

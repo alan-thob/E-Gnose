@@ -41,3 +41,31 @@ section {
     filter: brightness(1.10);
     font-weight: 900;
 }
+
+.user_infos--container {
+    text-align: center;
+    background: rgb(7, 30, 83, 0.5);
+    padding: 60px 0;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3vh;
+    border-radius: 10px;
+}
+
+.user_infos--container .subscribe__btn {
+    font-weight: 500;
+    font-size: 20px;
+    padding: 6px;
+    border-radius: 25px;
+    color: #fff;
+    background: linear-gradient(90deg, rgb(7, 30, 83, 1), rgb(21, 192, 237, 0.5));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    margin: 20px auto 0 auto;
+    width: 13rem;
+    cursor: pointer;
+}
