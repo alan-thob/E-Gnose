@@ -47,6 +47,7 @@ include_once('../_navbar/navbar.php');
         <div class="user_infos--container">
             <p>Sélectionnez l'utilisateur à modifier :</p>
             <form action="" method="post">
+
                 <?php
                 // On récupère tout le contenu de la table clients
 
@@ -55,7 +56,7 @@ include_once('../_navbar/navbar.php');
                 global $db;
                 ?>
                 <select id="id" name="id">
-                    <option disabled selected> Sélectionner un utilisateur </option>
+                    <option disabled selected> Sélectionner un utilisateur</option>
                     <?php
                     $stmt = $db->prepare("SELECT id_user, user_nom FROM users");
                     $stmt->execute();
@@ -70,25 +71,54 @@ include_once('../_navbar/navbar.php');
             </form>
 
             <?php
-            echo'<hr>';
+            echo '<hr>';
             if (isset($_POST['id'])) {
                 $req = $db->prepare("SELECT * FROM users WHERE id_user = ?");
                 $req->bindParam(1, $_POST['id'], PDO::PARAM_INT);
                 $req->execute();
                 $donnees = $req->fetch(PDO::FETCH_ASSOC);
-                echo "Vous êtes en train de modifier le compte de : " . $donnees['user_nom'] . ' [' . $_POST['id'] .']' . "<br>";
+                echo "Vous êtes en train de modifier le compte de : " . $donnees['user_nom'] . ' [ID:' . $_POST['id'] . ']' . "<br>";
                 echo '<form action="" method="post">';
                 // On affiche chaque entrée une à une
 
                 echo '<input type="hidden" name="id_user" value="' . $donnees['id_user'] . '">';
-                echo '<label for="user_nom">Nom :</label><input type="text" name="user_nom" value="' . $donnees['user_nom'] . '" required><br>';
-                echo '<label for="user_email">Email :</label><input type="email" name="user_email" value="' . $donnees['user_email'] . '" required><br>';
-                echo '<label for="user_role">Rôle :</label><input type="number" name="user_role" value="' . $donnees['user_role'] . '" min="1" max="3" required><br>';
-                echo '<label for="user_telephone">Téléphone :</label><input type="text" name="user_telephone" value="' . $donnees['user_telephone'] . '" required><br>';
-                echo '<label for="user_date_naissance">Date de naissance :</label><input type="date" name="user_date_naissance" value="' . $donnees['user_date_naissance'] . '" required><br>';
-                echo '<label for="user_value">Valeur :</label><input type="number" name="user_value" value="' . $donnees['user_value'] . '" min="0" max="1" required><br>';
-                echo '<label for="id_abonnement">ID d\'abonnement :</label><input type="number" name="id_abonnement" value="' . $donnees['id_abonnement'] . '" min="1" max="3" required><br>';
-                echo "<input type='submit' value='Modifier' /><br />";
+
+                echo '<div class="form-group">
+                <label for="user_nom">Nom</label>
+                    <input type="text" class="form-control" name="user_nom" value="' . $donnees['user_nom'] . '" required>
+                </div>
+
+                <div class="form-group">
+                <label for="user_email">Email</label>
+                    <input type="email" class="form-control" name="user_email" value="' . $donnees['user_email'] . '" required>
+                </div>
+
+                <div class="form-group">
+                <label for="user_role">Rôle</label>
+                    <input type="number" class="form-control" name="user_role" value="' . $donnees['user_role'] . '" min="1" max="3" required>
+                </div>
+
+                <div class="form-group">
+                <label for="user_telephone">Téléphone</label>
+                    <input type="text" class="form-control" name="user_telephone" value="' . $donnees['user_telephone'] . '" required>
+                </div>
+
+                <div class="form-group">
+                <label for="user_date_naissance">Date de naissance</label>
+                    <input type="date" class="form-control" name="user_date_naissance" value="' . $donnees['user_date_naissance'] . '" required>
+                </div>
+
+                <div class="form-group">
+                <label for="user_value">Valeur</label>
+                    <input type="number" class="form-control" name="user_value" value="' . $donnees['user_value'] . '" min="0" max="1" required>
+                </div>
+
+                <div class="form-group">
+                <label for="id_abonnement">ID d\'abonnement</label>
+                    <input type="number" class="form-control" name="id_abonnement" value="' . $donnees['id_abonnement'] . '" min="1" max="3" required>
+                </div>';
+
+                echo '<input class="subscribe__btn" type="submit" value="Modifier"/>';
                 echo "</form>";
             }
             $administration->ModifyUser();

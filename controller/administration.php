@@ -51,9 +51,9 @@ class Administration
                 $_POST['film_value'], $_POST['id_film']
             ));
             if ($modify) {
-                echo "modification réussi sur l'id : <b>" . $_POST['id_film'] . ' - ' . $_POST['film_titre'] . "</b>";
+                echo "<p style='color: #15cf15;'>Les modifications du média <span style='font-weight: bold;'>" . $_POST['film_titre'] . " [" . $_POST['id_film'] . "] </span>" . "ont été effectuées avec succès !</p> ";
             } else {
-                echo "echec de la modification";
+                echo "<p style='color: #ff394c;'>Les modifications du média <span style='font-weight: bold;'>" . $_POST['film_titre'] . " [" . $_POST['id_film'] . "] </span>" . "n'ont pues être effectuées !</p> ";
             }
         }
     }
@@ -69,9 +69,9 @@ class Administration
                 $_POST['id_abonnement'], $_POST['id_user']
             ));
             if ($modify) {
-                echo "modification réussi sur l'id : <b>" . $_POST['id_user'] . ' - ' . $_POST['user_nom'] . "</b>";
+                echo "<p style='color: #15cf15;'>Les modifications de l'utilisateur <span style='font-weight: bold;'>" . $_POST['user_nom'] . " [" . $_POST['id_user'] . "] </span>" . "ont été effectuées avec succès !</p> ";
             } else {
-                echo "echec de la modification";
+                echo "<p style='color: #ff394c;'>Les modifications de l'utilisateur <span style='font-weight: bold;'>" . $_POST['user_nom'] . " [" . $_POST['id_user'] . "] </span>" . "n'ont pues être effectuées !</p> ";
             }
         }
     }
@@ -85,9 +85,9 @@ class Administration
             ));
 
             if ($modify) {
-                echo "modification réussi sur l'id : <b>" . $_POST['id_genre'] . ' - ' . $_POST['genre'] . "</b>";
+                echo "<p style='color: #15cf15;'>La modification du genre <span style='font-weight: bold;'>" . $_POST['genre'] . " [" . $_POST['id_genre'] . "] </span>" . "a été effectuée avec succès !</p> ";
             } else {
-                echo "echec de la modification";
+                echo "<p style='color: #ff394c;'>La modification du genre <span style='font-weight: bold;'>" . $_POST['genre'] . " [" . $_POST['id_genre'] . "] </span>" . "n'a pue être effectuée !</p> ";
             }
         }
     }

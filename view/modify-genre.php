@@ -34,45 +34,70 @@
 
 <body class="unselectable">
 
-<p>Veuillez selectionner l'immatriculation de l'embarcation à modifier:</p>
-<form action="" method='post'>
-    <?php
-    // On récupere tout le contenu de la table clients
+<?php
+include_once('../_navbar/navbar.php');
+?>
 
-    require_once("../controller/singleton_connexion.php");
-    require_once("../controller/administration.php");
-    global $db; ?>
-    <select id="id" name="id">
-        <?php
-        $stmt = $db->query("SELECT id_genre, genre FROM genres");
-        $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($result as $row) {
-            echo '<option value="' . $row['id_genre'] . '">' . $row['id_genre'] . ' - ' . $row['genre'] . '</option>';
-        } ?>
-    </select>
-    <input type="submit" value="Valider"/><br/>
-</form>
+<section>
+    <div class="container">
+        <div class="title">
+            <h1>Modifier un genre</h1>
+        </div>
+
+        <div class="user_infos--container">
+            <p>Sélectionnez le genre à modifier :</p>
+            <form action="" method='post'>
+
+                <?php
+                // On récupere tout le contenu de la table clients
+
+                require_once("../controller/singleton_connexion.php");
+                require_once("../controller/administration.php");
+                global $db; ?>
+                <select id="id" name="id">
+                    <option disabled selected> Sélectionner un genre</option>
+                    <?php
+                    $stmt = $db->query("SELECT id_genre, genre FROM genres");
+                    $stmt->execute();
+                    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($result as $row) {
+                        echo '<option value="' . $row['id_genre'] . '">' . $row['id_genre'] . ' - ' . $row['genre'] . '</option>';
+                    }
+                    ?>
+                </select>
+
+                <input class="subscribe__btn" type="submit" value="Valider"/>
+            </form>
+
+            <?php
+            if (isset($_POST['id'])) {
+                $req = $db->prepare("SELECT * FROM genres WHERE id_genre = ?");
+                $req->bindParam(1, $_POST['id'], PDO::PARAM_INT);
+                $req->execute();
+                $donnees = $req->fetch(PDO::FETCH_ASSOC);
+
+                echo "Vous êtes en train de modifier le genre : " . $donnees['genre'] . ' [ID:' . $_POST['id'] . ']' . "<br>";
+                echo '<form action="" method="post">';
+                // On affiche chaque entrée une à une
+
+                echo '<input type="hidden" name="id_genre" value="' . $donnees['id_genre'] . '">';
+
+                echo '<div class="form-group">
+                <label for="genre">Genre</label>
+                    <input type="text" class="form-control" name="genre" value="' . $donnees['genre'] . '" required>
+                </div>';
+
+                echo '<input class="subscribe__btn" type="submit" value="Modifier">';
+                echo "</form>";
+            }
+            $administration->ModifyGenre();
+            ?>
+        </div>
+    </div>
+</section>
 
 <?php
-if (isset($_POST['id'])) {
-    $req = $db->prepare("SELECT * FROM genres WHERE id_genre = ?");
-    $req->bindParam(1, $_POST['id'], PDO::PARAM_INT);
-    $req->execute();
-    $donnees = $req->fetch(PDO::FETCH_ASSOC);
-
-    echo "Vous êtes entrain de modifier : " . $_POST['id'] . ' - ' . $donnees['genre'] . "</br>";
-    echo '<form action="" method="post">';
-    // On affiche chaque entrée une à une
-
-    echo '<input type="text" name="id_genre" value="' . $donnees['id_genre'] . '" readonly>' . "<br>";
-    echo '<input type="text" name="genre" value="' . $donnees['genre'] . '" requiered>' . "<br>";
-    echo "<input type='submit' value='modifier' /><br />";
-    echo "</form>";
-}
-$administration->ModifyGenre();
-
-
+include_once('../_footer/footer.php');
 ?>
 </body>
 
