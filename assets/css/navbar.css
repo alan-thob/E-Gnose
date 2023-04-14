@@ -155,6 +155,7 @@ label.search-icon i {
 
 .go-icon i {
     transition: all 0.3s ease;
+    will-change: transform;
 }
 
 .go-icon i:hover {
