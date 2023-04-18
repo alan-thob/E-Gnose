@@ -34,7 +34,6 @@ require_once('../controller/ControllerConnexion.php');
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="https://e-gnose.sfait.fr/assets/img/favicon.png" rel="icon">
-    <link href="../assets/css/authentification.css" rel="stylesheet" type="text/css" media="screen">
     <link href="../assets/css/user-account.css" rel="stylesheet" type="text/css" media="screen">
     <link href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css' rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">

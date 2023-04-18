@@ -329,3 +329,8 @@ h6 span {
     background-color: #fff;
     border-radius:5px;
 }
+
+
+.uil-at:before, .uil-lock-alt:before {
+    line-height: 2em;
+}
