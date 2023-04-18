@@ -23,8 +23,10 @@ require_once('../controller/ControllerConnexion.php');
     <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
     <title>Authentification | e-Gnose</title>
 
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.ico" rel="icon">
+
     <!-- Links -->
-    <link href="https://e-gnose.sfait.fr/assets/img/favicon.png" rel="icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">

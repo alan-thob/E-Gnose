@@ -27,6 +27,9 @@ if($_SESSION['user_role']!=1){
     <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
     <title>Contenu | e-Gnose</title>
 
+    <!-- Favicons -->
+    <link href="assets/img/favicon.ico" rel="icon">
+
     <!-- Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

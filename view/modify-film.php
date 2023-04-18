@@ -21,12 +21,14 @@
     <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
     <title>Modifier un média | e-Gnose</title>
 
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.ico" rel="icon">
+
     <!-- Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link href="https://e-gnose.sfait.fr/assets/img/favicon.png" rel="icon">
     <link href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css' rel="stylesheet">
     <link href="../assets/css/modify-pages.css" rel="stylesheet" type="text/css" media="screen">
 </head>
