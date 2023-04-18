@@ -1,10 +1,13 @@
-<?php session_start();
-require_once("./controller/singleton_connexion.php");
+<?php
+session_start();
+require_once('./controller/singleton_connexion.php');
+
 if (isset($_SESSION['user_nom'])) {
-    echo "Bonjour, " . $_SESSION["user_nom"];
+    echo 'Bonjour, ' . htmlspecialchars($_SESSION['user_nom'], ENT_QUOTES);
 } else {
-    echo "pensez à vous inscrire";
-} ?>
+    echo 'Pensez à vous inscrire';
+}
+?>
 <!doctype html>
 <html lang="fr">
 
