@@ -2,9 +2,13 @@
 require_once("../controller/singleton_connexion.php");
 require_once("../model/comment_model.php");
 
+/**
+ * Cette fonction ajoute un nouveau commentaire dans la base de données
+ */
 function ajout_com() {
     global $db;
 
+    // Vérifier si le formulaire a été soumis et si tous les champs sont remplis
     if (empty($_POST) || !isset($_POST["titre"], $_POST["content"], $_POST["stars"]) || empty($_POST["titre"]) || empty($_POST["content"]) || empty($_POST["stars"])) {
         die("Le formulaire est incomplet");
     }
@@ -13,7 +17,7 @@ function ajout_com() {
     $titre = strip_tags($_POST["titre"]);
     $content = htmlspecialchars($_POST["content"]);
 
-    // Enregistrer les données
+    // Enregistrer les données dans la table commentaires
     $sql = "INSERT INTO `commentaires`(`commentaire_titre`, `commentaire_text`, `commentaire_note`,`commentaire_value`) VALUES (:commentaire_titre, :commentaire_text, :commentaire_note, :commentaire_value)";
     $query = $db->prepare($sql);
     $query->bindValue(":commentaire_titre", $titre, PDO::PARAM_STR);
@@ -21,11 +25,15 @@ function ajout_com() {
     $query->bindValue(":commentaire_note", strval($_POST["stars"]), PDO::PARAM_STR);
     $query->bindValue(":commentaire_value", 1, PDO::PARAM_INT);
 
+    // Vérifier si la requête s'est exécutée avec succès
     if (!$query->execute()) {
         die("Une erreur est survenue lors de l'ajout dans la table commentaires");
     }
 
+    // Récupérer l'identifiant du dernier commentaire inséré
     $id = $db->lastInsertId();
+
+    // Enregistrer les données dans la table laisser
     $sql2 = "INSERT INTO `laisser`(`id_user`, `id_commentaire`, `id_film`, `id_serie`,`id_livre`) VALUES (:id_user, :id_commentaire, :id_film, :id_serie, :id_livre)";
     $query2 = $db->prepare($sql2);
     $query2->bindValue(":id_user", $_SESSION["id_user"], PDO::PARAM_INT);
@@ -34,6 +42,7 @@ function ajout_com() {
     $query2->bindValue(":id_serie", 0, PDO::PARAM_INT);
     $query2->bindValue(":id_livre", 0, PDO::PARAM_INT);
 
+    //Exécute une requête SQL et afficher un message d'erreur si celle-ci échoue
     if (!$query2->execute()) {
         die("Une erreur est survenue lors de l'ajout dans la table laisser");
     }
