@@ -1,55 +1,45 @@
 <?php
 require_once("../controller/singleton_connexion.php");
 require_once("../model/comment_model.php");
-function ajout_com()
-{
+
+function ajout_com() {
     global $db;
-    $id_user = $_SESSION["id_user"];
-    $id_film = $_GET["id"];
 
+    if (empty($_POST) || !isset($_POST["titre"], $_POST["content"], $_POST["stars"]) || empty($_POST["titre"]) || empty($_POST["content"]) || empty($_POST["stars"])) {
+        die("Le formulaire est incomplet");
+    }
 
-    if (!empty($_POST)) {
-        if (isset($_POST["titre"], $_POST["content"], $_POST["stars"]) && !empty($_POST["titre"]) && !empty($_POST["content"]) && !empty($_POST["stars"])) {
-            // Formulaire complet
-            // Récupération des données en les protégeants
-            // On retire les balises du titre
-            $titre = strip_tags($_POST["titre"]);
-            // On neutralise les balises du contenu
-            $content = htmlspecialchars($_POST["content"]);
+    // Récupération des données en les protégeants
+    $titre = strip_tags($_POST["titre"]);
+    $content = htmlspecialchars($_POST["content"]);
 
-            // Enregistrer les données
-            $sql = "INSERT INTO `commentaires`(`commentaire_titre`, `commentaire_text`, `commentaire_note`,`commentaire_value`) VALUES (:commentaire_titre, :commentaire_text, :commentaire_note, :commentaire_value)";
-            // Préparation de la requête
-            $query = $db->prepare($sql);
-            $query->bindValue(":commentaire_titre", $titre, PDO::PARAM_STR);
-            $query->bindValue(":commentaire_text", $content, PDO::PARAM_STR);
-            $query->bindValue(":commentaire_note", strval($_POST["stars"]), PDO::PARAM_STR);
-            $query->bindValue(":commentaire_value", 1, PDO::PARAM_INT);
+    // Enregistrer les données
+    $sql = "INSERT INTO `commentaires`(`commentaire_titre`, `commentaire_text`, `commentaire_note`,`commentaire_value`) VALUES (:commentaire_titre, :commentaire_text, :commentaire_note, :commentaire_value)";
+    $query = $db->prepare($sql);
+    $query->bindValue(":commentaire_titre", $titre, PDO::PARAM_STR);
+    $query->bindValue(":commentaire_text", $content, PDO::PARAM_STR);
+    $query->bindValue(":commentaire_note", strval($_POST["stars"]), PDO::PARAM_STR);
+    $query->bindValue(":commentaire_value", 1, PDO::PARAM_INT);
 
-            // On execute
-            if (!$query->execute()) {
-                die("Une erreur est survenue");
-            } elseif ($query->execute()) {
-                $id = $db->lastInsertId();
-                $sql2 = "INSERT INTO `laisser`(`id_user`, `id_commentaire`, `id_film`, `id_serie`,`id_livre`) VALUES (:id_user, :id_commentaire, :id_film, :id_serie, :id_livre)";
-                // Préparation de la requête
-                $query2 = $db->prepare($sql2);
-                $query2->bindValue(":id_user", $id_user, PDO::PARAM_INT);
-                $query2->bindValue(":id_commentaire", $id, PDO::PARAM_INT);
-                $query2->bindValue(":id_film", $id_film, PDO::PARAM_INT);
-                $query2->bindValue(":id_serie", 0, PDO::PARAM_INT);
-                $query2->bindValue(":id_livre", 0, PDO::PARAM_INT);
-                if (!$query2->execute()) {
-                    die("Une erreur est survenue lors de l'ajout dans la table laisser");
-                }
-            }
-        } else {
-            die("le formulaire est incomplet");
-        }
+    if (!$query->execute()) {
+        die("Une erreur est survenue lors de l'ajout dans la table commentaires");
+    }
+
+    $id = $db->lastInsertId();
+    $sql2 = "INSERT INTO `laisser`(`id_user`, `id_commentaire`, `id_film`, `id_serie`,`id_livre`) VALUES (:id_user, :id_commentaire, :id_film, :id_serie, :id_livre)";
+    $query2 = $db->prepare($sql2);
+    $query2->bindValue(":id_user", $_SESSION["id_user"], PDO::PARAM_INT);
+    $query2->bindValue(":id_commentaire", $id, PDO::PARAM_INT);
+    $query2->bindValue(":id_film", $_GET["id"], PDO::PARAM_INT);
+    $query2->bindValue(":id_serie", 0, PDO::PARAM_INT);
+    $query2->bindValue(":id_livre", 0, PDO::PARAM_INT);
+
+    if (!$query2->execute()) {
+        die("Une erreur est survenue lors de l'ajout dans la table laisser");
     }
 }
-
 ?>
+
 <?php
 if (isset($_SESSION['user_nom'])) {
     ajout_com(); ?>
