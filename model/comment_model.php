@@ -14,10 +14,10 @@ class Commentaire
         if ($req->rowCount() > 0) {
             while ($result = $req->fetch()){
                 echo  "
-                <h1 class='text name'>Titre du commentaire :".strip_tags($result['commentaire_titre'])."</h1>
-                <h6 class='text name'>le commentaire :".strip_tags($result['commentaire_text'])."</h6>
-                <p>Le nombre d'étoiles :" .$result['commentaire_note']."</p><br>
-                <p>Le commentaire a été laissé par :".$result['user_nom']."</p><br>";
+                <p>Auteur(e) : ".$result['user_nom']."</p>
+                <h6 class='text name'>".strip_tags($result['commentaire_text'])."</h6>
+                <p>Note attribuée : " .$result['commentaire_note']. " étoiles." . "</p><br>";
+
             }
         }
     }
