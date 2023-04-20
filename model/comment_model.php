@@ -14,9 +14,13 @@ class Commentaire
         if ($req->rowCount() > 0) {
             while ($result = $req->fetch()){
                 echo  "
-                <p>Auteur(e) : ".$result['user_nom']."</p>
-                <h6 class='text name'>".strip_tags($result['commentaire_text'])."</h6>
-                <p>Note attribuée : " .$result['commentaire_note']. " étoiles." . "</p><br>";
+                <div class='container'>
+                <div class='user_feedback--container'>
+                <p>Auteur(e) : " . $result['user_nom'] . "</p>
+                <h6 class='text name'>" . strip_tags($result['commentaire_text']) . "</h6>
+                <p>Note attribuée : " . $result['commentaire_note'] . " étoiles." . "</p><br>
+                </div>
+                </div>";
 
             }
         }
