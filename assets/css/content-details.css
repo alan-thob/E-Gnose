@@ -171,5 +171,6 @@ textarea.form-control {
 .user_feedback--container {
     background: rgb(7, 30, 83, 0.5);
     border-radius: 10px;
-    padding: 0 0 0 15px
+    padding: 0 0 0 15px;
+    margin: 0 0 15px 0;
 }
