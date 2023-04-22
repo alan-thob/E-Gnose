@@ -71,13 +71,13 @@ if (!$result) {
 
     <section>
         <div class="container">
+        
             <div class="title">
                 <h1>Ma wishlist</h1>
             </div>
 
-
             <div class="user_infos--container">
-
+            
                 <?php if ($result->rowCount() == 0) : ?>
                     <h2 class="text-center">Votre wishlist est vide</h2>
                     <input class="subscribe__btn" type="button" onclick="history.back(-1)" value="Retourner en arrière" />
