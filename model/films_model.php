@@ -44,6 +44,9 @@ class Film
                         <div class='infos--content'>
                             <h1> $film_titre ($film_date[0])</h1>
                             <p>Réalisateur : $film_realisateur </p>
+                            <div class='play-trailer-button'>
+                                <a class='play-trailer' href='#'>Lire</a>
+                            </div>
                             <p>Duree : $film_duree (min)</p>
                             <div class='stars'>
                                 <p>Avis des internautes </p>

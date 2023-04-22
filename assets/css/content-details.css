@@ -87,6 +87,22 @@ div {
     margin-bottom: 0;
 }
 
+.play-trailer {
+    width: 7rem;
+    height: 2rem;
+}
+
+.play-trailer-button {
+    background-color: red;
+    text-align: center;
+    display: flex;
+    float: right;
+    border-radius: 3px;
+}
+
+.play-trailer-button a:hover {
+    text-decoration: none;
+}
 /*################################ */
 /*###### SECTION FORMULAIRE ###### */
 /*################################ */
