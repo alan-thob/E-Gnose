@@ -33,24 +33,21 @@ if (!$result) {
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="description"
-          content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
-    <meta name="robots" content="index, follow"/>
-    <meta property="og:title" content="Ma wishlist | e-Gnose"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
-    <meta property="og:url" content="https://e-gnose.sfait.fr/view/wishlist.php"/>
-    <meta property="og:description"
-          content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
-    <meta property="og:locale" content="fr_FR"/>
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Ma wishlist | e-Gnose"/>
-    <meta name="twitter:description"
-          content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
-    <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Ma wishlist | e-Gnose" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
+    <meta property="og:url" content="https://e-gnose.sfait.fr/view/wishlist.php" />
+    <meta property="og:description" content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Ma wishlist | e-Gnose" />
+    <meta name="twitter:description" content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
     <title>Ma wishlist | e-Gnose</title>
 
     <!-- Favicons -->
@@ -68,38 +65,38 @@ if (!$result) {
 
 <body class="unselectable">
 
-<?php
-include_once('../_navbar/navbar.php');
-?>
+    <?php
+    include_once('../_navbar/navbar.php');
+    ?>
 
-<section>
-    <div class="container">
-        <div class="title">
-            <h1>Ma wishlist</h1>
+    <section>
+        <div class="container">
+            <div class="title">
+                <h1>Ma wishlist</h1>
+            </div>
+
+
+            <div class="user_infos--container">
+
+                <?php if ($result->rowCount() == 0) : ?>
+                    <h2 class="text-center">Votre wishlist est vide</h2>
+                    <input class="subscribe__btn" type="button" onclick="history.back(-1)" value="Retourner en arrière" />
+                <?php else : ?>
+                    <ul>
+                        <?php while ($row = $result->fetch()) : ?>
+                            <li>
+                                <?php echo $row['film_titre']; ?>
+                                <form method="POST" action="../controller/remove_from_wishlist.php">
+                                    <input type="hidden" name="id_film" value="<?php echo $row['id_film']; ?>">
+                                    <button type="submit">Retirer</button>
+                                </form>
+                            </li>
+                        <?php endwhile; ?>
+                    </ul>
+                <?php endif; ?>
+            </div>
         </div>
-
-
-        <div class="user_infos--container">
-
-            <?php if ($result->rowCount() == 0) : ?>
-                <h2 class="text-center">Votre wishlist est vide</h2>
-                <input class="subscribe__btn" type="button" onclick="history.back(-1)" value="Retourner en arrière"/>
-            <?php else : ?>
-                <ul>
-                    <?php while ($row = $result->fetch()) : ?>
-                        <li>
-                            <?php echo $row['film_titre']; ?>
-                            <form method="POST" action="../controller/remove_from_wishlist.php">
-                                <input type="hidden" name="id_film" value="<?php echo $row['id_film']; ?>">
-                                <button type="submit">Retirer</button>
-                            </form>
-                        </li>
-                    <?php endwhile; ?>
-                </ul>
-            <?php endif; ?>
-        </div>
-    </div>
-</section>
+    </section>
 </body>
 
 </html>
