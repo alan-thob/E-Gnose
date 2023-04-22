@@ -47,9 +47,6 @@ section {
     padding-right: 0;
 }
 
-div {
-    border: 1px solid red;
-}
 /*##################################### */
 /*###### SECTION AFFICHE CONTENU ###### */
 /*##################################### */
@@ -71,7 +68,7 @@ div {
 }
 
 .infos--content {
-    padding: 0 0 30px 0;
+    padding: 0 0 15px 0;
 }
 
 .stars {
@@ -87,22 +84,162 @@ div {
     margin-bottom: 0;
 }
 
-.play-trailer {
-    width: 7rem;
-    height: 2rem;
-}
-
-.play-trailer-button {
-    background-color: red;
-    text-align: center;
+.container-play-btn {
     display: flex;
-    float: right;
-    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.button {
+    display: inline-block;
+    position: relative;
+}
+.button.is-play {
+    background-color: rgb(21, 192, 237, 1);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.button.is-play .button-outer-circle {
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}
+.button.is-play .button-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+}
+.button.is-play .button-icon .triangle {
+    animation: fadeIn 7s ease;
+}
+.button.is-play .button-icon .path {
+    stroke-dasharray: 90;
+    stroke-dashoffset: 0;
+    animation: triangleStroke 3s;
+    animation-timing-function: ease;
+}
+.has-scale-animation {
+    animation: smallScale 3s infinite;
+}
+.has-delay-short {
+    animation-delay: 0.5s;
+}
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-o-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-moz-keyframes triangleStroke {
+    from {
+        stroke-dashoffset: 90;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@-webkit-keyframes triangleStroke {
+    from {
+        stroke-dashoffset: 90;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@-o-keyframes triangleStroke {
+    from {
+        stroke-dashoffset: 90;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes triangleStroke {
+    from {
+        stroke-dashoffset: 90;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@-moz-keyframes smallScale {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@-webkit-keyframes smallScale {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@-o-keyframes smallScale {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@keyframes smallScale {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.5);
+        opacity: 0;
+    }
 }
 
-.play-trailer-button a:hover {
-    text-decoration: none;
-}
 /*################################ */
 /*###### SECTION FORMULAIRE ###### */
 /*################################ */
