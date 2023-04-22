@@ -1,7 +1,6 @@
 <?php session_start(); ?>
 <!doctype html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,7 +17,7 @@
     <meta name="twitter:title" content="Contenu | e-Gnose" />
     <meta name="twitter:description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
     <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
-    <title>Contenu | e-Gnose</title>
+
 
     <!-- Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,6 +65,9 @@
         echo 'Média introuvable';
         exit;
     }
+
+    // On change le nom de l'onglet en fonction du nom du film
+    echo "<title>".$media['film_titre']. " | e-Gnose" . "</title>";
     ?>
 
     <section style="padding-bottom: 0;">
@@ -108,17 +110,17 @@
                             </section>
                     <?php }
                     } ?>
-                    
-                    
-                    
+
+
+
                     <section>
                     <h3>Les acteurs :</h3>
-                    <?php 
+                    <?php
                         $acteur = $db->prepare('SELECT * FROM acteurs, personnage, films  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_film = films.id_film AND films.id_film = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
                         $acteur->bindParam(1, $id, PDO::PARAM_INT);
                         $acteur->execute();
-                        
-                        if ($acteur->rowCount() > 0) { 
+
+                        if ($acteur->rowCount() > 0) {
                             $count = 0;
                             while($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)){?>
                             <div>
@@ -131,13 +133,13 @@
                                 </ul>
                             </div>
                     <?php
-                        } 
-                    } 
+                        }
+                    }
                     ?>
-                    
+
                     </section>
-                    
-                    
+
+
                     <p>
                         Bonjour, ceci est un test pour les détails
                     </p>
