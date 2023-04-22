@@ -7,14 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Contenu | e-Gnose" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
     <meta property="og:url" content="https://e-gnose.sfait.fr/view/content.php" />
     <meta property="og:description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
     <meta property="og:locale" content="fr_FR" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Contenu | e-Gnose" />
     <meta name="twitter:description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
     <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
 
@@ -66,8 +64,10 @@
         exit;
     }
 
-    // On change le nom de l'onglet en fonction du nom du film
+    // On change le nom de l'onglet et des métadonnées en fonction du nom du film
     echo "<title>".$media['film_titre']. " | e-Gnose" . "</title>";
+    echo "<meta property='og:title' content=".$media['film_titre']. ' | e-Gnose' . " />";
+    echo "<meta name='twitter:title' content=".$media['film_titre']. ' | e-Gnose' . " />";
     ?>
 
     <section style="padding-bottom: 0;">
