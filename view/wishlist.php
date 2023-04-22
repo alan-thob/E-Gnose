@@ -12,7 +12,7 @@ global $db;
 // Récupérer la wishlist de l'utilisateur
 $id_user = $_SESSION['id_user'];
 
-$query = "SELECT wishlist.id_wishlist, wishlist.id_film, wishlist.created_at, films.id_film, films.film_titre
+$query = "SELECT wishlist.id_wishlist, wishlist.id_film, wishlist.created_at, films.id_film, films.film_titre, films.film_cover_image
  FROM users, wishlist, films
  WHERE users.id_user = wishlist.id_user
  AND wishlist.id_film = films.id_film
@@ -83,9 +83,14 @@ if (!$result) {
                     <input class="subscribe__btn" type="button" onclick="history.back(-1)" value="Retourner en arrière" />
                 <?php else : ?>
                     <ul>
-                        <?php while ($row = $result->fetch()) : ?>
+                        <?php while ($row = $result->fetch()) : 
+                        ?>
                             <li>
-                                <?php echo $row['film_titre']; ?>
+                                <?php 
+                                echo "<img src='".$row['film_cover_image'] ."' alt='' style='width:200px'></br>"; 
+                                echo $row['film_titre']; 
+                                
+                                ?>
                                 <form method="POST" action="../controller/remove_from_wishlist.php">
                                     <input type="hidden" name="id_film" value="<?php echo $row['id_film']; ?>">
                                     <button type="submit">Retirer</button>

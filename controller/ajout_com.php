@@ -55,60 +55,50 @@ if (isset($_SESSION['user_nom'])) {
     ajout_com(); ?>
     <section class="ftco-section">
         <div class="container">
-            <div class=" justify-content-center">
-                <div class="contact-wrap">
-                    <div class="container" style="padding-left: 0;padding-right: 0;">
-                        <div class="title">
-                            <h1>Ajouter un commentaire</h1>
-                        </div>
-                    <form method="POST" id="contactForm" name="contactForm" class="contactForm">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="titre" id="titre"
-                                           placeholder="Titre">
+            <div class="row justify-content-center">
+                <div class="row justify-content-center">
+                    <div class="contact-wrap">
+                        <h2 class="mb-4 text-center">Ajouter un commentaire</h2>
+                        <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="titre" id="titre" placeholder="Titre">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea name="content" class="form-control" id="content" cols="30" rows="8" placeholder="Votre commentaire ..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="stars"> Nombres d'étoiles</label>
+                                        <input type="number" class="form-control" name="stars" id="stars" max="5.0" min="1.0" maxlength="1.0" step="0.01" placeholder="Nombres d'étoiles">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="submit" value="Publier" class="btn btn-primary">
+                                        <div class="submitting"></div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                                <textarea name="content" class="form-control" id="content" cols="30"
-                                                          rows="8" placeholder="Votre commentaire ..."></textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="stars"> Nombres d'étoiles</label>
-                                    <input type="number" class="form-control" name="stars" id="stars" max="5.0"
-                                           min="1.0" maxlength="1.0" step="0.01"
-                                           placeholder="Nombres d'étoiles">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="submit" value="Publier" class="btn btn-primary">
-                                    <div class="submitting"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 <?php } ?>
 
-    <section>
-        <div>
-            <div class="container" style="padding-left: 0;padding-right: 0;">
-                <div class="title">
-                    <h1>Tous les commentaires</h1>
-                </div>
-
-                <?php
-                $comment->getComment();
-                ?>
-            </div>
-    </section>
+<section>
+    <div>
+        <?php
+        $comment->getComment();
+        ?>
+    </div>
+</section>
 
 
 <?php

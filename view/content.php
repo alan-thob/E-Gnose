@@ -6,29 +6,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta name="description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
     <meta name="robots" content="index, follow" />
     <meta property="og:title" content="Contenu | e-Gnose" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
     <meta property="og:url" content="https://e-gnose.sfait.fr/view/content.php" />
-    <meta property="og:description" content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta property="og:description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
     <meta property="og:locale" content="fr_FR" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Contenu | e-Gnose" />
-    <meta name="twitter:description" content="Films, livres, audios … Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta name="twitter:description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
     <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
     <title>Contenu | e-Gnose</title>
-
-    <!-- Favicons -->
-    <link href="../assets/img/favicon.ico" rel="icon">
 
     <!-- Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <link href="https://e-gnose.sfait.fr/assets/img/favicon.png" rel="icon">
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="../assets/css/content-details.css" rel="stylesheet" type="text/css" media="screen">
+
     <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
 </head>
 
@@ -46,7 +45,7 @@
     }
     // On stock l'id de la ressource dans une variable
     $id = $_GET['id'];
-    // On va chercher le média à l'aide d'une requéte
+    // On va chercher le média Ã  l'aide d'une requéte
     $sql = "SELECT * FROM films WHERE id_film = :id"; // :id = sécurité
 
     // On prépare la requéte
@@ -104,7 +103,7 @@
                             <section>
                                 <form method="POST" action="../controller/add_to_wishlist.php">
                                     <input type="hidden" name="id_film" value="<?php echo $id ?>">
-                                    <button type="submit">Ajouter à la wishlist</button>
+                                    <button type="submit">Ajouter à  la wishlist</button>
                                 </form>
                             </section>
                     <?php }
@@ -127,7 +126,7 @@
                                     <li>
                                         <p><?= $acteurs['acteur_nom'] ?></p>
                                         <p><?= $acteurs['personnage_nom'] ?></p>
-                                        <p><?= $acteurs['acteur_img'] ?></p>
+                                        <img src="<?= $acteurs['acteur_img'] ?>" alt=""/>
                                     </li>
                                 </ul>
                             </div>
