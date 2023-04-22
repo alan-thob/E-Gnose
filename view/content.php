@@ -66,8 +66,8 @@
 
     // On change le nom de l'onglet et des métadonnées en fonction du nom du film
     echo "<title>".$media['film_titre']. " | e-Gnose" . "</title>";
-    echo "<meta property='og:title' content=".$media['film_titre']. ' | e-Gnose' . " />";
-    echo "<meta name='twitter:title' content=".$media['film_titre']. ' | e-Gnose' . " />";
+    echo "<meta property='og:title' content='".$media['film_titre']. " | e-Gnose'.' />";
+    echo "<meta name='twitter:title' content='".$media['film_titre']. " | e-Gnose'.' />";
     ?>
 
     <section style="padding-bottom: 0;">
