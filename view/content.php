@@ -5,15 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta name="description" content="Films, livres, audios | Toute une bibliothéque pour vous divertir, oé que vous soyez, en illimité !" />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
     <meta property="og:url" content="https://e-gnose.sfait.fr/view/content.php" />
-    <meta property="og:description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta property="og:description" content="Films, livres, audios | Toute une bibliothéque pour vous divertir, oé que vous soyez, en illimité !" />
     <meta property="og:locale" content="fr_FR" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
+    <meta name="twitter:description" content="Films, livres, audios | Toute une bibliothéque pour vous divertir, oé que vous soyez, en illimité !" />
     <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
 
 
@@ -42,7 +42,7 @@
     }
     // On stock l'id de la ressource dans une variable
     $id = $_GET['id'];
-    // On va chercher le média Ã  l'aide d'une requéte
+    // On va chercher le média à l'aide d'une requéte
     $sql = "SELECT * FROM films WHERE id_film = :id"; // :id = sécurité
 
     // On prépare la requéte
@@ -54,7 +54,7 @@
     // On exécute
     $requete->execute();
 
-    // On récupère le média
+    // On récupére le média
     $media = $requete->fetch();
     // On vérifie si le média est vide
     if (!$media) {
@@ -95,7 +95,6 @@
                     </button>
                 </div>
                 <div id="panel-details" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="tab-content active-tab-content">
-                    <h3>TEST.</h3>
                     <?php if (isset($_SESSION['id_user'])) {
                         $done = $db->prepare('SELECT * FROM wishlist WHERE id_film = ? AND id_user = ?');
                         $done->bindParam(1, $id, PDO::PARAM_INT);
@@ -105,7 +104,7 @@
                             <section>
                                 <form method="POST" action="../controller/add_to_wishlist.php">
                                     <input type="hidden" name="id_film" value="<?php echo $id ?>">
-                                    <button type="submit">Ajouter à  la wishlist</button>
+                                    <button type="submit">Ajouter à la wishlist</button>
                                 </form>
                             </section>
                     <?php }
