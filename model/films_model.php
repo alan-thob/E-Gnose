@@ -39,7 +39,7 @@ class Film
             if ($film_value == 1) {
                 echo "<div class='details--content__section' style='background: linear-gradient(rgb(21, 192, 237, 0.5), rgb(7, 30, 83, 1)), url($film_back_image);background-repeat: no-repeat !important;background-size: cover;background-position: center;'>
                         <div class='container-play-btn'>
-                            <a class='button is-play' href='#'> <!--Insérer le lien du média-->
+                            <a class='button is-play' href='$film_trailer' target='blank_'> <!--Insérer le lien du média-->
                                 <div class='button-outer-circle has-scale-animation'></div>
                                 <div class='button-outer-circle has-scale-animation has-delay-short'></div>
                                 <div class='button-icon is-play'>
