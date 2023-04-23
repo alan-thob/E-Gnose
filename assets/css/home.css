@@ -32,7 +32,7 @@ body, html {
 /*###### CAROUSEL HEADER ###### */
 /*############################# */
 .carousel-item {
-    height: 67vh;
+    height: 80vh;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
