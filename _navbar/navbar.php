@@ -6,6 +6,9 @@
         <div class="content-navbar">
             <ul class="links">
                 <li><a href="https://e-gnose.sfait.fr/">Accueil</a></li>
+                <li><a href="#">Film</a></li>
+                <li><a href="#">Série</a></li>
+                <li><a href="#">Livre</a></li>
                 <li>
                     <a href="#" class="desktop-link">Catégories</a>
                     <input type="checkbox" id="show-features">
