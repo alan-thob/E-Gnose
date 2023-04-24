@@ -1,6 +1,4 @@
 <?php
-require_once("../controller/singleton_connexion.php");
-
 class Administration
 {
 
@@ -33,10 +31,6 @@ class Administration
     }
 
 
-
-
-
-
     // Modify
     public function ModifyFilm()
     {
@@ -51,9 +45,9 @@ class Administration
                 $_POST['film_value'], $_POST['id_film']
             ));
             if ($modify) {
-                echo "<p style='color: #15cf15;'>Les modifications du média <span style='font-weight: bold;'>" . $_POST['film_titre'] . " [" . $_POST['id_film'] . "] </span>" . "ont été effectuées avec succès !</p> ";
+                echo "modification réussi sur l'id : <b>" . $_POST['id_film'] . ' - ' . $_POST['film_titre'] . "</b>";
             } else {
-                echo "<p style='color: #ff394c;'>Les modifications du média <span style='font-weight: bold;'>" . $_POST['film_titre'] . " [" . $_POST['id_film'] . "] </span>" . "n'ont pues être effectuées !</p> ";
+                echo "echec de la modification";
             }
         }
     }
@@ -69,9 +63,26 @@ class Administration
                 $_POST['id_abonnement'], $_POST['id_user']
             ));
             if ($modify) {
-                echo "<p style='color: #15cf15;'>Les modifications de l'utilisateur <span style='font-weight: bold;'>" . $_POST['user_nom'] . " [" . $_POST['id_user'] . "] </span>" . "ont été effectuées avec succès !</p> ";
+                echo "modification réussi sur l'id : <b>" . $_POST['id_user'] . ' - ' . $_POST['user_nom'] . "</b>";
             } else {
-                echo "<p style='color: #ff394c;'>Les modifications de l'utilisateur <span style='font-weight: bold;'>" . $_POST['user_nom'] . " [" . $_POST['id_user'] . "] </span>" . "n'ont pues être effectuées !</p> ";
+                echo "echec de la modification";
+            }
+        }
+    }
+    public function ModifyUserAccount()
+    {
+        global $db;
+        if (isset($_POST['user_email'])) {
+            $modify = $db->prepare('UPDATE users SET user_nom=?,user_prenom=?, user_email=?,user_address=?,user_city=?,user_country=?,user_cp=?,user_desc=? WHERE id_user=?');
+            $modify->execute(array(
+                $_POST['user_nom'], $_POST['user_prenom'], $_POST['user_email'],
+                $_POST['user_address'], $_POST['user_city'],  $_POST['user_country'],
+                $_POST['user_cp'], $_POST['user_desc'], $_SESSION['id_user']
+            ));
+            if ($modify) {
+                echo "modification réussi sur : <b>" . $_POST['user_nom'] . "</b></br> Veuillez rafraichir la page.";
+            } else {
+                echo "echec de la modification";
             }
         }
     }
@@ -85,16 +96,12 @@ class Administration
             ));
 
             if ($modify) {
-                echo "<p style='color: #15cf15;'>La modification du genre <span style='font-weight: bold;'>" . $_POST['genre'] . " [" . $_POST['id_genre'] . "] </span>" . "a été effectuée avec succès !</p> ";
+                echo "modification réussi sur l'id : <b>" . $_POST['id_genre'] . ' - ' . $_POST['genre'] . "</b>";
             } else {
-                echo "<p style='color: #ff394c;'>La modification du genre <span style='font-weight: bold;'>" . $_POST['genre'] . " [" . $_POST['id_genre'] . "] </span>" . "n'a pue être effectuée !</p> ";
+                echo "echec de la modification";
             }
         }
     }
-
-
-
-
 
 
     // DELETE 
@@ -171,6 +178,82 @@ class Administration
             $req = $db->prepare('DELETE FROM `tag` WHERE id_tag= ?');
             $req->execute(array($_POST['id_tag']));
         }
+    }
+
+
+    //SELECT USER
+    public function SelectUser()
+    {
+            if (isset($_SESSION["id_user"])) {
+                global $db;
+                $req = $db->prepare('SELECT * FROM `users` WHERE id_user= ?');
+                $req->execute(array($_SESSION["id_user"]));
+            }
+
+    }
+    
+    // SELECT FILM
+    public function SelectFilm()
+    {
+            global $db;
+            $req = $db->prepare('SELECT * FROM `films` ');
+            $req->execute();
+    }
+    public function SelectFilmByDateAsc()
+    {
+            global $db;
+            $allRessources = $db->query('SELECT * FROM films WHERE film_value = 1 ORDER BY film_date ASC LIMIT 10');
+            $allRessources->execute();
+    }
+    
+    
+    
+    // SELECT SERIE
+    public function SelectSerie()
+    {
+        global $db;
+        $req = $db->prepare('SELECT * FROM `series` ');
+        $req->execute();
+    }
+    
+    // SELECT LIVRE
+    public function SelectLivre()
+    {
+        global $db;
+        $req = $db->prepare('SELECT * FROM `livres` ');
+        $req->execute();
+    }
+    // SELECT ACTEUR
+    public function SelectActeur()
+    {
+        global $db;
+        $acteur = $db->prepare('SELECT * FROM acteurs, personnage, films  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_film = films.id_film AND films.id_film = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
+        $acteur->bindParam(1, $id, PDO::PARAM_INT);
+        $acteur->execute();
+        if ($acteur->rowCount() > 0) {
+            $count = 0;
+            while ($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)) { ?>
+                <div>
+                    <ul>
+                        <li>
+                            <p><?= $acteurs['acteur_nom'] ?></p>
+                            <p><?= $acteurs['personnage_nom'] ?></p>
+                            <img src="<?= $acteurs['acteur_img'] ?>" alt="" />
+                        </li>
+                    </ul>
+                </div>
+        <?php
+            }
+        }
+    }
+    // SELECT USER INFO
+    public function SelectUserInfo()
+    {
+        global $db;
+        global $donnees;
+        $req = $db->prepare('SELECT * FROM `users` WHERE id_user= ?');
+        $req->execute(array($_SESSION["id_user"]));
+        $donnees = $req->fetch(PDO::FETCH_ASSOC);
     }
 }
 

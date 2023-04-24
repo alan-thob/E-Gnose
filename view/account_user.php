@@ -40,10 +40,14 @@ require_once('../controller/administration.php');
     <?php
     include_once('../_navbar/navbar.php');
     require_once("../controller/administration.php");
+
+    $administration->SelectUserInfo() 
+    
     ?>
+
     <div class="main-content">
         <!-- Header -->
-        <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(https://raw.githubusercontent.com/creativetimofficial/argon-dashboard/gh-pages/assets-old/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+        <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(../assets/img/user-bg.jpg); background-size: cover; background-position: center top;">
             <!-- Mask -->
             <span class="mask bg-gradient-default opacity-8"></span>
             <!-- Header container -->
@@ -88,17 +92,27 @@ require_once('../controller/administration.php');
                             </div>
                             <div class="text-center">
                                 <h3>
-                                    <?= $_SESSION["user_nom"] ?><span class="font-weight-light">, 27</span>
+                                    <?= $donnees['user_prenom'] ." ". $donnees['user_nom']; ?>
                                 </h3>
+                                <?php
+                                if(!empty($donnees['user_city']) || !empty($donnees['user__country'])){
+                                ?>
                                 <div class="h5 font-weight-300">
-                                    <i class="ni location_pin mr-2"></i>Bucharest, Romania
+                                    <i class="ni location_pin mr-2"></i><?= $donnees['user_city']; ?>, <?= $donnees['user_country']; ?>
                                 </div>
+                                <?php 
+                                }
+                                if(!empty($donnees['user_desc'])){
+                                ?>
                                 <div class="h5 mt-4">
-                                    <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+                                    <i class="ni business_briefcase-24 mr-2"></i>Ma petite description :
                                 </div>
                                 <div>
-                                    <i class="ni education_hat mr-2"></i>University of Computer Science
+                                    <i class="ni education_hat mr-2"></i><?= $donnees['user_desc']; ?>
                                 </div>
+                                <?php 
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -110,17 +124,9 @@ require_once('../controller/administration.php');
                                 <div class="col-8">
                                     <h3 class="mb-0">Mon compte</h3>
                                 </div>
-                                <!-- <div class="col-4 text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">Settings</a>
-                </div> -->
                             </div>
                         </div>
                         <div class="card-body">
-                            <?php
-                            global $db;
-                            $req = $db->prepare('SELECT * FROM `users` WHERE id_user= ?');
-                            $req->execute(array($_SESSION["id_user"]));
-                            $donnees = $req->fetch(PDO::FETCH_ASSOC); ?>
                             <!-- On affiche chaque entrée une à une -->
                             <form action="" method="post">
                                 <h6 class="heading-small text-muted mb-4">Vos informations</h6>
@@ -149,6 +155,8 @@ require_once('../controller/administration.php');
                                     </div>
                                 </div>
                                 <hr class="my-4">
+
+
                                 <!-- Address -->
                                 <h6 class="heading-small text-muted mb-4">Où vous contacter ?</h6>
                                 <div class="pl-lg-4">
@@ -182,12 +190,14 @@ require_once('../controller/administration.php');
                                     </div>
                                 </div>
                                 <hr class="my-4">
+
+
                                 <!-- Description -->
                                 <h6 class="heading-small text-muted mb-4">A propos de moi :</h6>
                                 <div class="pl-lg-4">
                                     <div class="form-group focused">
                                         <label>A propos : </label>
-                                        <?= '<input type="textarea" rows="4" id="input-postal-code" name="user_desc" class="form-control form-control-alternative" placeholder="Quelques mots pour vous décrire ..." value="' . $donnees['user_desc'] . '"<br>'; ?>
+                                        <?= '<textarea rows="4" id="input-postal-code" name="user_desc" class="form-control form-control-alternative" placeholder="Quelques mots pour vous décrire ...">' . $donnees['user_desc'] . '</textarea><br>'; ?>
                                     </div>
                                 </div>
                                 <input class="subscribe__btn" type="submit" value="enregistrer les données" />
@@ -199,6 +209,8 @@ require_once('../controller/administration.php');
             </div>
         </div>
     </div>
+
+
     <?php
     include_once('../_footer/footer.php');
     ?>
