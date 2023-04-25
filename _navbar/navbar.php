@@ -6,10 +6,10 @@
         <div class="content-navbar">
             <ul class="links">
                 <li><a href="https://e-gnose.sfait.fr/">Accueil</a></li>
-                <li><a href="#">Film</a></li>
-                <li><a href="#">Série</a></li>
-                <li><a href="#">Livre</a></li>
-                <li>
+                <li><a href="./view/film.php">Films</a></li>
+                <li><a href="./view/serie.php">Séries</a></li>
+                <li><a href="./view/livre.php">Livres</a></li>
+                <!-- <li>
                     <a href="#" class="desktop-link">Catégories</a>
                     <input type="checkbox" id="show-features">
                     <label for="show-features">Catégories</label>
@@ -19,7 +19,7 @@
                         <li><a href="https://e-gnose.sfait.fr/view/categorie.php">Catégories 3</a></li>
                         <li><a href="https://e-gnose.sfait.fr/view/categorie.php">Catégories 4</a></li>
                     </ul>
-                </li>
+                </li> -->
                 <li><a href="https://e-gnose.sfait.fr/view/wishlist.php">Ma wishlist</a></li>
             </ul>
             <div class="logo">
