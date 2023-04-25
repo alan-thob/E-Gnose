@@ -1,13 +1,25 @@
 <?php
 session_start();
+require_once('../controller/singleton_connexion.php');
 
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['id_user'])) {
     header('Location: https://e-gnose.sfait.fr/view/authentification.php');
     exit;
 }
+if (isset($_POST["id_film"])) {
 
-require_once('../controller/singleton_connexion.php');
+    $id_film = $_POST["id_film"];
+
+
+    // Suppression de la wishlist de la base de données
+    $delete = $db->prepare('DELETE FROM wishlist WHERE id_user = ? AND id_film = ?');
+    $delete->execute([$_SESSION['id_user'], $id_film]);
+    if ($delete) {
+        header("Location: https://e-gnose.sfait.fr/view/wishlist.php");
+        exit;
+    }
+}
 global $db;
 // Récupérer la wishlist de l'utilisateur
 $id_user = $_SESSION['id_user'];
@@ -71,27 +83,27 @@ if (!$result) {
 
     <section>
         <div class="container">
-        
+
             <div class="title">
                 <h1>Ma wishlist</h1>
             </div>
 
             <div class="user_infos--container">
-            
+
                 <?php if ($result->rowCount() == 0) : ?>
                     <h2 class="text-center">Votre wishlist est vide</h2>
                     <input class="subscribe__btn" type="button" onclick="history.back(-1)" value="Retourner en arrière" />
                 <?php else : ?>
                     <ul>
-                        <?php while ($row = $result->fetch()) : 
+                        <?php while ($row = $result->fetch()) :
                         ?>
                             <li>
-                                <?php 
-                                echo "<img src='".$row['film_cover_image'] ."' alt='' style='width:200px'></br>"; 
-                                echo $row['film_titre']; 
-                                
+                                <?php
+                                echo "<img src='" . $row['film_cover_image'] . "' alt='' style='width:200px'></br>";
+                                echo $row['film_titre'];
+
                                 ?>
-                                <form method="POST" action="../controller/remove_from_wishlist.php">
+                                <form method="POST" action="">
                                     <input type="hidden" name="id_film" value="<?php echo $row['id_film']; ?>">
                                     <button type="submit">Retirer</button>
                                 </form>
