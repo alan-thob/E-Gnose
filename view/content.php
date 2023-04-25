@@ -1,6 +1,30 @@
-<?php session_start(); ?>
+<?php session_start();
+require_once("../controller/singleton_connexion.php");
+if (isset($_POST["id_film"])) {
+    $id_user = $_SESSION["id_user"];
+    $id_film = $_POST["id_film"];
+    // Suppression de la wishlist de la base de données
+    $done = $db->prepare('SELECT * FROM wishlist WHERE id_film = ? AND id_user = ?');
+    $done->bindParam(1, $id_film, PDO::PARAM_INT);
+    $done->bindParam(2, $id_user, PDO::PARAM_INT);
+    $done->execute();
+
+    if ($done->rowCount() == 0) {
+        $insert = $db->prepare('INSERT INTO wishlist (id_user, id_film) VALUES (?, ?)');
+        $insert->execute([$id_user, $id_film]);
+        if ($insert) {
+            header('Location: https://e-gnose.sfait.fr/view/wishlist.php');
+            exit;
+        }
+    } else {
+        header('Location: https://e-gnose.sfait.fr/view/wishlist.php');
+        exit;
+    }
+}
+?>
 <!doctype html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -32,7 +56,6 @@
 
     <?php
     include_once('../_navbar/navbar.php');
-    require_once("../controller/singleton_connexion.php");
     require_once("../model/films_model.php");
     // On vérifie que le média existe bien en récupérant son ID
     if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -65,9 +88,9 @@
     }
 
     // On change le nom de l'onglet et des métadonnées en fonction du nom du film
-    echo "<title>".$media['film_titre']. " | e-Gnose" . "</title>";
-    echo "<meta property='og:title' content='".$media['film_titre']. " | e-Gnose'.' />";
-    echo "<meta name='twitter:title' content='".$media['film_titre']. " | e-Gnose'.' />";
+    echo "<title>" . $media['film_titre'] . " | e-Gnose" . "</title>";
+    echo "<meta property='og:title' content='" . $media['film_titre'] . " | e-Gnose'.' />";
+    echo "<meta name='twitter:title' content='" . $media['film_titre'] . " | e-Gnose'.' />";
     ?>
 
     <section style="padding-bottom: 0;">
@@ -102,7 +125,7 @@
                         $done->execute();
                         if ($done->rowCount() == 0) { ?>
                             <section>
-                                <form method="POST" action="../controller/add_to_wishlist.php">
+                                <form method="POST" action="">
                                     <input type="hidden" name="id_film" value="<?php echo $id ?>">
                                     <button type="submit">Ajouter à la wishlist</button>
                                 </form>
@@ -113,28 +136,28 @@
 
 
                     <section>
-                    <h3>Les acteurs :</h3>
-                    <?php
+                        <h3>Les acteurs :</h3>
+                        <?php
                         $acteur = $db->prepare('SELECT * FROM acteurs, personnage, films  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_film = films.id_film AND films.id_film = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
                         $acteur->bindParam(1, $id, PDO::PARAM_INT);
                         $acteur->execute();
 
                         if ($acteur->rowCount() > 0) {
                             $count = 0;
-                            while($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)){?>
-                            <div>
-                                <ul>
-                                    <li>
-                                        <p><?= $acteurs['acteur_nom'] ?></p>
-                                        <p><?= $acteurs['personnage_nom'] ?></p>
-                                        <img src="<?= $acteurs['acteur_img'] ?>" alt=""/>
-                                    </li>
-                                </ul>
-                            </div>
-                    <?php
+                            while ($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)) { ?>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <p><?= $acteurs['acteur_nom'] ?></p>
+                                            <p><?= $acteurs['personnage_nom'] ?></p>
+                                            <img src="<?= $acteurs['acteur_img'] ?>" alt="" />
+                                        </li>
+                                    </ul>
+                                </div>
+                        <?php
+                            }
                         }
-                    }
-                    ?>
+                        ?>
 
                     </section>
 
