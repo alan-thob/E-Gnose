@@ -202,7 +202,15 @@ class Administration
     public function SelectFilmByDateAsc()
     {
             global $db;
-            $allRessources = $db->query('SELECT * FROM films WHERE film_value = 1 ORDER BY film_date ASC LIMIT 10');
+            global $allRessources;
+            $allRessources = $db->query('SELECT * FROM films WHERE film_value = 1 ORDER BY film_date DESC LIMIT 10');
+            $allRessources->execute();
+    }
+    public function SelectFilmByPop()
+    {
+            global $db;
+            global $allRessources;
+            $allRessources = $db->query('SELECT * FROM films WHERE film_value = 1 ORDER BY film_popularity DESC LIMIT 10');
             $allRessources->execute();
     }
     
@@ -227,6 +235,7 @@ class Administration
     public function SelectActeur()
     {
         global $db;
+        global $acteur;
         $acteur = $db->prepare('SELECT * FROM acteurs, personnage, films  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_film = films.id_film AND films.id_film = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
         $acteur->bindParam(1, $id, PDO::PARAM_INT);
         $acteur->execute();
