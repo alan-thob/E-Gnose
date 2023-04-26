@@ -226,74 +226,14 @@ require = function (r, e, n) {
                 }
             }]), n
         }(), o = function () {
-            new n(document.querySelector("#carousel0"), {
-                slidesVisible: 3,
-                slidesToScroll: 2,
-                infinite: !0,
-                pagination: !1
-            })
-            new n(document.querySelector("#carousel1"), {
-                slidesVisible: 3,
-                slidesToScroll: 2,
-                infinite: !0,
-                pagination: !1
-            })
-
-            new n(document.querySelector("#carousel2"), {
-                slidesVisible: 3,
-                slidesToScroll: 2,
-                infinite: !0,
-                pagination: !1
-            })
-
-            new n(document.querySelector("#carousel3"), {
-                slidesVisible: 3,
-                slidesToScroll: 2,
-                infinite: !0,
-                pagination: !1
-            })
-
-            new n(document.querySelector("#carousel4"), {
-                slidesVisible: 3,
-                slidesToScroll: 2,
-                infinite: !0,
-                pagination: !1
-            })
-
-            new n(document.querySelector("#carousel5"), {
-                slidesVisible: 3,
-                slidesToScroll: 2,
-                infinite: !0,
-                pagination: !1
-            })
-
-            new n(document.querySelector("#carousel6"), {
-                slidesVisible: 3,
-                slidesToScroll: 2,
-                infinite: !0,
-                pagination: !1
-            })
-
-            new n(document.querySelector("#carousel7"), {
-                slidesVisible: 3,
-                slidesToScroll: 2,
-                infinite: !0,
-                pagination: !1
-            })
-
-            new n(document.querySelector("#carousel8"), {
-                slidesVisible: 3,
-                slidesToScroll: 2,
-                infinite: !0,
-                pagination: !1
-            })
-
-            new n(document.querySelector("#carousel9"), {
-                slidesVisible: 3,
-                slidesToScroll: 2,
-                infinite: !0,
-                pagination: !1
-            })
+            for (let i = 0; i < 10; i++) {
+                new n(document.querySelector(`#carousel${i}`), {
+                    slidesVisible: 3,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    pagination: false
+                })
+            }
         };
         "loading" !== document.readyState && o(), document.addEventListener("DOMContentLoaded", o);
     }, {}]
