@@ -79,7 +79,7 @@ require_once('./controller/singleton_connexion.php');
         <div class="container">
 
             <div class="title">
-                <h3>Titres les plus récent disponible</h3>
+                <h3>Titres les plus récents disponible</h3>
             </div>
             <div id="carousel0">
                 <?php
@@ -112,6 +112,246 @@ require_once('./controller/singleton_connexion.php');
                 <h3>Les mieux notés</h3>
             </div>
             <div id="carousel1">
+                <?php
+                $administration->SelectFilmByPop();
+                if ($allRessources->rowCount() > 0) {
+                    while ($ressources = $allRessources->fetch()) {
+                        echo '<div class="item" style="width: 85%">
+        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+            <div class="item__body">
+                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            </div>
+        </a>
+    </div>';
+                    }
+                } else {
+                    echo "<p>Aucun média trouvé</p>";
+                }
+                ?>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les mieux notés</h3>
+            </div>
+            <div id="carousel2">
+                <?php
+                $administration->SelectFilmByPop();
+                if ($allRessources->rowCount() > 0) {
+                    while ($ressources = $allRessources->fetch()) {
+                        echo '<div class="item" style="width: 85%">
+        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+            <div class="item__body">
+                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            </div>
+        </a>
+    </div>';
+                    }
+                } else {
+                    echo "<p>Aucun média trouvé</p>";
+                }
+                ?>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les mieux notés</h3>
+            </div>
+            <div id="carousel3">
+                <?php
+                $administration->SelectFilmByPop();
+                if ($allRessources->rowCount() > 0) {
+                    while ($ressources = $allRessources->fetch()) {
+                        echo '<div class="item" style="width: 85%">
+        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+            <div class="item__body">
+                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            </div>
+        </a>
+    </div>';
+                    }
+                } else {
+                    echo "<p>Aucun média trouvé</p>";
+                }
+                ?>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les mieux notés</h3>
+            </div>
+            <div id="carousel4">
+                <?php
+                $administration->SelectFilmByPop();
+                if ($allRessources->rowCount() > 0) {
+                    while ($ressources = $allRessources->fetch()) {
+                        echo '<div class="item" style="width: 85%">
+        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+            <div class="item__body">
+                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            </div>
+        </a>
+    </div>';
+                    }
+                } else {
+                    echo "<p>Aucun média trouvé</p>";
+                }
+                ?>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les mieux notés</h3>
+            </div>
+            <div id="carousel5">
+                <?php
+                $administration->SelectFilmByPop();
+                if ($allRessources->rowCount() > 0) {
+                    while ($ressources = $allRessources->fetch()) {
+                        echo '<div class="item" style="width: 85%">
+        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+            <div class="item__body">
+                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            </div>
+        </a>
+    </div>';
+                    }
+                } else {
+                    echo "<p>Aucun média trouvé</p>";
+                }
+                ?>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les mieux notés</h3>
+            </div>
+            <div id="carousel6">
+                <?php
+                $administration->SelectFilmByPop();
+                if ($allRessources->rowCount() > 0) {
+                    while ($ressources = $allRessources->fetch()) {
+                        echo '<div class="item" style="width: 85%">
+        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+            <div class="item__body">
+                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            </div>
+        </a>
+    </div>';
+                    }
+                } else {
+                    echo "<p>Aucun média trouvé</p>";
+                }
+                ?>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les mieux notés</h3>
+            </div>
+            <div id="carousel7">
+                <?php
+                $administration->SelectFilmByPop();
+                if ($allRessources->rowCount() > 0) {
+                    while ($ressources = $allRessources->fetch()) {
+                        echo '<div class="item" style="width: 85%">
+        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+            <div class="item__body">
+                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            </div>
+        </a>
+    </div>';
+                    }
+                } else {
+                    echo "<p>Aucun média trouvé</p>";
+                }
+                ?>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les mieux notés</h3>
+            </div>
+            <div id="carousel8">
+                <?php
+                $administration->SelectFilmByPop();
+                if ($allRessources->rowCount() > 0) {
+                    while ($ressources = $allRessources->fetch()) {
+                        echo '<div class="item" style="width: 85%">
+        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+            <div class="item__body">
+                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            </div>
+        </a>
+    </div>';
+                    }
+                } else {
+                    echo "<p>Aucun média trouvé</p>";
+                }
+                ?>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les mieux notés</h3>
+            </div>
+            <div id="carousel9">
                 <?php
                 $administration->SelectFilmByPop();
                 if ($allRessources->rowCount() > 0) {

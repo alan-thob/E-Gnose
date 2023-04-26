@@ -245,6 +245,55 @@ require = function (r, e, n) {
                 infinite: !0,
                 pagination: !1
             })
+
+            new n(document.querySelector("#carousel3"), {
+                slidesVisible: 3,
+                slidesToScroll: 2,
+                infinite: !0,
+                pagination: !1
+            })
+
+            new n(document.querySelector("#carousel4"), {
+                slidesVisible: 3,
+                slidesToScroll: 2,
+                infinite: !0,
+                pagination: !1
+            })
+
+            new n(document.querySelector("#carousel5"), {
+                slidesVisible: 3,
+                slidesToScroll: 2,
+                infinite: !0,
+                pagination: !1
+            })
+
+            new n(document.querySelector("#carousel6"), {
+                slidesVisible: 3,
+                slidesToScroll: 2,
+                infinite: !0,
+                pagination: !1
+            })
+
+            new n(document.querySelector("#carousel7"), {
+                slidesVisible: 3,
+                slidesToScroll: 2,
+                infinite: !0,
+                pagination: !1
+            })
+
+            new n(document.querySelector("#carousel8"), {
+                slidesVisible: 3,
+                slidesToScroll: 2,
+                infinite: !0,
+                pagination: !1
+            })
+
+            new n(document.querySelector("#carousel9"), {
+                slidesVisible: 3,
+                slidesToScroll: 2,
+                infinite: !0,
+                pagination: !1
+            })
         };
         "loading" !== document.readyState && o(), document.addEventListener("DOMContentLoaded", o);
     }, {}]
