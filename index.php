@@ -1,12 +1,6 @@
 <?php
 session_start();
 require_once('./controller/singleton_connexion.php');
-
-/*if (isset($_SESSION['user_nom'])) {
-    echo 'Bonjour, ' . htmlspecialchars($_SESSION['user_nom'], ENT_QUOTES);
-} else {
-    echo 'Pensez à vous inscrire';
-}*/
 ?>
 <!doctype html>
 <html lang="fr">
@@ -37,7 +31,7 @@ require_once('./controller/singleton_connexion.php');
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link href="assets/css/home.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="./assets/css/home.css" rel="stylesheet" type="text/css" media="screen">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
     <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
@@ -84,22 +78,6 @@ require_once('./controller/singleton_connexion.php');
             <div id="carousel0">
                 <?php
                 $administration->SelectFilmByDateAsc();
-                if ($allRessources->rowCount() > 0) {
-                    while ($ressources = $allRessources->fetch()) {
-                        echo '<div class="item">
-        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
-            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
-            <div class="item__body">
-                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
-                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Voir la suite...</a></div>
-            </div>
-        </a>
-    </div>';
-                    }
-                } else {
-                    echo "<p>Aucun média trouvé</p>";
-                }
                 ?>
             </div>
         </div>
@@ -114,22 +92,6 @@ require_once('./controller/singleton_connexion.php');
             <div id="carousel1">
                 <?php
                 $administration->SelectFilmByPop();
-                if ($allRessources->rowCount() > 0) {
-                    while ($ressources = $allRessources->fetch()) {
-                        echo '<div class="item" style="width: 85%">
-        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
-            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
-            <div class="item__body">
-                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
-                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
-            </div>
-        </a>
-    </div>';
-                    }
-                } else {
-                    echo "<p>Aucun média trouvé</p>";
-                }
                 ?>
             </div>
         </div>
@@ -139,27 +101,11 @@ require_once('./controller/singleton_connexion.php');
         <div class="container">
 
             <div class="title">
-                <h3>Les mieux notés</h3>
+                <h3>Les Films se passant en France</h3>
             </div>
             <div id="carousel2">
                 <?php
-                $administration->SelectFilmByPop();
-                if ($allRessources->rowCount() > 0) {
-                    while ($ressources = $allRessources->fetch()) {
-                        echo '<div class="item" style="width: 85%">
-        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
-            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
-            <div class="item__body">
-                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
-                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
-            </div>
-        </a>
-    </div>';
-                    }
-                } else {
-                    echo "<p>Aucun média trouvé</p>";
-                }
+                $administration->SelectFilmByFr();
                 ?>
             </div>
         </div>
@@ -169,27 +115,11 @@ require_once('./controller/singleton_connexion.php');
         <div class="container">
 
             <div class="title">
-                <h3>Les mieux notés</h3>
+                <h3>Les films d'action</h3>
             </div>
             <div id="carousel3">
                 <?php
-                $administration->SelectFilmByPop();
-                if ($allRessources->rowCount() > 0) {
-                    while ($ressources = $allRessources->fetch()) {
-                        echo '<div class="item" style="width: 85%">
-        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
-            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
-            <div class="item__body">
-                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
-                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
-            </div>
-        </a>
-    </div>';
-                    }
-                } else {
-                    echo "<p>Aucun média trouvé</p>";
-                }
+                $administration->SelectFilmByAction();
                 ?>
             </div>
         </div>
@@ -199,27 +129,11 @@ require_once('./controller/singleton_connexion.php');
         <div class="container">
 
             <div class="title">
-                <h3>Les mieux notés</h3>
+                <h3>Les films d'Aventure</h3>
             </div>
             <div id="carousel4">
                 <?php
-                $administration->SelectFilmByPop();
-                if ($allRessources->rowCount() > 0) {
-                    while ($ressources = $allRessources->fetch()) {
-                        echo '<div class="item" style="width: 85%">
-        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
-            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
-            <div class="item__body">
-                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
-                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
-            </div>
-        </a>
-    </div>';
-                    }
-                } else {
-                    echo "<p>Aucun média trouvé</p>";
-                }
+                $administration->SelectFilmByAventure();
                 ?>
             </div>
         </div>
@@ -229,57 +143,11 @@ require_once('./controller/singleton_connexion.php');
         <div class="container">
 
             <div class="title">
-                <h3>Les mieux notés</h3>
-            </div>
-            <div id="carousel5">
-                <?php
-                $administration->SelectFilmByPop();
-                if ($allRessources->rowCount() > 0) {
-                    while ($ressources = $allRessources->fetch()) {
-                        echo '<div class="item" style="width: 85%">
-        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
-            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
-            <div class="item__body">
-                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
-                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
-            </div>
-        </a>
-    </div>';
-                    }
-                } else {
-                    echo "<p>Aucun média trouvé</p>";
-                }
-                ?>
-            </div>
-        </div>
-    </section>
-
-    <section id="carousel-content">
-        <div class="container">
-
-            <div class="title">
-                <h3>Les mieux notés</h3>
+                <h3>Les Films de Science-Fiction</h3>
             </div>
             <div id="carousel6">
                 <?php
-                $administration->SelectFilmByPop();
-                if ($allRessources->rowCount() > 0) {
-                    while ($ressources = $allRessources->fetch()) {
-                        echo '<div class="item" style="width: 85%">
-        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
-            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
-            <div class="item__body">
-                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
-                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
-            </div>
-        </a>
-    </div>';
-                    }
-                } else {
-                    echo "<p>Aucun média trouvé</p>";
-                }
+                $administration->SelectFilmBySF();
                 ?>
             </div>
         </div>
@@ -289,27 +157,11 @@ require_once('./controller/singleton_connexion.php');
         <div class="container">
 
             <div class="title">
-                <h3>Les mieux notés</h3>
+                <h3>Les Films d'Horreur</h3>
             </div>
             <div id="carousel7">
                 <?php
-                $administration->SelectFilmByPop();
-                if ($allRessources->rowCount() > 0) {
-                    while ($ressources = $allRessources->fetch()) {
-                        echo '<div class="item" style="width: 85%">
-        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
-            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
-            <div class="item__body">
-                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
-                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
-            </div>
-        </a>
-    </div>';
-                    }
-                } else {
-                    echo "<p>Aucun média trouvé</p>";
-                }
+                $administration->SelectFilmByHorror();
                 ?>
             </div>
         </div>
@@ -319,27 +171,11 @@ require_once('./controller/singleton_connexion.php');
         <div class="container">
 
             <div class="title">
-                <h3>Les mieux notés</h3>
+                <h3>Les Films Fantastiques</h3>
             </div>
             <div id="carousel8">
                 <?php
-                $administration->SelectFilmByPop();
-                if ($allRessources->rowCount() > 0) {
-                    while ($ressources = $allRessources->fetch()) {
-                        echo '<div class="item" style="width: 85%">
-        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
-            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
-            <div class="item__body">
-                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
-                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
-            </div>
-        </a>
-    </div>';
-                    }
-                } else {
-                    echo "<p>Aucun média trouvé</p>";
-                }
+                $administration->SelectFilmByFantastique();
                 ?>
             </div>
         </div>
@@ -349,32 +185,30 @@ require_once('./controller/singleton_connexion.php');
         <div class="container">
 
             <div class="title">
-                <h3>Les mieux notés</h3>
+                <h3>Les Films les plus Longs</h3>
             </div>
             <div id="carousel9">
                 <?php
-                $administration->SelectFilmByPop();
-                if ($allRessources->rowCount() > 0) {
-                    while ($ressources = $allRessources->fetch()) {
-                        echo '<div class="item" style="width: 85%">
-        <a href="./view/content.php?id=' . $ressources['id_film'] . '">
-            <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
-            <div class="item__body">
-                <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
-                <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-                <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
-            </div>
-        </a>
-    </div>';
-                    }
-                } else {
-                    echo "<p>Aucun média trouvé</p>";
-                }
+                $administration->SelectFilmByLong();
                 ?>
             </div>
         </div>
     </section>
+    
+    <section id="carousel-content">
+        <div class="container">
 
+            <div class="title">
+                <h3>Les Films les plus Courts</h3>
+            </div>
+            <div id="carousel5">
+                <?php
+                $administration->SelectFilmByCourt();
+                ?>
+            </div>
+        </div>
+    </section>
+    
     <div class="cta--subscribe">
         <h2>Retrouvez vos contenus préférés oû vous voulez, quand vous voulez, en illimité sur <span>e</span>-Gnose.</h2>
         <a class="subscribe__btn" href="#">Je m'abonne !</a>

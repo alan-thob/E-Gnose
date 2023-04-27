@@ -40,6 +40,8 @@ if (isset($_POST["id_film"])) {
     <meta name="twitter:description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
     <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
 
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.ico" rel="icon">
 
     <!-- Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +50,10 @@ if (isset($_POST["id_film"])) {
     <link href="https://e-gnose.sfait.fr/assets/img/favicon.png" rel="icon">
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="../assets/css/content-details.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="../assets/css/carrousel.css" rel="stylesheet" type="text/css" media="screen">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
     <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
 </head>
 
@@ -135,36 +140,39 @@ if (isset($_POST["id_film"])) {
 
 
 
-                    <section>
+                    <section id="carousel-content">
                         <h3>Les acteurs :</h3>
-                        <?php
-                        $acteur = $db->prepare('SELECT * FROM acteurs, personnage, films  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_film = films.id_film AND films.id_film = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
-                        $acteur->bindParam(1, $id, PDO::PARAM_INT);
-                        $acteur->execute();
+                        <div class="container">
 
-                        if ($acteur->rowCount() > 0) {
-                            $count = 0;
-                            while ($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)) { ?>
-                                <div>
-                                    <ul>
-                                        <li>
-                                            <p><?= $acteurs['acteur_nom'] ?></p>
-                                            <p><?= $acteurs['personnage_nom'] ?></p>
-                                            <img src="<?= $acteurs['acteur_img'] ?>" alt="" />
-                                        </li>
-                                    </ul>
-                                </div>
-                        <?php
+                            <?php
+                            $acteur = $db->prepare('SELECT * FROM acteurs, personnage, films  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_film = films.id_film AND films.id_film = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
+                            $acteur->bindParam(1, $id, PDO::PARAM_INT);
+                            $acteur->execute();
+
+                            if ($acteur->rowCount() > 0) {
+                                $count = 0;
+                                while ($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)) { ?>
+
+                                    <div id="carousel">
+                                        <div class="item">
+
+                                            <div class="item__image"><img src="<?= $acteurs['acteur_img'] ?>" alt=""></div>
+                                            <div class="item__body">
+                                                <div class="item__title"><?= $acteurs['acteur_nom'] ?></div>
+                                                <div class="item__description"><?= $acteurs['personnage_nom'] ?></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                            <?php
+                                }
+                            } else {
+                                echo "Aucune données sur les acteurs pour le moment";
                             }
-                        }
-                        ?>
+                            ?>
+                        </div>
 
                     </section>
-
-
-                    <p>
-                        Bonjour, ceci est un test pour les détails
-                    </p>
                 </div>
 
                 <div id="panel-comments" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="tab-content">
@@ -231,6 +239,9 @@ if (isset($_POST["id_film"])) {
 
         }
     </script>
+    
+    <script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="../assets/js/carousel.js" async></script>
 </body>
 
 </html>

@@ -184,46 +184,266 @@ class Administration
     //SELECT USER
     public function SelectUser()
     {
-            if (isset($_SESSION["id_user"])) {
-                global $db;
-                $req = $db->prepare('SELECT * FROM `users` WHERE id_user= ?');
-                $req->execute(array($_SESSION["id_user"]));
-            }
-
+        if (isset($_SESSION["id_user"])) {
+            global $db;
+            $req = $db->prepare('SELECT * FROM `users` WHERE id_user= ?');
+            $req->execute(array($_SESSION["id_user"]));
+        }
     }
-    
+
     // SELECT FILM
     public function SelectFilm()
     {
-            global $db;
-            $req = $db->prepare('SELECT * FROM `films` ');
-            $req->execute();
+        global $db;
+        $req = $db->prepare('SELECT * FROM `films` ');
+        $req->execute();
     }
     public function SelectFilmByDateAsc()
     {
-            global $db;
-            global $allRessources;
-            $allRessources = $db->query('SELECT * FROM films WHERE film_value = 1 ORDER BY film_date DESC LIMIT 10');
-            $allRessources->execute();
+        global $db;
+        $allRessources = $db->query('SELECT * FROM films WHERE film_value = 1 ORDER BY film_date DESC LIMIT 15');
+        $allRessources->execute();
+        if ($allRessources->rowCount() > 0) {
+            while ($ressources = $allRessources->fetch()) {
+                echo '<div class="item" style="width: 85%">
+<a href="./view/content.php?id=' . $ressources['id_film'] . '">
+    <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+    <div class="item__body">
+        <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+        <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+        <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+    </div>
+</a>
+</div>';
+            }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
+        }
     }
     public function SelectFilmByPop()
     {
-            global $db;
-            global $allRessources;
-            $allRessources = $db->query('SELECT * FROM films WHERE film_value = 1 ORDER BY film_popularity DESC LIMIT 10');
-            $allRessources->execute();
+        global $db;
+        $allRessources = $db->query('SELECT * FROM films WHERE film_value = 1 ORDER BY film_popularity DESC LIMIT 15');
+        $allRessources->execute();
+        if ($allRessources->rowCount() > 0) {
+            while ($ressources = $allRessources->fetch()) {
+                echo '<div class="item" style="width: 85%">
+<a href="./view/content.php?id=' . $ressources['id_film'] . '">
+    <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+    <div class="item__body">
+        <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+        <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+        <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+    </div>
+</a>
+</div>';
+            }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
+        }
     }
-    
-    
-    
+    public function SelectFilmByFr()
+    {
+        global $db;
+        $allRessources = $db->query('SELECT * FROM films WHERE film_value = 1 AND film_city="France" ORDER BY film_popularity DESC LIMIT 15');
+        $allRessources->execute();
+        if ($allRessources->rowCount() > 0) {
+            while ($ressources = $allRessources->fetch()) {
+                echo '<div class="item" style="width: 85%">
+<a href="./view/content.php?id=' . $ressources['id_film'] . '">
+    <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+    <div class="item__body">
+        <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+        <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+        <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+    </div>
+</a>
+</div>';
+            }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
+        }
+    }
+
+    public function SelectFilmByAction()
+    {
+        global $db;
+        $allRessources = $db->query('SELECT * FROM films, genre_films, genres WHERE films.id_film = genre_films.id_film AND genre_films.id_genre = genres.id_genre AND genres.id_genre = 18 AND film_value = 1 ORDER BY film_popularity DESC LIMIT 15');
+        $allRessources->execute();
+        if ($allRessources->rowCount() > 0) {
+            while ($ressources = $allRessources->fetch()) {
+                echo '<div class="item" style="width: 85%">
+<a href="./view/content.php?id=' . $ressources['id_film'] . '">
+    <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+    <div class="item__body">
+        <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+        <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+        <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+    </div>
+</a>
+</div>';
+            }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
+        }
+    }
+    public function SelectFilmByAventure()
+    {
+        global $db;
+        $allRessources = $db->query('SELECT * FROM films, genre_films, genres WHERE films.id_film = genre_films.id_film AND genre_films.id_genre = genres.id_genre AND genres.id_genre = 12 AND film_value = 1 ORDER BY film_popularity DESC LIMIT 15');
+        $allRessources->execute();
+        if ($allRessources->rowCount() > 0) {
+            while ($ressources = $allRessources->fetch()) {
+                echo '<div class="item" style="width: 85%">
+<a href="./view/content.php?id=' . $ressources['id_film'] . '">
+    <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+    <div class="item__body">
+        <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+        <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+        <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+    </div>
+</a>
+</div>';
+            }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
+        }
+    }
+    public function SelectFilmBySF()
+    {
+        global $db;
+        $allRessources = $db->query('SELECT * FROM films, genre_films, genres WHERE films.id_film = genre_films.id_film AND genre_films.id_genre = genres.id_genre AND genres.id_genre = 878 AND film_value = 1 ORDER BY film_date DESC LIMIT 15');
+        $allRessources->execute();
+        if ($allRessources->rowCount() > 0) {
+            while ($ressources = $allRessources->fetch()) {
+                echo '<div class="item" style="width: 85%">
+    <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+        <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+        <div class="item__body">
+            <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+            <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+            <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+        </div>
+    </a>
+</div>';
+            }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
+        }
+    }
+    public function SelectFilmByHorror()
+    {
+        global $db;
+        $allRessources = $db->query('SELECT * FROM films, genre_films, genres WHERE films.id_film = genre_films.id_film AND genre_films.id_genre = genres.id_genre AND genres.id_genre = 27 AND film_value = 1 ORDER BY film_date DESC LIMIT 15');
+        $allRessources->execute();
+        if ($allRessources->rowCount() > 0) {
+            while ($ressources = $allRessources->fetch()) {
+                echo '<div class="item" style="width: 85%">
+    <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+        <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+        <div class="item__body">
+            <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+            <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+            <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+        </div>
+    </a>
+</div>';
+            }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
+        }
+    }
+    public function SelectFilmByFantastique()
+    {
+        global $db;
+        $allRessources = $db->query('SELECT * FROM films, genre_films, genres WHERE films.id_film = genre_films.id_film AND genre_films.id_genre = genres.id_genre AND genres.id_genre = 14 AND film_value = 1 ORDER BY film_date DESC LIMIT 15');
+        $allRessources->execute();
+        if ($allRessources->rowCount() > 0) {
+            while ($ressources = $allRessources->fetch()) {
+                echo '<div class="item" style="width: 85%">
+    <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+        <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+        <div class="item__body">
+            <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+            <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+            <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+        </div>
+    </a>
+</div>';
+            }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
+        }
+    }
+    public function SelectFilmByLong()
+    {
+        global $db;
+        $allRessources = $db->query('SELECT * FROM films WHERE film_value = 1 ORDER BY film_duree DESC LIMIT 15');
+        $allRessources->execute();
+        if ($allRessources->rowCount() > 0) {
+            while ($ressources = $allRessources->fetch()) {
+                echo '<div class="item" style="width: 85%">
+    <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+        <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+        <div class="item__body">
+            <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+            <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+            <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+        </div>
+    </a>
+</div>';
+            }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
+        }
+    }
+    public function SelectFilmByCourt()
+    {
+        global $db;
+        $allRessources = $db->query('SELECT * FROM films WHERE film_value = 1 ORDER BY film_duree ASC LIMIT 15');
+        $allRessources->execute();
+        if ($allRessources->rowCount() > 0) {
+            while ($ressources = $allRessources->fetch()) {
+                echo '<div class="item" style="width: 85%">
+    <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+        <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+        <div class="item__body">
+            <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+            <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+            <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+        </div>
+    </a>
+</div>';
+            }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
+        }
+    }
+
+
+
     // SELECT SERIE
     public function SelectSerie()
     {
         global $db;
-        $req = $db->prepare('SELECT * FROM `series` ');
-        $req->execute();
+        $allRessources = $db->prepare('SELECT * FROM `series`  WHERE serie_value = 1 ORDER BY DESC LIMIT 15');
+        $allRessources->execute();
+        if ($allRessources->rowCount() > 0) {
+            while ($ressources = $allRessources->fetch()) {
+                echo '<div class="item" style="width: 85%">
+<a href="./view/content.php?id=' . $ressources['id_serie'] . '">
+    <div class="item__image"><img src="' . $ressources['serie_cover_image'] . '" alt=""></div>
+    <div class="item__body">
+        <div class="item__title">' . strip_tags($ressources['serie_titre']) . '</div>
+    </div>
+</a>
+</div>';
+            }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
+        }
     }
-    
+
     // SELECT LIVRE
     public function SelectLivre()
     {
@@ -251,7 +471,7 @@ class Administration
                         </li>
                     </ul>
                 </div>
-        <?php
+<?php
             }
         }
     }
