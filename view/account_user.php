@@ -47,15 +47,15 @@ require_once('../controller/administration.php');
 
     <div class="main-content">
         <!-- Header -->
-        <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(../assets/img/user-bg.jpg); background-size: cover; background-position: center top;">
+        <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="background-image: url(../assets/img/user-bg.jpg); background-size: cover; background-position: center top;">
             <!-- Mask -->
             <span class="mask bg-gradient-default opacity-8"></span>
             <!-- Header container -->
             <div class="container-fluid d-flex align-items-center">
                 <div class="row">
                     <div class="col-lg-7 col-md-10">
-                        <h1 class="display-2 text-white">Bonjour <?= $_SESSION["user_nom"] ?></h1>
-                        <p class="text-white mt-0 mb-5">Ceci est votre page de profil. Vous pouvez voir vos données personnelles et les modifiers ainsi que changer votre photo <b>(beta)</b></p>
+                        <h1 class="display-2 text-white">Bonjour, <?= $_SESSION["user_nom"] ?>.</h1>
+                        <p class="text-white mt-0 mb-5">Bienvenue sur votre espace client <b>[beta]</b>. Vous pouvez consulter vos données personnelles et les modifier à tout moment !</p>
                     </div>
                 </div>
             </div>
@@ -68,9 +68,7 @@ require_once('../controller/administration.php');
                         <div class="row justify-content-center">
                             <div class="col-lg-3 order-lg-2">
                                 <div class="card-profile-image">
-                                    <a href="#">
-                                        <img src="../assets/img/user_icon.jpg" class="rounded-circle">
-                                    </a>
+                                    <img src="../assets/img/user_icon.jpg" class="rounded-circle" alt="User-photo">
                                 </div>
                             </div>
                         </div>
@@ -129,7 +127,7 @@ require_once('../controller/administration.php');
                         <div class="card-body">
                             <!-- On affiche chaque entrée une à une -->
                             <form action="" method="post">
-                                <h6 class="heading-small text-muted mb-4">Vos informations</h6>
+                                <h6 class="heading-small text-muted mb-4">Vos informations personnelles</h6>
                                 <div class="pl-lg-4">
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -142,7 +140,7 @@ require_once('../controller/administration.php');
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group focused">
-                                                <label class="form-control-label" for="input-first-name">Prenom</label>
+                                                <label class="form-control-label" for="input-first-name">Prénom</label>
                                                 <?= '<input type="text" id="input-first-name" class="form-control form-control-alternative" name="user_prenom" value="' . $donnees['user_prenom'] . '"<br>'; ?>
                                             </div>
                                         </div>
@@ -152,15 +150,7 @@ require_once('../controller/administration.php');
                                                 <?= '<input type="text" id="input-last-name" class="form-control form-control-alternative" name="user_nom" value="' . $donnees['user_nom'] . '" required><br>'; ?>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <hr class="my-4">
 
-
-                                <!-- Address -->
-                                <h6 class="heading-small text-muted mb-4">Où vous contacter ?</h6>
-                                <div class="pl-lg-4">
-                                    <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group focused">
                                                 <label class="form-control-label" for="input-address">Adresse</label>
@@ -183,8 +173,8 @@ require_once('../controller/administration.php');
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
-                                                <label class="form-control-label" for="input-country">Code Postale</label>
-                                                <?= '<input type="number" id="input-postal-code"  class="form-control form-control-alternative" name="user_cp" value="' . $donnees['user_cp'] . '"<br>'; ?>
+                                                <label class="form-control-label" for="input-country">Code Postal</label>
+                                                <?= '<input type="text" id="input-postal-code"  class="form-control form-control-alternative" name="user_cp" value="' . $donnees['user_cp'] . '"<br>'; ?>
                                             </div>
                                         </div>
                                     </div>
@@ -193,14 +183,14 @@ require_once('../controller/administration.php');
 
 
                                 <!-- Description -->
-                                <h6 class="heading-small text-muted mb-4">A propos de moi :</h6>
+                                <h6 class="heading-small text-muted mb-4">À propos de moi :</h6>
                                 <div class="pl-lg-4">
                                     <div class="form-group focused">
-                                        <label>A propos : </label>
+                                        <label>Biographie</label>
                                         <?= '<textarea rows="4" id="input-postal-code" name="user_desc" class="form-control form-control-alternative" placeholder="Quelques mots pour vous décrire ...">' . $donnees['user_desc'] . '</textarea><br>'; ?>
                                     </div>
                                 </div>
-                                <input class="subscribe__btn" type="submit" value="enregistrer les données" />
+                                <input class="save--btn" type="submit" value="Sauvegarder" />
                             </form>
                             <?php $administration->ModifyUserAccount(); ?>
                         </div>
