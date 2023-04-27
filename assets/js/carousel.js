@@ -1,14 +1,20 @@
+// La fonction require permet de charger des modules
 require = function (r, e, n) {
+    // La fonction t est utilisée pour charger un module
     function t(n, o) {
+        // La fonction i est utilisée pour résoudre les dépendances du module
         function i(r) {
             return t(i.resolve(r))
         }
 
+        // La fonction f est utilisée pour récupérer le nom du module à partir de son index
         function f(e) {
             return r[n][1][e] || e
         }
 
+        // Si le module n'est pas déjà chargé, on le charge
         if (!e[n]) {
+            // Si le module n'est pas trouvé, une erreur est renvoyée
             if (!r[n]) {
                 var c = "function" == typeof require && require;
                 if (!o && c) return c(n, !0);
@@ -16,6 +22,7 @@ require = function (r, e, n) {
                 var l = new Error("Cannot find module '" + n + "'");
                 throw l.code = "MODULE_NOT_FOUND", l
             }
+            // On résout les dépendances du module et on l'exporte
             i.resolve = f;
             var a = e[n] = new t.Module;
             r[n][0].call(a.exports, i, a, a.exports)
@@ -23,18 +30,23 @@ require = function (r, e, n) {
         return e[n].exports
     }
 
+    // La fonction o est utilisée pour créer un nouveau module
     function o() {
         this.bundle = t, this.exports = {}
     }
 
+    // La variable u est utilisée pour récupérer la fonction require globale si elle existe
     var u = "function" == typeof require && require;
+    // On charge les modules spécifiés dans le tableau n
     t.Module = o, t.modules = r, t.cache = e, t.parent = u;
     for (var i = 0; i < n.length; i++) t(n[i]);
     return t
 }({
     3: [function (require, module, exports) {
         "use strict";
+        // Une classe nommée t est définie
         var t = function () {
+            // La fonction t est utilisée pour définir les propriétés de la classe
             function t(t, i) {
                 for (var e = 0; e < i.length; e++) {
                     var s = i[e];
@@ -47,6 +59,7 @@ require = function (r, e, n) {
             }
         }();
 
+        // La fonction i est utilisée pour convertir une variable en tableau
         function i(t) {
             if (Array.isArray(t)) {
                 for (var i = 0, e = Array(t.length); i < t.length; i++) e[i] = t[i];
@@ -55,13 +68,17 @@ require = function (r, e, n) {
             return Array.from(t)
         }
 
+        // La fonction e est utilisée pour vérifier que l'objet est une instance de la classe
         function e(t, i) {
             if (!(t instanceof i)) throw new TypeError("Cannot call a class as a function")
         }
 
+// La classe s est définie
         var s = function () {
             function i(t) {
-                e(this, i), t.container.addEventListener("dragstart", function (t) {
+                e(this, i); // On vérifie que l'objet est une instance de la classe
+                // On ajoute des événements d'écoute à l'élément container
+                t.container.addEventListener("dragstart", function (t) {
                     return t.preventDefault()
                 }), t.container.addEventListener("mousedown", this.startDrag.bind(this)), t.container.addEventListener("touchstart", this.startDrag.bind(this)), window.addEventListener("mousemove", this.drag.bind(this)), window.addEventListener("touchmove", this.drag.bind(this)), window.addEventListener("touchend", this.endDrag.bind(this)), window.addEventListener("mouseup", this.endDrag.bind(this)), window.addEventListener("touchcancel", this.endDrag.bind(this)), this.carousel = t
             }
@@ -69,9 +86,10 @@ require = function (r, e, n) {
             return t(i, [{
                 key: "startDrag", value: function (t) {
                     if (t.touches) {
-                        if (t.touches.length > 1) return;
+                        if (t.touches.length > 1) return; // Si plusieurs touches sont détectées, on arrête
                         t = t.touches[0]
                     }
+                    // On définit l'origine du mouvement et la largeur de l'élément container
                     this.origin = {
                         x: t.screenX,
                         y: t.screenY
@@ -82,9 +100,9 @@ require = function (r, e, n) {
                     if (this.origin) {
                         var i = t.touches ? t.touches[0] : t,
                             e = {x: i.screenX - this.origin.x, y: i.screenY - this.origin.y};
-                        t.touches && Math.abs(e.x) > Math.abs(e.y) && (t.preventDefault(), t.stopPropagation());
+                        t.touches && Math.abs(e.x) > Math.abs(e.y) && (t.preventDefault(), t.stopPropagation()); // Si le mouvement est principalement horizontal, on empêche le défilement de la page
                         var s = -100 * this.carousel.currentItem / this.carousel.items.length;
-                        this.lastTranslate = e, this.carousel.translate(s + 100 * e.x / this.width)
+                        this.lastTranslate = e, this.carousel.translate(s + 100 * e.x / this.width) // On effectue la translation de l'élément container
                     }
                 }
             }, {
