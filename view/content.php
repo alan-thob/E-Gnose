@@ -150,7 +150,6 @@ if (isset($_POST["id_film"])) {
                             $acteur->execute();
 
                             if ($acteur->rowCount() > 0) {
-                                $count = 0;
                                 while ($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)) { ?>
 
                                     <div id="carousel">
@@ -173,6 +172,26 @@ if (isset($_POST["id_film"])) {
                         </div>
 
                     </section>
+
+                    <section>
+                        <h3>Description :</h3>
+                        <?php
+                        $desc = $db->prepare('SELECT films.film_description FROM films WHERE id_film = ?');
+                        $desc->bindParam(1, $id, PDO::PARAM_INT);
+                        $desc->execute();
+                        if ($desc->rowCount() > 0) {
+                            while ($descp = $desc->fetch(PDO::FETCH_ASSOC)) { ?>
+
+                                <div>
+                                    <div class="item__description"><p style="color:#fff;"><?= $descp['film_description'] ?></p></div>
+                                </div>
+                        <?php
+                            }
+                        } else {
+                            echo "Aucune données sur les acteurs pour le moment";
+                        }
+                        ?>
+                    </section>
                 </div>
 
                 <div id="panel-comments" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="tab-content">
@@ -181,7 +200,6 @@ if (isset($_POST["id_film"])) {
             </div>
         </div>
     </section>
-
     <?php
     include_once('../_footer/footer.php');
     ?>
@@ -239,7 +257,7 @@ if (isset($_POST["id_film"])) {
 
         }
     </script>
-    
+
     <script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="../assets/js/carousel.js" async></script>
 </body>
