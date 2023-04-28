@@ -51,9 +51,12 @@ if (isset($_POST["id_film"])) {
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="../assets/css/content-details.css" rel="stylesheet" type="text/css" media="screen">
     <link href="../assets/css/carrousel.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="../assets/css/popup.css" rel="stylesheet" type="text/css" media="screen">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
+    <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
+    <script src="../assets/js/popup.js" defer></script>
     <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
 </head>
 
@@ -102,8 +105,8 @@ if (isset($_POST["id_film"])) {
         <div>
             <?php
             if ($media['film_value'] == 1 && $media['id_film'] == $id) {
-                $film->getFilm();
-            } else {
+                $film->getFilm(); ?>
+            <?php } else {
                 header("Location: ../index.php");
                 exit;
             }
@@ -183,7 +186,9 @@ if (isset($_POST["id_film"])) {
                             while ($descp = $desc->fetch(PDO::FETCH_ASSOC)) { ?>
 
                                 <div>
-                                    <div class="item__description"><p style="color:#fff;"><?= $descp['film_description'] ?></p></div>
+                                    <div class="item__description">
+                                        <p style="color:#fff;"><?= $descp['film_description'] ?></p>
+                                    </div>
                                 </div>
                         <?php
                             }

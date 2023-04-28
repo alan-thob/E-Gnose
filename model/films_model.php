@@ -37,9 +37,10 @@ class Film
                 $film_value = $film['film_value'];
             }
             if ($film_value == 1) {
-                echo "<div class='details--content__section' style='background: linear-gradient(rgb(21, 192, 237, 0.5), rgb(7, 30, 83, 1)), url($film_back_image);background-repeat: no-repeat !important;background-size: cover;background-position: center;'>
+                echo "
+                <div class='details--content__section' style='background: linear-gradient(rgb(21, 192, 237, 0.5), rgb(7, 30, 83, 1)), url($film_back_image);background-repeat: no-repeat !important;background-size: cover;background-position: center;'>
                         <div class='container-play-btn'>
-                            <a class='button is-play' href='$film_trailer' target='blank_'> <!--Insérer le lien du média-->
+                            <button class='button is-play'  onclick=\"show('popup1')\">
                                 <div class='button-outer-circle has-scale-animation'></div>
                                 <div class='button-outer-circle has-scale-animation has-delay-short'></div>
                                 <div class='button-icon is-play'>
@@ -48,7 +49,11 @@ class Film
                                     <path class='path' d='M5,0 L30,15 L5,30z' fill='none' stroke='#fff' stroke-width='1'></path>
                                     </svg>
                                 </div>        
-                            </a>
+                            </button>
+                            <div class='popup' id='popup1'>
+                            <iframe src='$film_trailer' frameborder='0'></iframe>
+                            <div class='blob-txt'><a href='#' onclick=\"hide('popup1')\"><br>Ok!</a></div>
+                        </div>
                         </div>
                     <div class='poster--content'>
                         <div class='infos--content'>
@@ -74,4 +79,3 @@ class Film
     }
 }
 $film = new Film();
-
