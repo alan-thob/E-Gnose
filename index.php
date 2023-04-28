@@ -195,7 +195,7 @@ require_once('./controller/singleton_connexion.php');
         </div>
     </section>
     
-    <section id="carousel-content">
+    <!-- <section id="carousel-content">
         <div class="container">
 
             <div class="title">
@@ -204,6 +204,19 @@ require_once('./controller/singleton_connexion.php');
             <div id="carousel5">
                 <?php
                 $administration->SelectFilmByCourt();
+                ?>
+            </div>
+        </div>
+    </section> -->
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les Series</h3>
+            </div>
+            <div id="carousel5">
+                <?php
+                $administration->SelectSerieByPop();
                 ?>
             </div>
         </div>

@@ -423,15 +423,15 @@ class Administration
 
 
     // SELECT SERIE
-    public function SelectSerie()
+    public function SelectSerieByPop()
     {
         global $db;
-        $allRessources = $db->prepare('SELECT * FROM `series`  WHERE serie_value = 1 ORDER BY DESC LIMIT 15');
+        $allRessources = $db->prepare('SELECT * FROM `series`  WHERE serie_value = 1 ORDER BY serie_popularity DESC LIMIT 15');
         $allRessources->execute();
         if ($allRessources->rowCount() > 0) {
             while ($ressources = $allRessources->fetch()) {
                 echo '<div class="item" style="width: 85%">
-<a href="./view/content.php?id=' . $ressources['id_serie'] . '">
+<a href="./view/content_serie.php?id=' . $ressources['id_serie'] . '">
     <div class="item__image"><img src="' . $ressources['serie_cover_image'] . '" alt=""></div>
     <div class="item__body">
         <div class="item__title">' . strip_tags($ressources['serie_titre']) . '</div>

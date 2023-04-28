@@ -1,17 +1,17 @@
 <?php session_start();
 require_once("../controller/singleton_connexion.php");
-if (isset($_POST["id_film"])) {
+if (isset($_POST["id_serie"])) {
     $id_user = $_SESSION["id_user"];
-    $id_film = $_POST["id_film"];
+    $id_serie = $_POST["id_serie"];
     // Suppression de la wishlist de la base de données
-    $done = $db->prepare('SELECT * FROM wishlist WHERE id_film = ? AND id_user = ?');
-    $done->bindParam(1, $id_film, PDO::PARAM_INT);
+    $done = $db->prepare('SELECT * FROM wishlist WHERE id_serie = ? AND id_user = ?');
+    $done->bindParam(1, $id_serie, PDO::PARAM_INT);
     $done->bindParam(2, $id_user, PDO::PARAM_INT);
     $done->execute();
 
     if ($done->rowCount() == 0) {
-        $insert = $db->prepare('INSERT INTO wishlist (id_user, id_film) VALUES (?, ?)');
-        $insert->execute([$id_user, $id_film]);
+        $insert = $db->prepare('INSERT INTO wishlist (id_user, id_serie) VALUES (?, ?)');
+        $insert->execute([$id_user, $id_serie]);
         if ($insert) {
             header('Location: https://e-gnose.sfait.fr/view/wishlist.php');
             exit;
@@ -64,7 +64,7 @@ if (isset($_POST["id_film"])) {
 
     <?php
     include_once('../_navbar/navbar.php');
-    require_once("../model/films_model.php");
+    require_once("../model/series_model.php");
     // On vérifie que le média existe bien en récupérant son ID
     if (!isset($_GET['id']) || empty($_GET['id'])) {
         // S'il n'existe pas, on le renvoie vers la page de recherche
@@ -74,7 +74,7 @@ if (isset($_POST["id_film"])) {
     // On stock l'id de la ressource dans une variable
     $id = $_GET['id'];
     // On va chercher le média à  l'aide d'une requète
-    $sql = "SELECT * FROM films WHERE id_film = :id"; // :id = sécurité
+    $sql = "SELECT * FROM series WHERE id_serie = :id"; // :id = sécurité
 
     // On prépare la requéte
     $requete = $db->prepare($sql);
@@ -95,17 +95,17 @@ if (isset($_POST["id_film"])) {
         exit;
     }
 
-    // On change le nom de l'onglet et des métadonnées en fonction du nom du film
-    echo "<title>" . $media['film_titre'] . " | e-Gnose" . "</title>";
-    echo "<meta property='og:title' content='" . $media['film_titre'] . " | e-Gnose'.' />";
-    echo "<meta name='twitter:title' content='" . $media['film_titre'] . " | e-Gnose'.' />";
+    // On change le nom de l'onglet et des métadonnées en fonction du nom du serie
+    echo "<title>" . $media['serie_titre'] . " | e-Gnose" . "</title>";
+    echo "<meta property='og:title' content='" . $media['serie_titre'] . " | e-Gnose'.' />";
+    echo "<meta name='twitter:title' content='" . $media['serie_titre'] . " | e-Gnose'.' />";
     ?>
 
     <section style="padding-bottom: 0;">
         <div>
             <?php
-            if ($media['film_value'] == 1 && $media['id_film'] == $id) {
-                $film->getFilm(); ?>
+            if ($media['serie_value'] == 1 && $media['id_serie'] == $id) {
+                $serie->getserie(); ?>
             <?php } else {
                 header("Location: ../index.php");
                 exit;
@@ -127,14 +127,14 @@ if (isset($_POST["id_film"])) {
                 </div>
                 <div id="panel-details" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="tab-content active-tab-content">
                     <?php if (isset($_SESSION['id_user'])) {
-                        $done = $db->prepare('SELECT * FROM wishlist WHERE id_film = ? AND id_user = ?');
+                        $done = $db->prepare('SELECT * FROM wishlist WHERE id_serie = ? AND id_user = ?');
                         $done->bindParam(1, $id, PDO::PARAM_INT);
                         $done->bindParam(2, $_SESSION['id_user'], PDO::PARAM_INT);
                         $done->execute();
                         if ($done->rowCount() == 0) { ?>
                             <section>
                                 <form method="POST" action="">
-                                    <input type="hidden" name="id_film" value="<?php echo $id ?>">
+                                    <input type="hidden" name="id_serie" value="<?php echo $id ?>">
                                     <button type="submit">Ajouter à  la wishlist</button>
                                 </form>
                             </section>
@@ -148,7 +148,7 @@ if (isset($_POST["id_film"])) {
                         <div class="container">
 
                             <?php
-                            $acteur = $db->prepare('SELECT * FROM acteurs, personnage, films  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_film = films.id_film AND films.id_film = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
+                            $acteur = $db->prepare('SELECT * FROM acteurs, personnage, series  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_serie = series.id_serie AND series.id_serie = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
                             $acteur->bindParam(1, $id, PDO::PARAM_INT);
                             $acteur->execute();
 
@@ -179,7 +179,7 @@ if (isset($_POST["id_film"])) {
                     <section>
                         <h3>Description :</h3>
                         <?php
-                        $desc = $db->prepare('SELECT films.film_description FROM films WHERE id_film = ?');
+                        $desc = $db->prepare('SELECT series.serie_description_plus FROM series WHERE id_serie = ?');
                         $desc->bindParam(1, $id, PDO::PARAM_INT);
                         $desc->execute();
                         if ($desc->rowCount() > 0) {
@@ -187,7 +187,7 @@ if (isset($_POST["id_film"])) {
 
                                 <div>
                                     <div class="item__description">
-                                        <p style="color:#fff;"><?= $descp['film_description'] ?></p>
+                                        <p style="color:#fff;"><?= $descp['serie_description_plus'] ?></p>
                                     </div>
                                 </div>
                         <?php
