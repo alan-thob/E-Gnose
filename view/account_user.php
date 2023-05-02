@@ -2,6 +2,8 @@
 require_once("../controller/singleton_connexion.php");
 require_once('../controller/administration.php');
 ?>
+
+
 <!doctype html>
 <html lang="fr">
 
@@ -32,7 +34,10 @@ require_once('../controller/administration.php');
     <link href="../assets/css/authentification.css" rel="stylesheet" type="text/css" media="screen">
     <link href="../assets/css/user-account.css" rel="stylesheet" type="text/css" media="screen">
     <link href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css' rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
 <body class="unselectable">
@@ -183,14 +188,20 @@ require_once('../controller/administration.php');
 
 
                                 <!-- Description -->
-                                <h6 class="heading-small text-muted mb-4">À propos de moi :</h6>
+                                <h6 class="heading-small text-muted mb-4">À propos de moi</h6>
                                 <div class="pl-lg-4">
                                     <div class="form-group focused">
                                         <label>Biographie</label>
                                         <?= '<textarea rows="4" id="input-postal-code" name="user_desc" class="form-control form-control-alternative" placeholder="Quelques mots pour vous décrire ...">' . $donnees['user_desc'] . '</textarea><br>'; ?>
                                     </div>
                                 </div>
-                                <input class="save--btn" type="submit" value="Sauvegarder" />
+                                <div class="text-center">
+                                    <!-- Button HTML (to Trigger Modal) -->
+                                    <a href="#myModal"  data-toggle="modal">Ouvrir popup</a>
+                                </div>
+                                <input class="save--btn " type="submit" value="Sauvegarder" href="#myModal" />
+
+
                             </form>
                             <?php $administration->ModifyUserAccount(); ?>
                         </div>
@@ -200,10 +211,10 @@ require_once('../controller/administration.php');
         </div>
     </div>
 
-
     <?php
     include_once('../_footer/footer.php');
     ?>
+
 
 
 </body>
