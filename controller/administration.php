@@ -80,7 +80,7 @@ class Administration
                 $_POST['user_cp'], $_POST['user_desc'], $_SESSION['id_user']
             ));
             if ($modify) {
-                echo "modification réussi sur : <b>" . $_POST['user_nom'] . "</b></br> Veuillez rafraichir la page.";
+                echo "Modification réussie sur : <b>" . $_POST['user_nom'] . "</b></br> Veuillez rafraichir la page.";
             } else {
                 echo "echec de la modification";
             }
