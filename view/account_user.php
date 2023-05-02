@@ -197,9 +197,9 @@ require_once('../controller/administration.php');
                                 </div>
                                 <div class="text-center">
                                     <!-- Button HTML (to Trigger Modal) -->
-                                    <a href="#myModal"  data-toggle="modal">Ouvrir popup</a>
+                                    <a href="#modal"  data-toggle="modal">Ouvrir popup</a><br>
                                 </div>
-                                <input class="save--btn " type="submit" value="Sauvegarder" href="#myModal" />
+                                <input class="save--btn" type="submit" value="Sauvegarder"/>
 
 
                             </form>

@@ -81,8 +81,7 @@ class Administration
             ));
             if ($modify) {
                 echo "
-                    <!-- Modal HTML -->
-    <div id='myModal' class='modal fade'>
+    <div id='modal' class='modal fade' >
         <div class='modal-dialog modal-confirm'>
             <div class='modal-content'>
                 <div class='modal-header'>
@@ -95,13 +94,31 @@ class Administration
                     <p class='text-center'>Vos nouvelles informations ont été enregistrées avec succès. Vous devrez peut-être rafraichir la page pour les voir apparaitre.</p>
                 </div>
                 <div class='modal-footer'>
-                    <button class='btn btn-success btn-block' data-dismiss='modal'>OK</button>
+                    <button class='btn btn-success btn-block' data-dismiss='modal'>Fermer</button>
                 </div>
             </div>
         </div>
     </div>";
             } else {
-                echo "echec de la modification";
+                echo "
+    <div id='modal' class='modal fade'>
+        <div class='modal-dialog modal-confirm'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <div class='icon-box' style='background: red;'>
+                        <i class='material-icons'>&#xe000;</i>
+                    </div>
+                    <h4 class='modal-title w-100'>Erreur !</h4>
+                </div>
+                <div class='modal-body'>
+                    <p class='text-center'>Une erreur est survenue. Veuillez réitérer votre demande ultérieurement.</p>
+                </div>
+                <div class='modal-footer'>
+                    <button class='btn btn-success btn-block' data-dismiss='modal' style='background: red;'>Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>";
             }
         }
     }
