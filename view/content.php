@@ -55,7 +55,6 @@ if (isset($_POST["id_film"])) {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
-    <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
     <script src="../assets/js/popup.js" defer></script>
     <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
 </head>
@@ -141,41 +140,6 @@ if (isset($_POST["id_film"])) {
                     <?php }
                     } ?>
 
-
-
-                    <section id="carousel-content">
-                        <h3>Les acteurs :</h3>
-                        <div class="container">
-
-                            <?php
-                            $acteur = $db->prepare('SELECT * FROM acteurs, personnage, films  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_film = films.id_film AND films.id_film = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
-                            $acteur->bindParam(1, $id, PDO::PARAM_INT);
-                            $acteur->execute();
-
-                            if ($acteur->rowCount() > 0) {
-                                while ($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)) { ?>
-
-                                    <div id="carousel">
-                                        <div class="item">
-
-                                            <div class="item__image"><img src="<?= $acteurs['acteur_img'] ?>" alt=""></div>
-                                            <div class="item__body">
-                                                <div class="item__title"><?= $acteurs['acteur_nom'] ?></div>
-                                                <div class="item__description"><?= $acteurs['personnage_nom'] ?></div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                            <?php
-                                }
-                            } else {
-                                echo "Aucune données sur les acteurs pour le moment";
-                            }
-                            ?>
-                        </div>
-
-                    </section>
-
                     <section>
                         <h3>Description :</h3>
                         <?php
@@ -190,12 +154,46 @@ if (isset($_POST["id_film"])) {
                                         <p style="color:#fff;"><?= $descp['film_description'] ?></p>
                                     </div>
                                 </div>
-                        <?php
+                                <?php
                             }
                         } else {
                             echo "Aucune données sur les acteurs pour le moment";
                         }
                         ?>
+                    </section>
+
+
+                    <section id="carousel-content">
+                        <h3>Les acteurs :</h3>
+                        <div class="container">
+
+                            <?php
+                            $acteur = $db->prepare('SELECT * FROM acteurs, personnage, films  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_film = films.id_film AND films.id_film = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
+                            $acteur->bindParam(1, $id, PDO::PARAM_INT);
+                            $acteur->execute();
+
+                            if ($acteur->rowCount() > 0) {
+                                while ($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)) { ?>
+
+                                    <div id="carousel0">
+                                        <div class="item">
+
+                                            <div class="item__image"><img src="<?= $acteurs['acteur_img'] ?>" alt=""></div>
+                                            <div class="item__body">
+                                                <div class="item__title"><?= $acteurs['acteur_nom'] ?></div>
+                                                <div class="item__description"><?= $acteurs['personnage_nom'] ?></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+                            } else {
+                                echo "Aucune données sur les acteurs pour le moment";
+                            }
+                            ?>
+                        </div>
+
                     </section>
                 </div>
 
