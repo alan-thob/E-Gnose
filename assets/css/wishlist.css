@@ -45,14 +45,9 @@ section {
 .user_infos--container {
     text-align: center;
     background: rgb(7, 30, 83, 0.5);
-    padding: 60px 0;
     display: flex;
-    align-content: center;
-    align-items: center;
     flex-direction: column;
-    margin-top: 3vh;
     border-radius: 10px;
-    justify-content: center;
 }
 
 .user_infos--container .subscribe__btn {
@@ -87,18 +82,37 @@ ul {
 .ligne {
     display: flex;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px
 }
 
 .film {
-    width: 23%;
+    width: 20%;
     /* ajustez la largeur en fonction de vos besoins */
-    margin-right: 2%;
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    transition: transform .3s;
+}
+
+.film:hover {
+    transform: translate3d(0, -3px, 0)
 }
 
 .film img {
     width: 100%;
     border-radius: 5px; /* ajouter des bords arrondis */
+}
+
+.delete-btn i {
+    font-size: 20px;
+    color: #bd9e5a;
+    filter: brightness(1.10);
+    transition: color 0.2s ease-in-out;
+}
+
+.delete-btn i:hover {
+    color: #ff0000;
 }

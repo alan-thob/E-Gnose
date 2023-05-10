@@ -74,8 +74,8 @@ if (!$result) {
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="../assets/css/wishlist.css" rel="stylesheet" type="text/css" media="screen">
-
     <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
+    <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body class="unselectable">
@@ -103,11 +103,12 @@ include_once('../_navbar/navbar.php');
                         <div class="ligne">
                     <?php endif; ?>
                     <div class="film">
-                        <img src="<?php echo $row['film_cover_image']; ?>" alt="<?php echo $row['film_titre']; ?>">
+                        <!-- /!\ Lien a changer au clic sur l'image du média /!\ -->
+                        <a href="../view/content.php?id=' . $ressources['id_film'] . '"><img src="<?php echo $row['film_cover_image']; ?>" alt="<?php echo $row['film_titre']; ?>"></a>
                         <p><?php echo $row['film_titre']; ?></p>
-                        <form method="POST" action="">
+                        <form id="wishlist-form" method="POST" action="">
                             <input type="hidden" name="id_film" value="<?php echo $row['id_film']; ?>">
-                            <button type="submit">Retirer</button>
+                            <a class="delete-btn" href="#" onclick="submitForm();"><i class="fas fa-trash"></i></a>
                         </form>
                     </div>
                     <?php if (($count + 1) % 4 == 0) : ?>
@@ -122,6 +123,18 @@ include_once('../_navbar/navbar.php');
         <?php endif; ?>
     </div>
 </section>
+
+<?php
+include_once('../_footer/footer.php');
+?>
+
+<script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script>
+    function submitForm() {
+        document.getElementById("wishlist-form").submit();
+    }
+</script>
+
 </body>
 
 </html>
