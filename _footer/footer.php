@@ -4,7 +4,7 @@
         <div class="button-footer">
             <a href="#">Conditions d'utilisation et Politique de confidentialité</a> <span>|</span> <a href="#">Avertissement relatif aux cookies</a>
         </div>
-        <p class="text-center">Fait avec ♡ par Alan THOB et Kyllian DIOCHON</p>
+        <p class="text-center">Fait avec <i class="fa-sharp fa-solid fa-heart" style="color: red"></i> par Alan THOB et Kyllian DIOCHON</p>
     </div>
 </div>
 

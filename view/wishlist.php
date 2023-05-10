@@ -108,7 +108,7 @@ include_once('../_navbar/navbar.php');
                         <p><?php echo $row['film_titre']; ?></p>
                         <form id="wishlist-form" method="POST" action="">
                             <input type="hidden" name="id_film" value="<?php echo $row['id_film']; ?>">
-                            <a class="delete-btn" href="#" onclick="submitForm();"><i class="fas fa-trash"></i></a>
+                            <a class="delete-btn" title="Supprimer de la wishlist." href="#" onclick="submitForm();"><i class="fas fa-trash"></i></a>
                         </form>
                     </div>
                     <?php if (($count + 1) % 4 == 0) : ?>
