@@ -10,8 +10,7 @@ if (!isset($_SESSION['id_user'])) {
 if (isset($_POST["id_film"])) {
 
     $id_film = $_POST["id_film"];
-
-
+    
     // Suppression de la wishlist de la base de données
     $delete = $db->prepare('DELETE FROM wishlist WHERE id_user = ? AND id_film = ?');
     $delete->execute([$_SESSION['id_user'], $id_film]);
@@ -104,11 +103,11 @@ include_once('../_navbar/navbar.php');
                     <?php endif; ?>
                     <div class="film">
                         <!-- /!\ Lien a changer au clic sur l'image du média /!\ -->
-                        <a href="../view/content.php?id=' . $ressources['id_film'] . '"><img src="<?php echo $row['film_cover_image']; ?>" alt="<?php echo $row['film_titre']; ?>"></a>
+                        <a href="../view/content.php?id=<?php echo $row['id_film'] ?>"><img src="<?php echo $row['film_cover_image']; ?>" alt="<?php echo $row['film_titre']; ?>"></a>
                         <p><?php echo $row['film_titre']; ?></p>
                         <form id="wishlist-form" method="POST" action="">
                             <input type="hidden" name="id_film" value="<?php echo $row['id_film']; ?>">
-                            <a class="delete-btn" title="Supprimer de la wishlist." href="#" onclick="submitForm();"><i class="fas fa-trash"></i></a>
+                            <button class="delete-btn" type="submit"><i class="fas fa-trash"></i></button>
                         </form>
                     </div>
                     <?php if (($count + 1) % 4 == 0) : ?>
@@ -129,12 +128,6 @@ include_once('../_footer/footer.php');
 ?>
 
 <script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-<script>
-    function submitForm() {
-        document.getElementById("wishlist-form").submit();
-    }
-</script>
-
 </body>
 
 </html>
