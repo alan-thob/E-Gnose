@@ -232,8 +232,9 @@ require_once('./controller/singleton_connexion.php');
     include_once('_footer/footer.php');
     ?>
 
+    <script src="assets/js/carousel.js"></script>
     <script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-    <script src="assets/js/carousel.js" async></script>
+
 
 </body>
 
