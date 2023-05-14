@@ -51,7 +51,7 @@ section {
     padding: 30px 30px;
 }
 
-.user_infos--container .subscribe__btn {
+.subscribe__btn {
     font-weight: 500;
     font-size: 20px;
     padding: 6px;
@@ -65,14 +65,6 @@ section {
     margin: 20px auto 0 auto;
     width: 13rem;
     cursor: pointer;
-}
-
-li {
-    list-style: none;
-}
-
-ul {
-    display: flex;
 }
 
 .films {
