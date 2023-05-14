@@ -36,6 +36,7 @@ require_once('../controller/administration.php');
     <link href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css' rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
@@ -103,17 +104,20 @@ require_once('../controller/administration.php');
                                 <div class="h5 font-weight-300">
                                     <i class="ni location_pin mr-2"></i><?= $donnees['user_city']; ?>, <?= $donnees['user_country']; ?>
                                 </div>
-                                <?php 
+                                    <?php
                                 }
                                 if(!empty($donnees['user_desc'])){
-                                ?>
-                                <div class="h5 mt-4">
-                                    <i class="ni business_briefcase-24 mr-2"></i>Ma petite description :
-                                </div>
-                                <div>
-                                    <i class="ni education_hat mr-2"></i><?= $donnees['user_desc']; ?>
-                                </div>
-                                <?php 
+                                    ?>
+                                    <div>
+                                        <i class="ni education_hat mr-2"></i><strong>«</strong> <?= $donnees['user_desc']; ?> <strong>»</strong>
+                                    </div>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <div>
+                                        Je n'ai pas encore renseigné ma biographie.
+                                    </div>
+                                    <?php
                                 }
                                 ?>
                             </div>
@@ -146,13 +150,13 @@ require_once('../controller/administration.php');
                                         <div class="col-lg-6">
                                             <div class="form-group focused">
                                                 <label class="form-control-label" for="input-first-name">Prénom</label>
-                                                <?= '<input type="text" id="input-first-name" class="form-control form-control-alternative" name="user_prenom" value="' . $donnees['user_prenom'] . '"<br>'; ?>
+                                                <?= '<input type="text" id="input-first-name" class="form-control form-control-alternative" name="user_prenom" value="' . $donnees['user_prenom'] . '" required pattern="[a-zA-Z\-]+"><br>'; ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group focused">
                                                 <label class="form-control-label" for="input-last-name">Nom</label>
-                                                <?= '<input type="text" id="input-last-name" class="form-control form-control-alternative" name="user_nom" value="' . $donnees['user_nom'] . '" required><br>'; ?>
+                                                <?= '<input type="text" id="input-last-name" class="form-control form-control-alternative" name="user_nom" value="' . $donnees['user_nom'] . '" required pattern="[a-zA-Z\-]+"><br>'; ?>
                                             </div>
                                         </div>
 
@@ -173,7 +177,7 @@ require_once('../controller/administration.php');
                                         <div class="col-lg-4">
                                             <div class="form-group focused">
                                                 <label class="form-control-label" for="input-country">Pays</label>
-                                                <?= '<input type="text" id="input-country"  class="form-control form-control-alternative" name="user_country" value="' . $donnees['user_country'] . '"<br>'; ?>
+                                                <?= '<input type="text" id="input-country" class="form-control form-control-alternative" name="user_country" value="' . $donnees['user_country'] . '" pattern="[A-Za-z\s-]+" title="Le nom du pays ne peut contenir que des lettres, des espaces et des tirets."><br>'; ?>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
