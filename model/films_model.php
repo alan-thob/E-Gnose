@@ -52,7 +52,7 @@ class Film
                             </button>
                             <div class='popup' id='popup1'>
                             <iframe src='$film_trailer' frameborder='0'></iframe>
-                            <div class='blob-txt'><a href='#' onclick=\"hide('popup1')\"><br>Ok!</a></div>
+                            <div class='blob-txt'><a href='#' onclick=\"hide('popup1')\"><br><i class='fa-solid fa-xmark'></i></a></div>
                         </div>
                         </div>
                     <div class='poster--content'>
