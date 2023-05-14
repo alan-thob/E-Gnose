@@ -102,7 +102,6 @@ include_once('../_navbar/navbar.php');
                         <div class="ligne">
                     <?php endif; ?>
                     <div class="film">
-                        <!-- /!\ Lien a changer au clic sur l'image du média /!\ -->
                         <a href="../view/content.php?id=<?php echo $row['id_film'] ?>"><img src="<?php echo $row['film_cover_image']; ?>" alt="<?php echo $row['film_titre']; ?>"></a>
                         <p><?php echo $row['film_titre']; ?></p>
                         <form id="wishlist-form" method="POST" action="">
