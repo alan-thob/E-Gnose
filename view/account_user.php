@@ -149,20 +149,20 @@ require_once('../controller/administration.php');
                                         <div class="col-lg-6">
                                             <div class="form-group focused">
                                                 <label class="form-control-label" for="input-first-name">Prénom</label>
-                                                <?= '<input type="text" id="input-first-name" class="form-control form-control-alternative" name="user_prenom" value="' . $donnees['user_prenom'] . '" required pattern="[a-zA-Z\-]+"><br>'; ?>
+                                                <input type="text" id="input-first-name" class="form-control form-control-alternative" name="user_prenom" value="<?= $donnees['user_prenom'] ?>" required pattern="[a-zA-Z\-]+"><br>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group focused">
                                                 <label class="form-control-label" for="input-last-name">Nom</label>
-                                                <?= '<input type="text" id="input-last-name" class="form-control form-control-alternative" name="user_nom" value="' . $donnees['user_nom'] . '" required pattern="[a-zA-Z\-]+"><br>'; ?>
+                                                <input type="text" id="input-last-name" class="form-control form-control-alternative" name="user_nom" value="<?= $donnees['user_nom'] ?>" required pattern="[a-zA-Z\-]+"><br>
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="form-group focused">
                                                 <label class="form-control-label" for="input-address">Adresse</label>
-                                                <?= '<input type="text" id="input-address" class="form-control form-control-alternative" name="user_address" value="' . $donnees['user_address'] . '"<br>'; ?>
+                                                <input type="text" id="input-address" class="form-control form-control-alternative" name="user_address" value="<?= $donnees['user_address'] ?>"><br>
                                             </div>
                                         </div>
                                     </div>
@@ -170,19 +170,19 @@ require_once('../controller/administration.php');
                                         <div class="col-lg-4">
                                             <div class="form-group focused">
                                                 <label class="form-control-label" for="input-city">Ville</label>
-                                                <?= '<input type="text" id="input-city" class="form-control form-control-alternative" name="user_city" value="' . $donnees['user_city'] . '"<br>'; ?>
+                                                <input type="text" id="input-city" class="form-control form-control-alternative" name="user_city" value="<?= $donnees['user_city'] ?>"><br>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group focused">
                                                 <label class="form-control-label" for="input-country">Pays</label>
-                                                <?= '<input type="text" id="input-country" class="form-control form-control-alternative" name="user_country" value="' . $donnees['user_country'] . '" pattern="[A-Za-z\s-]+" title="Le nom du pays ne peut contenir que des lettres, des espaces et des tirets."><br>'; ?>
+                                                <input type="text" id="input-country" class="form-control form-control-alternative" name="user_country" value="<?= $donnees['user_country'] ?>" pattern="[A-Za-z\s-]+" title="Le nom du pays ne peut contenir que des lettres, des espaces et des tirets."><br>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
-                                                <label class="form-control-label" for="input-country">Code Postal</label>
-                                                <?= '<input type="text" id="input-postal-code"  class="form-control form-control-alternative" name="user_cp" value="' . $donnees['user_cp'] . '"<br>'; ?>
+                                                <label class="form-control-label" for="input-postal-code">Code Postal</label>
+                                                <input type="text" id="input-postal-code" class="form-control form-control-alternative" name="user_cp" value="<?= $donnees['user_cp'] ?>"><br>
                                             </div>
                                         </div>
                                     </div>
@@ -195,7 +195,7 @@ require_once('../controller/administration.php');
                                 <div class="pl-lg-4">
                                     <div class="form-group focused">
                                         <label>Biographie</label>
-                                        <?= '<textarea rows="4" id="input-postal-code" name="user_desc" class="form-control form-control-alternative" placeholder="Quelques mots pour vous décrire ...">' . $donnees['user_desc'] . '</textarea><br>'; ?>
+                                        <?= '<textarea rows="4" id="input-bio" name="user_desc" class="form-control form-control-alternative" placeholder="Quelques mots pour vous décrire ...">' . $donnees['user_desc'] . '</textarea><br>'; ?>
                                     </div>
                                 </div>
                                 <div class="text-center">
