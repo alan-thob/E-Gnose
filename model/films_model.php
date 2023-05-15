@@ -60,7 +60,7 @@ class Film
                                     </a>
                                 
                                     <div class='modal-content'>
-                                      <iframe src='$film_trailer' allow='fullscreen;' autoplay='1' muted frameborder='0'></iframe>
+                                      <iframe src='$film_trailer' allow='fullscreen;' frameborder='0'></iframe>
                                     </div>
                                   </div>
                                 </div>
