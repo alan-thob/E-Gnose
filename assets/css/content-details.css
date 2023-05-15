@@ -53,7 +53,7 @@ section {
 
 .details--content__section {
     height: 80vh;
-    background: linear-gradient(rgb(21, 192, 237, 0.5), rgb(7, 30, 83, 1)), url(../img/posters/apercu_futurama.png) fixed center center repeat;
+    background: linear-gradient(rgb(21, 192, 237, 0.5), rgb(7, 30, 83, 1)) fixed center center repeat;
     background-size: cover;
     justify-content: flex-end;
     flex-direction: column;

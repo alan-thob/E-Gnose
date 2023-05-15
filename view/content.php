@@ -47,7 +47,7 @@ if (isset($_POST["id_film"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
-    <link href="https://e-gnose.sfait.fr/assets/img/favicon.png" rel="icon">
+    <link href="https://e-gnose.sfait.fr/assets/img/favicon.ico" rel="icon">
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="../assets/css/content-details.css" rel="stylesheet" type="text/css" media="screen">
     <link href="../assets/css/carrousel.css" rel="stylesheet" type="text/css" media="screen">

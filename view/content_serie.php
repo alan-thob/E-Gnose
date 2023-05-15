@@ -32,7 +32,7 @@ if (isset($_POST["id_serie"])) {
     <meta name="description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
+    <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.ico" />
     <meta property="og:url" content="https://e-gnose.sfait.fr/view/content.php" />
     <meta property="og:description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
     <meta property="og:locale" content="fr_FR" />

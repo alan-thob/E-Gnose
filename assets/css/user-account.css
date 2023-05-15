@@ -3,18 +3,26 @@
 @import "scrollbar.css";
 @import "popup-modal.css";
 
-*,
-*::before,
-*::after {
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -ms-overflow-style: scrollbar;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+body, html {
+    font-family: 'Kanit', sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(rgb(7, 30, 83, 1), rgb(21, 192, 237, 0.5)), url(../img/mozaic.webp) fixed center center repeat;
+
+}
+
+.unselectable {
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
 }
 
 figcaption,
@@ -58,7 +66,6 @@ p {
 }
 
 address {
-    font-style: normal;
     line-height: inherit;
     margin-bottom: 1rem;
 }
@@ -70,10 +77,6 @@ ul {
 
 ul ul {
     margin-bottom: 0;
-}
-
-dfn {
-    font-style: italic;
 }
 
 strong {
@@ -116,7 +119,6 @@ label {
 input,
 button,
 textarea {
-    font-family: inherit;
     font-size: inherit;
     line-height: inherit;
     margin: 0;
@@ -214,7 +216,6 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: inherit;
     font-weight: 600;
     line-height: 1.5;
     margin-bottom: .5rem;
@@ -847,102 +848,6 @@ textarea.form-control {
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-}
-
-.nav {
-    display: flex;
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style: none;
-    flex-wrap: wrap;
-}
-
-.nav-link {
-    display: block;
-    padding: .25rem .75rem;
-}
-
-.nav-link:hover,
-.nav-link:focus {
-    text-decoration: none;
-}
-
-.navbar {
-    position: relative;
-    display: flex;
-    padding: 1rem 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.navbar > .container,
-.navbar > .container-fluid {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.navbar-nav {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style: none;
-}
-
-.navbar-nav .nav-link {
-    padding-right: 0;
-    padding-left: 0;
-}
-
-.navbar-nav .dropdown-menu {
-    position: static;
-    float: none;
-}
-
-@media (max-width: 767.98px) {
-
-    .navbar-expand-md > .container,
-    .navbar-expand-md > .container-fluid {
-        padding-right: 0;
-        padding-left: 0;
-    }
-}
-
-@media (min-width: 768px) {
-    .navbar-expand-md {
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-    }
-
-    .navbar-expand-md .navbar-nav {
-        flex-direction: row;
-    }
-
-    .navbar-expand-md .navbar-nav .dropdown-menu {
-        position: absolute;
-    }
-
-    .navbar-expand-md .navbar-nav .nav-link {
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
-
-    .navbar-expand-md > .container,
-    .navbar-expand-md > .container-fluid {
-        flex-wrap: nowrap;
-    }
-}
-
-.navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, .95);
-}
-
-.navbar-dark .navbar-nav .nav-link:hover,
-.navbar-dark .navbar-nav .nav-link:focus {
-    color: rgba(255, 255, 255, .65);
 }
 
 .card {
