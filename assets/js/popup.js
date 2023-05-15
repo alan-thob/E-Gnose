@@ -1,13 +1,9 @@
-//début fonction Popup 
-$ = function (id) {
-    return document.getElementById(id);
-}
+var elements = $('.modal-overlay, .modal');
 
-var show = function (id) {
-    $(id).style.display = 'block';
-}
+$('#play-btn').click(function () {
+    elements.addClass('active');
+});
 
-var hide = function (id) {
-    $(id).style.display = 'none';
-}
-//Fin fonction Popup
+$('.close-modal').click(function () {
+    elements.removeClass('active');
+});

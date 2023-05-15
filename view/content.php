@@ -52,10 +52,8 @@ if (isset($_POST["id_film"])) {
     <link href="../assets/css/content-details.css" rel="stylesheet" type="text/css" media="screen">
     <link href="../assets/css/carrousel.css" rel="stylesheet" type="text/css" media="screen">
     <link href="../assets/css/popup.css" rel="stylesheet" type="text/css" media="screen">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
-    <script src="../assets/js/popup.js" defer></script>
     <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
 </head>
 
@@ -263,6 +261,8 @@ if (isset($_POST["id_film"])) {
 
     <script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="../assets/js/carousel.js" async></script>
+    <script src="../assets/js/popup.js"></script>
+
 </body>
 
 </html>

@@ -40,7 +40,7 @@ class Film
                 echo "
                 <div class='details--content__section' style='background: linear-gradient(rgb(21, 192, 237, 0.5), rgb(7, 30, 83, 1)), url($film_back_image);background-repeat: no-repeat !important;background-size: cover;background-position: center;'>
                         <div class='container-play-btn'>
-                            <button class='button is-play'  onclick=\"show('popup1')\">
+                            <button class='button is-play' id='play-btn'>
                                 <div class='button-outer-circle has-scale-animation'></div>
                                 <div class='button-outer-circle has-scale-animation has-delay-short'></div>
                                 <div class='button-icon is-play'>
@@ -50,11 +50,21 @@ class Film
                                     </svg>
                                 </div>        
                             </button>
-                            <div class='popup' id='popup1'>
-                            <iframe src='$film_trailer' frameborder='0'></iframe>
-                            <div class='blob-txt'><a href='#' onclick=\"hide('popup1')\"><br><i class='fa-solid fa-xmark'></i></a></div>
-                        </div>
-                        </div>
+                            <!-- modal -->
+                            <div class='modal-overlay'>
+                                <div class='modal'>
+                                    <a class='close-modal'>
+                                        <svg viewBox='0 0 20 20'>
+                                            <path fill='#fff' d='M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z'></path>
+                                        </svg>
+                                    </a>
+                                
+                                    <div class='modal-content'>
+                                      <iframe src='$film_trailer' allow='fullscreen;' autoplay='1' muted frameborder='0'></iframe>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div><!-- End modal -->
                     <div class='poster--content'>
                         <div class='infos--content'>
                             <h1> $film_titre ($film_date[0])</h1>

@@ -223,7 +223,7 @@ require_once('./controller/singleton_connexion.php');
     </section>
     
     <div class="cta--subscribe">
-        <h2>Retrouvez vos contenus préférés oû vous voulez, quand vous voulez, en illimité sur <span>e</span>-Gnose.</h2>
+        <h2>Retrouvez vos contenus préférés où vous voulez, quand vous voulez, en illimité sur <span>e</span>-Gnose.</h2>
         <a class="subscribe__btn" href="#">Je m'abonne !</a>
     </div>
 
