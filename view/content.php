@@ -135,7 +135,7 @@ if (isset($_POST["id_film"])) {
                                     <button type="submit">Ajouter à  la wishlist</button>
                                 </form>
                             </section>
-                    <?php }
+                        <?php }
                     } ?>
 
                     <section>
@@ -191,7 +191,6 @@ if (isset($_POST["id_film"])) {
                             }
                             ?>
                         </div>
-
                     </section>
                 </div>
 

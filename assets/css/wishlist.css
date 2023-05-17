@@ -81,7 +81,6 @@ section {
 
 .film {
     width: 20%;
-    /* ajustez la largeur en fonction de vos besoins */
     border-radius: 5px;
     overflow: hidden;
     display: flex;
