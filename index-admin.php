@@ -105,7 +105,7 @@ include_once('_navbar/navbar.php');
                     <div class="icon-box">
                         <div class="icon"><i style="width: 80%" class="fa-solid fa-pen"></i></div>
                         <h4>Modifier un média</h4>
-                        <p>Modifier les informations d'un média déjà inscrit dans la base de données.</p>
+                        <p>Modifier les informations d'un contenu média déjà inscrit dans la base de données.</p>
                     </div>
                 </a>
             </div>
@@ -115,7 +115,7 @@ include_once('_navbar/navbar.php');
                     <div class="icon-box">
                         <div class="icon"><i style="width: 80%" class="fa-solid fa-trash"></i></div>
                         <h4>Supprimer un média</h4>
-                        <p>Supprimer définitivement un média existant de la base de données.</p>
+                        <p>Supprimer définitivement un contenu média existant de la base de données.</p>
                     </div>
                 </a>
             </div>
