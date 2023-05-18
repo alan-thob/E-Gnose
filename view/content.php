@@ -162,7 +162,7 @@ if (isset($_POST["id_film"])) {
                     </section>
 
 
-                    <!--<section id="carousel-content">
+                    <section id="carousel-content">
                         <h3>Les acteurs :</h3>
                         <div class="container">
 
@@ -191,9 +191,7 @@ if (isset($_POST["id_film"])) {
                                 echo "Aucune données sur les acteurs pour le moment";
                             }
                             ?>
-                        </div>
-
-                    </section>-->
+                    </section>
                 </div>
 
                 <div id="panel-comments" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="tab-content">
