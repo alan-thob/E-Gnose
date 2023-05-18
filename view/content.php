@@ -122,6 +122,7 @@ if (isset($_POST["id_film"])) {
                         Commentaires
                     </button>
                 </div>
+
                 <div id="panel-details" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="tab-content active-tab-content">
                     <?php if (isset($_SESSION['id_user'])) {
                         $done = $db->prepare('SELECT * FROM wishlist WHERE id_film = ? AND id_user = ?');
@@ -132,10 +133,10 @@ if (isset($_POST["id_film"])) {
                             <section>
                                 <form method="POST" action="">
                                     <input type="hidden" name="id_film" value="<?php echo $id ?>">
-                                    <button type="submit">Ajouter à  la wishlist</button>
+                                    <button type="submit">Ajouter à la wishlist</button>
                                 </form>
                             </section>
-                    <?php }
+                        <?php }
                     } ?>
 
                     <section>
@@ -161,7 +162,7 @@ if (isset($_POST["id_film"])) {
                     </section>
 
 
-                    <section id="carousel-content">
+                    <!--<section id="carousel-content">
                         <h3>Les acteurs :</h3>
                         <div class="container">
 
@@ -192,7 +193,7 @@ if (isset($_POST["id_film"])) {
                             ?>
                         </div>
 
-                    </section>
+                    </section>-->
                 </div>
 
                 <div id="panel-comments" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="tab-content">
