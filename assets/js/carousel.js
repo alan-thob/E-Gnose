@@ -154,24 +154,6 @@ require = function (r, e, n) {
                     })
                 }
             }, {
-                key: "createPagination", value: function () {
-                    var t = this, i = this.createDivWithClass("carousel__pagination"), e = [];
-                    this.root.appendChild(i);
-                    for (var s = function (s) {
-                        var n = t.createDivWithClass("carousel__pagination__button");
-                        n.addEventListener("click", function () {
-                            return t.gotoItem(s + t.offset)
-                        }), i.appendChild(n), e.push(n)
-                    }, n = 0; n < this.items.length - 2 * this.offset; n += this.options.slidesToScroll) s(n);
-                    this.onMove(function (i) {
-                        var s = t.items.length - 2 * t.offset,
-                            n = e[Math.floor((i - t.offset) % s / t.options.slidesToScroll)];
-                        n && (e.forEach(function (t) {
-                            return t.classList.remove("carousel__pagination__button--active")
-                        }), n.classList.add("carousel__pagination__button--active"))
-                    })
-                }
-            }, {
                 key: "translate", value: function (t) {
                     this.container.style.transform = "translate3d(" + t + "%, 0, 0)"
                 }
