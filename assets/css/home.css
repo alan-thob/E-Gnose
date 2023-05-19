@@ -85,7 +85,11 @@ body, html {
 
 @media (max-width: 768px) {
     .cta--subscribe {
-        height: 150px;
+        height: 240px;
+    }
+
+    .cta--subscribe h2 {
+        font-size: 1.6rem;
     }
 
     .cta--subscribe a {
@@ -94,3 +98,20 @@ body, html {
     }
 }
 
+
+@media (max-width: 478px) {
+    .cta--subscribe {
+        height: 240px;
+    }
+
+    .cta--subscribe h2 {
+        font-size: 1.3rem;
+    }
+
+    .cta--subscribe .subscribe__btn {
+        font-weight: 500;
+        font-size: 20px;
+        padding: 5px;
+
+    }
+}
