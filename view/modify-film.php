@@ -1,3 +1,9 @@
+<?php
+session_start();
+require_once("../controller/singleton_connexion.php");
+require_once("../controller/administration.php");
+require_once("../controller/administration.php");
+?>
 <!DOCTYPE html>
 <html lang=fr>
 
@@ -51,9 +57,6 @@ include_once('../_navbar/navbar.php');
 
                 <?php
                 // On récupère tout le contenu de la table clients
-
-                require_once("../controller/singleton_connexion.php");
-                require_once("../controller/administration.php");
                 global $db; ?>
                 <select id="id" name="id">
                     <option disabled selected> Sélectionner un média</option>
@@ -77,13 +80,16 @@ include_once('../_navbar/navbar.php');
                 $req->bindParam(1, $_POST['id'], PDO::PARAM_INT);
                 $req->execute();
                 $donnees = $req->fetch(PDO::FETCH_ASSOC);
-
                 echo "Vous êtes en train de modifier le média : " . $donnees['film_titre'] . ' [ID: ' . $_POST['id'] . ']' . "<br>";
                 echo '<form action="" method="post">';
                 // On affiche chaque entrée une à une
 
                 echo '<div class="form-group">
 
+                <div class="form-group">
+                    <input type="hidden" class="form-control" name="id_film" value="' . $donnees['id_film'] . '" required>
+                </div>
+                
                 <div class="form-group">
                 <label for="film_city">Film City</label>
                     <input type="text" class="form-control" name="film_city" value="' . $donnees['film_city'] . '" required>

@@ -1,12 +1,12 @@
 <?php
-// session_start();
-// if($_SESSION['user_role']!=1){
-//  if($_SESSION['user_role'] == 3){
-//  header('location: ./index.php');
-//  }else{
-//  header('location: ./index.php');
-//  }
-// }
+session_start();
+if($_SESSION['user_role']!=1){
+ if($_SESSION['user_role'] == 3){
+ header('location: ./index.php');
+ }else{
+ header('location: ./index.php');
+ }
+}
 ?>
 
 <!doctype html>
@@ -62,7 +62,7 @@ include_once('_navbar/navbar.php');
 
         <div class="row">
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <a href="#">
+                <a href="./view/modify-user.php">
                     <div class="icon-box">
                         <div class="icon"><i style="width: 80%" class="fa-solid fa-user-pen"></i></div>
                         <h4>Modifier un utilisateur</h4>
@@ -72,7 +72,7 @@ include_once('_navbar/navbar.php');
             </div>
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                <a href="#">
+                <a href="./view/delete-user.php">
                     <div class="icon-box">
                         <div class="icon"><i style="width: 80%" class="fa-solid fa-user-xmark"></i></div>
                         <h4>Supprimer un utilisateur</h4>
@@ -86,7 +86,81 @@ include_once('_navbar/navbar.php');
 
     <div class="container services">
         <div class="title">
-            <h3>Administrer du contenu média.</h3>
+            <h3>Administrer un film.</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <a href="#">
+                    <div class="icon-box">
+                        <div class="icon"><i style="width: 80%" class="fa-solid fa-plus"></i></div>
+                        <h4>Ajouter un média</h4>
+                        <p>Ajouter un nouveau contenu média dans la base de données.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                <a href="#">
+                    <div class="icon-box">
+                        <div class="icon"><i style="width: 80%" class="fa-solid fa-pen"></i></div>
+                        <h4>Modifier un média</h4>
+                        <p>Modifier les informations d'un contenu média déjà inscrit dans la base de données.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                <a href="#">
+                    <div class="icon-box">
+                        <div class="icon"><i style="width: 80%" class="fa-solid fa-trash"></i></div>
+                        <h4>Supprimer un média</h4>
+                        <p>Supprimer définitivement un contenu média existant de la base de données.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container services">
+        <div class="title">
+            <h3>Administrer une serie.</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <a href="#">
+                    <div class="icon-box">
+                        <div class="icon"><i style="width: 80%" class="fa-solid fa-plus"></i></div>
+                        <h4>Ajouter un média</h4>
+                        <p>Ajouter un nouveau contenu média dans la base de données.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                <a href="#">
+                    <div class="icon-box">
+                        <div class="icon"><i style="width: 80%" class="fa-solid fa-pen"></i></div>
+                        <h4>Modifier un média</h4>
+                        <p>Modifier les informations d'un contenu média déjà inscrit dans la base de données.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                <a href="#">
+                    <div class="icon-box">
+                        <div class="icon"><i style="width: 80%" class="fa-solid fa-trash"></i></div>
+                        <h4>Supprimer un média</h4>
+                        <p>Supprimer définitivement un contenu média existant de la base de données.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container services">
+        <div class="title">
+            <h3>Administrer un livre.</h3>
         </div>
 
         <div class="row">

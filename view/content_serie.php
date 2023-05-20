@@ -1,26 +1,6 @@
 <?php session_start();
 require_once("../controller/singleton_connexion.php");
-if (isset($_POST["id_serie"])) {
-    $id_user = $_SESSION["id_user"];
-    $id_serie = $_POST["id_serie"];
-    // Suppression de la wishlist de la base de données
-    $done = $db->prepare('SELECT * FROM wishlist WHERE id_serie = ? AND id_user = ?');
-    $done->bindParam(1, $id_serie, PDO::PARAM_INT);
-    $done->bindParam(2, $id_user, PDO::PARAM_INT);
-    $done->execute();
-
-    if ($done->rowCount() == 0) {
-        $insert = $db->prepare('INSERT INTO wishlist (id_user, id_serie) VALUES (?, ?)');
-        $insert->execute([$id_user, $id_serie]);
-        if ($insert) {
-            header('Location: https://e-gnose.sfait.fr/view/wishlist.php');
-            exit;
-        }
-    } else {
-        header('Location: https://e-gnose.sfait.fr/view/wishlist.php');
-        exit;
-    }
-}
+require_once("../model/series_model.php");
 ?>
 <!doctype html>
 <html lang="fr">
@@ -64,7 +44,6 @@ if (isset($_POST["id_serie"])) {
 
     <?php
     include_once('../_navbar/navbar.php');
-    require_once("../model/series_model.php");
     // On vérifie que le média existe bien en récupérant son ID
     if (!isset($_GET['id']) || empty($_GET['id'])) {
         // S'il n'existe pas, on le renvoie vers la page de recherche
@@ -126,23 +105,6 @@ if (isset($_POST["id_serie"])) {
                     </button>
                 </div>
                 <div id="panel-details" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="tab-content active-tab-content">
-                    <?php if (isset($_SESSION['id_user'])) {
-                        $done = $db->prepare('SELECT * FROM wishlist WHERE id_serie = ? AND id_user = ?');
-                        $done->bindParam(1, $id, PDO::PARAM_INT);
-                        $done->bindParam(2, $_SESSION['id_user'], PDO::PARAM_INT);
-                        $done->execute();
-                        if ($done->rowCount() == 0) { ?>
-                            <section>
-                                <form method="POST" action="">
-                                    <input type="hidden" name="id_serie" value="<?php echo $id ?>">
-                                    <button type="submit">Ajouter à  la wishlist</button>
-                                </form>
-                            </section>
-                    <?php }
-                    } ?>
-
-
-
                     <section id="carousel-content">
                         <h3>Les acteurs :</h3>
                         <div class="container">

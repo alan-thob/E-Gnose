@@ -1,4 +1,24 @@
 <?php
+if (isset($_POST["id_serie"])) {
+    $id_user = $_SESSION["id_user"];
+    $id_serie = $_GET["id"];
+    // Suppression de la wishlist de la base de données
+    $done = $db->prepare('SELECT * FROM wishlist WHERE id_serie = ? AND id_user = ?');
+    $done->bindParam(1, $id_serie, PDO::PARAM_INT);
+    $done->bindParam(2, $id_user, PDO::PARAM_INT);
+    $done->execute();
+    if ($done->rowCount() == 0) {
+        $insert = $db->prepare('INSERT INTO wishlist (id_user, id_serie) VALUES (?, ?)');
+        $insert->execute([$id_user, $id_serie]);
+        if ($insert) {
+            header('Location: ../view/wishlist.php');
+            exit;
+        }
+    } else {
+        header('Location: ../view/wishlist.php');
+        exit;
+    }
+}
 class serie
 {
     public $id_serie;
@@ -39,22 +59,6 @@ class serie
             if ($serie_value == 1) {
                 echo "
                 <div class='details--content__section' style='background: linear-gradient(rgb(21, 192, 237, 0.5), rgb(7, 30, 83, 1)), url($serie_back_cover);background-repeat: no-repeat !important;background-size: cover;background-position: center;'>
-                        <div class='container-play-btn'>
-                            <button class='button is-play'  onclick=\"show('popup1')\">
-                                <div class='button-outer-circle has-scale-animation'></div>
-                                <div class='button-outer-circle has-scale-animation has-delay-short'></div>
-                                <div class='button-icon is-play'>
-                                    <svg height='100%' width='100%' fill='#fff'>
-                                    <polygon class='triangle' points='5,0 30,15 5,30' viewBox='0 0 30 15'></polygon>
-                                    <path class='path' d='M5,0 L30,15 L5,30z' fill='none' stroke='#fff' stroke-width='1'></path>
-                                    </svg>
-                                </div>        
-                            </button>
-                            <div class='popup' id='popup1'>
-                            <iframe src='$serie_trailer' frameborder='0'></iframe>
-                            <div class='blob-txt'><a href='#' onclick=\"hide('popup1')\"><br>Ok!</a></div>
-                        </div>
-                        </div>
                     <div class='poster--content'>
                         <div class='infos--content'>
                             <h1> $serie_titre</h1>
@@ -65,16 +69,27 @@ class serie
                             <div class='stars'>
                                 <p>Avis des internautes </p>
                                 <i class='fa fa-star gold'></i>
-                                <i class='fa fa-star gold'></i>
-                                <i class='fa fa-star gold'></i>
-                                <i class='fa fa-star'></i>
-                                <i class='fa fa-star'></i>
                                 <p> $serie_popularity/5</p>
                             </div>
+            ";
+                if (isset($_SESSION['id_user'])) {
+                    $id_serie = $_GET['id'];
+                    $done = $db->prepare('SELECT * FROM wishlist WHERE id_serie = ? AND id_user = ?');
+                    $done->bindParam(1, $id_serie, PDO::PARAM_INT);
+                    $done->bindParam(2, $_SESSION['id_user'], PDO::PARAM_INT);
+                    $done->execute();
+                    if ($done->rowCount() == 0) { ?>
+                        <section>
+                            <form method="POST" action="">
+                                <input type="hidden" name="id_serie" value="<?php echo $id_serie ?>">
+                                <button type="submit">Ajouter à la wishlist</button>
+                            </form>
+                        </section>
                         </div>
                     </div>
                 </div>
-            ";
+<?php }
+                }
             }
         }
     }

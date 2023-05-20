@@ -46,8 +46,8 @@ require_once('../controller/administration.php');
     include_once('../_navbar/navbar.php');
     require_once("../controller/administration.php");
 
-    $administration->SelectUserInfo() 
-    
+    $administration->SelectUserInfo()
+
     ?>
 
     <div class="main-content">
@@ -95,28 +95,28 @@ require_once('../controller/administration.php');
                             </div>
                             <div class="text-center">
                                 <h3>
-                                    <?= $donnees['user_prenom'] ." ". $donnees['user_nom']; ?>
+                                    <?= $donnees['user_prenom'] . " " . $donnees['user_nom']; ?>
                                 </h3>
                                 <?php
-                                if(!empty($donnees['user_city']) || !empty($donnees['user__country'])){
+                                if (!empty($donnees['user_city']) || !empty($donnees['user__country'])) {
                                 ?>
-                                <div class="h5 font-weight-300">
-                                    <i class="ni location_pin mr-2"></i><?= $donnees['user_city']; ?>, <?= $donnees['user_country']; ?>
-                                </div>
-                                    <?php
+                                    <div class="h5 font-weight-300">
+                                        <i class="ni location_pin mr-2"></i><?= $donnees['user_city']; ?>, <?= $donnees['user_country']; ?>
+                                    </div>
+                                <?php
                                 }
-                                if(!empty($donnees['user_desc'])){
-                                    ?>
+                                if (!empty($donnees['user_desc'])) {
+                                ?>
                                     <div>
                                         <i class="ni education_hat mr-2"></i><strong>«</strong> <?= $donnees['user_desc']; ?> <strong>»</strong>
                                     </div>
-                                    <?php
+                                <?php
                                 } else {
-                                    ?>
+                                ?>
                                     <div>
                                         Je n'ai pas encore renseigné ma biographie.
                                     </div>
-                                    <?php
+                                <?php
                                 }
                                 ?>
                             </div>
@@ -132,8 +132,10 @@ require_once('../controller/administration.php');
                                 </div>
                             </div>
                         </div>
+
+
                         <div class="card-body">
-                            <!-- On affiche chaque entrée une à une -->
+                            <!-- On affiche chaque entrée une à  une -->
                             <form action="" method="post">
                                 <h6 class="heading-small text-muted mb-4">Vos informations personnelles</h6>
                                 <div class="pl-lg-4">
@@ -191,7 +193,7 @@ require_once('../controller/administration.php');
 
 
                                 <!-- Description -->
-                                <h6 class="heading-small text-muted mb-4">À propos de moi</h6>
+                                <h6 class="heading-small text-muted mb-4">à propos de moi</h6>
                                 <div class="pl-lg-4">
                                     <div class="form-group focused">
                                         <label>Biographie</label>
@@ -200,9 +202,9 @@ require_once('../controller/administration.php');
                                 </div>
                                 <div class="text-center">
                                     <!-- Button HTML (to Trigger Modal) -->
-                                    <a href="#modal"  data-toggle="modal">Ouvrir popup</a><br>
+                                    <a href="#modal" data-toggle="modal">Ouvrir popup</a><br>
                                 </div>
-                                <input class="save--btn" type="submit" value="Sauvegarder"/>
+                                <input class="save--btn" type="submit" value="Sauvegarder" />
 
 
                             </form>
@@ -217,8 +219,6 @@ require_once('../controller/administration.php');
     <?php
     include_once('../_footer/footer.php');
     ?>
-
-
 
 </body>
 
