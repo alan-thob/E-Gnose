@@ -1,26 +1,6 @@
 <?php session_start();
 require_once("../controller/singleton_connexion.php");
-if (isset($_POST["id_film"])) {
-    $id_user = $_SESSION["id_user"];
-    $id_film = $_POST["id_film"];
-    // Suppression de la wishlist de la base de données
-    $done = $db->prepare('SELECT * FROM wishlist WHERE id_film = ? AND id_user = ?');
-    $done->bindParam(1, $id_film, PDO::PARAM_INT);
-    $done->bindParam(2, $id_user, PDO::PARAM_INT);
-    $done->execute();
-
-    if ($done->rowCount() == 0) {
-        $insert = $db->prepare('INSERT INTO wishlist (id_user, id_film) VALUES (?, ?)');
-        $insert->execute([$id_user, $id_film]);
-        if ($insert) {
-            header('Location: https://e-gnose.sfait.fr/view/wishlist.php');
-            exit;
-        }
-    } else {
-        header('Location: https://e-gnose.sfait.fr/view/wishlist.php');
-        exit;
-    }
-}
+require_once("../model/films_model.php");
 ?>
 <!doctype html>
 <html lang="fr">
@@ -47,13 +27,15 @@ if (isset($_POST["id_film"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
-    <link href="https://e-gnose.sfait.fr/assets/img/favicon.ico" rel="icon">
+    <link href="https://e-gnose.sfait.fr/assets/img/favicon.png" rel="icon">
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="../assets/css/content-details.css" rel="stylesheet" type="text/css" media="screen">
     <link href="../assets/css/carrousel.css" rel="stylesheet" type="text/css" media="screen">
     <link href="../assets/css/popup.css" rel="stylesheet" type="text/css" media="screen">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
+    <script src="../assets/js/popup.js" defer></script>
     <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
 </head>
 
@@ -61,7 +43,6 @@ if (isset($_POST["id_film"])) {
 
     <?php
     include_once('../_navbar/navbar.php');
-    require_once("../model/films_model.php");
     // On vérifie que le média existe bien en récupérant son ID
     if (!isset($_GET['id']) || empty($_GET['id'])) {
         // S'il n'existe pas, on le renvoie vers la page de recherche
@@ -122,22 +103,7 @@ if (isset($_POST["id_film"])) {
                         Commentaires
                     </button>
                 </div>
-
                 <div id="panel-details" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="tab-content active-tab-content">
-                    <?php if (isset($_SESSION['id_user'])) {
-                        $done = $db->prepare('SELECT * FROM wishlist WHERE id_film = ? AND id_user = ?');
-                        $done->bindParam(1, $id, PDO::PARAM_INT);
-                        $done->bindParam(2, $_SESSION['id_user'], PDO::PARAM_INT);
-                        $done->execute();
-                        if ($done->rowCount() == 0) { ?>
-                            <section>
-                                <form method="POST" action="">
-                                    <input type="hidden" name="id_film" value="<?php echo $id ?>">
-                                    <button type="submit">Ajouter à la wishlist</button>
-                                </form>
-                            </section>
-                        <?php }
-                    } ?>
 
                     <section>
                         <h3>Description :</h3>
@@ -191,6 +157,8 @@ if (isset($_POST["id_film"])) {
                                 echo "Aucune données sur les acteurs pour le moment";
                             }
                             ?>
+                        </div>
+
                     </section>
                 </div>
 
@@ -260,8 +228,6 @@ if (isset($_POST["id_film"])) {
 
     <script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="../assets/js/carousel.js" async></script>
-    <script src="../assets/js/popup.js"></script>
-
 </body>
 
 </html>
