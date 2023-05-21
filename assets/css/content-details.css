@@ -311,11 +311,10 @@ textarea.form-control {
 /*###### SECTION WISHLIST ###### */
 /*############################## */
 
-.wishlist--button button {
+.add-wishlist button {
     background: none;
-    border: 0;
-    cursor: pointer;
-    font-size: 2.5rem;
+    border: none;
+    font-size: 40px;
 }
 
 /*############################## */

@@ -10,7 +10,7 @@ class Database
     //private $pass = "p]bbxAH@7cNy";
     private $connexionbdd;
     private $host = "localhost";
-    private $dbname = "e-gnose-2";
+    private $dbname = "e-gnose";
     private $user = "root";
     private $pass = "root";
 

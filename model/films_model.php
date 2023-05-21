@@ -20,11 +20,12 @@ if (isset($_POST["id_film"])) {
         exit;
     }
 }
+
 class Film
 {
     public $id_film;
-    public  $film_city;
-    public  $film_titre;
+    public $film_city;
+    public $film_titre;
     public $film_description;
     public $film_realisateur;
     public $film_cover_image;
@@ -93,11 +94,12 @@ class Film
                             <p>Duree : $film_duree (min)</p>
                             
                             <div class='stars'>
-                                <p>Avis des internautes  :</p>
+                                <p>Avis des internautes :</p>
                                 <i class='fa fa-star gold'></i>
                                 <p> $film_popularity/5</p>
+                                </div>
             ";
-            
+
                 if (isset($_SESSION['id_user'])) {
                     $id_film = $_GET['id'];
                     $done = $db->prepare('SELECT * FROM wishlist WHERE id_film = ? AND id_user = ?');
@@ -105,21 +107,28 @@ class Film
                     $done->bindParam(2, $_SESSION['id_user'], PDO::PARAM_INT);
                     $done->execute();
                     if ($done->rowCount() == 0) { ?>
-                        <section>
+                        <div class="add-wishlist">
                             <form method="POST" action="">
                                 <input type="hidden" name="id_film" value="<?php echo $id_film ?>">
-                                <button type="submit" style="background: none;
-border: none;"><i class="fa-sharp fa-solid fa-heart" style="color: red"></i></button>
+                                <button type="submit" title="Ajouter à la wishlist."><i class="fa-solid fa-circle-plus"
+                                                                                        style="color: rgb(21, 192, 237, 1)"></i>
+                                </button>
                             </form>
-                        </section>
                         </div>
+                    <?php } else { ?>
+                        <div class="add-wishlist">
+                            <form method="POST" action="">
+                                <input type="hidden" name="id_film" value="<?php echo $id_film ?>">
+                                <button type="submit" title="Retirer de la wishlist."><i
+                                            class="fa-solid fa-circle-minus" style="color: rgb(21, 192, 237, 1)"></i>
+                                </button>
+                            </form>
                         </div>
-                        </div>
-                        </div>
-<?php }
+                    <?php }
                 }
             }
         }
     }
 }
+
 $film = new Film();
