@@ -90,14 +90,12 @@ class Film
                     <div class='poster--content'>
                         <div class='infos--content'>
                             <h1> $film_titre ($film_date[0])</h1>
-                            <p>Réalisateur : $film_realisateur </p>
-                            <p>Duree : $film_duree (min)</p>
+                            <p>Produit par : $film_realisateur.</p>
+                            <p>Durée : $film_duree minutes.</p>
                             
                             <div class='stars'>
-                                <p>Avis des internautes :</p>
-                                <i class='fa fa-star gold'></i>
-                                <p> $film_popularity/5</p>
-                                </div>
+                                <p>Avis des internautes :</p><i class='fa fa-star gold'></i><p> $film_popularity/5</p>
+                            </div>
             ";
 
                 if (isset($_SESSION['id_user'])) {
@@ -107,7 +105,7 @@ class Film
                     $done->bindParam(2, $_SESSION['id_user'], PDO::PARAM_INT);
                     $done->execute();
                     if ($done->rowCount() == 0) { ?>
-                        <div class="add-wishlist">
+                        <div class="add-remove-wishlist">
                             <form method="POST" action="">
                                 <input type="hidden" name="id_film" value="<?php echo $id_film ?>">
                                 <button type="submit" title="Ajouter à la wishlist."><i class="fa-solid fa-circle-plus"
@@ -116,7 +114,7 @@ class Film
                             </form>
                         </div>
                     <?php } else { ?>
-                        <div class="add-wishlist">
+                        <div class="add-remove-wishlist">
                             <form method="POST" action="">
                                 <input type="hidden" name="id_film" value="<?php echo $id_film ?>">
                                 <button type="submit" title="Retirer de la wishlist."><i

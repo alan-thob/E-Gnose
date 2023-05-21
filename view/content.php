@@ -122,7 +122,7 @@ require_once("../model/films_model.php");
                                 <?php
                             }
                         } else {
-                            echo "Aucune données sur les acteurs pour le moment";
+                            echo "Aucune données sur le média pour le moment";
                         }
                         ?>
                     </section>

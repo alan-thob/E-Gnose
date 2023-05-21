@@ -2,35 +2,42 @@
     color: #636363;
     font-size: 14px;
 }
+
 .modal-confirm .modal-content {
     padding: 20px;
     border-radius: 5px;
     border: none;
 }
+
 .modal-confirm .modal-header {
     border-bottom: none;
     position: relative;
 }
+
 .modal-confirm h4 {
     text-align: center;
     font-size: 26px;
     margin: 30px 0 -15px;
 }
+
 .modal-confirm .form-control, .modal-confirm .btn {
     min-height: 40px;
     border-radius: 3px;
 }
+
 .modal-confirm .close {
     position: absolute;
     top: -5px;
     right: -5px;
 }
+
 .modal-confirm .modal-footer {
     border: none;
     text-align: center;
     border-radius: 5px;
     font-size: 13px;
 }
+
 .modal-confirm .icon-box {
     color: #fff;
     position: absolute;
@@ -53,9 +60,11 @@
     position: relative;
     top: 3px;
 }
+
 .modal-confirm.modal-dialog {
     margin-top: 230px;
 }
+
 .modal-confirm .btn {
     color: #fff;
     border-radius: 4px;
@@ -65,10 +74,12 @@
     line-height: normal;
     border: none;
 }
+
 .modal-confirm .btn:hover, .modal-confirm .btn:focus {
     background: #6fb32b;
     outline: none;
 }
+
 .trigger-btn {
     display: inline-block;
     margin: 100px auto;
