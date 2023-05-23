@@ -111,4 +111,8 @@ form button {
 
 .delete-btn i:hover {
     color: #ff0000;
+    cursor: pointer;
+}
+.delete-btn:focus {
+    outline: none;
 }
