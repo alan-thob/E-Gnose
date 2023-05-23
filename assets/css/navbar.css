@@ -259,7 +259,17 @@ label.search-icon i {
     }
 }
 
+@media screen and (min-width: 901px) {
+    .responsive-navbar {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 900px) {
+    .desktop-navbar {
+        display: none;
+    }
+
     .wrapper .menu-icon {
         display: block;
         margin-left: 25px;
@@ -320,9 +330,8 @@ label.search-icon i {
         overflow: hidden;
     }
 
-    .content-navbar .links #show-features:checked ~ ul,
-    .content-navbar .links #show-services:checked ~ ul,
-    .content-navbar .links #show-items:checked ~ ul {
+    .content-navbar .links #category-dropdown:checked ~ ul,
+    .content-navbar .links #user-area-dropdown:checked ~ ul {
         max-height: 100vh;
     }
 
@@ -415,10 +424,10 @@ label.search-icon, .menu-icon {
 
 .dropdown--searchbar {
     background-color: #171c24;
-    color:aliceblue;
+    color: aliceblue;
 }
 
-.dropdown--searchbar a:hover{
+.dropdown--searchbar a:hover {
     text-decoration: none;
 }
 
