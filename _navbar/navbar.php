@@ -18,7 +18,11 @@
                     </ul>
                 </li>
 
+
+                
                 <li><a href="https://e-gnose.sfait.fr/view/wishlist.php">Ma wishlist</a></li>
+
+
 
                 <div class="responsive-navbar">
                     <?php
@@ -77,7 +81,6 @@
                 }
                 ?>
             </div>
-
         </div>
 
 
