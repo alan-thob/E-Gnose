@@ -113,11 +113,6 @@ select::-ms-expand {
     display: unset;
 }
 
-@media (max-width: 768px) {
-    .user_infos--container {
-        height: 150px;
-    }
-}
 
 .form-group label {
     float: left;

@@ -163,9 +163,9 @@ class Administration
             $req->execute(array($_POST['id_user']));
 
             if ($req) {
-                echo "suppression réussi sur l'id : <b>" . $_POST['id_user'] . ' - ' . $_POST['user_nom'] . "</b>";
+                echo "Suppression réussie sur l'id : <b>" . $_POST['id_user'] . ' - ' . $_POST['user_nom'] . "</b>";
             } else {
-                echo "echec de la supression";
+                echo "Echec de la suppression";
             }
         }
     }
