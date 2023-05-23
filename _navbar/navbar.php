@@ -17,29 +17,27 @@
                         <li><a href="https://e-gnose.sfait.fr/view/livre.php">Livres</a></li>
                     </ul>
                 </li>
-                <?php
-                if (isset($_SESSION['id_user']) && $_SESSION['user_role'] == 1) {
-                    echo '<li><a href="https://e-gnose.sfait.fr/index-admin.php">Administration</a></li>';
-                }
-                ?>
+
                 <li><a href="https://e-gnose.sfait.fr/view/wishlist.php">Ma wishlist</a></li>
 
                 <div class="responsive-navbar">
                     <?php
                     if (isset($_SESSION['id_user']) && $_SESSION['id_user'] != null) {
                         echo '<li>
-<input type="checkbox" id="user-area-dropdown">
-                        <label for="user-area-dropdown">Mon compte</label>
-                            <ul>
-                                <li><a href="https://e-gnose.sfait.fr/view/account_user.php">Accéder à mon compte</a></li>
-                                <li><a href="../_navbar/deconnexion.php">Se déconnecter</a></li>
-                            </ul>';
+ <input type="checkbox" id="user-area-dropdown">
+ <label for="user-area-dropdown">Mon compte</label>
+ <ul>
+ <li><a href="https://e-gnose.sfait.fr/view/account_user.php">Accéder à mon compte</a></li>';
+                        if (isset($_SESSION['id_user']) && $_SESSION['user_role'] == 1) {
+                            echo '<li><a href="https://e-gnose.sfait.fr/index-admin.php">Espace admin</a></li>';
+                        }
+                        echo '<li><a href="./_navbar/deconnexion.php">Se déconnecter</a></li>
+ </ul>
+ </li>';
                     } else {
-                        echo '
-                    <li><a href="https://e-gnose.sfait.fr/view/authentification.php">Mon compte</a></li></li>';
+                        echo '<li><a href="https://e-gnose.sfait.fr/view/authentification.php">Mon compte</a></li>';
                     }
                     ?>
-                </div>
             </ul>
 
 
@@ -51,28 +49,31 @@
                 <?php
                 if (isset($_SESSION['id_user']) && $_SESSION['id_user'] != null) {
                     echo ' <div class="content-navbar" style="right: 45px;">
-                            <ul class="links">
-                                 <li>
-                                      <button class="icons2 desktop-link"><a href="#" style="padding: 22px 22px 12px 22px;"><i class="far fa-user-circle"></i></a></button>
-                                      <input type="checkbox" id="show-user-features">
-                                       <label for="show-user-features"><i class="far fa-user-circle"></i></label>
-                                           <ul style="right: 50px">
-                                              <li><a href="https://e-gnose.sfait.fr/view/account_user.php">Mon compte</a></li>
-                                             <li><a href="../_navbar/deconnexion.php">Se déconnecter</a></li>
-                                          </ul>
-                               </li>
-                             </ul>
-                             </div>';
+ <ul class="links">
+ <li>
+ <button class="icons2 desktop-link"><a href="#" style="padding: 22px 22px 12px 22px;"><i class="far fa-user-circle"></i></a></button>
+ <input type="checkbox" id="show-user-features">
+ <label for="show-user-features"><i class="far fa-user-circle"></i></label>
+ <ul style="right: 50px">
+ <li><a href="https://e-gnose.sfait.fr/view/account_user.php">Mon compte</a></li>';
+                    if (isset($_SESSION['id_user']) && $_SESSION['user_role'] == 1) {
+                        echo '<li><a href="https://e-gnose.sfait.fr/index-admin.php">Espace admin</a></li>';
+                    }
+                    echo '<li><a href="./_navbar/deconnexion.php">Se déconnecter</a></li>
+ </ul>
+ </li>
+ </ul>
+ </div>';
                 } else {
                     echo '<div class="content-navbar" style="right: 45px;padding: 21px 14px 13px 20px;">
-                                <ul class="links">
-                                   <li>
-                                       <button class="icons2 desktop-link"><a href="https://e-gnose.sfait.fr/view/authentification.php" style="padding: 22px 22px 12px 22px;"><i class="far fa-user-circle"></i></a></button>
-                                          <input type="checkbox" id="show-features">
-                                     <label for="show-features"><i class="far fa-user-circle"></i></label>
-                                  </li>
-                              </ul>
-                           </div>';
+ <ul class="links">
+ <li>
+ <button class="icons2 desktop-link"><a href="https://e-gnose.sfait.fr/view/authentification.php" style="padding: 22px 22px 12px 22px;"><i class="far fa-user-circle"></i></a></button>
+ <input type="checkbox" id="show-features">
+ <label for="show-features"><i class="far fa-user-circle"></i></label>
+ </li>
+ </ul>
+ </div>';
                 }
                 ?>
             </div>
