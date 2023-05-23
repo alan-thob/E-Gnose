@@ -2,9 +2,9 @@
 session_start();
 if($_SESSION['user_role']!=1){
  if($_SESSION['user_role'] == 3){
- header('location: ./index.php');
+ header('location: /index.php');
  }else{
- header('location: ./index.php');
+ header('location: /view/error/403.php');
  }
 }
 ?>
