@@ -32,6 +32,7 @@
     <link href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css' rel="stylesheet">
     <link href="../assets/css/modify-pages.css" rel="stylesheet" type="text/css" media="screen">
+    <script src="https://kit.fontawesome.com/d51f8b0cc0.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body class="unselectable">
