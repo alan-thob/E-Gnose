@@ -476,7 +476,7 @@ class Administration
                     </div>';
             }
         }else {
-            echo "<p>Aucun média trouvé</p>";
+            echo "<p>Aucun acteur disponible pour le moment</p>";
         }
     }
 
