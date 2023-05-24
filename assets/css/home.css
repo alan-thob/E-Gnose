@@ -27,6 +27,13 @@ body, html {
     user-select: none; /* Likely future */
 }
 
+.title h1 {
+    font-size: 36px;
+    color: #bd9e5a;
+    filter: brightness(1.10);
+    font-weight: 900;
+}
+
 /*############################# */
 /*###### CAROUSEL HEADER ###### */
 /*############################# */
