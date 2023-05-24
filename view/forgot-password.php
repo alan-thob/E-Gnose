@@ -39,8 +39,43 @@ require_once('../controller/ControllerConnexion.php');
 
 <?php
 include_once('../_navbar/navbar.php');
-?>
 
+function generateToken($length = 32) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $token = '';
+    $max = strlen($characters) - 1;
+
+    for ($i = 0; $i < $length; $i++) {
+        $token .= $characters[random_int(0, $max)];
+    }
+
+    return $token;
+}
+
+// Vérification de la soumission du formulaire
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Récupération de l'adresse e-mail soumise
+    $email = $_POST['email'];
+
+    // Vérification de l'adresse e-mail dans la base de données
+    // Ici, vous devrez implémenter votre propre logique pour vérifier si l'adresse e-mail existe dans votre base de données
+
+    // Si l'adresse e-mail existe, générez le token de réinitialisation et enregistrez-le dans la base de données
+
+    // Envoyez l'e-mail contenant le lien de réinitialisation au format HTML
+    $token = generateToken(); // Fonction de génération de token
+    $resetLink = 'https://example.com/reset-password.php?token=' . $token; // Lien de réinitialisation
+    $subject = 'Réinitialisation du mot de passe';
+    $message = 'Cliquez sur le lien suivant pour réinitialiser votre mot de passe : <a href="' . $resetLink . '">' . $resetLink . '</a>';
+    $headers = 'From: kyllian.diochon.kd@gmail.com' . "\r\n" .
+        'Reply-To: noreply@example.com' . "\r\n" .
+        'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+    // Envoyer l'e-mail
+    mail($email, $subject, $message, $headers);
+
+}
+?>
 
 <div class="section">
     <div class="container">
@@ -52,18 +87,13 @@ include_once('../_navbar/navbar.php');
                             <div class="center-wrap">
                                 <div class="section text-center">
                                     <h4 class="mb-4 pb-3">Procédure de récupération du compte</h4>
+                                    <form method="POST" action="">
                                     <form action="" method="post">
                                         <div class="form-group">
                                             <input type="email" name="user_email" class="form-style"
                                                    placeholder="Adresse mail" id="user_email" autocomplete="off"
                                                    required>
                                             <i class="input-icon uil uil-at"></i>
-                                        </div>
-                                        <div class="form-group mt-2">
-                                            <input type="password" name="user_password" class="form-style"
-                                                   placeholder="Mot de passe" id="user_password" autocomplete="off"
-                                                   required>
-                                            <i class="input-icon uil uil-lock-alt"></i>
                                         </div>
                                         <div>
                                             <input type="submit" name="connexion" value="Suivant" class="btn mt-4">
