@@ -45,6 +45,10 @@ require_once('../controller/administration.php');
 
 <body class="unselectable">
 
+<div id="preloader">
+    <?php include_once('../controller/preloader.php'); ?>
+</div>
+
 <?php
 include_once('../_navbar/navbar.php');
 require_once("../controller/administration.php");
@@ -246,6 +250,8 @@ $administration->SelectUserInfo()
 <?php
 include_once('../_footer/footer.php');
 ?>
+
+<script src="../assets/js/preloader.js"></script>
 
 </body>
 

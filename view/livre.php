@@ -40,6 +40,11 @@ require_once('../controller/singleton_connexion.php');
 
 <body class="unselectable">
 
+<div id="preloader">
+    <?php include_once('../controller/preloader.php'); ?>
+</div>
+
+
 <?php
 require_once("../controller/administration.php");
 require_once("../model/films_model.php");
@@ -81,6 +86,7 @@ include_once('../_navbar/navbar.php');
 include_once('../_footer/footer.php');
 ?>
 
+<script src="../assets/js/preloader.js"></script>
 <script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script src="../assets/js/carousel.js" async></script>
 

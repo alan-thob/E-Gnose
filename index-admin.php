@@ -56,6 +56,10 @@ if(isset($_SESSION['user_role'])){
 
 <body>
 
+<div id="preloader">
+    <?php include_once('./controller/preloader.php'); ?>
+</div>
+
 <?php
 include_once('_navbar/navbar.php');
 ?>
@@ -210,6 +214,8 @@ include_once('_navbar/navbar.php');
 <?php
 include_once('_footer/footer.php');
 ?>
+
+<script src="assets/js/preloader.js"></script>
 
 </body>
 

@@ -37,6 +37,11 @@
 
 <body class="unselectable">
 
+<div id="preloader">
+    <?php include_once('../controller/preloader.php'); ?>
+</div>
+
+
 <p>Veuillez selectionner l'immatriculation de l'embarcation à modifier:</p>
 
 <form action="" method='post'>
@@ -127,6 +132,9 @@ if (isset($_POST['id'])) {
 
 
 ?>
+
+<script src="../assets/js/preloader.js"></script>
+
 </body>
 
 </html>

@@ -9,6 +9,11 @@
 </head>
 
 <body>
+
+<div id="preloader">
+    <?php include_once('../controller/preloader.php'); ?>
+</div>
+
     <center>
         <p>Veuillez selectionner le film à supprimer :</p>
         <form action="" method='post'>
@@ -58,6 +63,8 @@
         }
         $administration->Deletefilm();
         ?>
+
+        <script src="../assets/js/preloader.js"></script>
 </body>
 
 </html>

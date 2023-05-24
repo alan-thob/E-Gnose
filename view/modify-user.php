@@ -37,9 +37,15 @@
 
 <body class="unselectable">
 
+<div id="preloader">
+    <?php include_once('../controller/preloader.php'); ?>
+</div>
+
+
 <?php
 include_once('../_navbar/navbar.php');
 ?>
+
 
 <section>
     <div class="container">
@@ -135,6 +141,8 @@ include_once('../_navbar/navbar.php');
 <?php
 include_once('../_footer/footer.php');
 ?>
+
+<script src="../assets/js/preloader.js"></script>
 
 </body>
 

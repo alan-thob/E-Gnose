@@ -41,6 +41,11 @@ require_once("../model/films_model.php");
 
 <body class="unselectable">
 
+<div id="preloader">
+    <?php include_once('../controller/preloader.php'); ?>
+</div>
+
+
     <?php
     include_once('../_navbar/navbar.php');
     // On vérifie que le média existe bien en récupérant son ID
@@ -226,6 +231,7 @@ require_once("../model/films_model.php");
         }
     </script>
 
+    <script src="../assets/js/preloader.js"></script>
     <script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="../assets/js/carousel.js" async></script>
 </body>

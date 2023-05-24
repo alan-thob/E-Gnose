@@ -79,6 +79,10 @@ if (!$result) {
 
 <body class="unselectable">
 
+<div id="preloader">
+    <?php include_once('../controller/preloader.php'); ?>
+</div>
+
 <?php
 include_once('../_navbar/navbar.php');
 ?>
@@ -126,6 +130,7 @@ include_once('../_navbar/navbar.php');
 include_once('../_footer/footer.php');
 ?>
 
+<script src="../assets/js/preloader.js"></script>
 <script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </body>
 
