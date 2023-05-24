@@ -457,6 +457,28 @@ class Administration
     }
 
 
+    //SELECT ACTOR
+    public function SelectActor()
+    {
+        global $db;
+        $id = $_GET['id'];
+        $acteur = $db->prepare('SELECT * FROM acteurs, personnage, films  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_film = films.id_film AND films.id_film = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
+        $acteur->bindParam(1, $id, PDO::PARAM_INT);
+        $acteur->execute();
+        if ($acteur->rowCount() > 0) {
+            while ($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)) {
+                echo '<div class="item" style="width: 85%">
+                        <div class="item__image"><img src="' . $acteurs['acteur_img'] . '" alt=""></div>
+                        <div class="item__body">
+                            <div class="item__title">' . strip_tags($acteurs['acteur_nom']) . '</div>
+                            <div class="item__description">' . strip_tags($acteurs['personnage_nom']) . '</div><br/>
+                        </div>
+                    </div>';
+            }
+        }else {
+            echo "<p>Aucun acteur disponible pour le moment</p>";
+        }
+    }
 
     // SELECT SERIE
     public function SelectSerieByPop()

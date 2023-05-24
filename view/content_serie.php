@@ -109,40 +109,6 @@ require_once("../model/series_model.php");
                         Commentaires
                     </button>
                 </div>
-                <div id="panel-details" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="tab-content active-tab-content">
-                    <section id="carousel-content">
-                        <h3>Les acteurs :</h3>
-                        <div class="container">
-
-                            <?php
-                            $acteur = $db->prepare('SELECT * FROM acteurs, personnage, series  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_serie = series.id_serie AND series.id_serie = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
-                            $acteur->bindParam(1, $id, PDO::PARAM_INT);
-                            $acteur->execute();
-
-                            if ($acteur->rowCount() > 0) {
-                                while ($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)) { ?>
-
-                                    <div id="carousel">
-                                        <div class="item">
-
-                                            <div class="item__image"><img src="<?= $acteurs['acteur_img'] ?>" alt=""></div>
-                                            <div class="item__body">
-                                                <div class="item__title"><?= $acteurs['acteur_nom'] ?></div>
-                                                <div class="item__description"><?= $acteurs['personnage_nom'] ?></div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                            <?php
-                                }
-                            } else {
-                                echo "Aucune données sur les acteurs pour le moment";
-                            }
-                            ?>
-                        </div>
-
-                    </section>
-
                     <section>
                         <h3>Description :</h3>
                         <?php
