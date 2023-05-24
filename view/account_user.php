@@ -11,18 +11,21 @@ require_once('../controller/administration.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Espace compte | e-Gnose" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
-    <meta property="og:url" content="https://e-gnose.sfait.fr/view/account-user.php" />
-    <meta property="og:description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
-    <meta property="og:locale" content="fr_FR" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Espace compte | e-Gnose" />
-    <meta name="twitter:description" content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !" />
-    <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
+    <meta name="description"
+          content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
+    <meta name="robots" content="index, follow"/>
+    <meta property="og:title" content="Espace compte | e-Gnose"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
+    <meta property="og:url" content="https://e-gnose.sfait.fr/view/account-user.php"/>
+    <meta property="og:description"
+          content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
+    <meta property="og:locale" content="fr_FR"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Espace compte | e-Gnose"/>
+    <meta name="twitter:description"
+          content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
+    <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
     <title>Espace compte | e-Gnose</title>
 
     <!-- Links -->
@@ -42,17 +45,20 @@ require_once('../controller/administration.php');
 
 <body class="unselectable">
 
-    <?php
-    include_once('../_navbar/navbar.php');
-    require_once("../controller/administration.php");
+<?php
+include_once('../_navbar/navbar.php');
+require_once("../controller/administration.php");
 
-    $administration->SelectUserInfo()
+$administration->SelectUserInfo()
 
-    ?>
+?>
+
+<section>
 
     <div class="main-content">
         <!-- Header -->
-        <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="background-image: url(../assets/img/user-bg.webp); background-size: cover; background-position: center top;">
+        <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+             style="background-image: url(../assets/img/user-bg.webp); background-size: cover; background-position: center top;">
             <!-- Mask -->
             <span class="mask bg-gradient-default opacity-8"></span>
             <!-- Header container -->
@@ -60,7 +66,9 @@ require_once('../controller/administration.php');
                 <div class="row">
                     <div class="col-lg-7 col-md-10">
                         <h1 class="display-2 text-white">Bonjour, <?= $_SESSION["user_nom"] ?>.</h1>
-                        <p class="text-white mt-0 mb-5">Bienvenue sur votre espace compte. Vous pouvez consulter vos données personnelles et les modifier à tout moment !</p>
+                        <p class="text-white mt-0 mb-5">Bienvenue sur votre espace compte. Vous pouvez consulter vos
+                            données
+                            personnelles et les modifier à tout moment !</p>
                     </div>
                 </div>
             </div>
@@ -68,7 +76,7 @@ require_once('../controller/administration.php');
         <!-- Page content -->
         <div class="container-fluid mt--7">
             <div class="row">
-                <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+                <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0 card-user">
                     <div class="card card-profile shadow">
                         <div class="row justify-content-center">
                             <div class="col-lg-3 order-lg-2">
@@ -99,24 +107,26 @@ require_once('../controller/administration.php');
                                 </h3>
                                 <?php
                                 if (!empty($donnees['user_city']) || !empty($donnees['user__country'])) {
-                                ?>
+                                    ?>
                                     <div class="h5 font-weight-300">
-                                        <i class="ni location_pin mr-2"></i><?= $donnees['user_city']; ?>, <?= $donnees['user_country']; ?>
+                                        <i class="ni location_pin mr-2"></i><?= $donnees['user_city']; ?>
+                                        , <?= $donnees['user_country']; ?>
                                     </div>
-                                <?php
+                                    <?php
                                 }
                                 if (!empty($donnees['user_desc'])) {
-                                ?>
+                                    ?>
                                     <div>
-                                        <i class="ni education_hat mr-2"></i><strong>«</strong> <?= $donnees['user_desc']; ?> <strong>»</strong>
+                                        <i class="ni education_hat mr-2"></i><strong>«</strong> <?= $donnees['user_desc']; ?>
+                                        <strong>»</strong>
                                     </div>
-                                <?php
+                                    <?php
                                 } else {
-                                ?>
+                                    ?>
                                     <div>
                                         Je n'ai pas encore renseigné ma biographie.
                                     </div>
-                                <?php
+                                    <?php
                                 }
                                 ?>
                             </div>
@@ -151,20 +161,28 @@ require_once('../controller/administration.php');
                                         <div class="col-lg-6">
                                             <div class="form-group focused">
                                                 <label class="form-control-label" for="input-first-name">Prénom</label>
-                                                <input type="text" id="input-first-name" class="form-control form-control-alternative" name="user_prenom" value="<?= $donnees['user_prenom'] ?>" required pattern="[a-zA-Z\-]+"><br>
+                                                <input type="text" id="input-first-name"
+                                                       class="form-control form-control-alternative" name="user_prenom"
+                                                       value="<?= $donnees['user_prenom'] ?>" required
+                                                       pattern="[a-zA-Z\-]+"><br>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group focused">
                                                 <label class="form-control-label" for="input-last-name">Nom</label>
-                                                <input type="text" id="input-last-name" class="form-control form-control-alternative" name="user_nom" value="<?= $donnees['user_nom'] ?>" required pattern="[a-zA-Z\-]+"><br>
+                                                <input type="text" id="input-last-name"
+                                                       class="form-control form-control-alternative" name="user_nom"
+                                                       value="<?= $donnees['user_nom'] ?>" required
+                                                       pattern="[a-zA-Z\-]+"><br>
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="form-group focused">
                                                 <label class="form-control-label" for="input-address">Adresse</label>
-                                                <input type="text" id="input-address" class="form-control form-control-alternative" name="user_address" value="<?= $donnees['user_address'] ?>"><br>
+                                                <input type="text" id="input-address"
+                                                       class="form-control form-control-alternative" name="user_address"
+                                                       value="<?= $donnees['user_address'] ?>"><br>
                                             </div>
                                         </div>
                                     </div>
@@ -172,19 +190,27 @@ require_once('../controller/administration.php');
                                         <div class="col-lg-4">
                                             <div class="form-group focused">
                                                 <label class="form-control-label" for="input-city">Ville</label>
-                                                <input type="text" id="input-city" class="form-control form-control-alternative" name="user_city" value="<?= $donnees['user_city'] ?>"><br>
+                                                <input type="text" id="input-city"
+                                                       class="form-control form-control-alternative" name="user_city"
+                                                       value="<?= $donnees['user_city'] ?>"><br>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group focused">
                                                 <label class="form-control-label" for="input-country">Pays</label>
-                                                <input type="text" id="input-country" class="form-control form-control-alternative" name="user_country" value="<?= $donnees['user_country'] ?>" pattern="[A-Za-z\s-]+" title="Le nom du pays ne peut contenir que des lettres, des espaces et des tirets."><br>
+                                                <input type="text" id="input-country"
+                                                       class="form-control form-control-alternative" name="user_country"
+                                                       value="<?= $donnees['user_country'] ?>" pattern="[A-Za-z\s-]+"
+                                                       title="Le nom du pays ne peut contenir que des lettres, des espaces et des tirets."><br>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
-                                                <label class="form-control-label" for="input-postal-code">Code Postal</label>
-                                                <input type="text" id="input-postal-code" class="form-control form-control-alternative" name="user_cp" value="<?= $donnees['user_cp'] ?>"><br>
+                                                <label class="form-control-label" for="input-postal-code">Code
+                                                    Postal</label>
+                                                <input type="text" id="input-postal-code"
+                                                       class="form-control form-control-alternative" name="user_cp"
+                                                       value="<?= $donnees['user_cp'] ?>"><br>
                                             </div>
                                         </div>
                                     </div>
@@ -204,7 +230,7 @@ require_once('../controller/administration.php');
                                     <!-- Button HTML (to Trigger Modal) -->
                                     <a href="#modal" data-toggle="modal">Ouvrir popup</a><br>
                                 </div>
-                                <input class="save--btn" type="submit" value="Sauvegarder" />
+                                <input class="save--btn" type="submit" value="Sauvegarder"/>
 
 
                             </form>
@@ -215,10 +241,11 @@ require_once('../controller/administration.php');
             </div>
         </div>
     </div>
+</section>
 
-    <?php
-    include_once('../_footer/footer.php');
-    ?>
+<?php
+include_once('../_footer/footer.php');
+?>
 
 </body>
 

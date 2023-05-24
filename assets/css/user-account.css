@@ -24,6 +24,10 @@ body, html {
     user-select: none; /* Likely future */
 }
 
+section {
+    padding: 60px 0;
+}
+
 figcaption,
 footer,
 header,
@@ -1057,7 +1061,7 @@ button.bg-white:focus {
 }
 
 .pt-0 {
-    padding-top: 0 !important;
+    padding-top: 70px !important
 }
 
 .pr-0 {
@@ -1103,10 +1107,6 @@ button.bg-white:focus {
 
     .pl-lg-4 {
         padding-left: 1.5rem !important;
-    }
-
-    .pt-lg-8 {
-        padding-top: 7rem !important;
     }
 
     .ml-lg-auto {
@@ -1686,4 +1686,10 @@ p {
     border: 0;
     margin: 20px auto 0 auto;
     cursor: pointer;
+}
+
+@media (max-width: 1199px) {
+    .card-user {
+        padding-top: 50px;
+    }
 }
