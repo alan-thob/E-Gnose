@@ -149,9 +149,9 @@ class Administration
             $req->execute(array($_POST['id_film']));
 
             if ($req) {
-                echo "suppression réussi sur l'id : <b>" . $_POST['id_film'] . ' - ' . $_POST['film_titre'] . "</b>";
+                echo "Suppression réussie sur l'id : <b>" . $_POST['id_film'] . ' - ' . $_POST['film_titre'] . "</b>";
             } else {
-                echo "echec de la supression";
+                echo "Echec de la suppression";
             }
         }
     }
@@ -177,9 +177,9 @@ class Administration
             $req->execute(array($_POST['id_genre']));
 
             if ($req) {
-                echo "suppression réussi sur l'id : <b>" . $_POST['id_genre'] . ' - ' . $_POST['genre'] . "</b>";
+                echo "Suppression réussie sur l'id : <b>" . $_POST['id_genre'] . ' - ' . $_POST['genre'] . "</b>";
             } else {
-                echo "echec de la supression";
+                echo "Echec de la suppression";
             }
         }
     }
@@ -247,7 +247,7 @@ class Administration
     <div class="item__body">
         <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
         <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-        <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+        <a style="float: right" href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
     </div>
 </a>
 </div>';
@@ -269,7 +269,7 @@ class Administration
     <div class="item__body">
         <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
         <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-        <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+        <a style="float: right" href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
     </div>
 </a>
 </div>';
@@ -291,7 +291,7 @@ class Administration
     <div class="item__body">
         <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
         <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-        <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+        <a style="float: right" href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
     </div>
 </a>
 </div>';
@@ -336,7 +336,7 @@ class Administration
     <div class="item__body">
         <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
         <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-        <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+        <a style="float: right" href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
     </div>
 </a>
 </div>';
@@ -358,7 +358,7 @@ class Administration
         <div class="item__body">
             <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
             <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-            <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            <a style="float: right" href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
         </div>
     </a>
 </div>';
@@ -380,7 +380,7 @@ class Administration
         <div class="item__body">
             <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
             <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-            <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            <a style="float: right" href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
         </div>
     </a>
 </div>';
@@ -402,7 +402,7 @@ class Administration
         <div class="item__body">
             <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
             <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-            <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            <a style="float: right" href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
         </div>
     </a>
 </div>';
@@ -424,7 +424,7 @@ class Administration
         <div class="item__body">
             <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
             <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-            <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            <a style="float: right" href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
         </div>
     </a>
 </div>';
@@ -446,7 +446,7 @@ class Administration
         <div class="item__body">
             <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
             <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-            <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+            <a style="float: right" href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
         </div>
     </a>
 </div>';

@@ -35,7 +35,7 @@
                         if (isset($_SESSION['id_user']) && $_SESSION['user_role'] == 1) {
                             echo '<li><a href="https://e-gnose.sfait.fr/index-admin.php">Espace admin</a></li>';
                         }
-                        echo '<li><a href="./_navbar/deconnexion.php">Se déconnecter</a></li>
+                        echo '<li><a href="https://e-gnose.sfait.fr/_navbar/deconnexion.php">Se déconnecter</a></li>
  </ul>
  </li>';
                     } else {
@@ -63,7 +63,7 @@
                     if (isset($_SESSION['id_user']) && $_SESSION['user_role'] == 1) {
                         echo '<li><a href="https://e-gnose.sfait.fr/index-admin.php">Espace admin</a></li>';
                     }
-                    echo '<li><a href="./_navbar/deconnexion.php">Se déconnecter</a></li>
+                    echo '<li><a href="https://e-gnose.sfait.fr/_navbar/deconnexion.php">Se déconnecter</a></li>
  </ul>
  </li>
  </ul>
