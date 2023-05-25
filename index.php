@@ -80,7 +80,7 @@ include_once('./_navbar/navbar.php');
     <div class="container">
 
         <div class="title">
-            <h3>Titres les plus récents disponible</h3>
+            <h3>Titres les plus récents</h3>
         </div>
         <div id="carousel0">
             <?php
@@ -108,7 +108,7 @@ include_once('./_navbar/navbar.php');
     <div class="container">
 
         <div class="title">
-            <h3>Les Films se passant en France</h3>
+            <h3>Films tournés en France</h3>
         </div>
         <div id="carousel2">
             <?php
@@ -122,7 +122,7 @@ include_once('./_navbar/navbar.php');
     <div class="container">
 
         <div class="title">
-            <h3>Les films d'action</h3>
+            <h3>Films d'action</h3>
         </div>
         <div id="carousel3">
             <?php
@@ -136,7 +136,7 @@ include_once('./_navbar/navbar.php');
     <div class="container">
 
         <div class="title">
-            <h3>Les films d'Aventure</h3>
+            <h3>Films d'aventure</h3>
         </div>
         <div id="carousel4">
             <?php
@@ -150,7 +150,7 @@ include_once('./_navbar/navbar.php');
     <div class="container">
 
         <div class="title">
-            <h3>Les Films de Science-Fiction</h3>
+            <h3>Films de science-fiction</h3>
         </div>
         <div id="carousel6">
             <?php
@@ -164,7 +164,7 @@ include_once('./_navbar/navbar.php');
     <div class="container">
 
         <div class="title">
-            <h3>Les Films d'Horreur</h3>
+            <h3>Films d'horreur</h3>
         </div>
         <div id="carousel7">
             <?php
@@ -178,7 +178,7 @@ include_once('./_navbar/navbar.php');
     <div class="container">
 
         <div class="title">
-            <h3>Les Films Fantastiques</h3>
+            <h3>Films fantastiques</h3>
         </div>
         <div id="carousel8">
             <?php
@@ -192,7 +192,7 @@ include_once('./_navbar/navbar.php');
     <div class="container">
 
         <div class="title">
-            <h3>Les Films les plus Longs</h3>
+            <h3>Films les plus longs</h3>
         </div>
         <div id="carousel9">
             <?php
@@ -219,7 +219,7 @@ $administration->SelectFilmByCourt();
     <div class="container">
 
         <div class="title">
-            <h3>Les Series</h3>
+            <h3>Series</h3>
         </div>
         <div id="carousel5">
             <?php
