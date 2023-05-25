@@ -445,3 +445,10 @@ label.search-icon, .menu-icon {
     margin: 0 10px 7px 10px;
     transition: all 0.3s ease;
 }
+
+@media (max-width: 1250px) {
+    .dropdown--searchbar {
+        width: 100vw;
+    }
+
+}
