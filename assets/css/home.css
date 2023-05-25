@@ -12,6 +12,7 @@
 body, html {
     font-family: 'Kanit', sans-serif;
     background: linear-gradient(120deg, #071e53, #15c0ed) 50% no-repeat;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
 }
