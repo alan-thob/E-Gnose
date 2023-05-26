@@ -54,11 +54,16 @@ if(isset($_SESSION['user_role'])){
     <script src="https://e-gnose.sfait.fr/assets/js/showMovie.js" defer></script>
 </head>
 
-<body>
+<body class="unselectable">
 
 <?php
 include_once('_navbar/navbar.php');
 ?>
+
+<div id="preloader">
+    <?php include_once('controller/preloader.php'); ?>
+</div>
+
 
 <section class="services">
     <div class="container">
