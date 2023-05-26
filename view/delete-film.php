@@ -84,7 +84,7 @@ include_once('../_navbar/navbar.php');
                         echo '<option value="' . $row['id_film'] . '">' . $row['id_film'] . ' - ' . $row['film_titre'] . '</option>';
                     } ?>
                 </select>
-                <input class="subscribe__btn" type="submit" value="Supprimer"/>
+                <input class="subscribe__btn" type="submit" value="Valider"/>
             </form></br>
 
             <?php
