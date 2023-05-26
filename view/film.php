@@ -42,6 +42,11 @@ require_once('../controller/administration.php');
 
 <body class="unselectable">
 
+<div id="preloader">
+    <?php include_once('../controller/preloader.php'); ?>
+</div>
+
+
     <?php
     include_once('../_navbar/navbar.php');
     ?>

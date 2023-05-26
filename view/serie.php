@@ -40,6 +40,11 @@ require_once('../controller/singleton_connexion.php');
 
 <body class="unselectable">
 
+<div id="preloader">
+    <?php include_once('../controller/preloader.php'); ?>
+</div>
+
+
 <?php
 require_once("../controller/administration.php");
 require_once("../model/films_model.php");
