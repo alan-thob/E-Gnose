@@ -2,22 +2,21 @@
 session_start();
 require_once("../controller/singleton_connexion.php");
 require_once("../controller/administration.php");
-require_once("../controller/administration.php");
 
 if(isset($_SESSION['user_role'])){
     if($_SESSION['user_role'] == 1){
-        // l'utilisateur a un r�le d'administrateur
+        // l'utilisateur a un rôle d'administrateur
     } else if($_SESSION['user_role'] == 3){
-        // l'utilisateur a un r�le de mod�rateur
+        // l'utilisateur a un rôle de modérateur
         header('location: ../index.php');
         exit;
     } else {
-        // l'utilisateur a un r�le ind�fini
+        // l'utilisateur a un rôle indéfini
         header('location: ../view/error/403.php');
         exit;
     }
 } else {
-    // la variable de session n'est pas initialis�e
+    // la variable de session n'est pas initialisée
     header('location: ../view/error/403.php');
     exit;
 }
