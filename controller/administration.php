@@ -149,7 +149,7 @@ class Administration
             $req->execute(array($_POST['id_film']));
 
             if ($req) {
-                echo "Suppression réussie sur l'id : <b>" . $_POST['id_film'] . ' - ' . $_POST['film_titre'] . "</b>";
+                echo "Suppression réussi sur l'id : <b>" . $_POST['id_film'] . ' - ' . $_POST['film_titre'] . "</b>";
             } else {
                 echo "Echec de la suppression";
             }
@@ -242,7 +242,7 @@ class Administration
         if ($allRessources->rowCount() > 0) {
             while ($ressources = $allRessources->fetch()) {
                 echo '<div class="item" style="width: 85%">
-<a href="./view/content.php?id=' . $ressources['id_film'] . '">
+<a href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">
     <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
     <div class="item__body">
         <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
@@ -264,7 +264,7 @@ class Administration
         if ($allRessources->rowCount() > 0) {
             while ($ressources = $allRessources->fetch()) {
                 echo '<div class="item" style="width: 85%">
-<a href="./view/content.php?id=' . $ressources['id_film'] . '">
+<a href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">
     <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
     <div class="item__body">
         <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
@@ -286,7 +286,7 @@ class Administration
         if ($allRessources->rowCount() > 0) {
             while ($ressources = $allRessources->fetch()) {
                 echo '<div class="item" style="width: 85%">
-<a href="./view/content.php?id=' . $ressources['id_film'] . '">
+<a href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">
     <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
     <div class="item__body">
         <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
@@ -309,12 +309,12 @@ class Administration
         if ($allRessources->rowCount() > 0) {
             while ($ressources = $allRessources->fetch()) {
                 echo '<div class="item" style="width: 85%">
-<a href="./view/content.php?id=' . $ressources['id_film'] . '">
+<a href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">
     <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
     <div class="item__body">
         <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
         <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-        <a style="float: right" href="./view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+        <a style="float: right" href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
     </div>
 </a>
 </div>';
@@ -331,7 +331,7 @@ class Administration
         if ($allRessources->rowCount() > 0) {
             while ($ressources = $allRessources->fetch()) {
                 echo '<div class="item" style="width: 85%">
-<a href="./view/content.php?id=' . $ressources['id_film'] . '">
+<a href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">
     <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
     <div class="item__body">
         <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
@@ -353,7 +353,7 @@ class Administration
         if ($allRessources->rowCount() > 0) {
             while ($ressources = $allRessources->fetch()) {
                 echo '<div class="item" style="width: 85%">
-    <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+    <a href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">
         <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
         <div class="item__body">
             <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
@@ -375,7 +375,7 @@ class Administration
         if ($allRessources->rowCount() > 0) {
             while ($ressources = $allRessources->fetch()) {
                 echo '<div class="item" style="width: 85%">
-    <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+    <a href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">
         <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
         <div class="item__body">
             <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
@@ -397,7 +397,7 @@ class Administration
         if ($allRessources->rowCount() > 0) {
             while ($ressources = $allRessources->fetch()) {
                 echo '<div class="item" style="width: 85%">
-    <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+    <a href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">
         <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
         <div class="item__body">
             <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
@@ -419,7 +419,7 @@ class Administration
         if ($allRessources->rowCount() > 0) {
             while ($ressources = $allRessources->fetch()) {
                 echo '<div class="item" style="width: 85%">
-    <a href="./view/content.php?id=' . $ressources['id_film'] . '">
+    <a href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">
         <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
         <div class="item__body">
             <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
@@ -441,15 +441,15 @@ class Administration
         if ($allRessources->rowCount() > 0) {
             while ($ressources = $allRessources->fetch()) {
                 echo '<div class="item" style="width: 85%">
-    <a href="./view/content.php?id=' . $ressources['id_film'] . '">
-        <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
-        <div class="item__body">
-            <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
-            <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
-            <a style="float: right" href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
-        </div>
-    </a>
-</div>';
+                        <a href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">
+                        <div class="item__image"><img src="' . $ressources['film_cover_image'] . '" alt=""></div>
+                        <div class="item__body">
+                            <div class="item__title">' . strip_tags($ressources['film_titre']) . '</div>
+                            <div class="item__description">' . substr($ressources['film_description'], 0, 200) . '... <br/>
+                            <a style="float: right" href="https://e-gnose.sfait.fr/view/content.php?id=' . $ressources['id_film'] . '">Lire la suite...</a></div>
+                        </div>
+                        </a> 
+                      </div>';
             }
         } else {
             echo "<p>Aucun média trouvé</p>";
@@ -457,45 +457,62 @@ class Administration
     }
 
 
-    //SELECT ACTOR
-    public function SelectActor()
-    {
-        global $db;
-        $id = $_GET['id'];
-        $acteur = $db->prepare('SELECT * FROM acteurs, personnage, films  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_film = films.id_film AND films.id_film = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
-        $acteur->bindParam(1, $id, PDO::PARAM_INT);
-        $acteur->execute();
-        if ($acteur->rowCount() > 0) {
-            while ($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)) {
-                echo '<div class="item" style="width: 85%">
-                        <div class="item__image"><img src="' . $acteurs['acteur_img'] . '" alt=""></div>
-                        <div class="item__body">
-                            <div class="item__title">' . strip_tags($acteurs['acteur_nom']) . '</div>
-                            <div class="item__description">' . strip_tags($acteurs['personnage_nom']) . '</div><br/>
-                        </div>
-                    </div>';
-            }
-        }else {
-            echo "<p>Aucun acteur disponible pour le moment</p>";
-        }
-    }
-
     // SELECT SERIE
     public function SelectSerieByPop()
     {
         global $db;
-        $allRessources = $db->prepare('SELECT * FROM `series`  WHERE serie_value = 1 ORDER BY serie_popularity DESC LIMIT 15');
+        $allRessources = $db->prepare('SELECT * FROM `series`  WHERE serie_cover_image != " " AND serie_value = 1 ORDER BY serie_popularity DESC LIMIT 15');
         $allRessources->execute();
         if ($allRessources->rowCount() > 0) {
             while ($ressources = $allRessources->fetch()) {
                 echo '<div class="item" style="width: 85%">
-<a href="./view/content_serie.php?id=' . $ressources['id_serie'] . '">
-    <div class="item__image"><img src="' . $ressources['serie_cover_image'] . '" alt=""></div>
-    <div class="item__body">
-        <div class="item__title">' . strip_tags($ressources['serie_titre']) . '</div>
-    </div>
-</a>
-</div>';
+                        <a href="https://e-gnose.sfait.fr/view/content_serie.php?id=' . $ressources['id_serie'] . '">
+                            <div class="item__image"><img src="' . $ressources['serie_cover_image'] . '" alt=""></div>
+                            <div class="item__body">
+                                <div class="item__title">' . strip_tags($ressources['serie_titre']) . '</div>
+                            </div>
+                        </a>
+                    </div>';
+            }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
+        }
+    }
+    public function SelectSerieByMinDuree()
+    {
+        global $db;
+        $allRessources = $db->prepare('SELECT * FROM `series`  WHERE serie_cover_image != " " AND serie_value = 1 ORDER BY serie_duree_episode DESC LIMIT 15');
+        $allRessources->execute();
+        if ($allRessources->rowCount() > 0) {
+            while ($ressources = $allRessources->fetch()) {
+                echo '<div class="item" style="width: 85%">
+                        <a href="https://e-gnose.sfait.fr/view/content_serie.php?id=' . $ressources['id_serie'] . '">
+                            <div class="item__image"><img src="' . $ressources['serie_cover_image'] . '" alt=""></div>
+                            <div class="item__body">
+                                <div class="item__title">' . strip_tags($ressources['serie_titre']) . '</div>
+                            </div>
+                        </a>
+                    </div>';
+            }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
+        }
+    }
+    public function SelectSerieByUsCity()
+    {
+        global $db;
+        $allRessources = $db->prepare('SELECT * FROM `series`  WHERE serie_city = "US" AND serie_cover_image != " " AND serie_value = 1 ORDER BY serie_titre DESC LIMIT 15');
+        $allRessources->execute();
+        if ($allRessources->rowCount() > 0) {
+            while ($ressources = $allRessources->fetch()) {
+                echo '<div class="item" style="width: 85%">
+                        <a href="https://e-gnose.sfait.fr/view/content_serie.php?id=' . $ressources['id_serie'] . '">
+                            <div class="item__image"><img src="' . $ressources['serie_cover_image'] . '" alt=""></div>
+                            <div class="item__body">
+                                <div class="item__title">' . strip_tags($ressources['serie_titre']) . '</div>
+                            </div>
+                        </a>
+                    </div>';
             }
         } else {
             echo "<p>Aucun média trouvé</p>";
@@ -503,36 +520,73 @@ class Administration
     }
 
     // SELECT LIVRE
-    public function SelectLivre()
+    public function SelectLivreNbPageAsc()
     {
         global $db;
-        $req = $db->prepare('SELECT * FROM `livres` ');
+        $req = $db->prepare('SELECT * FROM `livres` ORDER By livre_nombre_page ASC ');
         $req->execute();
-    }
-    // SELECT ACTEUR
-    public function SelectActeur()
-    {
-        global $db;
-        global $acteur;
-        $acteur = $db->prepare('SELECT * FROM acteurs, personnage, films  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_film = films.id_film AND films.id_film = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
-        $acteur->bindParam(1, $id, PDO::PARAM_INT);
-        $acteur->execute();
-        if ($acteur->rowCount() > 0) {
-            $count = 0;
-            while ($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)) { ?>
-                <div>
-                    <ul>
-                        <li>
-                            <p><?= $acteurs['acteur_nom'] ?></p>
-                            <p><?= $acteurs['personnage_nom'] ?></p>
-                            <img src="<?= $acteurs['acteur_img'] ?>" alt="" />
-                        </li>
-                    </ul>
-                </div>
-<?php
+        if ($req->rowCount() > 0) {
+            while ($ressources = $req->fetch()) {
+                echo '<div class="item" style="width: 85%">
+                        <a href="https://e-gnose.sfait.fr/view/content_serie.php?id=' . $ressources['id_livre'] . '">
+                            <div class="item__image"><img src="' . $ressources['livre_cover_image'] . '" alt=""></div>
+                            <div class="item__body">
+                                <div class="item__title">' . strip_tags($ressources['livre_titre']) . '</div>
+                            </div>
+                        </a>
+                    </div>';
             }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
         }
     }
+    public function SelectLivreDateAsc()
+    {
+        global $db;
+        $req = $db->prepare('SELECT * FROM `livres` ORDER By livre_date_publication ASC');
+        $req->execute();
+        if ($req->rowCount() > 0) {
+            while ($ressources = $req->fetch()) {
+                echo '<div class="item" style="width: 85%">
+                        <a href="https://e-gnose.sfait.fr/view/content_serie.php?id=' . $ressources['id_livre'] . '">
+                            <div class="item__image"><img src="' . $ressources['livre_cover_image'] . '" alt=""></div>
+                            <div class="item__body">
+                                <div class="item__title">' . strip_tags($ressources['livre_titre']) . '</div>
+                            </div>
+                        </a>
+                    </div>';
+            }
+        } else {
+            echo "<p>Aucun média trouvé</p>";
+        }
+    }
+    
+    
+    
+    
+     //SELECT ACTOR
+     public function SelectActor()
+     {
+         global $db;
+         $id = $_GET['id'];
+         $acteur = $db->prepare('SELECT * FROM acteurs, personnage, films  WHERE acteurs.id_acteur = personnage.id_acteur AND personnage.id_film = films.id_film AND films.id_film = ? ORDER BY personnage.personnage_order ASC LIMIT 0,10');
+         $acteur->bindParam(1, $id, PDO::PARAM_INT);
+         $acteur->execute();
+         if ($acteur->rowCount() > 0) {
+             while ($acteurs = $acteur->fetch(PDO::FETCH_ASSOC)) {
+                 echo '<div class="item" style="width: 85%">
+                         <div class="item__image"><img src="' . $acteurs['acteur_img'] . '" alt=""></div>
+                         <div class="item__body">
+                             <div class="item__title">' . strip_tags($acteurs['acteur_nom']) . '</div>
+                             <div class="item__description">' . strip_tags($acteurs['personnage_nom']) . '</div><br/>
+                         </div>
+                     </div>';
+             }
+         }else {
+             echo "<p>Aucun acteur disponible pour le moment</p>";
+         }
+     }
+
     // SELECT USER INFO
     public function SelectUserInfo()
     {

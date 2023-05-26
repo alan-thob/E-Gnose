@@ -40,10 +40,6 @@ require_once('../controller/singleton_connexion.php');
 
 <body class="unselectable">
 
-<div id="preloader">
-    <?php include_once('../controller/preloader.php'); ?>
-</div>
-
 <?php
 require_once("../controller/administration.php");
 require_once("../model/films_model.php");
@@ -60,7 +56,7 @@ include_once('../_navbar/navbar.php');
         </div>
         <div id="carousel0">
             <?php
-            $administration->SelectFilmByDateAsc();
+            $administration->SelectSerieByPop();
             ?>
         </div>
     </div>
@@ -70,11 +66,24 @@ include_once('../_navbar/navbar.php');
     <div class="container">
 
         <div class="title">
-            <h3>Les mieux notés</h3>
+            <h3>Les Series avec épisode les plus court</h3>
         </div>
         <div id="carousel1">
             <?php
-            $administration->SelectFilmByPop();
+            $administration->SelectSerieByMinDuree();
+            ?>
+        </div>
+    </div>
+</section>
+<section id="carousel-content">
+    <div class="container">
+
+        <div class="title">
+            <h3>Les Series US</h3>
+        </div>
+        <div id="carousel2">
+            <?php
+            $administration->SelectSerieByUsCity();
             ?>
         </div>
     </div>
@@ -85,7 +94,6 @@ include_once('../_navbar/navbar.php');
 include_once('../_footer/footer.php');
 ?>
 
-<script src="../assets/js/preloader.js"></script>
 <script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script src="../assets/js/carousel.js" async></script>
 

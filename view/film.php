@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once('../controller/singleton_connexion.php');
+require_once('../controller/administration.php');
+
 ?>
 <!doctype html>
 <html lang="fr">
@@ -9,17 +11,17 @@ require_once('../controller/singleton_connexion.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Films, livres, audio... Toute une bibliothèque pour vous divertir, oû que vous soyez, en illimité !" />
+    <meta name="description" content="Films, livres, audio... Toute une bibliothÃ¨que pour vous divertir, oÃ» que vous soyez, en illimité !" />
     <meta name="robots" content="index, follow" />
     <meta property="og:title" content="Les films | e-Gnose" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
     <meta property="og:url" content="https://e-gnose.sfait.fr/view/film.php" />
-    <meta property="og:description" content="Films, livres, audios... Toute une bibliothèque pour vous divertir, oû que vous soyez, en illimité !" />
+    <meta property="og:description" content="Films, livres, audios... Toute une bibliothÃ¨que pour vous divertir, oÃ» que vous soyez, en illimité !" />
     <meta property="og:locale" content="fr_FR" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Les films | e-Gnose" />
-    <meta name="twitter:description" content="Films, livres, audios... Toute une bibliothèque pour vous divertir, oû que vous soyez, en illimité !" />
+    <meta name="twitter:description" content="Films, livres, audios... Toute une bibliothÃ¨que pour vous divertir, oÃ» que vous soyez, en illimité !" />
     <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png" />
     <title>Les films | e-Gnose</title>
 
@@ -40,55 +42,144 @@ require_once('../controller/singleton_connexion.php');
 
 <body class="unselectable">
 
-<div id="preloader">
-    <?php include_once('../controller/preloader.php'); ?>
-</div>
+    <?php
+    include_once('../_navbar/navbar.php');
+    ?>
 
+    <section id="carousel-content">
+        <div class="container">
 
-<?php
-require_once("../controller/administration.php");
-require_once("../model/films_model.php");
-include_once('../_navbar/navbar.php');
-?>
-
-<section id="carousel-content" style="padding-top: 60px">
-    <div class="container">
-        <div class="title">
-            <h1>Les films</h1>
+            <div class="title">
+                <h3>Titres les plus récents disponible</h3>
+            </div>
+            <div id="carousel0">
+                <?php
+                $administration->SelectFilmByDateAsc();
+                ?>
+            </div>
         </div>
-        <div class="title">
-            <h3>Titres les plus récents</h3>
+    </section>
+
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les mieux notés</h3>
+            </div>
+            <div id="carousel1">
+                <?php
+                $administration->SelectFilmByPop();
+                ?>
+            </div>
         </div>
-        <div id="carousel0">
-            <?php
-            $administration->SelectFilmByDateAsc();
-            ?>
+    </section>
+    
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les Films les plus court</h3>
+            </div>
+            <div id="carousel2">
+                <?php
+                $administration->SelectFilmByCourt();
+                ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="carousel-content">
-    <div class="container">
+    <section id="carousel-content">
+        <div class="container">
 
-        <div class="title">
-            <h3>Les mieux notés</h3>
+            <div class="title">
+                <h3>Les films d'action</h3>
+            </div>
+            <div id="carousel3">
+                <?php
+                $administration->SelectFilmByAction();
+                ?>
+            </div>
         </div>
-        <div id="carousel1">
-            <?php
-            $administration->SelectFilmByPop();
-            ?>
+    </section>
+
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les films d'Aventure</h3>
+            </div>
+            <div id="carousel4">
+                <?php
+                $administration->SelectFilmByAventure();
+                ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les Films de Science-Fiction</h3>
+            </div>
+            <div id="carousel5">
+                <?php
+                $administration->SelectFilmBySF();
+                ?>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les Films d'Horreur</h3>
+            </div>
+            <div id="carousel6">
+                <?php
+                $administration->SelectFilmByHorror();
+                ?>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les Films Fantastiques</h3>
+            </div>
+            <div id="carousel7">
+                <?php
+                $administration->SelectFilmByFantastique();
+                ?>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel-content">
+        <div class="container">
+
+            <div class="title">
+                <h3>Les Films les plus Longs</h3>
+            </div>
+            <div id="carousel8">
+                <?php
+                $administration->SelectFilmByLong();
+                ?>
+            </div>
+        </div>
+    </section>
+    
 
 
-<?php
-include_once('../_footer/footer.php');
-?>
+    <?php
+    include_once('../_footer/footer.php');
+    ?>
 
-<script src="../assets/js/preloader.js"></script>
-<script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-<script src="../assets/js/carousel.js" async></script>
+    <script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="../assets/js/carousel.js" async></script>
 
 </body>
 

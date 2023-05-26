@@ -40,11 +40,6 @@ require_once('../controller/singleton_connexion.php');
 
 <body class="unselectable">
 
-<div id="preloader">
-    <?php include_once('../controller/preloader.php'); ?>
-</div>
-
-
 <?php
 require_once("../controller/administration.php");
 require_once("../model/films_model.php");
@@ -57,11 +52,11 @@ include_once('../_navbar/navbar.php');
             <h1>Les livres</h1>
         </div>
         <div class="title">
-            <h3>Titres les plus récents</h3>
+            <h3>Livres les plus récents</h3>
         </div>
         <div id="carousel0">
             <?php
-            $administration->SelectFilmByDateAsc();
+            $administration->SelectLivreDateAsc();
             ?>
         </div>
     </div>
@@ -71,11 +66,11 @@ include_once('../_navbar/navbar.php');
     <div class="container">
 
         <div class="title">
-            <h3>Les mieux notés</h3>
+            <h3>Livres + long au + court</h3>
         </div>
         <div id="carousel1">
             <?php
-            $administration->SelectFilmByPop();
+            $administration->SelectLivreNbPageAsc();
             ?>
         </div>
     </div>
@@ -86,7 +81,6 @@ include_once('../_navbar/navbar.php');
 include_once('../_footer/footer.php');
 ?>
 
-<script src="../assets/js/preloader.js"></script>
 <script src="https://cdn.usebootstrap.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script src="../assets/js/carousel.js" async></script>
 
