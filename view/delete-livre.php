@@ -161,6 +161,9 @@ include_once('../_navbar/navbar.php');
             }
             $administration->DeleteLivre();
             ?>
+        </div>
+    </div>
+</section>
 </body>
 
 </html>
