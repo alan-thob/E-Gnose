@@ -2,7 +2,6 @@
 session_start();
 require_once("../controller/singleton_connexion.php");
 require_once("../controller/administration.php");
-require_once("../controller/administration.php");
 
 if(isset($_SESSION['user_role'])){
     if($_SESSION['user_role'] == 1){
