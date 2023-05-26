@@ -35,7 +35,7 @@ class Administration
     public function ModifyFilm()
     {
         global $db;
-        if (isset($_POST['film_date'])) {
+        if (isset($_POST['film_titre'])) {
             $modify = $db->prepare('UPDATE films SET film_city=?,film_titre=?,film_description=?,film_realisateur=?, film_cover_image =?, film_back_image =?,film_trailer=?, 
             film_duree=?, film_date=?, film_popularity=?, film_value=? WHERE id_film = ?');
             $modify->execute(array(
@@ -46,6 +46,43 @@ class Administration
             ));
             if ($modify) {
                 echo "modification réussi sur l'id : <b>" . $_POST['id_film'] . ' - ' . $_POST['film_titre'] . "</b>";
+            } else {
+                echo "echec de la modification";
+            }
+        }
+    }
+    public function ModifySerie()
+    {
+        global $db;
+        if (isset($_POST['serie_titre'])) {
+            $modify = $db->prepare('UPDATE series SET serie_city=?,serie_titre=?,serie_realisateur=?,serie_description_plus=?,serie_duree_episode=?, serie_cover_image =?, serie_back_cover =?,serie_trailer=?, 
+            serie_nombre_episodes=?, serie_nombre_saison=?, serie_popularity=?, serie_value=? WHERE id_serie = ?');
+            $modify->execute(array(
+                $_POST['serie_city'],
+                $_POST['serie_titre'], $_POST['serie_realisateur'], $_POST['serie_description_plus'], $_POST['serie_duree_episode'], $_POST['serie_cover_image'],
+                $_POST['serie_back_cover'], $_POST['serie_trailer'], $_POST['serie_nombre_episodes'], $_POST['serie_nombre_saison'], $_POST['serie_popularity'],
+                $_POST['serie_value'], $_POST['id_serie']
+            ));
+            if ($modify) {
+                echo "modification réussi sur l'id : <b>" . $_POST['id_serie'] . ' - ' . $_POST['serie_titre'] . "</b>";
+            } else {
+                echo "echec de la modification";
+            }
+        }
+    }
+    public function ModifyLivre()
+    {
+        global $db;
+        if (isset($_POST['livre_titre'])) {
+            $modify = $db->prepare('UPDATE livres SET livre_titre=?,livre_editeur=?,livre_auteur=?,livre_date_publication=?, livre_nombre_page =?,livre_cover_image=?, 
+            livre_description=?, livre_popularity=?, livre_value=? WHERE id_livre = ?');
+            $modify->execute(array(
+                $_POST['livre_titre'], $_POST['livre_editeur'], $_POST['livre_auteur'], $_POST['livre_date_publication'], 
+                $_POST['livre_nombre_page'], $_POST['livre_cover_image'], $_POST['livre_description'], $_POST['livre_popularity'],
+                $_POST['livre_value'], $_POST['id_livre']
+            ));
+            if ($modify) {
+                echo "modification réussi sur l'id : <b>" . $_POST['id_livre'] . ' - ' . $_POST['livre_titre'] . "</b>";
             } else {
                 echo "echec de la modification";
             }
@@ -150,6 +187,34 @@ class Administration
 
             if ($req) {
                 echo "Suppression réussi sur l'id : <b>" . $_POST['id_film'] . ' - ' . $_POST['film_titre'] . "</b>";
+            } else {
+                echo "Echec de la suppression";
+            }
+        }
+    }
+    public function DeleteSerie()
+    {
+        global $db;
+        if (isset($_POST['id_serie'])) {
+            $req = $db->prepare('DELETE FROM `series` WHERE id_serie= ?');
+            $req->execute(array($_POST['id_serie']));
+
+            if ($req) {
+                echo "Suppression réussi sur l'id : <b>" . $_POST['id_serie'] . ' - ' . $_POST['serie_titre'] . "</b>";
+            } else {
+                echo "Echec de la suppression";
+            }
+        }
+    }
+    public function DeleteLivre()
+    {
+        global $db;
+        if (isset($_POST['id_livre'])) {
+            $req = $db->prepare('DELETE FROM `livres` WHERE id_livre= ?');
+            $req->execute(array($_POST['id_livre']));
+
+            if ($req) {
+                echo "Suppression réussi sur l'id : <b>" . $_POST['id_livre'] . ' - ' . $_POST['livre_titre'] . "</b>";
             } else {
                 echo "Echec de la suppression";
             }

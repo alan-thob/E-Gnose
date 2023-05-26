@@ -5,16 +5,16 @@ if(isset($_SESSION['user_role'])){
         // l'utilisateur a un rôle d'administrateur
     } else if($_SESSION['user_role'] == 3){
         // l'utilisateur a un rôle de modérateur
-        header('location: /index-admin.php');
+        header('location: ./index.php');
         exit;
     } else {
         // l'utilisateur a un rôle indéfini
-        header('location: /view/error/403.php');
+        header('location: ./view/error/403.php');
         exit;
     }
 } else {
     // la variable de session n'est pas initialisée
-    header('location: /view/error/403.php');
+    header('location: ./view/error/403.php');
     exit;
 }
 ?>
@@ -55,10 +55,6 @@ if(isset($_SESSION['user_role'])){
 </head>
 
 <body>
-
-<div id="preloader">
-    <?php include_once('./controller/preloader.php'); ?>
-</div>
 
 <?php
 include_once('_navbar/navbar.php');
@@ -104,18 +100,18 @@ include_once('_navbar/navbar.php');
         </div>
 
         <div class="row">
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <a href="#">
+            <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <a href="./view/insert-film.php">
                     <div class="icon-box">
                         <div class="icon"><i style="width: 80%" class="fa-solid fa-plus"></i></div>
                         <h4>Ajouter un média</h4>
                         <p>Ajouter un nouveau contenu média dans la base de données.</p>
                     </div>
                 </a>
-            </div>
+            </div> -->
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                <a href="#">
+                <a href="./view/modify-film.php">
                     <div class="icon-box">
                         <div class="icon"><i style="width: 80%" class="fa-solid fa-pen"></i></div>
                         <h4>Modifier un média</h4>
@@ -125,7 +121,7 @@ include_once('_navbar/navbar.php');
             </div>
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-                <a href="#">
+                <a href="./view/delete-film.php">
                     <div class="icon-box">
                         <div class="icon"><i style="width: 80%" class="fa-solid fa-trash"></i></div>
                         <h4>Supprimer un média</h4>
@@ -141,32 +137,32 @@ include_once('_navbar/navbar.php');
         </div>
 
         <div class="row">
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <a href="#">
+            <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <a href="./view/insert-serie.php">
                     <div class="icon-box">
                         <div class="icon"><i style="width: 80%" class="fa-solid fa-plus"></i></div>
-                        <h4>Ajouter un média</h4>
-                        <p>Ajouter un nouveau contenu média dans la base de données.</p>
+                        <h4>Ajouter une serie</h4>
+                        <p>Ajouter un nouveau contenu serie dans la base de données.</p>
                     </div>
                 </a>
-            </div>
+            </div> -->
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                <a href="#">
+                <a href="./view/modify-serie.php">
                     <div class="icon-box">
                         <div class="icon"><i style="width: 80%" class="fa-solid fa-pen"></i></div>
-                        <h4>Modifier un média</h4>
-                        <p>Modifier les informations d'un contenu média déjà inscrit dans la base de données.</p>
+                        <h4>Modifier une serie</h4>
+                        <p>Modifier les informations d'une serie média déjà inscrit dans la base de données.</p>
                     </div>
                 </a>
             </div>
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-                <a href="#">
+                <a href="./view/delete-serie.php">
                     <div class="icon-box">
                         <div class="icon"><i style="width: 80%" class="fa-solid fa-trash"></i></div>
-                        <h4>Supprimer un média</h4>
-                        <p>Supprimer définitivement un contenu média existant de la base de données.</p>
+                        <h4>Supprimer une serie</h4>
+                        <p>Supprimer définitivement un contenu serie existant de la base de données.</p>
                     </div>
                 </a>
             </div>
@@ -178,32 +174,32 @@ include_once('_navbar/navbar.php');
         </div>
 
         <div class="row">
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <a href="#">
+            <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <a href="./view/insert-livre.php">
                     <div class="icon-box">
                         <div class="icon"><i style="width: 80%" class="fa-solid fa-plus"></i></div>
-                        <h4>Ajouter un média</h4>
-                        <p>Ajouter un nouveau contenu média dans la base de données.</p>
+                        <h4>Ajouter un livre</h4>
+                        <p>Ajouter un nouveau contenu livre dans la base de données.</p>
                     </div>
                 </a>
-            </div>
+            </div> -->
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                <a href="#">
+                <a href="./view/modify-livre.php">
                     <div class="icon-box">
                         <div class="icon"><i style="width: 80%" class="fa-solid fa-pen"></i></div>
-                        <h4>Modifier un média</h4>
-                        <p>Modifier les informations d'un contenu média déjà inscrit dans la base de données.</p>
+                        <h4>Modifier un livre</h4>
+                        <p>Modifier les informations d'un contenu livre déjà inscrit dans la base de données.</p>
                     </div>
                 </a>
             </div>
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-                <a href="#">
+                <a href="./view/delete-livre.php">
                     <div class="icon-box">
                         <div class="icon"><i style="width: 80%" class="fa-solid fa-trash"></i></div>
-                        <h4>Supprimer un média</h4>
-                        <p>Supprimer définitivement un contenu média existant de la base de données.</p>
+                        <h4>Supprimer un livre</h4>
+                        <p>Supprimer définitivement un contenu livre existant de la base de données.</p>
                     </div>
                 </a>
             </div>
@@ -214,8 +210,6 @@ include_once('_navbar/navbar.php');
 <?php
 include_once('_footer/footer.php');
 ?>
-
-<script src="assets/js/preloader.js"></script>
 
 </body>
 

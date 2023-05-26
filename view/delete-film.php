@@ -1,3 +1,23 @@
+<?php
+session_start();
+if(isset($_SESSION['user_role'])){
+    if($_SESSION['user_role'] == 1){
+        // l'utilisateur a un r�le d'administrateur
+    } else if($_SESSION['user_role'] == 3){
+        // l'utilisateur a un r�le de mod�rateur
+        header('location: ../index.php');
+        exit;
+    } else {
+        // l'utilisateur a un r�le ind�fini
+        header('location: ../view/error/403.php');
+        exit;
+    }
+} else {
+    // la variable de session n'est pas initialis�e
+    header('location: ../view/error/403.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +29,6 @@
 </head>
 
 <body>
-
-<div id="preloader">
-    <?php include_once('../controller/preloader.php'); ?>
-</div>
-
     <center>
         <p>Veuillez selectionner le film à supprimer :</p>
         <form action="" method='post'>
@@ -63,8 +78,6 @@
         }
         $administration->Deletefilm();
         ?>
-
-        <script src="../assets/js/preloader.js"></script>
 </body>
 
 </html>

@@ -37,11 +37,6 @@ require_once('../controller/ControllerConnexion.php');
 
 <body class="unselectable">
 
-<div id="preloader">
-    <?php include_once('../controller/preloader.php'); ?>
-</div>
-
-
 <?php
 include_once('../_navbar/navbar.php');
 
@@ -113,8 +108,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 </div>
-
-<script src="../assets/js/preloader.js"></script>
 
 </body>
 

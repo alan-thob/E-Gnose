@@ -6,18 +6,18 @@ require_once("../controller/administration.php");
 
 if(isset($_SESSION['user_role'])){
     if($_SESSION['user_role'] == 1){
-        // l'utilisateur a un rôle d'administrateur
+        // l'utilisateur a un r�le d'administrateur
     } else if($_SESSION['user_role'] == 3){
-        // l'utilisateur a un rôle de modérateur
+        // l'utilisateur a un r�le de mod�rateur
         header('location: ../index.php');
         exit;
     } else {
-        // l'utilisateur a un rôle indéfini
+        // l'utilisateur a un r�le ind�fini
         header('location: ../view/error/403.php');
         exit;
     }
 } else {
-    // la variable de session n'est pas initialisée
+    // la variable de session n'est pas initialis�e
     header('location: ../view/error/403.php');
     exit;
 }
@@ -76,16 +76,16 @@ include_once('../_navbar/navbar.php');
             <form action="" method='post'>
 
                 <?php
-                // On récupère tout le contenu de la table clients
+                // On r�cup�re tout le contenu de la table clients
                 global $db; ?>
                 <select id="id" name="id">
                     <option disabled selected> Sélectionner un média</option>
                     <?php
-                    $stmt = $db->query("SELECT id_film, film_titre FROM films");
+                    $stmt = $db->query("SELECT id_livre, livre_titre FROM livres");
                     $stmt->execute();
                     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($result as $row) {
-                        echo '<option value="' . $row['id_film'] . '">' . $row['id_film'] . ' - ' . $row['film_titre'] . '</option>';
+                        echo '<option value="' . $row['id_livre'] . '">' . $row['id_livre'] . ' - ' . $row['livre_titre'] . '</option>';
                     }
                     ?>
                 </select>
@@ -96,79 +96,69 @@ include_once('../_navbar/navbar.php');
 
             <?php
             if (isset($_POST['id'])) {
-                $req = $db->prepare("SELECT * FROM films WHERE id_film = ?");
+                $req = $db->prepare("SELECT * FROM livres WHERE id_livre = ?");
                 $req->bindParam(1, $_POST['id'], PDO::PARAM_INT);
                 $req->execute();
                 $donnees = $req->fetch(PDO::FETCH_ASSOC);
-                echo "Vous êtes en train de modifier le média : " . $donnees['film_titre'] . ' [ID: ' . $_POST['id'] . ']' . "<br>";
+                echo "Vous êtes en train de modifier le média : " . $donnees['livre_titre'] . ' [ID: ' . $_POST['id'] . ']' . "<br>";
                 echo '<form action="" method="post">';
-                // On affiche chaque entrée une à une
+                // On affiche chaque entr�e une � une
 
                 echo '<div class="form-group">
 
                 <div class="form-group">
-                    <input type="hidden" class="form-control" name="id_film" value="' . $donnees['id_film'] . '" required>
+                    <input type="hidden" class="form-control" name="id_livre" value="' . $donnees['id_livre'] . '" required>
                 </div>
                 
                 <div class="form-group">
-                <label for="film_city">Film City</label>
-                    <input type="text" class="form-control" name="film_city" value="' . $donnees['film_city'] . '" required>
+                <label for="livre_titre">Titre</label>
+                    <input type="text" class="form-control" name="livre_titre" value="' . $donnees['livre_titre'] . '" required>
                 </div>
                 
                 <div class="form-group">
-                <label for="film_titre">Titre</label>
-                    <input type="text" class="form-control" name="film_titre" value="' . $donnees['film_titre'] . '" required>
+                <label for="livre_editeur">livre editeur</label>
+                    <input type="text" class="form-control" name="livre_editeur" value="' . $donnees['livre_editeur'] . '" required>
                 </div>
                 
                 <div class="form-group">
-                <label for="film_description">Description</label>
-                    <input type="text" class="form-control" name="film_description" value="' . $donnees['film_description'] . '" required>
+                <label for="livre_auteur">livre auteur</label>
+                    <input type="text" class="form-control" name="livre_auteur" value="' . $donnees['livre_auteur'] . '" required>
                 </div>
                 
                 <div class="form-group">
-                <label for="film_realisateur">Réalisateur(s)</label>
-                    <input type="text" class="form-control" name="film_realisateur" value="' . $donnees['film_realisateur'] . '" required>
+                <label for="livre_date_publication">livre Date Publication</label>
+                    <input type="text" class="form-control" name="livre_date_publication" value="' . $donnees['livre_date_publication'] . '" required>
                 </div>
                 
                 <div class="form-group">
-                <label for="film_cover_image">Image de couverture</label>
-                    <input type="text" class="form-control" name="film_cover_image" value="' . $donnees['film_cover_image'] . '" required>
+                <label for="livre_description">Description</label>
+                    <input type="text" class="form-control" name="livre_description" value="' . $donnees['livre_description'] . '" required>
                 </div>
                 
                 <div class="form-group">
-                <label for="film_back_image">Image d\'arrière-plan</label>
-                    <input type="text" class="form-control" name="film_back_image" value="' . $donnees['film_back_image'] . '" required>
+                <label for="livre_nombre_page">Pages</label>
+                    <input type="text" class="form-control" name="livre_nombre_page" value="' . $donnees['livre_nombre_page'] . '" required>
                 </div>
                 
                 <div class="form-group">
-                <label for="film_trailer">Trailer</label>
-                    <input type="text" class="form-control" name="film_trailer" value="' . $donnees['film_trailer'] . '" required>
+                <label for="livre_cover_image">Image de couverture</label>
+                    <input type="text" class="form-control" name="livre_cover_image" value="' . $donnees['livre_cover_image'] . '" required>
                 </div>
                 
                 <div class="form-group">
-                <label for="film_duree">Durée</label>
-                    <input type="number" class="form-control" name="film_duree" value="' . $donnees['film_duree'] . '" required>
+                <label for="livre_popularity">Popularité</label>
+                    <input type="number" step="0.1" class="form-control" name="livre_popularity" value="' . $donnees['livre_popularity'] . '" required>
                 </div>
                 
                 <div class="form-group">
-                <label for="film_date">Date de publication</label>
-                    <input type="date" class="form-control" name="film_date" value="' . $donnees['film_date'] . '" required>
-                </div>
-                
-                <div class="form-group">
-                <label for="film_popularity">Popularité</label>
-                    <input type="number" step="0.1" class="form-control" name="film_popularity" value="' . $donnees['film_popularity'] . '" required>
-                </div>
-                
-                <div class="form-group">
-                <label for="film_value">Valeur</label>
-                    <input type="number" class="form-control" name="film_value" value="' . $donnees['film_value'] . '" min="0" max="1" required>
+                <label for="livre_value">Valeur</label>
+                    <input type="number" class="form-control" name="livre_value" value="' . $donnees['livre_value'] . '" min="0" max="1" required>
                 </div>';
 
                 echo '<input class="subscribe__btn" type="submit" value="Modifier">';
                 echo "</form>";
             }
-            $administration->ModifyFilm();
+            $administration->ModifyLivre();
             ?>
         </div>
     </div>

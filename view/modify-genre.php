@@ -1,3 +1,23 @@
+<?php
+session_start();
+if(isset($_SESSION['user_role'])){
+    if($_SESSION['user_role'] == 1){
+        // l'utilisateur a un rôle d'administrateur
+    } else if($_SESSION['user_role'] == 3){
+        // l'utilisateur a un rôle de modérateur
+        header('location: ../index.php');
+        exit;
+    } else {
+        // l'utilisateur a un rôle indéfini
+        header('location: ../view/error/403.php');
+        exit;
+    }
+} else {
+    // la variable de session n'est pas initialisée
+    header('location: ../view/error/403.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang=fr>
 
@@ -36,11 +56,6 @@
 </head>
 
 <body class="unselectable">
-
-<div id="preloader">
-    <?php include_once('../controller/preloader.php'); ?>
-</div>
-
 
 <?php
 include_once('../_navbar/navbar.php');
@@ -107,8 +122,6 @@ include_once('../_navbar/navbar.php');
 <?php
 include_once('../_footer/footer.php');
 ?>
-
-<script src="../assets/js/preloader.js"></script>
 
 </body>
 
