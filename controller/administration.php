@@ -658,7 +658,7 @@ die();
     {
         global $db;
         global $donnees;
-        $req = $db->prepare('SELECT * FROM `users`, `abonnement`  WHERE id_user= ?');
+        $req = $db->prepare('SELECT users.*, abonnement.type FROM `users`, `abonnement`  WHERE id_user= ? AND users.id_abonnement =  abonnement.id_abonnement');
         $req->execute(array($_SESSION["id_user"]));
         $donnees = $req->fetch(PDO::FETCH_ASSOC);
     }
