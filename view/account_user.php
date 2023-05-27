@@ -12,19 +12,19 @@ require_once('../controller/administration.php');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description"
-          content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
+          content="Films, livres, audios | Toute une bibliothà¨que pour vous divertir, oà¹ que vous soyez, en illimité !"/>
     <meta name="robots" content="index, follow"/>
     <meta property="og:title" content="Espace compte | e-Gnose"/>
     <meta property="og:type" content="website"/>
     <meta property="og:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
     <meta property="og:url" content="https://e-gnose.sfait.fr/view/account-user.php"/>
     <meta property="og:description"
-          content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
+          content="Films, livres, audios | Toute une bibliothà¨que pour vous divertir, oà¹ que vous soyez, en illimité !"/>
     <meta property="og:locale" content="fr_FR"/>
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:title" content="Espace compte | e-Gnose"/>
     <meta name="twitter:description"
-          content="Films, livres, audios | Toute une bibliothèque pour vous divertir, où que vous soyez, en illimité !"/>
+          content="Films, livres, audios | Toute une bibliothà¨que pour vous divertir, oà¹ que vous soyez, en illimité !"/>
     <meta name="twitter:image" content="https://e-gnose.sfait.fr/assets/img/favicon.png"/>
     <title>Espace compte | e-Gnose</title>
 
@@ -72,7 +72,7 @@ $administration->SelectUserInfo()
                         <h1 class="display-2 text-white">Bonjour, <?= $_SESSION["user_nom"] ?>.</h1>
                         <p class="text-white mt-0 mb-5">Bienvenue sur votre espace compte. Vous pouvez consulter vos
                             données
-                            personnelles et les modifier à tout moment !</p>
+                            personnelles et les modifier à  tout moment !</p>
                     </div>
                 </div>
             </div>
@@ -133,6 +133,11 @@ $administration->SelectUserInfo()
                                     <?php
                                 }
                                 ?>
+                                <hr>
+                                <div class="h5 font-weight-300">
+                                        <h3>Vous avez un abonnement :<b><i class="ni location_pin mr-2"></i><?= $donnees['type']; ?></b></h3></br>
+                                        <i>L'abonnement Freedom correspond à un abonnement basic. Pour changer et passer à l'abonnement supérieur, merci de contacter : admin@gmail.com</i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -149,7 +154,7 @@ $administration->SelectUserInfo()
 
 
                         <div class="card-body">
-                            <!-- On affiche chaque entrée une à  une -->
+                            <!-- On affiche chaque entrée une à Â  une -->
                             <form action="" method="post">
                                 <h6 class="heading-small text-muted mb-4">Vos informations personnelles</h6>
                                 <div class="pl-lg-4">
@@ -223,7 +228,7 @@ $administration->SelectUserInfo()
 
 
                                 <!-- Description -->
-                                <h6 class="heading-small text-muted mb-4">à propos de moi</h6>
+                                <h6 class="heading-small text-muted mb-4">à  propos de moi</h6>
                                 <div class="pl-lg-4">
                                     <div class="form-group focused">
                                         <label>Biographie</label>

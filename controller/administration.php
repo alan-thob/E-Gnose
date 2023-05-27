@@ -184,7 +184,8 @@ class Administration
         if (isset($_POST['id_film'])) {
             $req = $db->prepare('DELETE FROM `films` WHERE id_film= ?');
             $req->execute(array($_POST['id_film']));
-
+var_dump($req);
+die();
             if ($req) {
                 echo "Suppression réussi sur l'id : <b>" . $_POST['id_film'] . ' - ' . $_POST['film_titre'] . "</b>";
             } else {
@@ -657,7 +658,7 @@ class Administration
     {
         global $db;
         global $donnees;
-        $req = $db->prepare('SELECT * FROM `users` WHERE id_user= ?');
+        $req = $db->prepare('SELECT * FROM `users`, `abonnement`  WHERE id_user= ?');
         $req->execute(array($_SESSION["id_user"]));
         $donnees = $req->fetch(PDO::FETCH_ASSOC);
     }
