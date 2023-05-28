@@ -594,7 +594,7 @@ die();
         if ($req->rowCount() > 0) {
             while ($ressources = $req->fetch()) {
                 echo '<div class="item" style="width: 85%">
-                        <a href="https://e-gnose.sfait.fr/view/content_serie.php?id=' . $ressources['id_livre'] . '">
+                        <a href="https://e-gnose.sfait.fr/view/content_livre.php?id=' . $ressources['id_livre'] . '">
                             <div class="item__image"><img src="' . $ressources['livre_cover_image'] . '" alt=""></div>
                             <div class="item__body">
                                 <div class="item__title">' . strip_tags($ressources['livre_titre']) . '</div>
@@ -614,7 +614,7 @@ die();
         if ($req->rowCount() > 0) {
             while ($ressources = $req->fetch()) {
                 echo '<div class="item" style="width: 85%">
-                        <a href="https://e-gnose.sfait.fr/view/content_serie.php?id=' . $ressources['id_livre'] . '">
+                        <a href="https://e-gnose.sfait.fr/view/content_livre.php?id=' . $ressources['id_livre'] . '">
                             <div class="item__image"><img src="' . $ressources['livre_cover_image'] . '" alt=""></div>
                             <div class="item__body">
                                 <div class="item__title">' . strip_tags($ressources['livre_titre']) . '</div>

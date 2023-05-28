@@ -18,8 +18,8 @@ class Commentaire
  <div class='container'>
  <div class='user_feedback--container'>
  <p>Auteur(e) : " . $result['user_nom'] . "</p>
- <p class='text name'>" . strip_tags($result['commentaire_text']) . "</p>
- <p style='margin-bottom: 0'>Note attribuée : " . $result['commentaire_note'] . " <i class='fa fa-star gold'></i></p>
+ <h6 class='text name'>" . strip_tags($result['commentaire_text']) . "</h6>
+ <p>Note attribuée : " . $result['commentaire_note'] . " étoiles." . "</p><br>
  </div>
  </div>";
 
