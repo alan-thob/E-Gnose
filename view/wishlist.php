@@ -18,7 +18,18 @@ if (isset($_POST["id_film"])) {
         header("Location: https://e-gnose.sfait.fr/view/wishlist.php");
         exit;
     }
+}elseif(isset($_POST["id_serie"])){
+    $id_serie = $_POST["id_serie"];
+    
+    // Suppression de la wishlist de la base de données
+    $delete2 = $db->prepare('DELETE FROM wishlist WHERE id_user = ? AND id_serie = ?');
+    $delete2->execute([$_SESSION['id_user'], $id_serie]);
+    if ($delete2) {
+        header("Location: https://e-gnose.sfait.fr/view/wishlist.php");
+        exit;
+    }
 }
+
 global $db;
 // Récupérer la wishlist de l'utilisateur
 $id_user = $_SESSION['id_user'];
@@ -161,7 +172,7 @@ include_once('../_navbar/navbar.php');
                         <div class="ligne">
                     <?php endif; ?>
                     <div class="film">
-                        <a href="../view/content.php?id=<?php echo $row2['id_serie'] ?>"><img src="<?php echo $row2['serie_cover_image']; ?>" alt="<?php echo $row2['serie_titre']; ?>" title="Voir <?php echo $row2['serie_titre']; ?>."></a>
+                        <a href="../view/content_serie.php?id=<?php echo $row2['id_serie'] ?>"><img src="<?php echo $row2['serie_cover_image']; ?>" alt="<?php echo $row2['serie_titre']; ?>" title="Voir <?php echo $row2['serie_titre']; ?>."></a>
                         <p><?php echo $row2['serie_titre']; ?></p>
                         <form id="wishlist-form" method="POST" action="">
                             <input type="hidden" name="id_serie" value="<?php echo $row2['id_serie']; ?>">
