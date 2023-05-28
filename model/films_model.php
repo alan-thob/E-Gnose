@@ -2,12 +2,11 @@
 if (isset($_POST["id_film"])) {
     $id_user = $_SESSION["id_user"];
     $id_film = $_GET['id'];
-    // Suppression de la wishlist de la base de données
+
     $done = $db->prepare('SELECT * FROM wishlist WHERE id_film = ? AND id_user = ?');
     $done->bindParam(1, $id_film, PDO::PARAM_INT);
     $done->bindParam(2, $id_user, PDO::PARAM_INT);
     $done->execute();
-
     if ($done->rowCount() == 0) {
         $insert = $db->prepare('INSERT INTO wishlist (id_user, id_film) VALUES (?, ?)');
         $insert->execute([$id_user, $id_film]);
@@ -38,19 +37,15 @@ class Film
     public function getFilm()
     {
         require_once("../controller/singleton_connexion.php");
-        $database = Database::getInstance();
-        $db = $database->getConnexion();
+        global $db;
         $films = $db->prepare('SELECT * FROM films WHERE film_value = :film_value AND id_film = :id_film ORDER BY film_titre DESC ');
         $films->bindValue(":film_value", 1, PDO::PARAM_INT);
         $films->bindValue(":id_film", $_GET["id"], PDO::PARAM_INT);
         $films->execute();
         if ($films->rowCount() > 0) {
             while ($film = $films->fetch()) {
-                $film_city = $film['film_city'];
                 $film_titre = $film['film_titre'];
-                $film_description = $film['film_description'];
                 $film_realisateur = $film['film_realisateur'];
-                $film_cover_image = $film['film_cover_image'];
                 $film_back_image = $film['film_back_image'];
                 $film_trailer = $film['film_trailer'];
                 $film_duree = $film['film_duree'];
@@ -104,27 +99,39 @@ class Film
                     $done->bindParam(1, $id_film, PDO::PARAM_INT);
                     $done->bindParam(2, $_SESSION['id_user'], PDO::PARAM_INT);
                     $done->execute();
-                    if ($done->rowCount() == 0) { ?>
+                    if ($done->rowCount() == 0) {
+?>
                         <div class="add-remove-wishlist">
                             <form method="POST" action="">
                                 <input type="hidden" name="id_film" value="<?php echo $id_film ?>">
-                                <button type="submit" title="Ajouter à la wishlist."><i class="fa-solid fa-circle-plus" style="color: rgb(21, 192, 237, 1)"></i>
-                                </button>
+                                <button type="submit" title="Ajouter à la wishlist."><i class="fa-solid fa-circle-plus" style="color: rgb(21, 192, 237, 1)"></i></button>
                             </form>
                         </div>
-                        <?php } else {
-                        $id_user = $_SESSION['id_user'];
-                        $id_film = $_GET['id'];
-                        $delete = $db->prepare('DELETE FROM wishlist WHERE id_user = ? AND id_film = ?');
-                        $delete->bindParam(1, $id_user, PDO::PARAM_INT);
-                        $delete->bindParam(2, $id_film, PDO::PARAM_INT);
-                        $delete->execute();
-                        if ($delete) { ?>
+                        <?php
+                    } else {
+                        if (isset($_POST['id_film'])) {
+                            $id_user = $_SESSION['id_user'];
+                            $id_film = $_POST['id_film'];
+                            $delete = $db->prepare('DELETE FROM wishlist WHERE id_user = ? AND id_film = ?');
+                            $delete->bindParam(1, $id_user, PDO::PARAM_INT);
+                            $delete->bindParam(2, $id_film, PDO::PARAM_INT);
+                            $delete->execute();
+                            if ($delete) {
+                        ?>
+                                <div class="add-remove-wishlist">
+                                    <form method="POST" action="">
+                                        <input type="hidden" name="id_film" value="<?php echo $id_film ?>">
+                                        <button type="submit" title="Retirer de la wishlist."><i class="fa-solid fa-circle-minus" style="color: rgb(21, 192, 237, 1)"></i></button>
+                                    </form>
+                                </div>
+                            <?php
+                            }
+                        } else {
+                            ?>
                             <div class="add-remove-wishlist">
                                 <form method="POST" action="">
                                     <input type="hidden" name="id_film" value="<?php echo $id_film ?>">
-                                    <button type="submit" title="Retirer de la wishlist."><i class="fa-solid fa-circle-minus" style="color: rgb(21, 192, 237, 1)"></i>
-                                    </button>
+                                    <button type="submit" title="Retirer de la wishlist."><i class="fa-solid fa-circle-minus" style="color: rgb(21, 192, 237, 1)"></i></button>
                                 </form>
                             </div>
 <?php

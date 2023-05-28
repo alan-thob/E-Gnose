@@ -589,7 +589,7 @@ die();
     public function SelectLivreNbPageAsc()
     {
         global $db;
-        $req = $db->prepare('SELECT * FROM `livres` ORDER By livre_nombre_page ASC ');
+        $req = $db->prepare('SELECT * FROM `livres` WHERE livre_value = 1 ORDER By livre_nombre_page ASC ');
         $req->execute();
         if ($req->rowCount() > 0) {
             while ($ressources = $req->fetch()) {
@@ -609,7 +609,7 @@ die();
     public function SelectLivreDateAsc()
     {
         global $db;
-        $req = $db->prepare('SELECT * FROM `livres` ORDER By livre_date_publication ASC');
+        $req = $db->prepare('SELECT * FROM `livres` WHERE livre_value = 1 ORDER By livre_date_publication ASC');
         $req->execute();
         if ($req->rowCount() > 0) {
             while ($ressources = $req->fetch()) {

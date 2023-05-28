@@ -27,13 +27,29 @@ $query = "SELECT wishlist.id_wishlist, wishlist.id_film, wishlist.created_at, fi
  FROM users, wishlist, films
  WHERE users.id_user = wishlist.id_user
  AND wishlist.id_film = films.id_film
+ AND films.id_film != 0
  AND users.id_user = ?";
+ 
+$query2 = "SELECT wishlist.id_wishlist, wishlist.id_serie, wishlist.created_at, series.id_serie, series.serie_titre, series.serie_cover_image
+FROM users, wishlist, series
+WHERE users.id_user = wishlist.id_user
+AND wishlist.id_serie = series.id_serie
+AND series.id_serie != 0
+AND users.id_user = ?";
 
 $result = $db->prepare($query);
 $result->bindValue(1, $id_user, PDO::PARAM_INT);
 $result->execute();
 if (!$result) {
     $error = $result->errorInfo();
+    die("Erreur : " . $error[2]);
+}
+
+$result2 = $db->prepare($query2);
+$result2->bindValue(1, $id_user, PDO::PARAM_INT);
+$result2->execute();
+if (!$result2) {
+    $error = $result2->errorInfo();
     die("Erreur : " . $error[2]);
 }
 
@@ -91,7 +107,7 @@ include_once('../_navbar/navbar.php');
     <div class="container">
 
         <div class="title">
-            <h1>Ma wishlist</h1>
+            <h1>Ma wishlist pour les films</h1>
         </div>
 
         <div class="user_infos--container">
@@ -110,6 +126,45 @@ include_once('../_navbar/navbar.php');
                         <p><?php echo $row['film_titre']; ?></p>
                         <form id="wishlist-form" method="POST" action="">
                             <input type="hidden" name="id_film" value="<?php echo $row['id_film']; ?>">
+                            <button class="delete-btn" title="Supprimer de la wishlist." type="submit"><i class="fas fa-trash"></i></button>
+                        </form>
+                    </div>
+                    <?php if (($count + 1) % 4 == 0) : ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php $count++; ?>
+                <?php endwhile; ?>
+                <?php if ($count % 4 != 0) : ?>
+            </div>
+        <?php endif; ?>
+        </div>
+        <?php endif; ?>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <div class="title">
+            <h1>Ma wishlist pour les séries</h1>
+        </div>
+
+        <div class="user_infos--container">
+            <?php if ($result2->rowCount() == 0) : ?>
+                <h2 class="text-center">Votre wishlist est vide</h2>
+                <input class="subscribe__btn" type="button" onclick="history.back(-1)" value="Retourner en arrière" />
+            <?php else : ?>
+            <div class="films">
+                <?php $count = 0; ?>
+                <?php while ($row2 = $result2->fetch()) : ?>
+                    <?php if ($count % 4 == 0) : ?>
+                        <div class="ligne">
+                    <?php endif; ?>
+                    <div class="film">
+                        <a href="../view/content.php?id=<?php echo $row2['id_serie'] ?>"><img src="<?php echo $row2['serie_cover_image']; ?>" alt="<?php echo $row2['serie_titre']; ?>" title="Voir <?php echo $row2['serie_titre']; ?>."></a>
+                        <p><?php echo $row2['serie_titre']; ?></p>
+                        <form id="wishlist-form" method="POST" action="">
+                            <input type="hidden" name="id_serie" value="<?php echo $row2['id_serie']; ?>">
                             <button class="delete-btn" title="Supprimer de la wishlist." type="submit"><i class="fas fa-trash"></i></button>
                         </form>
                     </div>
